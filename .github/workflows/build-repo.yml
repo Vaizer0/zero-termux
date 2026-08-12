@@ -47,6 +47,7 @@ jobs:
           mkdir -p _site/repo
           cp -r site/* _site/
           cp -r repo/* _site/repo/
+          cp assets/zero-termux.gpg _site/
           echo "Deployment tree:"
           ls -la _site/
           ls _site/repo/ | head
