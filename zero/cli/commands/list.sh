@@ -7,7 +7,7 @@ list_main() {
 
   if [[ $# -eq 0 ]]; then
     echo
-    box "Core List"
+    box "Zero List"
     echo
     log_info "Usage: zero list <target>"
     echo

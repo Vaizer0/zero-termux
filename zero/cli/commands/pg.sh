@@ -11,7 +11,7 @@ PG_USER="postgres"
 # Mostrar ayuda
 pg_help() {
 	echo
-	box "Core PostgreSQL Manager"
+	box "Zero PostgreSQL Manager"
 	echo
 	log_info "Usage: zero pg <command> [options]"
 	echo

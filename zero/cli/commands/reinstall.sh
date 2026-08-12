@@ -7,7 +7,7 @@ reinstall_main() {
 
   if [[ $# -eq 0 ]]; then
     echo
-    box "Core Reinstall"
+    box "Zero Reinstall"
     echo
     log_info "Usage: zero reinstall <target>"
     log_info "Usage: zero reinstall <target> --tool1 --tool2"

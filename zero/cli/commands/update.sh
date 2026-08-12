@@ -7,7 +7,7 @@ update_main() {
 
   if [[ $# -eq 0 ]]; then
     echo
-    box "Core Update"
+    box "Zero Update"
     echo
     log_info "Usage: zero update <target>"
     log_info "Usage: zero update <target> --tool1 --tool2"

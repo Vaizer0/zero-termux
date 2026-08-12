@@ -165,7 +165,7 @@ ZERO_TIPS=(
 	"Install Meslo Nerd Font: ${D_CYAN}zero install ui --font${NC}"
 	"Configure cursor color: ${D_CYAN}zero install ui --cursor${NC}"
 	"Setup extra keys bar: ${D_CYAN}zero install ui --extra-keys${NC}"
-	"Install Core banner: ${D_CYAN}zero install ui --banner${NC}"
+	"Install Zero banner: ${D_CYAN}zero install ui --banner${NC}"
 
 	# ── Automation ───────────────────────────────────────────
 	"Run n8n automation: ${D_CYAN}zero install auto --n8n${NC}"
