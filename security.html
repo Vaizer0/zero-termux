@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security — Zero-Termux</title>
+<meta name="description" content="Zero-Termux security: trust model, APT signing, supply chain, responsible disclosure.">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="diamond">◈</span> Zero-Termux</a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="docs.html">Docs</a>
+      <a href="commands.html">Commands</a>
+      <a href="modules.html">Modules</a>
+      <a href="packages.html">Packages</a>
+      <a href="guides.html">Guides</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="contributing.html">Contributing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap prose">
+  <div class="page-head">
+    <div class="crumb">/ security</div>
+    <h1>Security</h1>
+    <p>The full policy is in <a href="https://github.com/Vaizer0/zero-termux/blob/main/SECURITY.md">SECURITY.md</a>. The model in one sentence: <strong>transparency, not trust.</strong></p>
+  </div>
+
+  <div class="note"><strong>Trust model</strong> All installer and package scripts are plain bash in this repository. Installing a third-party tool (via <span class="mono">zero</span> or <span class="mono">pkg</span>) runs its build steps on your device — that is the intended Termux design. Review scripts before installing anything you do not trust.</div>
+
+  <h2>What runs on your device</h2>
+  <ul>
+    <li><strong><span class="mono">zero install &lt;module&gt; [--tool …]</span></strong> runs that module's installers, pulling from official npm/pip/gem/cargo registries or the tool's official GitHub releases — never from Zero-Termux infrastructure.</li>
+    <li>Tool installers may write into <span class="mono">$PREFIX</span> (bin symlinks, share data); <span class="mono">shell</span> and <span class="mono">ui</span> modules write user-level config under <span class="mono">$HOME</span> (<span class="mono">~/.zshrc</span> additions, <span class="mono">~/.termux</span>, <span class="mono">~/.config</span>). <span class="mono">zero voice</span> records microphone audio only when you invoke it.</li>
+    <li><strong>APT packages:</strong> each <span class="mono">postinst</span> downloads the tool's source/release from its official repo, builds it, and symlinks the command into <span class="mono">$PREFIX/bin</span>. Data may land under <span class="mono">$PREFIX/share</span>/<span class="mono">lib</span>; a minority (themes, fonts, config packs) intentionally writes into <span class="mono">$HOME</span>. Check the package's <span class="mono">DEBIAN/</span> scripts before installing.</li>
+  </ul>
+
+  <h2>APT repository signing</h2>
+  <ul>
+    <li>Every <span class="mono">build-repo</span> run signs the <span class="mono">Release</span> file (→ signed <span class="mono">InRelease</span>) with an <strong>ed25519</strong> key.</li>
+    <li>Key: <span class="mono">Zero-Termux Signing &lt;zero-termux@users.noreply.github.com&gt;</span>, fingerprint <span class="mono">DF2C7FCDABF96DF4298E953BB0C7EC7C1BB9C494</span>.</li>
+    <li>Public key ships in the repo (<span class="mono">assets/zero-termux.gpg</span>) and at <span class="mono">https://vaizer0.github.io/zero-termux/zero-termux.gpg</span>.</li>
+    <li><strong>Private key exists only in GitHub Actions secrets</strong> (<span class="mono">PRIVATE_GPG_KEY</span> + <span class="mono">GPG_PASSPHRASE</span>). Treat any other source of it as compromised. It has never been committed.</li>
+  </ul>
+
+  <h2>Supply chain</h2>
+  <ul>
+    <li>Rolling tools resolve the <strong>latest release from official upstream</strong> at install time; no silent stale fallback — installers fail with a clear error if the upstream API is unreachable.</li>
+    <li>Pins are limited to build-critical/source-tag cases, individually justified (<span class="mono"># Zero-Termux: justified pin — &lt;reason&gt;</span> + manifest entry); CI fails on new unapproved pins.</li>
+    <li>All downloads over HTTPS, pointing at each tool's official source — never at this project's servers.</li>
+    <li>CI validates every PR; the Pages deploy serves the signed repo and public key from the same pipeline that built them.</li>
+  </ul>
+
+  <div class="danger"><strong>What we do NOT claim</strong> Packages are not "safe just because they are in the repo" — installing executes their <span class="mono">postinst</span>. And not every tool avoids touching your config; check before you install. Security tooling is for systems you own or are authorized to test.</div>
+
+  <h2>Responsible disclosure</h2>
+  <ul>
+    <li>Do <strong>not</strong> open a public issue for an active vulnerability affecting other users.</li>
+    <li>Open an issue prefixed <span class="mono">[SECURITY]</span> (or use the maintainer contact on the repo) with: tool/package + version, reproduction steps, impact, optional fix.</li>
+    <li>Ack within 3 business days; fix or documented mitigation within 14 days.</li>
+  </ul>
+
+  <h2>Verifying the key</h2>
+  <pre><code>curl -fsSL https://vaizer0.github.io/zero-termux/zero-termux.gpg -o key.gpg
+gpg --show-keys key.gpg
+# pub   ed25519 2026-08-12 [SC]
+#       DF2C 7FCD ABF9 6DF4 298E  953B B0C7 EC7C 1BB9 C494
+# uid   Zero-Termux Signing &lt;zero-termux@users.noreply.github.com&gt;</code></pre>
+</div>
+
+<footer>
+  <div class="mono">◈ Zero-Termux — modular dev environment &amp; APT repository for Termux</div>
+  <div><a href="https://github.com/Vaizer0/zero-termux">github.com/Vaizer0/zero-termux</a> · MIT · © <span data-year>2026</span></div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
