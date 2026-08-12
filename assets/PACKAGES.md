@@ -306,7 +306,6 @@ The complete catalog of packages available from the Zero-Termux repository. Each
 ## Updates & Support
 
 - GitHub: [Vaizer0/zero-termux](https://github.com/Vaizer0/zero-termux/tree/main/packages/)
-- YouTube: [@alienkrishnorg](https://youtube.com/@alienkrishnorg)
 
 The catalog is updated regularly. Check the README or the main repository for the latest release notes and new tools.
 
