@@ -1,0 +1,38 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing Zen-C...${NC}"
+
+echo -e "${YELLOW}Cloning Zen-C repository...${NC}"
+git clone -q https://github.com/z-libs/Zen-C.git $TMPDIR/zen-c || {
+    echo -e "${RED}Error: Failed to clone Zen-C repository.${NC}"
+    exit 1
+}
+
+cd $TMPDIR/zen-c
+
+echo -e "${YELLOW}Building Zen-C...${NC}"
+make -s || {
+    echo -e "${RED}Error: Failed to build Zen-C.${NC}"
+    exit 1
+}
+
+echo -e "${YELLOW}Installing Zen-C...${NC}"
+make -s install || {
+    echo -e "${RED}Error: Failed to install Zen-C.${NC}"
+    exit 1
+}
+
+echo -e "${YELLOW}Cleaning up...${NC}"
+rm -rf $TMPDIR/zen-c
+
+echo -e "${GREEN}Zen-C installed successfully!${NC}"
+echo -e "${YELLOW}Usage examples:${NC}"
+echo "  zc run hello.zc      # Compile and run"
+echo "  zc build hello.zc -o hello  # Build executable"
+echo "  zc repl              # Interactive Shell"
+exit 0

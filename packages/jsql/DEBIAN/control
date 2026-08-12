@@ -1,0 +1,12 @@
+Package: jsql
+Version: 0.114
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: curl, openjdk-21
+Section: web
+Priority: optional
+Homepage: https://github.com/ron190/jsql-injection
+Description: Lightweight database information finder from a server
+ jSQL Injection is a lightweight application used to detect and
+ exploit SQL injection vulnerabilities. It automates the process of
+ finding database information from a target server.

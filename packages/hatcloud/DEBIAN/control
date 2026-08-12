@@ -1,0 +1,12 @@
+Package: hatcloud
+Version: 1.0.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You] 
+Depends: ruby, git
+Section: security
+Priority: optional
+Homepage: https://github.com/HatBashBR/HatCloud
+Description: CloudFlare detector and information gatherer
+ HatCloud identifies websites protected by CloudFlare and extracts
+ origin server IPs. Useful for bypassing CloudFlare protections
+ during security assessments.

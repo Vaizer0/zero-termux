@@ -1,0 +1,14 @@
+Package: openbullet
+Version: 1.0.2
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, python-pip
+Section: security
+Priority: optional
+Homepage: https://github.com/esfelurm/OpenBullet.git
+Description: A tool for running openbullet configurations
+ Automated security testing tool featuring:
+ - Credential stuffing attacks
+ - Proxy support and rotation
+ - Configurable attack modules
+ - Real-time results monitoring

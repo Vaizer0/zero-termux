@@ -1,0 +1,12 @@
+Package: snoop
+Version: 1.4.3
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, python-psutil
+Section: utils
+Priority: optional
+Homepage: https://github.com/snooppr/snoop
+Description: Information gathering tool using online resources
+ Snoop is a comprehensive OSINT tool that collects information about
+ a target from various public sources. It helps security researchers
+ and penetration testers with reconnaissance tasks.

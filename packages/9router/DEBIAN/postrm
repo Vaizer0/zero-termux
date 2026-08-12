@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+npm uninstall -g 9router 2>/dev/null && echo "9router removed." || echo "9router not found."
+exit 0

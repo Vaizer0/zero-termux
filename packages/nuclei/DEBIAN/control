@@ -1,0 +1,12 @@
+Package: nuclei
+Version: 3.11.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, golang
+Section: web
+Priority: optional
+Homepage: https://nuclei.projectdiscovery.io/
+Description: Fast and customizable vulnerability scanner
+ nuclei is used to send requests across targets based on a template
+ leading to zero false positives and providing fast scanning
+ for known paths. It is built with simplicity in mind.

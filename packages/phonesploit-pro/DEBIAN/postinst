@@ -1,0 +1,35 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+INSTALL_DIR="$PREFIX/share/phonesploitpro"
+LAUNCHER="$PREFIX/bin/phonesploit"
+
+echo "[*] Installing PhoneSploit Pro v1.6.1..."
+git clone --depth=1 https://github.com/AzeemIdrisi/PhoneSploit-Pro.git "$INSTALL_DIR" || {
+    echo "[!] Clone failed. Check:"
+    echo "    1. Internet connection"
+    echo "    2. git installation"
+    exit 1
+}
+
+echo "[*] Installing Python dependencies..."
+pip install -r "$INSTALL_DIR/requirements.txt" || {
+    echo "[!] Dependency install failed"
+    exit 1
+}
+
+echo "[*] Creating launcher..."
+cat > "$LAUNCHER" <<'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+cd "$PREFIX/share/phonesploitpro"
+exec python phonesploitpro.py "$@"
+EOF
+
+chmod +x "$LAUNCHER" || {
+    echo "[!] Launcher creation failed"
+    exit 1
+}
+
+echo -e "\n[✓] PhoneSploit Pro installed!"
+echo "  Usage:"
+echo "    phonesploit           # Interactive mode"
+echo "  Note: Requires USB debugging enabled on target device"

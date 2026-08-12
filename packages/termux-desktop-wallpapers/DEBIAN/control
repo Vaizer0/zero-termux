@@ -1,0 +1,7 @@
+Package: termux-desktop-wallpapers
+Version: 1.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: termux-tools, termux-desktop
+Homepage: https://alienkrishn.infy.uk
+Description: Wallpapers for termux-desktop

@@ -1,0 +1,14 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Post-removal script for void-fonts
+
+set -e
+
+VOIDFONT_DIR="$PREFIX/share/voidfonts"
+LAUNCHER="$PREFIX/bin/vfonts"
+
+echo "[*] Removing Void-Fonts..."
+[ -d "$VOIDFONT_DIR" ] && rm -rf "$VOIDFONT_DIR"
+[ -f "$LAUNCHER" ] && rm -f "$LAUNCHER"
+
+echo "[√] Removal complete."
+exit 0

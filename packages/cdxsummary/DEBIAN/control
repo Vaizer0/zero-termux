@@ -1,0 +1,14 @@
+Package: cdxsummary
+Version: 0.1.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: python, python-pip
+Section: utils
+Priority: optional
+Homepage: https://github.com/internetarchive/cdx-summary
+Description: CDX summary and analysis tool
+ Analyze and summarize CDX files from Wayback Machine with:
+ - CDX file parsing
+ - Statistical analysis
+ - Domain summary reports
+ - Data export capabilities

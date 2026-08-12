@@ -1,0 +1,14 @@
+Package: paramspider
+Version: 1.0.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, python-pip
+Section: security
+Priority: optional
+Homepage: https://github.com/devanshbatham/paramspider
+Description: Parameter discovery suite for web applications
+ Mine parameters from web archives with:
+ - Wayback Machine integration
+ - JavaScript file analysis
+ - URL parameter extraction
+ - Massive scale scanning

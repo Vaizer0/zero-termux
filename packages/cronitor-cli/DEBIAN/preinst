@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+ARCH=$(uname -m)
+case $ARCH in
+    aarch64) ARCH_TYPE="arm64" ;;
+    arm*) ARCH_TYPE="arm" ;;
+    x86_64) ARCH_TYPE="amd64" ;;
+    *)
+        echo -e "${RED}Error: Unsupported architecture: $ARCH${NC}"
+        exit 1
+        ;;
+esac

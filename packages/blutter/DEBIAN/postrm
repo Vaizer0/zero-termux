@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling blutter...${NC}"
+
+if [ -f "$PREFIX/bin/blutter" ]; then
+    rm -f $PREFIX/bin/blutter
+    echo -e "${GREEN}Removed launcher script${NC}"
+fi
+
+if [ -d "$PREFIX/share/blutter" ]; then
+    rm -rf $PREFIX/share/blutter
+    echo -e "${GREEN}Removed blutter repository${NC}"
+fi
+
+echo -e "${GREEN}blutter completely removed${NC}"
+exit 0

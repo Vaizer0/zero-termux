@@ -1,0 +1,13 @@
+Package: hashid
+Version: 3.1.4
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: python, python-pip
+Section: security
+Priority: optional
+Homepage: https://github.com/psypanda/hashID
+Description: Advanced hash identifier
+ Identifies 300+ hash types including:
+ - Common cryptographic hashes
+ - Database passwords
+ - Application-specific hashes

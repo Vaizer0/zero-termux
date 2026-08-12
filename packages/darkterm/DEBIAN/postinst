@@ -1,0 +1,17 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+INSTALL_DIR="$PREFIX/share/darkterm"
+LAUNCHER="$PREFIX/bin/darkterm"
+
+[ -d "$INSTALL_DIR" ] && rm -rf "$INSTALL_DIR"
+
+git clone --depth 1 https://github.com/Anon4You/darkterm.git "$INSTALL_DIR"
+
+# Ensure the main script is executable
+chmod +x "$INSTALL_DIR/darkterm.sh"
+
+# Create symlink in $PREFIX/bin
+ln -sf "$INSTALL_DIR/darkterm.sh" "$LAUNCHER"
+
+exit 0

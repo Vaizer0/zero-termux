@@ -1,0 +1,17 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "Installing pptool ..."
+
+# Zero-Termux: rolling version — resolve latest GitHub release at install time
+WHEEL_URL="$(curl -fsSL 'https://api.github.com/repos/Kirlif/PPTool/releases/latest' 2>/dev/null | grep '"browser_download_url"' | grep '\.whl' | head -1 | cut -d'"' -f4)"
+[ -n "$WHEEL_URL" ] || exit 1
+WHEEL_PATH="$TMPDIR/$(basename "$WHEEL_URL")"
+
+curl -L -o "$WHEEL_PATH" "$WHEEL_URL" || exit 1
+
+pip install --quiet --force-reinstall "$WHEEL_PATH" || exit 1
+
+rm -f "$WHEEL_PATH"
+
+echo "pptool installed successfully."
+exit 0

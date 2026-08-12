@@ -1,0 +1,27 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+REPO="https://github.com/Alfredredbird/tookie-osint.git"
+INSTALL_DIR="$PREFIX/share/tookie-osint"
+
+[ -d "$INSTALL_DIR" ] && rm -rf "$INSTALL_DIR"
+
+git clone --depth 1 "$REPO" "$INSTALL_DIR"
+cd "$INSTALL_DIR"
+pip install -r requirements.txt
+
+# Fix shebang for Termux and make executable
+termux-fix-shebang brib.py
+chmod +x brib.py
+
+# Create symlink
+ln -sf "$INSTALL_DIR/brib.py" "$PREFIX/bin/tookie-osint"
+
+echo "Tookie-OSINT installed successfully."
+echo ""
+echo "Usage examples:"
+echo "  tookie-osint -u username"
+echo "  tookie-osint -U users.txt -t 10"
+echo "  tookie-osint -u username -o json"
+echo "  tookie-osint -u username -H"
+exit 0

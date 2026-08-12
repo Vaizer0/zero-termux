@@ -1,0 +1,43 @@
+name: Deploy Site
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'site/**'
+  workflow_dispatch:
+
+concurrency:
+  group: "zero-termux-pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Assemble site
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          cp -r site/* _site/
+
+      # keep_files: true preserves the APT repository (repo/) deployed by
+      # build-repo.yml. Both workflows share the zero-termux-pages concurrency
+      # group so site and repo deploys never run at the same time.
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./_site
+          keep_files: true
+          user_name: Vaizer0
+          user_email: vaizer0@users.noreply.github.com

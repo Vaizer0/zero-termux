@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+rm -rf ~/.config/tmd_config 
+rm -rf $PREFIX/bin/tmd 

@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+rm -f "$PREFIX/bin/qdl"
+rm -rf "$PREFIX/share/qdl-src"
+rm -f "$PREFIX/share/man/man1/qdl.1"
+
+exit 0

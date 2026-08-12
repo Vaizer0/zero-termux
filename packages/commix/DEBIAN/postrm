@@ -1,0 +1,21 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling Commix...${NC}"
+
+# Uninstall commix package
+pip uninstall -y commix 2>/dev/null || {
+echo -e "${YELLOW}commix package not found.${NC}"
+}
+
+# Remove cloned repository
+if [ -d "$PREFIX/share/commix" ]; then
+    rm -rf $PREFIX/share/commix
+    echo -e "${GREEN}Removed commix repository${NC}"
+    fi
+    
+    echo -e "${GREEN}Commix completely removed${NC}"
+    exit 0

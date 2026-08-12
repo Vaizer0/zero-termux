@@ -1,0 +1,26 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+INSTALL_DIR="$PREFIX/share/nikto"
+LAUNCHER="$PREFIX/bin/nikto"
+
+# Clone Nikto
+
+rm -rf "$INSTALL_DIR" 2>/dev/null || true
+echo "[*] Cloning Nikto..."
+git clone --depth 1 https://github.com/sullo/nikto.git "$INSTALL_DIR" || exit 1
+
+# Force-install Net::SSLeay via CPAN
+echo "[*] Installing JSON, XML::Writer, Net::SSLeay (tihis may take 2-5 minutes)..."
+cpan -fi JSON XML::Writer Net::SSLeay
+
+# Create launcher 
+echo "[*] Creating launcher..."
+cat > "$LAUNCHER" <<'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+cd "$PREFIX/share/nikto/program"
+exec perl nikto.pl "$@"
+EOF
+
+chmod +x "$LAUNCHER"
+echo "[+] Nikto Installed"
+echo "[+] Usage: nikto -h https://example.com"

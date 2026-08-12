@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling Numinfo...${NC}"
+
+# Remove launcher
+if [ -f "$PREFIX/bin/numinfo" ]; then
+    rm -f "$PREFIX/bin/numinfo"
+    echo -e "${GREEN}Removed launcher script${NC}"
+fi
+
+# Remove installation directory
+if [ -d "$PREFIX/share/numinfo" ]; then
+    rm -rf "$PREFIX/share/numinfo"
+    echo -e "${GREEN}Removed Numinfo directory${NC}"
+fi
+
+echo -e "${GREEN}Numinfo completely removed${NC}"
+exit 0

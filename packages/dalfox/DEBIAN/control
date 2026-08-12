@@ -1,0 +1,11 @@
+Package: dalfox
+Version: 3.2.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: rust, clang, pkg-config, openssl, openssl-tool
+Section: security
+Priority: optional
+Homepage: https://github.com/hahwul/dalfox
+Description: Fast parameter analysis and XSS scanning tool (v3 in Rust)
+ Dalfox v3 is a complete rewrite in Rust. This package builds the exact
+ version from official source code during installation.

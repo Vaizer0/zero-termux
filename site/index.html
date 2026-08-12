@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zero-Termux — Modular Dev Environment + APT Repository for Termux</title>
+<meta name="description" content="Zero-Termux: a modular development environment and signed APT package repository for Termux. Install hundreds of tools with one command.">
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #11151f;
+    --border: #1f2733;
+    --text: #d7e0ea;
+    --dim: #7a8699;
+    --accent: #38d9a9;
+    --accent2: #4dabf7;
+    --warn: #ffd43b;
+    --danger: #ff6b6b;
+    --mono: "JetBrains Mono", "Fira Code", ui-monospace, "Cascadia Code", Consolas, monospace;
+    --sans: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.6; }
+  a { color: var(--accent2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* nav */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(11, 14, 20, 0.92); backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .inner {
+    max-width: 1040px; margin: 0 auto; padding: 0.8rem 1.2rem;
+    display: flex; align-items: center; gap: 1.4rem;
+  }
+  nav .logo { font-family: var(--mono); font-weight: 700; color: var(--accent); font-size: 1.05rem; }
+  nav .logo span { color: var(--text); }
+  nav .links { display: flex; gap: 1rem; flex-wrap: wrap; }
+  nav .links a { color: var(--dim); font-size: 0.92rem; }
+  nav .links a:hover { color: var(--text); text-decoration: none; }
+
+  main { max-width: 1040px; margin: 0 auto; padding: 0 1.2rem 4rem; }
+
+  /* hero */
+  header.hero { padding: 4.5rem 0 2.5rem; }
+  header.hero .kicker {
+    display: inline-block; font-family: var(--mono); font-size: 0.8rem;
+    color: var(--accent); border: 1px solid rgba(56, 217, 169, 0.35);
+    padding: 0.2rem 0.7rem; border-radius: 999px; margin-bottom: 1.2rem;
+    background: rgba(56, 217, 169, 0.08);
+  }
+  header.hero h1 {
+    font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 800; letter-spacing: -0.02em;
+  }
+  header.hero h1 .zero { color: var(--accent); }
+  header.hero .tagline {
+    margin-top: 1rem; max-width: 640px; color: var(--dim); font-size: 1.1rem;
+  }
+
+  /* terminal window */
+  .terminal {
+    margin-top: 2.2rem; background: var(--panel); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  }
+  .terminal .bar {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 0.7rem 1rem; background: #0e1220; border-bottom: 1px solid var(--border);
+  }
+  .terminal .bar .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .dot.r { background: #ff5f56; } .dot.y { background: #ffbd2e; } .dot.g { background: #27c93f; }
+  .terminal .bar .title { margin-left: 0.6rem; font-family: var(--mono); font-size: 0.8rem; color: var(--dim); }
+  .terminal pre {
+    padding: 1.2rem 1.4rem; font-family: var(--mono); font-size: 0.92rem;
+    overflow-x: auto; white-space: pre;
+  }
+  .terminal pre .prompt { color: var(--accent); }
+  .terminal pre .c { color: var(--dim); }
+  .terminal pre .ok { color: var(--accent); }
+  .terminal pre .hl { color: var(--warn); }
+
+  /* install command box */
+  .install-box {
+    margin-top: 1.6rem; display: flex; align-items: stretch; gap: 0;
+    border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+    background: var(--panel);
+  }
+  .install-box code {
+    flex: 1; padding: 1rem 1.2rem; font-family: var(--mono); font-size: 0.9rem;
+    overflow-x: auto; white-space: nowrap; color: var(--text);
+  }
+  .install-box code .d { color: var(--dim); }
+  .install-box button {
+    border: none; cursor: pointer; padding: 0 1.6rem;
+    background: var(--accent); color: #06231a; font-weight: 700; font-family: var(--mono);
+    font-size: 0.85rem; letter-spacing: 0.04em;
+  }
+  .install-box button:hover { filter: brightness(1.1); }
+  .install-box button.copied { background: var(--warn); color: #221c00; }
+
+  /* sections */
+  section { margin-top: 4.5rem; scroll-margin-top: 5rem; }
+  section h2 {
+    font-size: 1.7rem; font-weight: 700; display: flex; align-items: center; gap: 0.6rem;
+  }
+  section h2 .hash { color: var(--accent); font-family: var(--mono); font-size: 1.2rem; }
+  section .lead { color: var(--dim); margin-top: 0.4rem; max-width: 720px; }
+
+  /* feature grid */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1.6rem; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.3rem 1.4rem;
+  }
+  .card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .card h3 .ic { color: var(--accent); margin-right: 0.4rem; font-family: var(--mono); }
+  .card p { color: var(--dim); font-size: 0.93rem; }
+
+  /* module chips */
+  .chips { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.6rem; }
+  .chip {
+    display: inline-flex; flex-direction: column; gap: 0.15rem;
+    border: 1px solid var(--border); background: var(--panel); border-radius: 10px;
+    padding: 0.8rem 1.1rem; min-width: 150px;
+  }
+  .chip .m { font-family: var(--mono); color: var(--accent2); font-weight: 700; }
+  .chip .c { color: var(--dim); font-size: 0.78rem; font-family: var(--mono); }
+  .chip:hover { border-color: var(--accent2); }
+
+  /* code blocks */
+  pre.block {
+    margin-top: 1.4rem; background: var(--panel); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.4rem; font-family: var(--mono);
+    font-size: 0.88rem; overflow-x: auto; white-space: pre;
+  }
+  pre.block .p { color: var(--accent); }
+  pre.block .d { color: var(--dim); }
+  pre.block .c { color: var(--dim); font-style: italic; }
+  pre.block .w { color: var(--warn); }
+
+  /* links list */
+  .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.8rem; margin-top: 1.6rem; }
+  .links-grid a {
+    display: block; padding: 0.9rem 1.1rem; background: var(--panel);
+    border: 1px solid var(--border); border-radius: 10px; color: var(--text);
+  }
+  .links-grid a .l { color: var(--accent2); font-family: var(--mono); font-size: 0.9rem; }
+  .links-grid a .d { display: block; color: var(--dim); font-size: 0.82rem; margin-top: 0.15rem; }
+  .links-grid a:hover { border-color: var(--accent2); text-decoration: none; }
+
+  footer {
+    border-top: 1px solid var(--border); margin-top: 5rem; padding: 2rem 1.2rem;
+    text-align: center; color: var(--dim); font-size: 0.85rem;
+  }
+  footer .mono { font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <div class="logo">◈ Zero<span>-Termux</span></div>
+    <div class="links">
+      <a href="#install">install</a>
+      <a href="#features">features</a>
+      <a href="#modules">modules</a>
+      <a href="#tools">tools</a>
+      <a href="#docs">docs</a>
+      <a href="https://github.com/Vaizer0/zero-termux" target="_blank" rel="noopener">github</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero" id="install">
+    <span class="kicker">Termux · aarch64/arm64 · amd64 · i686</span>
+    <h1>Your Termux, <span class="zero">zero</span> setup friction.</h1>
+    <p class="tagline">
+      Zero-Termux is a modular development environment and a signed APT repository for Termux —
+      one installer gives you the <code>core</code> CLI with 100+ tools and direct access to 228 packages.
+    </p>
+
+    <div class="install-box">
+      <code><span class="d">$</span> bash &lt;(curl -fsSL https://raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh)</code>
+      <button id="copy-btn" type="button" onclick="copyInstall()">COPY</button>
+    </div>
+
+    <div class="terminal">
+      <div class="bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="title">zero-termux — install demo</span>
+      </div>
+      <pre><span class="prompt">$</span> bash &lt;(curl -fsSL https://raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh)
+<span class="c">  ◆  1/7  Verifying dependencies          ✔ All dependencies present</span>
+<span class="c">  ◆  2/7  Setting up directories          ✔ Directories created</span>
+<span class="c">  ◆  3/7  Cloning repository              ✔ Repository cloned</span>
+<span class="c">  ◆  4/7  Creating core command           ✔ Symlink created: core → …/zero-termux/core/bin/core</span>
+<span class="c">  ◆  5/7  Configuring APT repository      ✔ GPG key installed</span>
+<span class="c">  ◆  6/7  Saving configuration            ✔ Configuration saved</span>
+<span class="ok">  ◆  7/7  Finalizing                      ✔ Installation Complete</span>
+
+<span class="prompt">$</span> core install ai
+<span class="hl">  ◈ Installing AI tools (rolling — latest versions) ◈</span>
+<span class="c">  qwen-code … opencode … claude-code … gemini-cli … done</span>
+
+<span class="prompt">$</span> pkg install zaproxy
+<span class="c">  Reading package lists… done</span>
+<span class="c">  [zero-termux] zaproxy: OWASP Zed Attack Proxy …</span>
+<span class="ok">  Done.</span></pre>
+    </div>
+  </header>
+
+  <section id="features">
+    <h2><span class="hash">#</span> Features</h2>
+    <p class="lead">Two ecosystems, one command. The <code>core</code> CLI manages module installs; the APT repository provides Debian packages — both rolling to latest versions.</p>
+    <div class="grid">
+      <div class="card"><h3><span class="ic">◈</span>Modular CLI</h3><p><code>core install lang · db · ai · editor · dev · npm · shell · ui · auto</code> — category-based installers with install/update/reinstall/uninstall lifecycle.</p></div>
+      <div class="card"><h3><span class="ic">▣</span>228 APT packages</h3><p>Security, recon, net, web, and dev tools as signed Debian packages — installed and upgraded with plain <code>pkg</code>.</p></div>
+      <div class="card"><h3><span class="ic">↻</span>Rolling versions</h3><p>Registry tools track <code>@latest</code>; GitHub-release binaries resolve the newest release at install time. No stale pins.</p></div>
+      <div class="card"><h3><span class="ic">🔑</span>Signed repository</h3><p>Every release is GPG-signed. The public key ships as <code>assets/zero-termux.gpg</code>; the private key never leaves CI secrets.</p></div>
+      <div class="card"><h3><span class="ic">⚡</span>One-line install</h3><p>The installer sets up dependencies, clones the repo, links <code>core</code>, and configures the APT source — with one-time migration from legacy installs.</p></div>
+      <div class="card"><h3><span class="ic">☰</span>Transparent</h3><p>Every package installs from source on-device with visible <code>DEBIAN/</code> scripts, and a CI test suite guards branding, pins, and stale URLs.</p></div>
+    </div>
+  </section>
+
+  <section id="modules">
+    <h2><span class="hash">#</span> Modules</h2>
+    <p class="lead">Install whole categories with one command. Each module installs individual tools with their own lifecycle:</p>
+    <div class="chips">
+      <a class="chip" href="#lang"><span class="m">lang</span><span class="c">core install lang</span></a>
+      <a class="chip" href="#db"><span class="m">db</span><span class="c">core install db</span></a>
+      <a class="chip" href="#ai"><span class="m">ai</span><span class="c">core install ai</span></a>
+      <a class="chip" href="#editor"><span class="m">editor</span><span class="c">core install editor</span></a>
+      <a class="chip" href="#dev"><span class="m">dev</span><span class="c">core install dev</span></a>
+      <a class="chip" href="#npm"><span class="m">npm</span><span class="c">core install npm</span></a>
+      <a class="chip" href="#shell"><span class="m">shell</span><span class="c">core install shell</span></a>
+      <a class="chip" href="#ui"><span class="m">ui</span><span class="c">core install ui</span></a>
+      <a class="chip" href="#auto"><span class="m">auto</span><span class="c">core install auto</span></a>
+    </div>
+
+    <div class="grid">
+      <div class="card" id="lang"><h3><span class="ic">λ</span>lang</h3><p>Programming language toolchains and runtimes — Go, Rust, Node, Python, and more, pinned to Termux-compatible versions.</p></div>
+      <div class="card" id="db"><h3><span class="ic">▤</span>db</h3><p>Databases and data stores: PostgreSQL, MariaDB, Redis, MongoDB, SQLite — installed, configured, and managed locally.</p></div>
+      <div class="card" id="ai"><h3><span class="ic">✧</span>ai</h3><p>AI coding agents and CLI assistants: qwen-code, opencode, claude-code, gemini-cli, ollama, and more — always the latest release.</p></div>
+      <div class="card" id="editor"><h3><span class="ic">▚</span>editor</h3><p>Terminal editors and editor frameworks — Neovim-based setups including nvchad and lazyvim.</p></div>
+      <div class="card" id="dev"><h3><span class="ic">⚙</span>dev</h3><p>Developer utilities: bat, curl, cloudflared, and the everyday tooling that makes Termux a real workstation.</p></div>
+      <div class="card" id="npm"><h3><span class="ic">⬢</span>npm</h3><p>Node.js CLI tools installed globally with <code>@latest</code> — turbopack, 9router, and friends.</p></div>
+      <div class="card" id="shell"><h3><span class="ic">❯</span>shell</h3><p>Shell upgrades: ZSH with plugins and a polished prompt, ready to use.</p></div>
+      <div class="card" id="ui"><h3><span class="ic">▦</span>ui</h3><p>Termux UI tooling — widgets, themes, and desktop helpers for a richer Termux experience.</p></div>
+      <div class="card" id="auto"><h3><span class="ic">⟳</span>auto</h3><p>Automation: n8n workflow automation running on-device for local and cloud workflows.</p></div>
+    </div>
+  </section>
+
+  <section id="tools">
+    <h2><span class="hash">#</span> APT Repository</h2>
+    <p class="lead">The Zero-Termux repository is signed and served from GitHub Pages. Add it with the installer, or manually:</p>
+    <pre class="block"><span class="c"># /data/data/com.termux/files/usr/etc/apt/sources.list.d/zero-termux.list</span>
+<span class="p">deb</span> [trusted=yes arch=all] https://vaizer0.github.io/zero-termux/repo zero-termux main
+
+<span class="p">$</span> curl -fsSL https://vaizer0.github.io/zero-termux/zero-termux.gpg -o $PREFIX/etc/apt/trusted.gpg.d/zero-termux.gpg
+<span class="p">$</span> apt update
+
+<span class="c"># search, install, upgrade — like any other repository</span>
+<span class="p">$</span> pkg search zaproxy
+<span class="p">$</span> pkg install zaproxy</pre>
+    <p class="lead">Browse the full catalog in <a href="https://github.com/Vaizer0/zero-termux/blob/main/assets/PACKAGES.md" target="_blank" rel="noopener">assets/PACKAGES.md</a>.</p>
+  </section>
+
+  <section id="docs">
+    <h2><span class="hash">#</span> Documentation</h2>
+    <p class="lead">From inside the CLI, <code>core open core</code> opens this site, and <code>core open &lt;module&gt;</code> jumps to a category. Everything else lives in the repository:</p>
+    <div class="links-grid">
+      <a href="https://github.com/Vaizer0/zero-termux" target="_blank" rel="noopener"><span class="l">README.md</span><span class="d">Quick start, usage, and architecture</span></a>
+      <a href="https://github.com/Vaizer0/zero-termux/blob/main/UPSTREAM.md" target="_blank" rel="noopener"><span class="l">UPSTREAM.md</span><span class="d">Upstream projects and provenance</span></a>
+      <a href="https://github.com/Vaizer0/zero-termux/blob/main/MIGRATION.md" target="_blank" rel="noopener"><span class="l">MIGRATION.md</span><span class="d">Migrating from legacy Core-Termux installs</span></a>
+      <a href="https://github.com/Vaizer0/zero-termux/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener"><span class="l">CONTRIBUTING.md</span><span class="d">Package layout, version policy, CI gates</span></a>
+      <a href="https://github.com/Vaizer0/zero-termux/blob/main/SECURITY.md" target="_blank" rel="noopener"><span class="l">SECURITY.md</span><span class="d">Security policy and responsible disclosure</span></a>
+      <a href="https://github.com/Vaizer0/zero-termux/releases" target="_blank" rel="noopener"><span class="l">Releases</span><span class="d">Signed repository releases</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="mono">Zero-Termux — modular dev environment &amp; APT repository for Termux</div>
+  <div style="margin-top:0.4rem">MIT · BSD-3-Clause (upstream TermuxVoid) — <a href="https://github.com/Vaizer0/zero-termux" target="_blank" rel="noopener">github.com/Vaizer0/zero-termux</a></div>
+</footer>
+
+<script>
+  var CMD = "bash <(curl -fsSL https://raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh)";
+  function copyInstall() {
+    var btn = document.getElementById("copy-btn");
+    function done() {
+      btn.textContent = "COPIED ✓";
+      btn.classList.add("copied");
+      setTimeout(function () {
+        btn.textContent = "COPY";
+        btn.classList.remove("copied");
+      }, 1800);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(CMD).then(done, function () { fallbackCopy(done); });
+    } else {
+      fallbackCopy(done);
+    }
+  }
+  function fallbackCopy(cb) {
+    var ta = document.createElement("textarea");
+    ta.value = CMD;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+    cb();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Removing Flutter SDK..."
+rm -rf "$PREFIX/opt/flutter"
+
+echo "[*] Removing launcher..."
+rm -f "$PREFIX/bin/flutter"
+
+
+echo "[√] Flutter completely removed"
+exit 0

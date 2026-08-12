@@ -1,0 +1,14 @@
+Package: silverinstaeye
+Version: 1.0-patched
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, python-pip, python-pillow, python-numpy, build-essential, cmake, ninja, libopenblas, libandroid-execinfo, patchelf, binutils, rust
+Section: security
+Priority: optional
+Homepage: https://github.com/silverxpymaster/SilverInstaEye
+Description: Instagram information gathering tool
+ OSINT tool for Instagram featuring:
+ - Profile information extraction
+ - Media analysis
+ - Follower/following statistics
+ - Data export capabilities

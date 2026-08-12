@@ -1,0 +1,12 @@
+Package: numinfo
+Version: 1.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python
+Section: utils
+Priority: optional
+Homepage: https://github.com/Anon4You/NumInfo
+Description: Phone number intelligence and lookup tool
+ Numinfo is a Python tool that provides detailed information about
+ phone numbers using various APIs. It supports multiple data sources
+ for comprehensive number validation and enrichment.

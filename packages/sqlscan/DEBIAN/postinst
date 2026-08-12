@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+sqlscanDir="$PREFIX/share/sqlscan"
+git clone --quiet https://github.com/machine1337/sqlscan $sqlscanDir
+if [[ -e $sqlscanDir/scan.sh ]]; then
+  chmod +x $sqlscanDir/scan.sh
+  ln -srf $sqlscanDir/scan.sh $PREFIX/bin/sqlscan
+  printf "\n[*] sqlscan installed...\n\nrun \e[32msqlscan\e[0m to ececute it\n"
+else
+  printf "\n\e[31mAn error accured aborting...\e[0m\n"
+  exit 1
+fi

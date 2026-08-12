@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+set -e
+
+# Install specific version using go install
+go install -trimpath -ldflags "-w -s" github.com/tomnomnom/unfurl@latest
+
+# Create symlink in $PREFIX/bin if binary is not already there
+if [ ! -f "$PREFIX/bin/unfurl" ] && [ -f "$HOME/go/bin/unfurl" ]; then
+    ln -sf "$HOME/go/bin/unfurl" "$PREFIX/bin/unfurl"
+fi
+
+exit 0

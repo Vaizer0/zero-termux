@@ -1,0 +1,37 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+SILVEREYE_DIR="$PREFIX/share/silverinstaeye"
+LAUNCHER="$PREFIX/bin/silverinstaeye"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing SilverInstaEye...${NC}"
+[ -d "$SILVEREYE_DIR" ] && { echo "[*] Removing old installation..."; rm -rf "$SILVEREYE_DIR"; }
+
+echo -e "${GREEN}Cloning repository...${NC}"
+git clone --depth=1 https://github.com/silverxpymaster/SilverInstaEye.git "$SILVEREYE_DIR" || {
+    echo -e "${RED}Error: Failed to clone SilverInstaEye repository.${NC}"
+    exit 1
+}
+
+export ANDROID_API_LEVEL=24
+echo -e "${GREEN}Installing Python dependencies...${NC}"
+cd "$SILVEREYE_DIR"
+pip install -r requirements.txt || {
+    echo -e "${RED}Error: Failed to install Python dependencies.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}Creating launcher...${NC}"
+cat > "$LAUNCHER" << EOF
+#!/data/data/com.termux/files/usr/bin/bash
+clear
+unset LD_PRELOAD
+cd "$SILVEREYE_DIR" && python silverinstaeye.py "\$@"
+EOF
+chmod +x "$LAUNCHER"
+
+echo -e "${GREEN}SilverInstaEye installed successfully!${NC}"
+echo "Run: silverinstaeye --help"
+exit 0

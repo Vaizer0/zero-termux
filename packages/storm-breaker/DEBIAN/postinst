@@ -1,0 +1,29 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+STORM_DIR="$PREFIX/share/storm-breaker"
+BIN_DIR="$PREFIX/bin"
+
+echo "[*] Installing Storm-Breaker..."
+[ -d "$STORM_DIR" ] && rm -rf "$STORM_DIR"
+
+echo "[*] Cloning repository..."
+git clone --depth 1 https://github.com/ultrasecurity/Storm-Breaker.git "$STORM_DIR"
+
+echo "[*] Installing dependencies..."
+cd "$STORM_DIR"
+pip install -r requirements.txt 2>/dev/null
+
+echo "[*] Creating launcher..."
+cat > "$BIN_DIR/storm-breaker" <<EOF
+#!/data/data/com.termux/files/usr/bin/bash
+cd "$STORM_DIR" && python st.py "\$@"
+EOF
+chmod +x "$BIN_DIR/storm-breaker"
+
+echo -e "\n[√] Storm-Breaker installed successfully!"
+echo "Default credentials:"
+echo "  username: admin"
+echo "  password: admin"
+echo "Run: storm-breaker"
+exit 0

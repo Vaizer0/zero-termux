@@ -1,0 +1,12 @@
+Package: darkcrawler
+Version: 2.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: tor, python, libxml2, libxslt, clang, python-lxml, git
+Section: net
+Priority: optional
+Homepage: https://github.com/Anon4You/DarkCrawler
+Description: CLI tool to crawl .onion sites and generate threat reports
+ DarkCrawler crawls .onion sites through the Tor network, performs
+ real‑time content threat analysis, and produces structured threat
+ intelligence reports.

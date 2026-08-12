@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "[*] Uninstalling Pandas..."
+pip uninstall -y pandas 2>/dev/null
+
+# Clean build artifacts
+rm -rf $PREFIX/lib/python*/site-packages/pandas*
+rm -rf $PREFIX/bin/pandas_*
+
+echo "[+] Uninstallation complete"

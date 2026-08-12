@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "[*] Removing HatCloud..."
+rm -rf $PREFIX/share/hatcloud 2>/dev/null
+rm -f $PREFIX/bin/hatcloud 2>/dev/null
+echo "[+] HatCloud uninstalled."

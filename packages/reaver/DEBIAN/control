@@ -1,0 +1,13 @@
+Package: reaver
+Version: 1.6.6
+Architecture: all
+Pre-Depends: root-repo
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, make, libpcap, libnl
+Section: net
+Priority: optional
+Homepage: https://github.com/t6x/reaver-wps-fork-t6x
+Description: Brute force WPS PINs and recover WPA/WPA2 passphrases
+ Reaver implements a brute force attack against WPS (Wi-Fi Protected Setup)
+ PINs to recover the WPA/WPA2 passphrase. This is the t6x fork with
+ improvements and bug fixes.

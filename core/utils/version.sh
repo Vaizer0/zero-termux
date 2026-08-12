@@ -1,0 +1,237 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+import "@/utils/log"
+import "@/utils/colors"
+
+_parse_version() {
+  local output="$1"
+  local ver
+  ver=$(echo "$output" | grep -oE '[0-9]+\.[0-9]+(\.[0-9]+)?' | head -1)
+  if [ -z "$ver" ]; then
+    echo ""
+    return 1
+  fi
+  local parts
+  IFS='.' read -ra parts <<< "$ver"
+  if [ ${#parts[@]} -eq 2 ]; then
+    echo "${parts[0]}.${parts[1]}.0"
+  else
+    echo "$ver"
+  fi
+}
+
+_get_installed_version() {
+  local binary="$1"
+  local flag="${2:---version}"
+  local display="${3:-$binary}"
+
+  if ! command -v "$binary" &>/dev/null; then
+    echo ""
+    return 1
+  fi
+
+  _spin_capture "Detecting $display version" _detect_installed_version "$binary" "$flag"
+}
+
+_detect_installed_version() {
+  local binary="$1"
+  local flag="$2"
+  local output
+  output=$("$binary" "$flag" 2>&1)
+  _parse_version "$output"
+}
+
+_spin_capture() {
+  local msg="$1"
+  shift
+  local frames=('⠋' '⠙' '⠹' '⠸' '⠼' '⠴' '⠦' '⠧' '⠇' '⠏')
+  local tmp
+  tmp=$(mktemp)
+  local spinner_fd
+  if [ -c /dev/tty ] 2>/dev/null; then
+    spinner_fd=/dev/tty
+  else
+    spinner_fd=/dev/null
+  fi
+
+  printf "    ${CYAN}%s${D_CYAN} %s${NC}" "${frames[0]}" "$msg" >"$spinner_fd"
+
+  ("$@" >"$tmp" 2>&1) &
+  local pid=$!
+
+  local i=0
+  while kill -0 "$pid" 2>/dev/null; do
+    printf "\r    ${CYAN}%s${D_CYAN} %s${NC}" "${frames[i]}" "$msg" >"$spinner_fd"
+    ((i = (i + 1) % ${#frames[@]}))
+    sleep 0.08
+  done
+
+  wait "$pid"
+  local rc=$?
+
+  printf "\r\033[K" >"$spinner_fd"
+  cat "$tmp"
+  rm -f "$tmp"
+  return $rc
+}
+
+_get_installed_npm_version() {
+  local pkg="$1"
+  local display="${2:-$pkg}"
+  _spin_capture "Detecting $display version" bash -c "npm ls -g '$pkg' --depth=0 2>/dev/null | grep '$pkg@' | sed 's/.*@//'"
+}
+
+_get_remote_npm_version() {
+  local pkg="$1"
+  local version=""
+
+  if command -v npm &>/dev/null; then
+    version=$(_spin_capture "Checking npm" bash -c "npm view '$pkg' version --loglevel=error 2>/dev/null")
+  fi
+
+  # Fallback: npm registry API via curl
+  if [ -z "$version" ] && command -v curl &>/dev/null; then
+    version=$(_spin_capture "Checking npm registry" bash -c "curl -fsSL 'https://registry.npmjs.org/$pkg/latest' 2>/dev/null | sed 's/.*\"version\":\"\([^\"]*\)\".*/\1/'")
+  fi
+
+  echo "$version"
+}
+
+_get_remote_pip_version() {
+  local pkg="$1"
+  local version=""
+
+  # Prefer the host pip (fast), but fall back to the PyPI JSON API when it
+  # cannot resolve the package — e.g. packages whose `requires-python` is
+  # excluded by the bionic Python (cactus-compute pins <3.14 while the host
+  # pip runs on Python 3.14) or when the host pip is unavailable.
+  if command -v pip &>/dev/null; then
+    version=$(_spin_capture "Checking PyPI" bash -c "pip index versions '$pkg' 2>/dev/null | head -1 | awk '{print \$2}' | tr -d '()'")
+  fi
+
+  if [ -z "$version" ]; then
+    version=$(_spin_capture "Checking PyPI" bash -c "curl -fsSL 'https://pypi.org/pypi/$pkg/json' 2>/dev/null | python3 -c 'import json,sys; print(json.load(sys.stdin)[\"info\"][\"version\"])' 2>/dev/null")
+  fi
+
+  echo "$version"
+}
+
+_get_remote_github_version() {
+  local repo="$1"
+  local raw tag
+
+  raw=$(_spin_capture "Checking GitHub" curl -fsSL "https://api.github.com/repos/$repo/releases/latest" 2>/dev/null)
+  tag=$(echo "$raw" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+
+  if [ -z "$tag" ]; then
+    raw=$(_spin_capture "Checking GitHub tags" curl -fsSL "https://api.github.com/repos/$repo/tags?per_page=100" 2>/dev/null)
+    tag=$(echo "$raw" | grep '"name":' | sed -E 's/.*"([^"]+)".*/\1/' | sort -V | tail -1)
+  fi
+
+  _parse_version "$tag"
+}
+
+_get_installed_pkg_version() {
+  local pkg="$1"
+  local display="${2:-$pkg}"
+  local raw
+  raw=$(_spin_capture "Detecting $display version" apt-cache policy "$pkg" 2>/dev/null)
+  echo "$raw" | grep 'Installed:' | awk '{print $2}' | grep -oE '[0-9]+\.[0-9]+(\.[0-9]+)?' | head -1
+}
+
+_get_installed_git_version() {
+  local dir="$1"
+  local display="${2:-$dir}"
+  if [ ! -d "$dir/.git" ]; then
+    echo ""
+    return 1
+  fi
+  local raw
+  raw=$(_spin_capture "Detecting $display version" bash -c "cd '$dir' 2>/dev/null && git fetch --tags --depth=1 2>/dev/null; cd '$dir' 2>/dev/null && git tag -l 2>/dev/null | sort -V | tail -1" 2>/dev/null)
+  _parse_version "$raw"
+}
+
+_get_remote_pkg_version() {
+  local raw
+  raw=$(_spin_capture "Checking apt" apt-cache policy "$1" 2>/dev/null)
+  echo "$raw" | grep 'Candidate:' | awk '{print $2}' | grep -oE '[0-9]+\.[0-9]+(\.[0-9]+)?' | head -1
+}
+
+_compare_versions() {
+  local v1="$1" v2="$2"
+
+  if [ -z "$v1" ] || [ -z "$v2" ]; then
+    return 2
+  fi
+
+  local strip_v1="${v1#v}"
+  local strip_v2="${v2#v}"
+
+  if [ "$strip_v1" = "$strip_v2" ]; then
+    return 0
+  fi
+
+  # Return 0 if v1 >= v2 (installed is same or newer, no update needed)
+  # Return 1 if v1 < v2 (remote is newer, update needed)
+  local highest
+  highest=$(printf '%s\n%s\n' "$strip_v1" "$strip_v2" | sort -V | tail -1)
+  [ "$highest" = "$strip_v1" ]
+}
+
+_check_update_needed() {
+  local display_name="$1"
+  local installed_ver="$2"
+  local remote_ver="$3"
+  local update_func="$4"
+
+  if [ -z "$installed_ver" ]; then
+    log_warn "$display_name: could not detect installed version"
+    echo
+    local confirm_var
+    read_confirm_default "Update $display_name anyway?" "y" confirm_var
+    if [ "$confirm_var" = "y" ]; then
+      $update_func
+      return $?
+    fi
+    log_info "Skipped $display_name"
+    return 0
+  fi
+
+  if [ -z "$remote_ver" ]; then
+    log_warn "$display_name: could not detect remote version"
+    echo
+    local confirm_var
+    read_confirm_default "Update $display_name anyway?" "y" confirm_var
+    if [ "$confirm_var" = "y" ]; then
+      $update_func
+      return $?
+    fi
+    log_info "Skipped $display_name"
+    return 0
+  fi
+
+  if _compare_versions "$installed_ver" "$remote_ver"; then
+    local installed_display="$installed_ver"
+    [[ "$installed_display" != v* ]] && installed_display="v$installed_display"
+    log_success "$display_name is already up to date ${D_NC}(${D_GREEN}${installed_display}${D_NC})"
+    return 2
+  fi
+
+  echo
+  local display_ver="$installed_ver"
+  local remote_ver_display="$remote_ver"
+  [[ "$display_ver" != v* ]] && display_ver="v$display_ver"
+  [[ "$remote_ver_display" != v* ]] && remote_ver_display="v$remote_ver_display"
+  log_info "$display_name: ${D_GREEN}${display_ver}${D_NC} → ${D_CYAN}${remote_ver_display}${D_NC}"
+
+  local confirm_var
+  read_confirm_default "Update $display_name to $remote_ver?" "y" confirm_var
+
+  if [ "$confirm_var" = "y" ]; then
+    $update_func
+    return $?
+  else
+    log_info "Skipped $display_name"
+    return 0
+  fi
+}

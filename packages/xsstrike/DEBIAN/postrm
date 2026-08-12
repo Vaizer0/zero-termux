@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling XSStrike...${NC}"
+
+# Remove launcher script
+if [ -f "$PREFIX/bin/xsstrike" ]; then
+    rm -f $PREFIX/bin/xsstrike
+    echo -e "${GREEN}Removed launcher script${NC}"
+fi
+
+# Remove cloned repository
+if [ -d "$PREFIX/share/xsstrike" ]; then
+    rm -rf $PREFIX/share/xsstrike
+    echo -e "${GREEN}Removed XSStrike repository${NC}"
+fi
+
+echo -e "${GREEN}XSStrike completely removed${NC}"
+exit 0

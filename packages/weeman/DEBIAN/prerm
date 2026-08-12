@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/weeman ]]; then
+  rm -rf ${HOME}/.local/share/weeman
+fi
+

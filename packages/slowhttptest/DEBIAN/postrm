@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+rm -f "$PREFIX/bin/slowhttptest"
+rm -f "$PREFIX/share/man/man1/slowhttptest.1"
+echo "slowhttptest completely removed."
+exit 0

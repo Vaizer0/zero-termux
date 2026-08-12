@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+PREFIX=${PREFIX:-/data/data/com.termux/files/usr}
+rm -f "$PREFIX/bin/bun"
+rm -rf "$PREFIX/share/bun"
+exit 0

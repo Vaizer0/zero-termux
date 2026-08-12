@@ -1,0 +1,21 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+[ -d $PREFIX/share/john ] && rm -rf $PREFIX/share/john
+echo "Cloning repository (It could take a while)..."
+git clone https://github.com/openwall/john $PREFIX/share/john
+echo "Compiling binary files (It could take a while)..."
+cd $PREFIX/share/john/src
+./configure --prefix=${PREFIX}
+make -s clean 2>/dev/null
+make -sj$(nproc --all) 
+
+echo "Creating symbolic links."
+for i in $(find $PREFIX/share/john/run -executable);do
+  addon=$(echo $i|awk -F "/" '{print $NF}')
+  ex=${addon:(-2)}
+  ln -s $i ${PREFIX}/bin/${addon%.$ex} 2>/dev/null
+done
+
+echo "[*] John The Ripper installation finished."
+echo "[*] Run 'john' to execute it."
+

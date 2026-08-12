@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+pip install rich
+mkdir -p ~/the-theif
+printf "\n\nthe-theif is installed...\nReport issues at https://github.com/Vaizer0/zero-termux"

@@ -1,0 +1,11 @@
+Package: user-scanner
+Version: 1.3.6.6
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: python, python-pip
+Section: utils
+Priority: optional
+Homepage: https://github.com/kaifcodec/user-scanner
+Description: 2-in-1 Email & Username OSINT suite
+ Analyzes 205+ scan vectors (100+ email / 105+ username) for
+ security research, investigations, and digital footprinting.

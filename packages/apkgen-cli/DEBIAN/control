@@ -1,0 +1,12 @@
+Package: apkgen-cli
+Version: 1.4.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, gum, termux-tools, android-sdk, flutter
+Section: devel
+Priority: optional
+Homepage: https://github.com/termuxvoid/apkgen-cli
+Description: CLI tool to quickly generate Android APKs from local templates
+ apkgen-cli simplifies Android APK generation using local templates.
+ Supports Java, Kotlin, native, and Flutter projects, providing a streamlined
+ workflow for developers and CI/CD pipelines.

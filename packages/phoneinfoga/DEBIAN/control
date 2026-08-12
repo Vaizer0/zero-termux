@@ -1,0 +1,12 @@
+Package: phoneinfoga
+Version: 2.11.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: curl, tar
+Section: recon
+Priority: optional
+Homepage: https://github.com/sundowndev/phoneinfoga
+Description: Phone number intelligence framework
+ PhoneInfoga is a reconnaissance tool for phone numbers.
+ It collects information from various sources and presents
+ detailed reports including carrier, line type, location, etc.

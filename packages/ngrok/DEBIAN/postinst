@@ -1,0 +1,44 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+INSTALL_DIR="$PREFIX/share/ngrok"
+LAUNCHER="$PREFIX/bin/ngrok"
+CONFIG_DIR="$HOME/.config/ngrok"
+
+# Architecture detection
+case $(uname -m) in
+    aarch64) ARCH="arm64" ;;
+    arm*) ARCH="arm" ;;
+    x86_64) ARCH="amd64" ;;
+    i*86) ARCH="386" ;;
+    *) ARCH="arm64" ;;
+esac
+
+echo "[*] Installing ngrok for $ARCH..."
+mkdir -p "$INSTALL_DIR" "$CONFIG_DIR" && cd "$INSTALL_DIR" || exit 1
+
+wget -q --show-progress "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-${ARCH}.tgz" -O ngrok.tgz || {
+    echo "[!] Download failed"
+    exit 1
+}
+
+tar xzf ngrok.tgz && rm ngrok.tgz
+chmod +x ngrok
+
+cat > "$LAUNCHER" <<EOF
+#!/data/data/com.termux/files/usr/bin/bash
+unset LD_PRELOAD
+if [ "\$1" = "add-authtoken" ] && [ -z "\$2" ]; then
+    echo "Usage: ngrok config add-authtoken <YOUR_AUTHTOKEN>"
+    echo "Get your token from: https://dashboard.ngrok.com/get-started/your-authtoken"
+    exit 1
+fi
+exec termux-chroot "$INSTALL_DIR/ngrok" "\$@"
+EOF
+
+chmod +x "$LAUNCHER"
+
+echo -e "\n[✓] ngrok installed!"
+echo "  To authenticate:"
+echo "  1. Get your token from: https://dashboard.ngrok.com/get-started/your-authtoken"
+echo "  2. Run: ngrok config add-authtoken <YOUR_TOKEN>"
+echo "  3. Start tunneling: ngrok http 80"

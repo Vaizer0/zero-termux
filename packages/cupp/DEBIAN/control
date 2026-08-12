@@ -1,0 +1,8 @@
+Package: cupp
+Version: 3.3.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: termux-exec,python
+Homepage: https://github.com/Mebus/cupp
+Description: Common User Passwords Profiler (CUPP)
+Installed-Size: 68

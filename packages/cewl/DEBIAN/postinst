@@ -1,0 +1,43 @@
+#!/bin/sh
+# Post-installation script for CeWL 6.2.1
+# Maintainer: Alienkrishn [Anon4You]
+# Depends: ruby, pkg-config, openssl, libxml2, libxslt, exiftool
+
+set -e
+
+CWEL_DIR="$PREFIX/share/cewl"
+LAUNCHER="$PREFIX/bin/cewl"
+REPO_URL="https://github.com/digininja/CeWL.git"
+
+# Check if CeWL directory exists; if yes, remove it
+if [ -d "$CWEL_DIR" ]; then
+    echo "[!] Removing old CeWL installation..."
+    rm -rf "$CWEL_DIR"
+fi
+
+# Clone the latest CeWL repo
+echo "[+] Cloning CeWL repository..."
+git clone --depth 1 "$REPO_URL" "$CWEL_DIR"
+
+# Remove Gemfile.lock to avoid conflicts
+if [ -f "$CWEL_DIR/Gemfile.lock" ]; then
+    echo "[!] Removing Gemfile.lock..."
+    rm -f "$CWEL_DIR/Gemfile.lock"
+fi
+
+# Install required gems
+echo "[+] Installing Ruby dependencies..."
+cd "$CWEL_DIR" || exit 1
+gem install bundler
+bundle install -j$(nproc --all)
+
+# Create a launcher script
+echo "[+] Creating launcher in $PREFIX/bin/cewl..."
+cat > "$LAUNCHER" <<EOF
+#!/bin/sh
+cd "$CWEL_DIR" && ruby cewl.rb "\$@"
+EOF
+chmod +x "$LAUNCHER"
+
+echo "[√] CeWL installed successfully!"
+exit 0

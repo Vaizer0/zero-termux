@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling wafw00f...${NC}"
+
+pip3 uninstall -y wafw00f 2>/dev/null || {
+    echo -e "${RED}Error: Failed to uninstall wafw00f.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}wafw00f completely removed${NC}"
+exit 0

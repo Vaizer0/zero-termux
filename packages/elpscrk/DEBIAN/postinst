@@ -1,0 +1,21 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+INSTALL_DIR="$PREFIX/share/elpscrk"
+LAUNCHER="$PREFIX/bin/elpscrk"
+
+[ -d "$INSTALL_DIR" ] && rm -rf "$INSTALL_DIR"
+
+git clone https://github.com/D4Vinci/elpscrk.git "$INSTALL_DIR"
+
+cd "$INSTALL_DIR"
+pip install colorama phonenumbers
+
+cat > "$LAUNCHER" << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+cd "$PREFIX/share/elpscrk"
+exec python elpscrk.py "$@"
+EOF
+chmod +x "$LAUNCHER"
+
+exit 0

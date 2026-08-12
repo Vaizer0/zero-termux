@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/sh
+
+set -e
+
+# Remove installed files
+echo "Removing AndroVirus files..."
+rm -rf "$PREFIX/share/androvirus"
+rm -f "$PREFIX/bin/androvirus"
+
+echo "AndroVirus has been completely removed."

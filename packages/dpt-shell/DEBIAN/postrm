@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling dpt-shell...${NC}"
+
+if [ -f "$PREFIX/bin/dpt-shell" ]; then
+    rm -f $PREFIX/bin/dpt-shell
+    echo -e "${GREEN}Removed launcher script${NC}"
+fi
+
+if [ -d "$PREFIX/share/dpt-shell" ]; then
+    rm -rf $PREFIX/share/dpt-shell
+    echo -e "${GREEN}Removed dpt-shell directory${NC}"
+fi
+
+echo -e "${GREEN}dpt-shell completely removed${NC}"
+exit 0

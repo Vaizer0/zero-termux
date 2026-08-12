@@ -1,0 +1,48 @@
+#!/data/data/com.termux/files/usr/bin/bash
+HASHCAT_DIR="$PREFIX/opt/hashcat"
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+print_status() { echo -e "${GREEN}[*] $1${NC}"; }
+print_error() { echo -e "${RED}[!] Error: $1${NC}"; exit 1; }
+
+[ -d "$HASHCAT_DIR" ] && { rm -rf "$HASHCAT_DIR" || print_error "Failed to remove existing directory"; }
+
+# Zero-Termux: justified pin — source build at tag — reproducible build
+wget --show-progress -q --progress=bar:force:noscroll -O "$TMPDIR/hashcat-7.1.2.zip" \
+https://github.com/hashcat/hashcat/archive/refs/tags/v7.1.2.zip || print_error "Download failed"
+
+unzip -q "$TMPDIR/hashcat-7.1.2.zip" -d "$TMPDIR" || print_error "Extraction failed"
+mv "$TMPDIR/hashcat-7.1.2" "$HASHCAT_DIR" || print_error "Move failed"
+cd "$HASHCAT_DIR" || print_error "Could not enter $HASHCAT_DIR"
+
+line=$(grep -n "\$(LDFLAGS)" src/Makefile | awk -F ":" '{print $1}')
+[ -n "$line" ] && {
+    let ln=$line-1
+    sed -i "${ln}a LDFLAGS += -liconv" src/Makefile || print_error "Failed to modify src/Makefile"
+    print_status "Updated LDFLAGS with -liconv"
+} || print_error "Could not find LDFLAGS in src/Makefile"
+
+line=$(grep -n "affinity.h" src/affinity.c | awk -F ":" '{print $1}' | head -n 1)
+[ -n "$line" ] && {
+    let ln=$line+1
+    sed -i "${ln}a#ifdef __ANDROID__\nint pthread_setaffinity_np(pthread_t thread, size_t cpusetsize, const cpu_set_t *cpuset) {\n    return 0;\n}\n#endif" src/affinity.c || print_error "Failed to modify src/affinity.c"
+    print_status "Added stub for pthread_setaffinity_np"
+} || print_error "Could not find affinity.h in src/affinity.c"
+
+make -j$(nproc --all) 
+ln -srf "$HASHCAT_DIR/hashcat" "$PREFIX/bin/"
+
+# Create user directory
+mkdir -p $HOME/.local/share/hashcat/
+
+echo -e "${GREEN}Hashcat installation process completed!${NC}"
+if [ -f "$PREFIX/bin/hashcat" ]; then
+    echo -e "${YELLOW}Usage:${NC}"
+    echo "  hashcat -b                    # Benchmark"
+    echo "  hashcat -m 0 hash.txt wordlist.txt  # MD5 cracking"
+    echo "  hashcat -I                    # List OpenCL devices"
+fi 
+

@@ -1,0 +1,13 @@
+Package: storm-breaker
+Version: 1.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, php
+Section: security
+Priority: optional
+Homepage: https://github.com/ultrasecurity/Storm-Breaker
+Description: Social Engineering Toolkit
+ Advanced phishing tool with:
+ - Multiple attack vectors
+ - Credential harvesting
+ - Automated payload generation

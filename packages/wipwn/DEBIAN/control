@@ -1,0 +1,13 @@
+Package: wipwn
+Version: 1.0
+Architecture: all
+Pre-Depends: root-repo
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, wpa-supplicant, pixiewps, iw, openssl, sudo, openssh
+Section: net
+Priority: optional
+Homepage: https://github.com/anbuinfosec/wipwn
+Description: Fast automated WiFi WPS PIN cracking tool
+ WiPWN automates the discovery and cracking of WPS‑enabled access points.
+ It supports multiple attack modes: Pixie Dust, brute force, dictionary,
+ and includes session management, vulnerability detection, and report generation.

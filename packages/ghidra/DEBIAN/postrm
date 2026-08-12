@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Removing Ghidra..."
+rm -rf "$PREFIX/share/ghidra"
+rm -f "$PREFIX/bin/ghidra"
+rm -f "$PREFIX/share/applications/ghidra.desktop"
+
+echo "[√] Uninstallation complete"
+exit 0

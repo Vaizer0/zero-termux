@@ -1,0 +1,28 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+REPO="https://github.com/halilkirazkaya/arsenal-ng.git"
+TMP_DIR="$TMPDIR/arsenal-ng-build"
+BIN="$PREFIX/bin/arsenal-ng"
+
+# Remove existing temporary directory if present
+rm -rf "$TMP_DIR" 2>/dev/null || true
+
+git clone --depth 1 "$REPO" "$TMP_DIR"
+cd "$TMP_DIR"
+
+make build
+
+install -Dm755 "bin/arsenal-ng" "$BIN"
+
+cd /
+rm -rf "$TMP_DIR"
+
+echo "Arsenal-ng installed successfully."
+echo ""
+echo "Launch the application:"
+echo "  arsenal-ng"
+echo ""
+echo "The TUI will open with all available commands."
+echo "Use arrow keys to navigate, type to search, Enter to select."
+exit 0

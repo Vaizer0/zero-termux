@@ -1,0 +1,12 @@
+Package: d-tect
+Version: 1.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python2
+Section: net
+Priority: optional
+Homepage: https://github.com/bibortone/D-Tech
+Description: D-TECT - Pentest the Modern Web
+ All-in-One penetration testing tool for information gathering
+ and vulnerability detection (sub‑domain scan, port scan,
+ XSS/SQLi detection, WordPress analysis, etc.)

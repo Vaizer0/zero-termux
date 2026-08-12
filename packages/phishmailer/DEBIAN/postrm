@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling phishmailer...${NC}"
+
+if [ -f "$PREFIX/bin/phishmailer" ]; then
+    rm -f $PREFIX/bin/phishmailer
+    echo -e "${GREEN}Removed launcher script${NC}"
+fi
+
+if [ -d "$PREFIX/share/phishmailer" ]; then
+    rm -rf $PREFIX/share/phishmailer
+    echo -e "${GREEN}Removed phishmailer repository${NC}"
+fi
+
+echo -e "${GREEN}phishmailer completely removed${NC}"
+exit 0

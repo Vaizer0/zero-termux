@@ -1,0 +1,8 @@
+Package: iplookup
+Version: 1.0.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: termux-exec,termux-tools,figlet,toilet,pv
+Installed-Size: 36
+Description: Ip address info gethering script..
+

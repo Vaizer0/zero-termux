@@ -1,0 +1,28 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# cline wrapper - termux-glibc loader + proot syscall emulation
+
+unset LD_PRELOAD
+
+GLIBC_LOADER="/data/data/com.termux/files/usr/glibc/lib/ld-linux-aarch64.so.1"
+GLIBC_LIB="/data/data/com.termux/files/usr/glibc/lib"
+TOOL_DATA_DIR="__DATA_DIR__"
+
+if [ ! -f "$GLIBC_LOADER" ] || [ ! -f "$TOOL_DATA_DIR/cline" ]; then
+  echo "Error: termux-glibc or cline binary not found" >&2
+  echo "Run: pkg install glibc" >&2
+  exit 1
+fi
+
+# proot with host rootfs for syscall translation
+# NOTE: the binary is execve-d directly so /proc/self/exe is the real binary, AND $PREFIX/bin is bound to /bin
+# because Cline's run_commands hardcodes spawn('/bin/bash', ['-c', cmd]). In Termux /bin -> /system/bin,
+# which has no bash, so the bind makes /bin/bash resolve to the real Termux bash.
+# IMPORTANT: Cline keeps a --cline-hub-daemon subprocess alive across sessions; if it was
+# started before this wrapper existed, it runs OUTSIDE proot and run_commands still fails
+# with posix_spawn('/bin/bash') ENOENT. Kill it (pkill -f cline) so a fresh daemon starts
+# inside proot.
+exec proot -r / \
+  -b /dev:/dev -b /proc:/proc -b /sys:/sys \
+  -b "$GLIBC_LIB:/lib" \
+  -b "$PREFIX/bin:/bin" \
+  "$TOOL_DATA_DIR/cline" "$@"

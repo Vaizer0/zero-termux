@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash 
+SNATCHERDIR="$PREFIX/var/snatcher"
+BIN="$PREFIX/bin/snatcher"
+git clone --quiet https://github.com/Anon4You/Snatcher $SNATCHERDIR 
+yes | termux-setup-storage > /dev/null 2>&1
+if ! hash lolcat > /dev/null 2>&1; then
+  pip install lolcat -q 
+fi 
+if ! hash tunnelmole > /dev/null 2>&1; then
+  npm -g install tunnelmole --silent
+fi 
+
+cat > $BIN <<- EOF
+#!$PREFIX/bin/bash 
+cd $SNATCHERDIR
+bash snatcher.sh 
+EOF
+
+chmod +x $BIN
+

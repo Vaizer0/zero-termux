@@ -1,0 +1,28 @@
+#!/data/data/com.termux/files/usr/bin/sh
+
+set -e
+
+# Clone or update the repository
+REPO_URL="https://github.com/Anon4You/Byakugan.git"
+INSTALL_DIR="$PREFIX/share/byakugan"
+
+echo "Installing Byakugan..."
+if [ -d "$INSTALL_DIR" ]; then
+    echo "Removing previous installation..."
+    rm -rf "$INSTALL_DIR"
+fi
+
+git clone "$REPO_URL" "$INSTALL_DIR"
+
+# Create launcher
+echo "Creating launcher script..."
+cat > "$PREFIX/bin/byakugan" <<EOF
+#!/bin/sh
+cd "$INSTALL_DIR"
+bash byakugan.sh
+EOF
+
+chmod 755 "$PREFIX/bin/byakugan"
+
+echo "Installation complete. Run 'byakugan' to start the tool."
+echo "WARNING: Use only for authorized security testing."

@@ -1,0 +1,21 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}[*] Uninstalling Andrax...${NC}"
+
+# Remove launcher
+if [ -f "$PREFIX/bin/andrax" ]; then
+    rm -f "$PREFIX/bin/andrax"
+    echo -e "${GREEN}[✓] Removed launcher${NC}"
+fi
+
+# Remove installation directory
+if [ -d "$PREFIX/share/andrax" ]; then
+    rm -rf "$PREFIX/share/andrax"
+    echo -e "${GREEN}[✓] Removed Andrax files${NC}"
+fi
+
+echo -e "${GREEN}✅ Uninstall complete!${NC}"
+exit 0

@@ -1,0 +1,9 @@
+Package: infect
+Version: 1.03
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: apkeditor, apktool, metasploit-framework, apksigner, libxml2
+Section: security
+Priority: optional
+Homepage: https://github.com/Vaizer0/zero-termux
+Description: Android APK backdoor injector with Meterpreter support

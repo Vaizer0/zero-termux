@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Installing jwt-hack 2.6.0 using cargo..."
+
+# Install the binary via cargo
+cargo install jwt-hack
+
+# Create symlink in $PREFIX/bin
+if [ -f "$HOME/.cargo/bin/jwt-hack" ]; then
+    ln -sf "$HOME/.cargo/bin/jwt-hack" "$PREFIX/bin/jwt-hack"
+    echo "[✓] jwt-hack installed successfully."
+    echo "Run 'jwt-hack' to start."
+else
+    echo "[!] Binary not found at ~/.cargo/bin/jwt-hack"
+    exit 1
+fi
+exit 0

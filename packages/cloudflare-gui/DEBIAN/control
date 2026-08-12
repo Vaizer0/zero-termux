@@ -1,0 +1,11 @@
+Package: cloudflare-gui
+Version: 1.0
+Architecture: all
+Priority: optional
+Section: net
+Maintainer: Alienkrishn [Anon4You]
+Depends: cloudflared, python, python-pip, python-tkinter
+Homepage: https://github.com/Keyaru-code/Cloudflare-GUI
+Description: Stylish GUI for Cloudflare Tunnels
+ Graphical interface for creating and managing Cloudflare tunnels.
+ Features one-click tunnel creation with automatic URL copying.

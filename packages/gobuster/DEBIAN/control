@@ -1,0 +1,14 @@
+Package: gobuster
+Version: 3.8.2
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: golang, git
+Section: security
+Priority: optional
+Homepage: https://github.com/OJ/gobuster
+Description: Directory/file & DNS busting tool written in Go
+ Fast directory and file brute-forcing tool featuring:
+ - Multiple busting modes (dir, dns, vhost)
+ - Concurrent threading
+ - Multiple extension support
+ - Output formatting

@@ -1,0 +1,21 @@
+#!/data/data/com.termux/files/usr/bin/sh
+
+WORDLISTS_DIR="$PREFIX/share/wordlists"
+
+case "$1" in
+    remove|purge|abort-install)
+        echo "[*] Removing wordlists..."
+        [ -d "$WORDLISTS_DIR" ] && {
+            rm -rf "$WORDLISTS_DIR" && \
+            echo "[+] Wordlists removed" || \
+            echo "[!] Removal failed" >&2
+        }
+        ;;
+    upgrade|failed-upgrade|disappear)
+        # Keep files during upgrade
+        ;;
+esac
+
+# Clean orphaned temp files (if any)
+find "$TMPDIR" -maxdepth 1 -name 'wordlists.*' -exec rm -rf {} + 2>/dev/null
+exit 0

@@ -1,0 +1,11 @@
+Package: apkleaks
+Version: 2.6.3
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: python, jadx
+Section: utils
+Priority: optional
+Homepage: https://github.com/dwisiswant0/apkleaks
+Description: Scanning APK file for URIs, endpoints & secrets.
+ Apkleaks is a tool for scanning APK files to extract URIs,
+ endpoints, and other sensitive information for security research.

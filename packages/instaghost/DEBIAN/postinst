@@ -1,0 +1,23 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing InstaGhost 1.0.0...${NC}"
+
+# Install InstaGhost directly from GitHub
+pip install git+https://github.com/Anon4You/InstaGhost.git || {
+    echo -e "${RED}Error: Failed to install InstaGhost.${NC}"
+    echo -e "${YELLOW}Make sure dependencies (git, python) are installed.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}InstaGhost installed successfully!${NC}"
+echo -e "${YELLOW}Usage examples:${NC}"
+echo "  instaghost username -i        # Interactive mode"
+echo "  instaghost target -p -P 5     # Download profile + 5 posts"
+echo "  instaghost user -a            # Grab all available data"
+echo "  instaghost --help             # Show all options"
+exit 0

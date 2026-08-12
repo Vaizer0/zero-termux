@@ -1,0 +1,47 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing Dorks Eye v2.0...${NC}"
+
+# Set Android environment variables for compatibility
+export ANDROID_API_LEVEL=24
+export ANDROID_NDK_HOME=$PREFIX
+
+if [ -d "$PREFIX/share/dorks-eye" ]; then
+    echo -e "${YELLOW}Removing existing dorks-eye directory...${NC}"
+    rm -rf $PREFIX/share/dorks-eye
+fi
+
+echo -e "${YELLOW}Cloning dorks-eye repository...${NC}"
+git clone -q https://github.com/BullsEye0/dorks-eye.git $PREFIX/share/dorks-eye || {
+    echo -e "${RED}Error: Failed to clone dorks-eye repository.${NC}"
+    exit 1
+}
+
+echo -e "${YELLOW}Installing requirements...${NC}"
+cd $PREFIX/share/dorks-eye
+pip install -r requirements.txt || {
+    echo -e "${RED}Error: Failed to install requirements.${NC}"
+    exit 1
+}
+
+echo -e "${YELLOW}Installing ddgs...${NC}"
+pip install ddgs || {
+    echo -e "${RED}Error: Failed to install ddgs.${NC}"
+    exit 1
+}
+
+echo -e "${YELLOW}Creating launcher...${NC}"
+cat > $PREFIX/bin/dorks-eye << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+exec python $PREFIX/share/dorks-eye/dorks-eye.py "$@"
+EOF
+
+chmod +x $PREFIX/bin/dorks-eye
+
+echo -e "${GREEN}Dorks Eye installed successfully!${NC}"
+exit 0

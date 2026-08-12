@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+rm -rf $PREFIX/share/blesh
+rm -rf $PREFIX/bin/blesh
+echo ble.sh removed..

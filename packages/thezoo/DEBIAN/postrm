@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+ZOO_DIR="$PREFIX/share/thezoo"
+LAUNCHER="$PREFIX/bin/thezoo"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling theZoo...${NC}"
+
+if [ -f "$LAUNCHER" ]; then
+    rm -f "$LAUNCHER" && echo -e "${GREEN}✓ Removed launcher${NC}" || \
+    echo -e "${RED}✗ Failed to remove launcher${NC}"
+fi
+
+if [ -d "$ZOO_DIR" ]; then
+    rm -rf "$ZOO_DIR" && echo -e "${GREEN}✓ Removed theZoo directory${NC}" || \
+    echo -e "${RED}✗ Failed to remove theZoo directory${NC}"
+fi
+
+echo -e "${GREEN}Uninstallation complete${NC}"
+exit 0

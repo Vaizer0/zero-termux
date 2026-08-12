@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "[*] Removing PhoneSploit Pro..."
+rm -rf "$PREFIX/share/phonesploitpro"
+rm -f "$PREFIX/bin/phonesploit"
+echo "[✓] Uninstallation complete"

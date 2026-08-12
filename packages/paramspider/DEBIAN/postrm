@@ -1,0 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Removing ParamSpider..."
+rm -rf "$PREFIX/share/paramspider"
+
+echo "[*] Uninstalling Python package..."
+pip uninstall -y paramspider 2>/dev/null || true
+
+echo "[√] ParamSpider completely removed"
+exit 0

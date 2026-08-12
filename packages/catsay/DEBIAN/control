@@ -1,0 +1,12 @@
+Package: catsay
+Version: 1.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python
+Section: games
+Priority: optional
+Homepage: https://github.com/Anon4You/catsay
+Description: terminal-based feline messenger inspired by cowsay
+ A Python-based program that displays messages inside dynamic speech
+ bubbles with various cat ASCII art designs. Supports custom cat
+ assets and piping from other CLI tools.

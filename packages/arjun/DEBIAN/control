@@ -1,0 +1,11 @@
+Package: arjun
+Version: 2.2.7
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: python, python-pip
+Section: web
+Priority: optional
+Homepage: https://github.com/s0md3v/Arjun
+Description: HTTP parameter discovery suite
+ Arjun is a tool for finding HTTP parameters from web applications.
+ It supports GET/POST methods, threading, and various filtering options.

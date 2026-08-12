@@ -1,0 +1,13 @@
+Package: mkwebapp
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: curl, file, termux-tools
+Homepage: https://github.com/Anon4You/mkwebapp
+Description: Tool to create Termux .deb packages for websites
+ mkwebapp allows users to easily package a website URL into a
+ standard Termux .deb package. It generates the necessary launcher
+ script, .desktop file, and attempts to fetch an icon, creating a
+ seamless integration for Termux:X11 desktop environments.

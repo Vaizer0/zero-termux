@@ -1,0 +1,26 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+HUNNER_DIR="$PREFIX/share/hunner"
+LAUNCHER="$PREFIX/bin/hunner"
+
+echo "[*] Installing Hunner Framework..."
+[ -d "$HUNNER_DIR" ] && { echo "[*] Removing old installation..."; rm -rf "$HUNNER_DIR"; }
+
+echo "[*] Cloning repository..."
+git clone --depth=1 https://github.com/b3-v3r/Hunner.git "$HUNNER_DIR"
+
+echo "[*] Installing Python dependencies..."
+python -m pip --no-cache-dir install httplib2
+
+echo "[*] Creating launcher..."
+cat > "$LAUNCHER" << EOF
+#!/data/data/com.termux/files/usr/bin/bash
+cd "$HUNNER_DIR" && python hunner.py "\$@"
+EOF
+chmod +x "$LAUNCHER"
+
+echo -e "\n[√] Hunner Framework installed successfully!"
+echo "Usage:"
+echo "  hunner         # To run the tool"
+exit 0

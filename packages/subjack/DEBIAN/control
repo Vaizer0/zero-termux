@@ -1,0 +1,14 @@
+Package: subjack
+Version: 3.0.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: golang, git
+Section: security
+Priority: optional
+Homepage: https://github.com/haccer/subjack
+Description: Subdomain Takeover tool written in Go
+ Automated subdomain takeover detection featuring:
+ - Multiple service provider support
+ - Fingerprint-based detection
+ - Concurrent scanning
+ - Custom configuration support

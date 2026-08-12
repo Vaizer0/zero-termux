@@ -1,0 +1,12 @@
+Package: rkpairip
+Version: 5.2
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, openjdk-17, apksigner
+Section: utils
+Priority: optional
+Homepage: https://github.com/TechnoIndian/RKPairip
+Description: Remove Pairip Protection and Rebuild APKs
+ RKPairip is a script to remove Pairip protection from APK files,
+ recover strings, and rebuild APKs. Designed for Android security
+ research and reverse engineering.

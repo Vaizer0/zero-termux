@@ -1,0 +1,14 @@
+Package: aircrack-ng
+Version: 1.7
+Architecture: all
+Pre-Depends: root-repo
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, make, automake, autoconf, libc++, libnl, libpcap, libsqlite, openssl, pcre, zlib, iw, ethtool, libtool, usbutils
+Section: net
+Priority: optional
+Homepage: https://www.aircrack-ng.org/
+Description: Wireless network security auditing suite
+ aircrack-ng is a complete suite of tools for assessing WiFi network
+ security. It captures and analyzes packets, performs attacks,
+ and cracks WEP/WPA/WPA2 keys. Includes monitoring, injection,
+ and cracking tools.

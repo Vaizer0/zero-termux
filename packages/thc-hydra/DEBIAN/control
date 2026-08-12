@@ -1,0 +1,12 @@
+Package: thc-hydra
+Version: 9.8dev
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, make, clang, openssl, libssh, libssh2, libgcrypt, libidn, pcre, pcre2, zlib, sed
+Section: net
+Priority: optional
+Homepage: https://github.com/vanhauser-thc/thc-hydra
+Description: Parallelized Login Cracker Supporting Numerous Protocols
+ THC-Hydra is a fast and flexible login password cracker that
+ supports many protocols including HTTP, FTP, SSH, SMB, RDP, and more.
+ Designed for security researchers and penetration testers.

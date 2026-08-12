@@ -1,0 +1,29 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing hbctool...${NC}"
+
+echo -e "${YELLOW}Downloading hbctool...${NC}"
+# Zero-Termux: rolling version — resolve latest GitHub release at install time
+HBC_URL="$(curl -fsSL 'https://api.github.com/repos/Kirlif/HBC-Tool/releases/latest' 2>/dev/null | grep '"browser_download_url"' | grep '\.whl' | head -1 | cut -d'"' -f4)"
+[ -n "$HBC_URL" ] || { echo -e "${RED}Error: failed to resolve latest hbctool release.${NC}" >&2; exit 1; }
+HBC_WHEEL="$TMPDIR/$(basename "$HBC_URL")"
+curl -sL -o "$HBC_WHEEL" "$HBC_URL" || {
+    echo -e "${RED}Error: Failed to download hbctool.${NC}"
+    exit 1
+}
+
+echo -e "${YELLOW}Installing hbctool...${NC}"
+pip install --quiet --force-reinstall "$HBC_WHEEL" || {
+    echo -e "${RED}Error: Failed to install hbctool.${NC}"
+    exit 1
+}
+
+rm -f "$HBC_WHEEL"
+
+echo -e "${GREEN}hbctool installed successfully!${NC}"
+exit 0

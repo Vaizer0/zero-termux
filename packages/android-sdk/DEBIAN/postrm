@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+rm -rf $PREFIX/opt/android-sdk
+
+echo "Android SDK removed!"
+echo "Please restart Termux"

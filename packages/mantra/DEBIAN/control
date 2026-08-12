@@ -1,0 +1,14 @@
+Package: mantra
+Version: 3.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: golang, git
+Section: security
+Priority: optional
+Homepage: https://github.com/brosck/mantra
+Description: API key hunter for JS files and web pages
+ Detect API key leaks in JavaScript files with:
+ - Multiple API provider patterns
+ - JavaScript file analysis
+ - Web page scanning
+ - Custom regex patterns

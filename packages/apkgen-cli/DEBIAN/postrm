@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+rm -f "$PREFIX/bin/apkgen"
+rm -rf "$PREFIX/share/apkgen"
+
+echo "apkgen-cli completely removed."
+exit 0

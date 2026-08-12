@@ -1,0 +1,12 @@
+Package: katana
+Version: 1.6.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, golang
+Section: web
+Priority: optional
+Homepage: https://github.com/projectdiscovery/katana
+Description: Fast, passive and active web crawler
+ katana is a next-generation crawling and spidering framework designed
+ for speed and efficiency. It supports standard and headless crawling,
+ form filling, and JavaScript rendering.

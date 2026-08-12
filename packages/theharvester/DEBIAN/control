@@ -1,0 +1,12 @@
+Package: theharvester
+Version: 4.10.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: proot, tar, axel, nethunter-cli
+Section: recon
+Priority: optional
+Homepage: https://github.com/laramies/theHarvester
+Description: E-mail, Subdomain, and Name Harvester
+ theHarvester is a tool for gathering e-mails, subdomains, hosts,
+ employee names, open ports and banners from different public sources
+ like search engines, PGP key servers, and SHODAN database.

@@ -1,0 +1,14 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Installing hashid 3.1.4..."
+pip install --upgrade --force-reinstall hashid >/dev/null 2>&1 || {
+    echo "[!] Installation failed" >&2
+    exit 1
+}
+
+echo -e "\n[√] hashID ready!"
+echo "Usage:"
+echo "  hashid 'hash_to_identify'"
+echo "  echo 'hash' | hashid"
+exit 0

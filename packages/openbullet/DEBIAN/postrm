@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+OBP_DIR="$PREFIX/share/openbullet"
+LAUNCHER="$PREFIX/bin/openbullet"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling openbullet...${NC}"
+
+if [ -f "$LAUNCHER" ]; then
+    rm -f "$LAUNCHER" && echo -e "${GREEN}✓ Removed launcher${NC}" || \
+    echo -e "${RED}✗ Failed to remove launcher${NC}"
+fi
+
+if [ -d "$OBP_DIR" ]; then
+    rm -rf "$OBP_DIR" && echo -e "${GREEN}✓ Removed openbullet directory${NC}" || \
+    echo -e "${RED}✗ Failed to remove openbullet directory${NC}"
+fi
+
+echo -e "${GREEN}Uninstallation complete${NC}"
+exit 0

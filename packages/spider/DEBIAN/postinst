@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+pip install -r $PREFIX/lib/spider/report/requirements.txt
+echo "
+-------------------------------------
+*SPIDER INSTALLED IN YOUR DEVICE*
+*NOW YOU CAN RUN THIS ON YOUR TERMUX*
+https://github.com/Vaizer0/zero-termux
+"

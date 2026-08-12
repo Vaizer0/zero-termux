@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+rm -f "$PREFIX/bin/medusa"
+rm -rf "$PREFIX/lib/medusa"
+rm -f "$PREFIX/share/man/man1/medusa.1"
+echo "Medusa completely removed."
+exit 0

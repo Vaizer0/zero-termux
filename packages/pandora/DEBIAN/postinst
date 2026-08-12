@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+PANDORA="$PREFIX/share/pandora"
+BIN="$PREFIX/bin/pandora"
+git clone --quiet https://github.com/MrSanZz/pandora.git $PANDORA
+
+cd $PANDORA
+pip install -r requirements.txt
+
+cat > $BIN <<-EOF
+#!$PREFIX/bin/sh
+cd $PANDORA
+python pandora.py 
+EOF
+
+chmod +x $BIN
+
+echo "[*] PANDORA tool installed"
+echo "[*] you can now use it by typing pandora"

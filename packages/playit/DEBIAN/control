@@ -1,0 +1,13 @@
+Package: playit
+Version: 0.17.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, rust, build-essential, pkg-config
+Section: net
+Priority: optional
+Homepage: https://playit.gg/
+Description: Global Proxy for Server Hosting Without Port Forwarding
+ Playit is a global proxy service that allows anyone to host servers
+ without port forwarding. Creates secure tunnels to expose local
+ services to the internet with automatic SSL and global accessibility.
+ Supports TCP, UDP, and HTTP traffic.

@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+bash ${PREFIX}/bin/websploit-installer
+rm -rf ${PREFIX}/bin/websploit-installer
+echo "[*] websploit installation finished."
+echo "[*] Run 'websploit' to execute it."

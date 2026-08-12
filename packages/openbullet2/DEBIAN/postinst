@@ -1,0 +1,66 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+# Zero-Termux: justified pin — source build at tag — reproducible build
+VERSION="2.0.1"
+ARCH=$(uname -m)
+
+case "$ARCH" in
+    aarch64) RUNTIME_ARCH="linux-arm64" ;;
+    x86_64)  RUNTIME_ARCH="linux-x64" ;;
+    *)
+        echo "Unsupported architecture: $ARCH" >&2
+        exit 1
+        ;;
+esac
+
+TARBALL_URL="https://github.com/openbullet/OpenBullet2/archive/refs/tags/${VERSION}.tar.gz"
+TMP_DIR="$TMPDIR/openbullet2-build"
+INSTALL_DIR="$PREFIX/lib/openbullet2"
+
+rm -rf "$TMP_DIR" 2>/dev/null || true
+mkdir -p "$TMP_DIR"
+cd "$TMP_DIR"
+
+curl -fsSL -o source.tar.gz "$TARBALL_URL" || { echo "Download failed" >&2; exit 1; }
+tar -xzf source.tar.gz --strip-components=1 || { echo "Extraction failed" >&2; exit 1; }
+
+mkdir -p build/wwwroot
+
+dotnet run --project Tools/CurlImpersonate.NativeAssets -- --rid "$RUNTIME_ARCH" || { echo "Native assets build failed" >&2; exit 1; }
+
+dotnet publish OpenBullet2.Web \
+    --runtime "$RUNTIME_ARCH" \
+    --configuration Release \
+    -o build \
+    /p:DisableBeauty=true || { echo "Publish failed" >&2; exit 1; }
+
+dotnet build-server shutdown || true
+
+find build -name "*.xml" -type f -delete
+
+pushd openbullet2-web-client >/dev/null
+npm install || { echo "npm install failed" >&2; exit 1; }
+npm run build || { echo "Frontend build failed" >&2; exit 1; }
+mv dist/* ../build/wwwroot || { echo "Frontend move failed" >&2; exit 1; }
+popd >/dev/null
+
+cp OpenBullet2.Web/dbip-country-lite.mmdb build/ || { echo "DB copy failed" >&2; exit 1; }
+
+rm -rf "$INSTALL_DIR" 2>/dev/null || true
+cp -r build "$INSTALL_DIR" || { echo "Installation copy failed" >&2; exit 1; }
+
+ln -svf "$PREFIX/lib/libsqlite3.so" "$INSTALL_DIR/libe_sqlite3.so" || { echo "Symlink creation failed" >&2; exit 1; }
+
+cd /
+rm -rf "$TMP_DIR"
+
+cat > "$PREFIX/bin/openbullet2" << 'EOF'
+#!/data/data/com.termux/files/usr/bin/sh
+cd "$PREFIX/lib/openbullet2"
+exec dotnet OpenBullet2.Web.dll "$@"
+EOF
+chmod +x "$PREFIX/bin/openbullet2"
+
+echo "OpenBullet2 installed successfully."
+exit 0

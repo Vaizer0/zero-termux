@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "[*] Installing Holehe via pip..."
+pip install holehe || {
+    echo "[!] Installation failed. Ensure:"
+    echo "    1. Python 3.7+ is installed"
+    echo "    2. pip is up-to-date (python -m pip install --upgrade pip)"
+    exit 1
+}
+
+echo "[+] Successfully installed. Usage:"
+echo "  holehe example@domain.com"
+echo "  holehe --only-used target@email.com"

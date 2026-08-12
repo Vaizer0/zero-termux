@@ -1,0 +1,27 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+set -e
+
+echo "Installing SMS‑Stealer..."
+
+INSTALL_DIR="$PREFIX/share/sms-stealer"
+
+# Remove old installation if any
+rm -rf "$INSTALL_DIR"
+
+# Clone repository
+git clone https://github.com/Anon4You/sms-stealer.git "$INSTALL_DIR" || exit 1
+
+# Create launcher
+mkdir -p "$PREFIX/bin"
+cat > "$PREFIX/bin/sms-stealer" << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+cd "$PREFIX/share/sms-stealer"
+exec ruby sms-stealer.rb "$@"
+EOF
+
+chmod +x "$PREFIX/bin/sms-stealer"
+
+echo "SMS‑Stealer installed successfully."
+echo "Run 'sms-stealer' to start the setup."
+exit 0

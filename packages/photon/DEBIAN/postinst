@@ -1,0 +1,25 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+INSTALL_DIR="$PREFIX/share/photon"
+LAUNCHER="$PREFIX/bin/photon"
+
+[ -d "$INSTALL_DIR" ] && rm -rf "$INSTALL_DIR"
+
+git clone https://github.com/s0md3v/photon.git "$INSTALL_DIR"
+cd "$INSTALL_DIR"
+pip install -r requirements.txt
+
+cat > "$LAUNCHER" << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+cd "$PREFIX/share/photon"
+exec python -W ignore::SyntaxWarning photon.py "$@"
+EOF
+
+chmod +x "$LAUNCHER"
+
+echo "Photon 1.3.2 installed successfully."
+echo "Usage examples:"
+echo "  photon -u https://example.com"
+echo "  photon -u https://target.com -l 3 -t 10"
+exit 0

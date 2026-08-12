@@ -1,0 +1,20 @@
+name: Maintenance
+
+on:
+  schedule:
+    # Weekly: Monday 03:00 UTC
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run scheduled maintenance checks
+        run: bash scripts/maintenance/run-scheduled-checks.sh
+
+      - name: Report rolling-version drift
+        run: bash scripts/version-check/check-rolling-versions.sh

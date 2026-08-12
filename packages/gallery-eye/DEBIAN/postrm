@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+rm -f "$PREFIX/bin/gallery-eye"
+rm -rf "$PREFIX/share/gallery-eye"
+rm -rf $HOME/gallery-eye
+
+echo "Gallery‑Eye completely removed."
+exit 0

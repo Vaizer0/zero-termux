@@ -1,0 +1,31 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+LAUNCHER="$PREFIX/bin/mantra"
+MANTRA_BIN="$HOME/go/bin/mantra"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing mantra...${NC}"
+go install -v github.com/Brosck/mantra@latest || {
+    echo -e "${RED}Error: Failed to install mantra. Ensure Go is installed and internet is available.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}Creating launcher at $LAUNCHER...${NC}"
+cat > "$LAUNCHER" <<- EOF
+#!/data/data/com.termux/files/usr/bin/bash
+$MANTRA_BIN "\$@"
+EOF
+
+chmod +x "$LAUNCHER" || {
+    echo -e "${RED}Error: Failed to set executable permissions for $LAUNCHER.${NC}"
+    exit 1
+}
+
+if [ -x "$MANTRA_BIN" ]; then
+    echo -e "${GREEN}mantra installed successfully. Run 'mantra -h' to verify.${NC}"
+else
+    echo -e "${RED}Error: mantra binary not found at $MANTRA_BIN.${NC}"
+    exit 1
+fi

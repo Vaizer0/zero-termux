@@ -1,0 +1,11 @@
+Package: phonesploit-pro
+Version: 1.61
+Architecture: all
+Maintainer: Alienkrishn [Anon4You] 
+Depends: git, python, android-tools, nmap, which, scrcpy
+Section: security
+Priority: optional
+Homepage: https://github.com/AzeemIdrisi/PhoneSploit-Pro
+Description: Android hacking tool with ADB
+ Exploit Android devices via ADB with 20+ attack vectors.
+ Supports both USB and wireless ADB connections.

@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+set -e
+
+echo "Installing 9router..."
+npm install -g 9router@latest --prefer-online || exit 1
+echo "9router installed successfully."
+exit 0

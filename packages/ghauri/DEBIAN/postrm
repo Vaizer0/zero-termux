@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling Ghauri...${NC}"
+
+# Uninstall Ghauri
+pip uninstall -y ghauri 2>/dev/null || {
+    echo -e "${YELLOW}Ghauri not found or already uninstalled.${NC}"
+}
+
+echo -e "${GREEN}Ghauri completely removed${NC}"
+exit 0

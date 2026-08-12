@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+rm -f "$PREFIX/bin/openbullet2"
+rm -rf "$PREFIX/lib/openbullet2"
+echo "OpenBullet2 completely removed."
+exit 0

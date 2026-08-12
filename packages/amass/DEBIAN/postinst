@@ -1,0 +1,64 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+# Zero-Termux: rolling version — resolve latest GitHub release at install time
+VERSION="$(curl -fsSL 'https://api.github.com/repos/owasp-amass/amass/releases/latest' 2>/dev/null | grep '"tag_name"' | cut -d'"' -f4 | sed 's/^v//')"
+[ -n "$VERSION" ] || { echo -e "${RED}Error: failed to resolve latest amass release.${NC}" >&2; exit 1; }
+
+echo -e "${GREEN}Installing amass $VERSION...${NC}"
+
+ARCH=$(uname -m)
+case $ARCH in
+    aarch64)
+        ARCH_TYPE="arm64"
+        ;;
+    armv7l)
+        ARCH_TYPE="armv7"
+        ;;
+    arm*)
+        ARCH_TYPE="armv7"
+        ;;
+    x86_64)
+        ARCH_TYPE="amd64"
+        ;;
+    i686)
+        ARCH_TYPE="386"
+        ;;
+    *)
+        echo -e "${RED}Error: Unsupported architecture: $ARCH${NC}"
+        exit 1
+        ;;
+esac
+
+echo -e "${YELLOW}Detected architecture: $ARCH ($ARCH_TYPE)${NC}"
+
+DOWNLOAD_URL="https://github.com/owasp-amass/amass/releases/download/v$VERSION/amass_linux_${ARCH_TYPE}.tar.gz"
+
+echo -e "${YELLOW}Downloading amass...${NC}"
+curl -L -o $TMPDIR/amass.tar.gz $DOWNLOAD_URL || {
+    echo -e "${RED}Error: Failed to download amass.${NC}"
+    exit 1
+}
+
+echo -e "${YELLOW}Extracting amass...${NC}"
+tar xzf $TMPDIR/amass.tar.gz -C $TMPDIR/ || {
+    echo -e "${RED}Error: Failed to extract amass.${NC}"
+    exit 1
+}
+
+echo -e "${YELLOW}Installing binary...${NC}"
+mv $TMPDIR/amass_linux_${ARCH_TYPE}/amass $PREFIX/bin/ || {
+    echo -e "${RED}Error: Failed to install amass binary.${NC}"
+    exit 1
+}
+
+chmod +x $PREFIX/bin/amass
+
+rm -rf $TMPDIR/amass.tar.gz $TMPDIR/amass_linux_${ARCH_TYPE}
+
+echo -e "${GREEN}amass installed successfully!${NC}"
+exit 0

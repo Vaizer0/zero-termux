@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling PKiller...${NC}"
+
+if [ -f "$PREFIX/bin/pkiller" ]; then
+    rm -f $PREFIX/bin/pkiller
+    echo -e "${GREEN}Removed launcher script${NC}"
+fi
+
+if [ -d "$PREFIX/share/PKiller" ]; then
+    rm -rf $PREFIX/share/PKiller
+    echo -e "${GREEN}Removed PKiller repository${NC}"
+fi
+
+echo -e "${GREEN}PKiller completely removed${NC}"
+exit 0

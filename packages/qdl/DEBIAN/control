@@ -1,0 +1,11 @@
+Package: qdl
+Version: 3.7
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, clang, libxml2, libusb, libzip, ninja, build-essential, help2man, pkg-config, termux-api, python, python-pip
+Section: utils
+Priority: optional
+Homepage: https://github.com/linux-msm/qdl
+Description: Qualcomm Download Tool (QDL) for EDL flashing
+ Official command line tool to flash Qualcomm devices in EDL 9008 mode.
+ Built from source with Termux fix.

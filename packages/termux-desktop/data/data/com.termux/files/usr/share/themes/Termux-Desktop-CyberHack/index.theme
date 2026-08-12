@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=CyberHack
+Comment=Your interface can't look any more hackerish than this. V3
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Name=CyberHack
+GtkTheme=CyberHack
+IconTheme=Kora
+MetacityTheme=CyberHack

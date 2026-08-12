@@ -1,0 +1,31 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+LAUNCHER="$PREFIX/bin/subzy"
+SUBZY_BIN="$HOME/go/bin/subzy"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing subzy...${NC}"
+go install -v github.com/PentestPad/subzy@latest || {
+    echo -e "${RED}Error: Failed to install subzy. Ensure Go is installed and internet is available.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}Creating launcher at $LAUNCHER...${NC}"
+cat > "$LAUNCHER" <<- EOF
+#!/data/data/com.termux/files/usr/bin/bash
+$SUBZY_BIN "\$@"
+EOF
+
+chmod +x "$LAUNCHER" || {
+    echo -e "${RED}Error: Failed to set executable permissions for $LAUNCHER.${NC}"
+    exit 1
+}
+
+if [ -x "$SUBZY_BIN" ]; then
+    echo -e "${GREEN}subzy installed successfully. Run 'subzy -h' to verify.${NC}"
+else
+    echo -e "${RED}Error: subzy binary not found at $SUBZY_BIN.${NC}"
+    exit 1
+fi

@@ -1,0 +1,14 @@
+Package: kerbrute
+Version: 1.0.3
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, golang, make
+Section: security
+Priority: optional
+Homepage: https://github.com/ropnop/kerbrute
+Description: Kerberos brute force and enumeration tool
+ Fast Kerberos pre-auth brute forcing with:
+ - User enumeration
+ - Password spraying
+ - AS-REP roasting
+ - Performance optimization

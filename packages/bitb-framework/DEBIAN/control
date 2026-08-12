@@ -1,0 +1,9 @@
+Package: bitb-framework
+Version: 1.2
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Installed-Size: 2
+Depends: php, git, python, curl, wget
+Suggests: zero-termux
+Homepage: https://github.com/surya-dev-singh/BITB-framwork
+Description: Phishing technique that simulates a browser window within the browser to spoof a legitimate domain.

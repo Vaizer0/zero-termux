@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+set -e
+
+go install -trimpath -ldflags "-w -s" github.com/lc/gau/v2/cmd/gau@latest
+
+# Ensure the binary is linked in $PREFIX/bin if GOPATH/bin is not in PATH
+if [ ! -f "$PREFIX/bin/gau" ] && [ -f "$HOME/go/bin/gau" ]; then
+    ln -sf "$HOME/go/bin/gau" "$PREFIX/bin/gau"
+fi
+
+exit 0

@@ -1,0 +1,14 @@
+Package: waybackurls
+Version: 0.1.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: golang, git
+Section: recon
+Priority: optional
+Homepage: https://github.com/tomnomnom/waybackurls
+Description: Fetch known URLs from Wayback Machine archives
+ Extract historical URLs from Wayback Machine with:
+ - Domain-based URL discovery
+ - Subdomain enumeration
+ - Timestamp filtering
+ - JSON output support

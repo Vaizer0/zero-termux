@@ -1,0 +1,13 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<channel name="xfce4-terminal" version="1.0">
+  <property name="background-mode" type="string" value="TERMINAL_BACKGROUND_TRANSPARENT"/>
+  <property name="background-darkness" type="double" value="0.81000000000000005"/>
+  <property name="misc-confirm-close" type="bool" value="false"/>
+  <property name="font-name" type="string" value="UbuntuMono Nerd Font Bold 12"/>
+  <property name="misc-default-geometry" type="string" value="95x26"/>
+  <property name="scrolling-unlimited" type="bool" value="true"/>
+  <property name="misc-cursor-blinks" type="bool" value="true"/>
+  <property name="use-default-working-dir" type="bool" value="false"/>
+  <property name="misc-maximize-default" type="bool" value="false"/>
+</channel>

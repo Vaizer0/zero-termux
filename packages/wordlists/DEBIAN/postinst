@@ -1,0 +1,32 @@
+#!/data/data/com.termux/files/usr/bin/sh
+
+WORDLISTS_DIR="$PREFIX/share/wordlists"
+WORK_DIR=$(mktemp -d -p "$TMPDIR") || {
+    echo "[!] Failed to create temp dir" >&2
+    exit 1
+}
+
+echo "[*] Installing wordlists to $WORDLISTS_DIR..."
+mkdir -p "$WORDLISTS_DIR"
+
+# Download rockyou.txt from Brannon Dorsey's mirror (faster)
+echo "[*] Fetching rockyou.txt (GitHub mirror)..."
+wget -q --show-progress -O "$WORDLISTS_DIR/rockyou.txt" \
+    https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt \
+    && echo "[+] rockyou.txt installed (143MB)"
+
+# Minimal SecLists (only Common-Credentials)
+cd "$WORK_DIR" && {
+    git clone --quiet --depth=1 --filter=blob:none \
+        --sparse https://github.com/danielmiessler/SecLists.git \
+        && cd SecLists \
+        && git sparse-checkout set Passwords/Common-Credentials \
+        && mv Passwords/Common-Credentials/*.txt "$WORDLISTS_DIR/" \
+        && echo "[+] SecLists common passwords installed"
+}
+
+# Cleanup
+rm -rf "$WORK_DIR"
+chmod 644 "$WORDLISTS_DIR"/* 2>/dev/null
+echo "[+] Installation complete. Wordlists:"
+ls -lh "$WORDLISTS_DIR" | awk '{print $5, $9}'

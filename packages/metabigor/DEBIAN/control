@@ -1,0 +1,12 @@
+Package: metabigor
+Version: 2.1.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: curl, tar, git, golang
+Section: net
+Priority: optional
+Homepage: https://github.com/j3ssie/metabigor
+Description: OSINT tool without API keys
+ Metabigor is an intelligence framework designed to perform OSINT tasks
+ without requiring API keys. Features include network discovery, ASN/IP
+ lookups, and command-line search engine queries.

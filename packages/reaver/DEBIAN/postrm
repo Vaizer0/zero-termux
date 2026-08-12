@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+rm -f "$PREFIX/bin/reaver"
+rm -f "$PREFIX/bin/wash"
+rm -rf "$PREFIX/var/lib/reaver"
+
+echo "Reaver completely removed."
+exit 0

@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+pip uninstall -y maigret 2>/dev/null || true
+echo "maigret completely removed."
+exit 0

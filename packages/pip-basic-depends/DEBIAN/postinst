@@ -1,0 +1,34 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing pip-basic-depends 1.0...${NC}"
+echo -e "${YELLOW}Setting up essential Python build tools...${NC}"
+
+# Install essential Python packaging tools
+pip install setuptools wheel packaging pyproject_metadata cython meson-python versioneer || {
+    echo -e "${RED}Error: Failed to install Python packaging tools.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}All dependencies installed successfully!${NC}"
+echo -e "${YELLOW}Now you can install Python packages without build errors.${NC}"
+echo -e "${YELLOW}Available tools:${NC}"
+echo "  setuptools      - Package building and distribution"
+echo "  wheel           - Built-package format for Python"
+echo "  packaging       - Core utilities for Python packages"
+echo "  pyproject_metadata - PEP 621 metadata support"
+echo "  cython          - C-extensions for Python"
+echo "  meson-python    - Meson build backend for Python"
+echo "  versioneer      - Version string management"
+echo ""
+echo -e "${YELLOW}Build tools available:${NC}"
+echo "  build-essential - Compiler toolchain"
+echo "  cmake           - Cross-platform build system"
+echo "  ninja           - Small build system"
+echo "  libopenblas     - Optimized BLAS library"
+echo "  rust            - Rust compiler for extensions"
+exit 0

@@ -1,0 +1,34 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing Commix 4.1...${NC}"
+
+# Clone commix repository to $PREFIX/share/commix
+echo -e "${YELLOW}Cloning commix repository...${NC}"
+git clone https://github.com/commixproject/commix.git $PREFIX/share/commix || {
+    echo -e "${RED}Error: Failed to clone commix repository.${NC}"
+    exit 1
+}
+
+# Install commix from the cloned directory
+echo -e "${YELLOW}Installing commix package...${NC}"
+cd $PREFIX/share/commix
+pip install . || {
+    echo -e "${RED}Error: Failed to install commix.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}Commix installed successfully!${NC}"
+echo -e "${YELLOW}Usage examples:${NC}"
+echo "  commix -u http://target.com/vuln.php?id=1"
+echo "  commix -l targets.txt"
+echo "  commix -m POST --data='id=1'"
+echo "  commix --wizard"
+echo "  commix --update"
+echo "  commix --list-tampers"
+echo "  commix -h for full help"
+exit 0

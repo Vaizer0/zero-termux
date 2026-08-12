@@ -1,0 +1,12 @@
+Package: nethunter-cli
+Version: 2025.4
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: proot, tar, axel
+Section: net
+Priority: optional
+Homepage: https://www.kali.org/
+Description: Kali NetHunter Rootless Edition CLI
+ NetHunter CLI provides command-line access to Kali NetHunter tools
+ and packages without requiring root access. Enables penetration
+ testing and security tools through PRoot environment integration.

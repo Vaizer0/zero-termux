@@ -1,0 +1,25 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+INSTALL_DIR="$PREFIX/share/apkpatcher"
+LAUNCHER="$PREFIX/bin/apkpatcher"
+
+# Remove the launcher symlink if it exists
+if [ -L "$LAUNCHER" ]; then
+    echo "[*] Removing launcher symlink $LAUNCHER..."
+    rm -f "$LAUNCHER" || {
+        echo "[!] Failed to remove $LAUNCHER"
+        exit 1
+    }
+fi
+
+# Remove the installation directory if it exists
+if [ -d "$INSTALL_DIR" ]; then
+    echo "[*] Removing installation directory $INSTALL_DIR..."
+    rm -rf "$INSTALL_DIR" || {
+        echo "[!] Failed to remove $INSTALL_DIR"
+        exit 1
+    }
+fi
+
+echo "[*] Cleanup completed successfully"
+exit 0

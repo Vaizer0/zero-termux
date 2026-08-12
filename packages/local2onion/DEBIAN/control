@@ -1,0 +1,8 @@
+Package: local2onion
+Version: 1.0
+Architecture: all
+Maintainer: Alienkrishn ~Anon4You
+Installed-Size: 54
+Depends: tor,php,curl,pv
+Description: Expose your localhost on the DARKWEB using termux
+

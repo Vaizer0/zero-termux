@@ -1,0 +1,14 @@
+Package: evilurl
+Version: 3.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, python-pip
+Section: security
+Priority: optional
+Homepage: https://github.com/UndeadSec/EvilURL
+Description: Generate unicode evil domains for IDN homograph attacks
+ Create homograph phishing domains with:
+ - Unicode character substitution
+ - Domain availability checking
+ - Multiple TLD support
+ - IDN homograph attack simulation

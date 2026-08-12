@@ -1,0 +1,8 @@
+Package: phoneinfo
+Version: 1.0.1
+Maintainer: Alienkrishn [Anon4You]
+Architecture: all
+Depends: termux-tools,termux-exec,figlet,jq
+Installed-Size: 36
+Description: Phone number lookup tool for termux
+

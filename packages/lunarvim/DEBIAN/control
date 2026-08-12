@@ -1,0 +1,12 @@
+Package: lunarvim
+Version: 1.4.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, make, python, npm, rust, fzf, fd, ripgrep, neovim
+Section: editors
+Priority: optional
+Homepage: https://www.lunarvim.org/
+Description: IDE layer for Neovim with sane defaults
+ LunarVim provides a modern, feature-rich Neovim configuration
+ with sensible defaults, LSP support, and extensive plugin
+ ecosystem – completely free and community driven.

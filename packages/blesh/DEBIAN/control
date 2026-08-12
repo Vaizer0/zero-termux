@@ -1,0 +1,12 @@
+Package: blesh
+Version: 0.4.0-devel4
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, make, termux-tools
+Section: shells
+Priority: optional
+Homepage: https://github.com/akinomyoga/ble.sh
+Description: Bash Line Editor (ble.sh) – interactive command line editing
+ ble.sh is a command-line editor for Bash that provides syntax highlighting,
+ command completion, and improved editing capabilities. It replaces the
+ default GNU Readline with a more feature-rich interface written in pure Bash.

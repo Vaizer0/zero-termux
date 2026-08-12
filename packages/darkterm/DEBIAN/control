@@ -1,0 +1,12 @@
+Package: darkterm
+Version: 2.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: termux-tools, termux-exec, git
+Section: net
+Priority: optional
+Homepage: https://github.com/Anon4You/darkterm
+Description: Advanced Ethical Hacking Framework for Termux
+ Darkterm provides 60+ integrated tools across 9 modules,
+ auto‑installs missing packages on demand, runs without root,
+ logs activities, and stores results in loot/ directory.

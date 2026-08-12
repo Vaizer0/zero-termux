@@ -1,0 +1,13 @@
+Package: qsreplace
+Version: 0.0.3
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, golang
+Section: utils
+Priority: optional
+Homepage: https://github.com/tomnomnom/qsreplace
+Description: Accept URLs on stdin, replace all query string values with a user-supplied value
+ qsreplace is a command‑line tool that reads a list of URLs from standard input,
+ replaces every query parameter value with a string provided by the user, and
+ outputs the modified URLs. It is commonly used in penetration testing to
+ prepare URLs for fuzzing or injection attacks.

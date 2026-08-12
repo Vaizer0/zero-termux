@@ -1,0 +1,129 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+PARROTDIR="$PREFIX/share/parrot-os"
+PARROTTAR="$TMPDIR/parrot-rootfs.tar.xz"
+
+ARCH=$(uname -m)
+case "$ARCH" in
+    aarch64) ARCH="arm64" ;;
+    arm*) ARCH="armhf" ;;
+    i386) ARCH="i386" ;;
+    x86_64) ARCH="amd64" ;;
+    *)
+        echo "Error: Unsupported architecture: $ARCH"
+        exit 1
+        ;;
+esac
+
+DOWNLOAD_URL="https://github.com/EXALAB/Anlinux-Resources/raw/refs/heads/master/Rootfs/Parrot/$ARCH/parrot-rootfs-$ARCH.tar.xz"
+
+clean_previous() {
+    if [ -d "$PARROTDIR" ]; then
+        echo "Removing previous Parrot OS installation..."
+        rm -rf "$PARROTDIR"
+        echo "Previous installation removed"
+    fi
+}
+
+download_parrot() {
+    echo "Downloading Parrot OS rootfs for $ARCH..."
+
+    if command -v axel >/dev/null 2>&1; then
+        axel -o "$PARROTTAR" "$DOWNLOAD_URL"
+    else
+        wget -q --show-progress "$DOWNLOAD_URL" -O "$PARROTTAR"
+    fi
+
+    if [ $? -ne 0 ]; then
+        echo "Error: Download failed!"
+        exit 1
+    fi
+}
+
+extract_rootfs() {
+    echo "Extracting Parrot OS rootfs..."
+
+    mkdir -p "$PARROTDIR"
+
+    proot --link2symlink tar -xpf "$PARROTTAR" -C "$PARROTDIR/" --exclude='dev' ||:
+
+    if [ ! -d "$PARROTDIR" ] || [ -z "$(ls -A "$PARROTDIR")" ]; then
+        echo "Error: Extraction failed!"
+        ls -la "$PARROTDIR"
+        exit 1
+    fi
+
+    rm -f "$PARROTTAR"
+    echo "Extraction completed to $PARROTDIR"
+}
+
+fix_resolv_conf() {
+    echo "Configuring DNS resolvers..."
+
+    mkdir -p "$PARROTDIR/etc"
+    cat > "$PARROTDIR/etc/resolv.conf" << EOF
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+EOF
+}
+
+create_launchers() {
+    echo "Creating launcher scripts..."
+
+    cat > "$PREFIX/bin/parrot-cli" << EOF
+#!/data/data/com.termux/files/usr/bin/bash
+
+PARROTDIR="$PARROTDIR"
+unset LD_PRELOAD
+
+cmdline="proot --link2symlink --kill-on-exit -0 -r \$PARROTDIR -b /dev -b /proc -b /sdcard -b \$HOME -b \$TMPDIR -b /system -b /vendor -w /root /usr/bin/env -i HOME=/root TERM=\$TERM LANG=\$LANG PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash"
+
+cmd="\$@"
+if [ "\$#" == "0" ]; then
+    exec \$cmdline
+else
+    exec \$cmdline -c "\$cmd"
+fi
+EOF
+
+    cat > "$PREFIX/bin/prt" << EOF
+#!/data/data/com.termux/files/usr/bin/bash
+
+PARROTDIR="$PARROTDIR"
+unset LD_PRELOAD
+
+cmdline="proot --link2symlink --kill-on-exit -0 -r \$PARROTDIR -b /dev -b /proc -b /sdcard -b \$HOME -b \$TMPDIR -b /system -b /vendor -w \$HOME /usr/bin/env -i HOME=/root TERM=\$TERM LANG=\$LANG PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash"
+
+cmd="\$@"
+if [ "\$#" == "0" ]; then
+    exec \$cmdline
+else
+    exec \$cmdline -c "\$cmd"
+fi
+EOF
+
+    chmod +x "$PREFIX/bin/parrot-cli" "$PREFIX/bin/prt"
+    echo "Launchers created: parrot-cli, prt"
+}
+
+install_parrot() {
+    echo "Starting Parrot OS installation for $ARCH..."
+    echo "Parrot OS will be installed to: $PARROTDIR"
+
+    clean_previous
+    download_parrot
+    extract_rootfs
+    fix_resolv_conf
+    create_launchers
+
+    echo ""
+    echo "Parrot OS installation completed!"
+    echo ""
+    echo "Usage:"
+    echo "  parrot-cli [command]  - Run command in Parrot OS (starts in /root)"
+    echo "  prt [command]         - Run command in Parrot OS (starts in \$HOME)"
+    echo ""
+    echo "Parrot OS rootfs location: $PARROTDIR"
+}
+
+install_parrot

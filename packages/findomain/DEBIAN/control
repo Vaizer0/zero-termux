@@ -1,0 +1,14 @@
+Package: findomain
+Version: 10.0.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, rust, make, cmake
+Section: net
+Priority: optional
+Homepage: https://github.com/Findomain/Findomain
+Description: The fastest and complete solution for domain recognition
+ Findomain is a high‑performance subdomain enumerator that uses
+ certificate transparency logs, DNS data, and multiple public APIs.
+ It includes subdomain monitoring, alerts via Discord/Slack/Telegram,
+ port scanning, HTTP checks, data import from other tools, and full
+ support for configuration files.

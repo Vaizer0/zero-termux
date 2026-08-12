@@ -1,0 +1,21 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+INSTALL_DIR="$PREFIX/share/darkcrawler"
+LAUNCHER="$PREFIX/bin/darkcrawler"
+
+[ -d "$INSTALL_DIR" ] && rm -rf "$INSTALL_DIR"
+
+git clone --depth 1 https://github.com/Anon4You/DarkCrawler.git "$INSTALL_DIR"
+
+cd "$INSTALL_DIR"
+pip install requests pysocks beautifulsoup4 stem rich
+
+cat > "$LAUNCHER" << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+exec python "$PREFIX/share/darkcrawler/darkcrawler.py" "$@"
+EOF
+
+chmod +x "$LAUNCHER"
+
+exit 0

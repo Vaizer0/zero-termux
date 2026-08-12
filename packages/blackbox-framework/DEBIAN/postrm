@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Post-removal script for Blackbox 2.0
+
+set -e
+
+python2 -m pip uninstall -y requests passlib pexpect || true
+exit 0

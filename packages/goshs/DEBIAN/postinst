@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+go install goshs.de/goshs/v2@latest
+
+if [ -f "$HOME/go/bin/goshs" ]; then
+    ln -sf "$HOME/go/bin/goshs" "$PREFIX/bin/goshs"
+fi
+
+echo "goshs installed successfully."
+echo ""
+echo "Usage examples:"
+echo "  goshs                          # Serve current directory on port 8000"
+echo "  goshs -s -ss -b user:password  # HTTPS with basic auth"
+echo "  goshs -smb -smb-domain CORP    # Capture SMB hashes"
+echo "  goshs -ldap                    # Capture LDAP credentials"
+echo "  goshs -dns -smtp               # Catch DNS callbacks and receive emails"
+echo "  goshs --ttl 2h                 # Self-destruct after 2 hours"
+echo "  goshs --tui                    # Run with interactive terminal dashboard"
+exit 0

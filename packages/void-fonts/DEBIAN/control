@@ -1,0 +1,11 @@
+Package: void-fonts
+Version: 1.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, bash
+Section: misc
+Priority: optional
+Homepage: https://github.com/termuxvoid/Void-Fonts.git
+Description: Custom font collection for Termux
+ Void-Fonts provides a collection of custom fonts specially
+ curated for Termux users. Includes installation and management script.

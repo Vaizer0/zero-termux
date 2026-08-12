@@ -1,0 +1,48 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+MSFPATH="$PREFIX/opt/metasploit-framework"
+# Zero-Termux: justified pin — source build at tag — reproducible build
+TAG="6.4.142"
+ZIP_URL="https://github.com/rapid7/metasploit-framework/archive/refs/tags/${TAG}.zip"
+
+[ -d "$MSFPATH" ] && rm -rf "$MSFPATH"
+mkdir -p $PREFIX/opt
+
+wget -q "$ZIP_URL" -O "$TMPDIR/msf.zip"
+unzip -q "$TMPDIR/msf.zip" -d "$TMPDIR"
+mv "$TMPDIR/metasploit-framework-${TAG}" "$MSFPATH"
+rm -f "$TMPDIR/msf.zip"
+
+cd "$MSFPATH"
+
+gem install bundler
+
+# Extract exact versions from Gemfile.lock
+DATE_VER=$(grep "^    date (" Gemfile.lock | awk '{print $2}' | tr -d '()')
+ACTIONVIEW_VER=$(grep "actionview (" Gemfile.lock | awk '{print $2}' | tr -d '()')
+NET_VER=$(grep "network_interface (" Gemfile.lock | awk '{print $2}' | tr -d '()')
+
+# Install date gem with exact version (single equals in the argument is fine)
+gem install date -v "$DATE_VER" --no-document
+
+# Install network_interface with workaround
+gem install network_interface -v "$NET_VER" -- --with-cflags="-Wno-error=implicit-function-declaration" 2>/dev/null || true
+
+# Remove lock file and add actionview with correct version using single equals
+rm -f Gemfile.lock
+bundle add actionview --version "$ACTIONVIEW_VER"
+
+bundle config set documentation false
+bundle install -j$(nproc --all)
+bundle update --bundler
+
+# Symlink all executable files in the root of MSFPATH (non‑extension files that are executable)
+find "$MSFPATH" -maxdepth 1 -type f -executable -not -name "*.rb" -not -name "*.sh" -not -name "*.ru" -not -name "*.pl" | while read file; do
+    binname=$(basename "$file")
+    ln -sf "$file" "$PREFIX/bin/$binname"
+done
+
+echo "Metasploit-Framework $TAG installed successfully"
+echo "Run 'msfconsole' or 'msfvenom'"
+exit 0

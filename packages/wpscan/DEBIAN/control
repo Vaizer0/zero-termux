@@ -1,0 +1,12 @@
+Package: wpscan
+Version: 4.0.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: ruby, ruby-nokogiri, ruby-ethon, libcurl, libffi, sed, findutils
+Section: web
+Priority: optional
+Homepage: https://wpscan.com/
+Description: WordPress vulnerability scanner
+ WPScan is a security scanner for WordPress websites, built with
+ an extensive vulnerability database. It identifies themes, plugins,
+ and core issues, and provides actionable security reports.

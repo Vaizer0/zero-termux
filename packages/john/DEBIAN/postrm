@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d $PREFIX/share/john ]]; then
+  for i in $(find $PREFIX/share/john/run -executable);do
+    addon=$(echo $i|awk -F "/" '{print $NF}')
+    ex=${addon:(-2)}
+    rm ${PREFIX}/bin/${addon%.$ex} 2>/dev/null
+  done
+  rm -rf $PREFIX/share/john ${PREFIX}/share/john
+fi
+

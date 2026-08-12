@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+REPO="https://github.com/t6x/reaver-wps-fork-t6x.git"
+TMP_DIR="$TMPDIR/reaver-build"
+
+git clone --depth 1 "$REPO" "$TMP_DIR"
+cd "$TMP_DIR"
+mv src/* .
+sed -i 's/DESIRED_FLAGS="-Werror-unknown-warning-option -Wno-unused-but-set-variable"/DESIRED_FLAGS="-Wno-unused-but-set-variable"/g' configure
+./configure --prefix="$PREFIX"
+make
+make install
+
+cd /
+rm -rf "$TMP_DIR"
+
+echo "Reaver 1.6.6 installed successfully."
+echo "Usage: reaver -i wlan0 -b AA:BB:CC:DD:EE:FF -vv"
+echo "       wash -i wlan0"
+echo "NOTE: Requires root privileges."
+exit 0

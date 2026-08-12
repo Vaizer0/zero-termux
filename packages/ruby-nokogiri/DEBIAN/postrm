@@ -1,0 +1,22 @@
+#!/bin/sh
+# Post-removal script for ruby-nokogiri
+
+set -e
+
+echo "Removing Nokogiri gem..."
+gem uninstall nokogiri -a -x || true
+
+# Also try to remove any other versions that might be installed
+gem uninstall nokogiri -a -x -I || true
+
+echo "Cleaning up residual files..."
+[ -d "$PREFIX/lib/ruby/gems" ] && find "$PREFIX/lib/ruby/gems" -name "*nokogiri*" -exec rm -rf {} + || true
+
+# Remove nokogiri binary from bin directory if it exists
+if [ -f "$PREFIX/bin/nokogiri" ]; then
+    echo "Removing nokogiri binary from $PREFIX/bin..."
+    rm -f "$PREFIX/bin/nokogiri"
+fi
+
+echo "Nokogiri removal complete."
+exit 0

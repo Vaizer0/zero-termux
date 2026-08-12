@@ -1,0 +1,11 @@
+Package: wacli
+Version: 0.13.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, golang
+Section: utils
+Priority: optional
+Homepage: https://wacli.sh/
+Description: Command-line tool for WhatsApp chat management
+ wacli is a CLI utility for interacting with WhatsApp chats,
+ including exporting, searching, and analyzing chat histories.

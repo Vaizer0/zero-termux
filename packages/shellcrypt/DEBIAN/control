@@ -1,0 +1,13 @@
+Package: shellcrypt
+Version: 2.0.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: python, nodejs, figlet
+Section: security
+Priority: optional
+Homepage: https://github.com/Anon4You/ShellCrypt
+Description: Professional code obfuscation tool for Bash and Python
+ Dual language obfuscation/decode tool featuring:
+ - Bash script obfuscation
+ - Python script encryption
+ - Multiple encoding methods

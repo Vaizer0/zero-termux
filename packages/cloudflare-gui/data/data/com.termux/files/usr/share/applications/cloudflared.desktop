@@ -1,0 +1,8 @@
+[Desktop Entry]
+Categories=System;Security;
+Type=Application
+Name=Cloudflared
+GenericName=Cloudflared GUI
+Comment=Cloudflared Gui tunnel 
+Exec=cloudflare-gui
+Icon=cloudflared

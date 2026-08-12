@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+MSFPATH="$PREFIX/opt/metasploit-framework"
+# Remove any symlink that points to MSFPATH
+find "$PREFIX/bin" -type l -lname "$MSFPATH/*" -exec rm -f {} \;
+rm -rf "$MSFPATH"
+exit 0

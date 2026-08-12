@@ -1,0 +1,42 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+REPO="https://github.com/gophish/gophish.git"
+TMP_DIR="$TMPDIR/gophish-build"
+SHARE_DIR="$PREFIX/share/gophish"
+BIN_DIR="$PREFIX/bin"
+
+rm -rf "$TMP_DIR" 2>/dev/null || true
+
+# Remove old installation to avoid stale files
+rm -rf "$SHARE_DIR" 2>/dev/null || true
+
+mkdir -p "$TMP_DIR"
+cd "$TMP_DIR"
+
+git clone --depth 1 "$REPO"
+cd gophish
+
+go build -trimpath -ldflags "-w -s" -o gophish
+
+mkdir -p "$SHARE_DIR"
+cp -r db static templates config.json gophish VERSION "$SHARE_DIR/"
+
+# Fix phishing port from 80 to 8080
+sed -i 's/"listen_url": "0\.0\.0\.0:80"/"listen_url": "0.0.0.0:8080"/' "$SHARE_DIR/config.json"
+
+cat > "$BIN_DIR/gophish" << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+cd "$PREFIX/share/gophish"
+exec ./gophish "$@"
+EOF
+chmod +x "$BIN_DIR/gophish"
+
+cd /
+rm -rf "$TMP_DIR"
+
+echo "Gophish installed successfully."
+echo "Admin: https://127.0.0.1:3333"
+echo "Phishing: http://0.0.0.0:8080"
+echo "Run 'gophish' to start."
+exit 0

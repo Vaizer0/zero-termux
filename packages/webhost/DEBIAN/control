@@ -1,0 +1,14 @@
+Package: webhost
+Version: 1.0.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: curl, php, python, npm, ngrok, cloudflared, figlet, openssh
+Section: net
+Priority: optional
+Homepage: https://github.com/Anon4You/WebHost
+Description: Serve local directories and expose via tunnels
+ WebHost is a Bash script that starts a local web server (PHP, Python,
+ or Node.js) and tunnels it to the internet using TunnelMole, Localhost.run,
+ Cloudflared, or Ngrok. It provides an interactive menu, color output,
+ and automatic cleanup. Ideal for testing webhooks, sharing development
+ servers, or exposing local services.

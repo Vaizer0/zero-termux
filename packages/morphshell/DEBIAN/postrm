@@ -1,0 +1,25 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+CYAN='\033[1;36m'
+RESET='\033[0m'
+
+echo -e "${CYAN}[*] Removing MorphShell configs...${RESET}"
+
+# Remove MorphShell configs
+rm -rf ~/.config/morphshell
+rm -rf ~/.config/fish/config.fish
+rm -rf ~/.config/starship.toml
+rm -f ~/.termux/font.ttf ~/.termux/colors.properties
+
+# Switch shell back to bash
+CURRENT_SHELL=$(basename "$SHELL")
+if [ "$CURRENT_SHELL" != "bash" ]; then
+    echo -e "${GREEN}[*] Switching shell back to bash...${RESET}"
+    chsh -s bash
+fi
+
+echo -e "${GREEN}[✓] MorphShell configs removed. Shell set to bash.${RESET}"
+echo -e "${CYAN}Restart Termux to apply changes.${RESET}"

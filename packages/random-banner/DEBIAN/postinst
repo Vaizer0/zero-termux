@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+bin="$PREFIX/bin/random-banner"
+rbqDir="$PREFIX/share/rbq"
+git clone --quiet https://github.com/Alienkrishn/random_banners.git $rbqDir
+
+cat > $bin <<- EOF
+#!/usr/bin/env bash
+bdir="\$PREFIX/share/rbq"
+cd \$bdir
+bash rbq.sh
+EOF
+chmod 700 $bin

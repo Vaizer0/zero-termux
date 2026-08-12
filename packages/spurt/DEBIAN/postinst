@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+spurtDir="$PREFIX/share/spurt"
+git clone --quiet https://github.com/zer-far/spurt.git $spurtDir
+
+if [[ -d $spurtDir ]]; then
+  cd $spurtDir
+  make
+else
+  printf "\nspurt dir missing...\n"
+  exit 1
+fi
+install -Dm700 -t $PREFIX/bin $spurtDir/spurt
+printf "\nspurt installed successfully.."

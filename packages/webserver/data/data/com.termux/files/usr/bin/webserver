@@ -1,0 +1,20 @@
+#!/bin/bash
+figlet webserver
+echo "a simple web server for termux"
+echo "Author : Alienkrishn"
+read -p "target path : " web
+printf "Starting php server...\r"
+php -S localhost:8080 -t $web > /dev/null 2>&1 &
+sleep 3
+printf "Starting Localhost.run tunnel...\r"
+ssh -R 80:localhost:8080 nokey@localhost.run > .logfile 2> /dev/null &
+sleep 10
+link=$(grep -o 'https://[-0-9a-z]*\.lhr\.life' ".logfile")
+echo -e "\e[31;1myour link are given bellow \e[34;1m\n"
+echo Public URL : $link
+echo -e "\nLocalHost   : http://localhost:8080"
+echo -e "\a\n\n\e[0mPress enter to exit"
+read -e
+killall -9 openssh > /dev/null 2>&1 &
+killall -9 php > /dev/null 2>&1 &
+rm .logfile > /dev/null 2>&1 &

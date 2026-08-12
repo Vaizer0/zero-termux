@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "[*] Removing Vedic Language..."
+rm -rf "$PREFIX/share/vediclang"
+rm -f "$PREFIX/bin/vedic"
+echo "[✓] Uninstallation complete"

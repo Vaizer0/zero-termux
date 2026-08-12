@@ -1,0 +1,4 @@
+#!/usr/bin/env bash 
+if [[ -d $PREFIX/share/hound/ ]]; then
+  rm -rf $PREFIX/share/hound/ 
+fi

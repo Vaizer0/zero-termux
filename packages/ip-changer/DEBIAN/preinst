@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+IPCHANGER="$PREFIX/share/ip-changer"
+if [[ -d $IPCHANGER ]]; then
+  rm -rf $IPCHANGER
+fi

@@ -1,0 +1,9 @@
+Package: vedic
+Version: 2.0.6
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, rust, clang, make, cmake
+Section: devel
+Priority: optional
+Homepage: https://github.com/vedic-lang/vedic
+Description: World's first Sanskrit programming language

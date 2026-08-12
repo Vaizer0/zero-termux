@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Removing EvilURL..."
+rm -rf "$PREFIX/share/evilurl"
+rm -f "$PREFIX/bin/evilurl"
+
+echo "[*] Cleaning Python packages..."
+python -m pip uninstall -y python-nmap python-whois 2>/dev/null || true
+
+echo "[√] EvilURL completely removed"
+exit 0

@@ -1,0 +1,12 @@
+Package: medusa
+Version: 2.3-patched
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, make, automake, autoconf, libtool, clang, pkg-config, openssl, libgcrypt, gnutls, postgresql, libssh2, libcurl, sed, findutils, apr, apr-util
+Section: net
+Priority: optional
+Homepage: https://github.com/jmk-foofus/medusa
+Description: Parallel network login brute-forcer
+ Medusa is a speedy, parallel, and modular login brute-forcer for
+ network services. Supports many protocols including HTTP, FTP, SSH,
+ SMB, and more.

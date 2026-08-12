@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=jSQL Injection
+Exec=jsql
+Icon=jsql
+Comment=Lightweight database information finder from a server
+Categories=Development;Security
+Terminal=false
+MimeType=application/x-java-archive;

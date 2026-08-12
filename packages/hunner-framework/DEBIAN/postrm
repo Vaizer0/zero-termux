@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Removing Hunner Framework..."
+rm -rf "$PREFIX/share/hunner"
+rm -f "$PREFIX/bin/hunner"
+
+echo "[*] Cleaning Python packages..."
+python -m pip uninstall -y httplib2 2>/dev/null || true
+
+echo "[√] Hunner Framework completely removed"
+exit 0

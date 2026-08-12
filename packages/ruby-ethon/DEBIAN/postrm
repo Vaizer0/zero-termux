@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+gem uninstall ethon -a -x --force 2>/dev/null || true
+echo "ruby-ethon completely removed."
+exit 0

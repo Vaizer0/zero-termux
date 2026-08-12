@@ -1,0 +1,18 @@
+Package: android-sdk
+Version: 36.0.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: openjdk-21, 7zip, axel
+Suggests: cmake, ninja-build
+Section: development
+Priority: optional
+Homepage: https://developer.android.com
+Description: Android SDK built using musl libc, supporting multiple architectures.
+ Provides Android NDK 29.0.14206865 and CMake 4.1.2.
+ Includes:
+  - Android SDK tools
+  - Android NDK 29.0.14206865
+  - CMake 4.1.2
+  - Platform tools
+  - Build tools
+  - System images

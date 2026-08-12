@@ -1,0 +1,32 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+
+# Install sqlmap using pip
+pip install -U sqlmap || {
+    echo -e "${RED}Error: Failed to install sqlmap.${NC}"
+    echo -e "${YELLOW}Make sure dependencies (python, python-pip) are installed.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}sqlmap installed successfully!${NC}"
+echo -e "${YELLOW}Usage examples:${NC}"
+echo "  sqlmap -u http://example.com/vuln.php?id=1"
+echo "  sqlmap -l targets.txt"
+echo "  sqlmap -r request.txt"
+echo "  sqlmap -m urls.txt"
+echo "  sqlmap -g \"inurl:php?id=\""
+echo "  sqlmap -c config.ini"
+echo "  sqlmap --wizard"
+echo "  sqlmap --shell"
+echo "  sqlmap --update"
+echo "  sqlmap --purge"
+echo "  sqlmap --list-tampers"
+echo "  sqlmap --dependencies"
+echo "  sqlmap -h    # Basic help"
+echo "  sqlmap -hh   # Advanced help"
+exit 0

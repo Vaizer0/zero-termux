@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Removing hashid..."
+pip uninstall -y hashid >/dev/null 2>&1 || true
+
+echo "[√] Uninstallation complete"
+exit 0

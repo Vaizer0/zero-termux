@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+clear
+printf "\n
+▀▛▘                  ▛▀▖      ▌  ▐
+ ▌▞▀▖▙▀▖▛▚▀▖▌ ▌▚▗▘▄▄▖▌ ▌▞▀▖▞▀▘▌▗▘▜▀ ▞▀▖▛▀▖
+ ▌▛▀ ▌  ▌▐ ▌▌ ▌▗▚    ▌ ▌▛▀ ▝▀▖▛▚ ▐ ▖▌ ▌▙▄▘
+ ▘▝▀▘▘  ▘▝ ▘▝▀▘▘ ▘   ▀▀ ▝▀▘▀▀ ▘ ▘ ▀ ▝▀ ▌
+                          Version: 1.0.7
+ Author : Alienkrishn
+
+ - Neon Hacker theme and icons
+ - Learn More: https://youtube.com/@alienkrishnorg
+
+"
+termux-x11 :1 -xstartup "dbus-launch --exit-with-session xfce4-session" > /dev/null 2>&1 &
+printf "Starting termux-desktop\r" ; sleep 1
+printf "Starting termux-desktop.\r" ; sleep 1
+printf "Starting termux-desktop..\r" ; sleep 1
+printf "Starting termux-desktop...\r" ; sleep 1
+printf "Starting termux-desktop....\r" ; sleep 1
+am start --user 0 -n com.termux.x11/com.termux.x11.MainActivity >/dev/null 2>&1 & 

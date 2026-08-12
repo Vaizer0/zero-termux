@@ -1,0 +1,57 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# jSQL Injection installer for Termux
+
+JSQL_DIR="$PREFIX/share/jsql"
+# Zero-Termux: justified pin — jar asset version aligned with DEBIAN/control Version
+JAR_NAME="jsql-injection-v0.114.jar"
+JAR_URL="https://github.com/ron190/jsql-injection/releases/download/v0.114/$JAR_NAME"
+LAUNCHER="$PREFIX/bin/jsql"
+
+# Colors
+RED='\e[31m'
+GREEN='\e[32m'
+YELLOW='\e[33m'
+BLUE='\e[34m'
+RESET='\e[0m'
+
+# Functions
+error_msg() {
+    echo -e "${RED}[!] Error: $1${RESET}" >&2
+    exit 1
+}
+
+success_msg() {
+    echo -e "${GREEN}[✓] $1${RESET}"
+}
+
+info_msg() {
+    echo -e "${BLUE}[i] $1${RESET}"
+}
+
+# Check Termux
+[ ! -d "$PREFIX" ] && error_msg "This script is for Termux only."
+
+# Remove existing installation
+if [ -d "$JSQL_DIR" ]; then
+    info_msg "Removing previous installation..."
+    rm -rf "$JSQL_DIR"
+fi
+
+# Create fresh directory
+mkdir -p "$JSQL_DIR" || error_msg "Failed to create directory"
+
+# Download JAR
+info_msg "Downloading jSQL Injection JAR..."
+curl -L -o "$JSQL_DIR/$JAR_NAME" "$JAR_URL" || error_msg "Download failed"
+
+# Create launcher
+cat > "$LAUNCHER" << EOF
+#!/data/data/com.termux/files/usr/bin/bash
+exec java -jar "$JSQL_DIR/$JAR_NAME" "\$@"
+EOF
+
+chmod +x "$LAUNCHER" || error_msg "Failed to make launcher executable"
+
+success_msg "jSQL Injection installed successfully!"
+exit 0

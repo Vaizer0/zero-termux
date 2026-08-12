@@ -1,0 +1,28 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+REPO="https://github.com/shekyan/slowhttptest.git"
+TMP_DIR="$TMPDIR/slowhttptest-build"
+PREFIX=${PREFIX:-/data/data/com.termux/files/usr}
+
+rm -rf "$TMP_DIR" 2>/dev/null || true
+git clone --depth 1 "$REPO" "$TMP_DIR" || { echo "Clone failed" >&2; exit 1; }
+cd "$TMP_DIR"
+
+./configure --prefix="$PREFIX" || { echo "Configure failed" >&2; exit 1; }
+
+find . -name "Makefile" -o -name "Makefile.in" | while read f; do
+    sed -i 's/aclocal-1\.16/aclocal/g; s/automake-1\.16/automake/g' "$f"
+done
+
+make || { echo "Build failed" >&2; exit 1; }
+make install || { echo "Install failed" >&2; exit 1; }
+
+cd /
+rm -rf "$TMP_DIR"
+
+echo "slowhttptest installed successfully."
+echo "Usage examples:"
+echo "  slowhttptest -c 1000 -H -g -o my_header_stats"
+echo "  slowhttptest -c 1000 -X -r 1000 -w 10 -y 20 -n 5 -z 32 -u https://target.com"
+exit 0

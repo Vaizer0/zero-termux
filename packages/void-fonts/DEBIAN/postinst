@@ -1,0 +1,30 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Post-installation script for void-fonts
+
+set -e
+
+VOIDFONT_DIR="$PREFIX/share/voidfonts"
+LAUNCHER="$PREFIX/bin/vfonts"
+REPO_URL="https://github.com/termuxvoid/Void-Fonts.git"
+
+echo "[*] Setting up Void-Fonts..."
+mkdir -p "$PREFIX/share"
+
+if [ -d "$VOIDFONT_DIR" ]; then
+    echo "[!] Removing previous installation..."
+    rm -rf "$VOIDFONT_DIR"
+fi
+
+echo "[*] Cloning repository..."
+git clone --depth 1 "$REPO_URL" "$VOIDFONT_DIR"
+
+echo "[*] Creating launcher..."
+cat > "$LAUNCHER" <<EOF
+#!/data/data/com.termux/files/usr/bin/bash
+cd "$VOIDFONT_DIR" && bash vfonts.sh "\$@"
+EOF
+chmod +x "$LAUNCHER"
+
+echo "[√] Installation complete."
+echo "    Run 'vfonts' to manage fonts."
+exit 0

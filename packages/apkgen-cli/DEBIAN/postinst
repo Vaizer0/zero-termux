@@ -1,0 +1,16 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+set -e
+
+INSTALL_DIR="$PREFIX/share/apkgen"
+
+echo "Installing apkgen-cli..."
+
+rm -rf "$INSTALL_DIR"
+git clone https://github.com/termuxvoid/apkgen-cli.git "$INSTALL_DIR"
+
+ln -sf "$INSTALL_DIR/apkgen" "$PREFIX/bin/apkgen"
+flutter config --android-sdk $PREFIX/opt/android-sdk
+
+echo "apkgen-cli installed successfully."
+exit 0

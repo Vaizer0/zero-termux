@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Remove launcher
+rm -f "$PREFIX/bin/d-tect"
+
+# Remove installation directory
+rm -rf "$PREFIX/share/d-tect"
+
+echo "D‑TECT has been completely removed."
+exit 0

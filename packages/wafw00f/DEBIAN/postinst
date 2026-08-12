@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing wafw00f 2.3.1...${NC}"
+pip3 install -U wafw00f || {
+    echo -e "${RED}Error: Failed to install wafw00f. Ensure Python and pip are available.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}wafw00f installed successfully!${NC}"
+echo "Usage:"
+echo "  wafw00f -h          # Show help menu"
+echo "  wafw00f https://example.com  # Detect WAF"
+echo "  wafw00f -l          # List all WAF signatures"
+exit 0

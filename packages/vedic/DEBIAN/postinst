@@ -1,0 +1,33 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+INSTALL_DIR="$PREFIX/share/vediclang"
+REPO_URL="https://github.com/vedic-lang/vedic.git"
+BINARY="$PREFIX/bin/vedic"
+
+echo "[*] Installing Vedic Language tools..."
+git clone --depth=1 "$REPO_URL" "$INSTALL_DIR" || {
+    echo "[!] Clone failed. Check:"
+    echo "    1. Internet connection"
+    echo "    2. git installation"
+    exit 1
+}
+
+echo "[*] Building Vedic (this may take 5-15 minutes)..."
+cd "$INSTALL_DIR" || exit 1
+rm -f Cargo.lock 2>/dev/null
+cargo build || {
+    echo "[!] Build failed. Ensure:"
+    echo "    1. Rust is installed (pkg install rust)"
+    echo "    2. clang and make are available"
+    exit 1
+}
+
+echo "[*] Creating symlink..."
+ln -sf "$INSTALL_DIR/target/debug/vedic" "$BINARY" || {
+    echo "[!] Failed to create symlink"
+    exit 1
+}
+
+echo -e "\n[✓] Vedic installed! Usage:"
+echo "  vedic --help        # Show help"
+echo "  vedic file.ved   # Run Vedic program"

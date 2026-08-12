@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+rm -f "$PREFIX/bin/wipwn"
+rm -rf "$PREFIX/share/wipwn"
+
+echo "WiPWN has been completely removed."
+exit 0

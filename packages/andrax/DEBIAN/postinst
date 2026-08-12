@@ -1,0 +1,72 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+# Configuration
+ANDRAX_URL="https://gitlab.com/crk-mythical/andrax-hackers-platform-v5-2/raw/master/compressed-core/andrax.r5-build5.tar.xz"
+ANDRAXDIR="$PREFIX/share/andrax"
+ANDRAXTAR="$TMPDIR/andrax.tar.xz"
+
+# Colors
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m'
+
+echo -e "${GREEN}[*] Starting Andrax installation...${NC}"
+
+# Remove previous installation
+if [ -d "$ANDRAXDIR" ]; then
+    echo -e "${GREEN}[*] Removing previous Andrax installation...${NC}"
+    rm -rf "$ANDRAXDIR"
+fi
+
+mkdir -p "$ANDRAXDIR"
+
+# Download with axel only
+echo -e "${GREEN}[*] Downloading Andrax to $TMPDIR using axel...${NC}"
+if ! command -v axel &>/dev/null; then
+    echo -e "${RED}[!] axel is not installed. Please install it first: pkg install axel${NC}"
+    exit 1
+fi
+axel -o "$ANDRAXTAR" "$ANDRAX_URL"
+
+# Extract with proot only (using --link2symlink)
+echo -e "${GREEN}[*] Extracting with proot --link2symlink...${NC}"
+proot --link2symlink tar -xJf "$ANDRAXTAR" -C "$ANDRAXDIR" --exclude='dev'
+
+# Clean up tarball
+rm -f "$ANDRAXTAR"
+
+# Create the launcher (improved version)
+echo -e "${GREEN}[*] Creating 'andrax' launcher...${NC}"
+cat > "$PREFIX/bin/andrax" <<'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+unset LD_PRELOAD
+ANDRAXDIR="$PREFIX/share/andrax"
+exec proot \
+    --link2symlink \
+    --kill-on-exit \
+    -0 \
+    -r "$ANDRAXDIR" \
+    -b /dev \
+    -b /proc \
+    -b /sys \
+    -b /sdcard \
+    -b "$HOME" \
+    -b "$TMPDIR" \
+    -b /system \
+    -b /vendor \
+    -b "$ANDRAXDIR/tmp:/tmp" \
+    -w /root \
+    /usr/bin/env -i \
+        HOME=/root \
+        TERM="$TERM" \
+        LANG="$LANG" \
+        PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin \
+    /bin/zsh --login -c "source /home/andrax/.zshrc 2>/dev/null; andrax; exec su - andrax"
+EOF
+
+chmod +x "$PREFIX/bin/andrax"
+
+echo -e "${GREEN}✅ Installation complete!${NC}"
+echo -e "Run 'andrax' to enter the Andrax environment."
+exit 0

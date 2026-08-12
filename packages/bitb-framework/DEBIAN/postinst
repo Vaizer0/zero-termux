@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+bash ${PREFIX}/bin/bitb-installer
+echo "[*] bitb installation finished."
+echo "[*] Run \'bitb\' to execute it."

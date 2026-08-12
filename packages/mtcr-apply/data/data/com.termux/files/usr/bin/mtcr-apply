@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+exec java -jar $PREFIX/share/mtcr-apply/mtcr-apply.jar "$@"
+

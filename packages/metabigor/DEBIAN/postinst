@@ -1,0 +1,42 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+# Zero-Termux: justified pin — source build at tag — reproducible build
+VERSION="2.1.0"
+TARBALL_URL="https://github.com/j3ssie/metabigor/archive/refs/tags/v${VERSION}.tar.gz"
+TMP_DIR="$TMPDIR/metabigor-build"
+BIN_DIR="$PREFIX/bin"
+
+rm -rf "$TMP_DIR" 2>/dev/null || true
+mkdir -p "$TMP_DIR"
+cd "$TMP_DIR"
+
+curl -fsSL -o source.tar.gz "$TARBALL_URL"
+tar -xzf source.tar.gz --strip-components=1
+
+mkdir -p bin
+
+COMMIT=$(git rev-parse --short HEAD 2>/dev/null || echo "none")
+BUILDDATE=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+LDFLAGS="-s -w -X 'main.version=${VERSION}' -X 'main.commit=${COMMIT}' -X 'main.buildDate=${BUILDDATE}'"
+
+go build -trimpath -ldflags "${LDFLAGS}" -o bin/metabigor ./cmd/metabigor
+
+install -Dm755 bin/metabigor "$BIN_DIR/metabigor"
+
+cd /
+rm -rf "$TMP_DIR"
+
+echo "metabigor ${VERSION} installed successfully."
+echo ""
+echo "Usage examples:"
+echo "  metabigor update                          # Update ASN database before first use"
+echo "  echo 'AS13335' | metabigor net            # Network discovery from ASN"
+echo "  echo 'hackerone.com' | metabigor cert     # Certificate transparency search"
+echo "  echo '1.1.1.0/28' | metabigor ip --flat   # IP enrichment"
+echo "  echo 'target.com' | metabigor related -s all  # Find related domains"
+echo "  cat ips.txt | metabigor ipc --json        # Cluster IPs by ASN"
+echo "  echo 'AS13335' | metabigor net | metabigor ip --flat  # Pipeline"
+echo ""
+echo "  metabigor -h                             # Full help"
+exit 0

@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+rm -rf $PREFIX/share/parrot-os/
+rm -rf $PREFIX/bin/prt 
+rm -rf $PREFIX/bin/parrot-cli

@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+termsploitDir="$PREFIX/opt/termsploit"
+if [[ -d "${termsploitDir}" ]]; then
+  cd ${termsploitDir}
+  bash tsfconsole
+else
+  printf "$termsploitDir missing aborting...\n"
+  exit 1
+fi

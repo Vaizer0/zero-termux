@@ -1,0 +1,17 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+set -e
+
+echo "Building Findomain..."
+
+git clone https://github.com/Findomain/Findomain.git "$TMPDIR/findomain" || exit 1
+cd "$TMPDIR/findomain"
+
+RUSTFLAGS="-C opt-level=z" cargo build --release || exit 1
+
+install -Dm700 -t "$PREFIX/bin" target/release/findomain || exit 1
+
+rm -rf "$TMPDIR/findomain"
+
+echo "Findomain installed successfully."
+exit 0

@@ -1,0 +1,9 @@
+Package: term-helper
+Version: 1.1.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: curl, pv
+Section: utils
+Priority: optional
+Homepage: https://github.com/Anon4You/term-helper
+Description: Terminal command helper and cheatsheet tool

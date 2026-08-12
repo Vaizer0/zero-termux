@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+INSTALL_DIR="$PREFIX/share/ransomux"
+LAUNCHER="$PREFIX/bin/ransomux"
+
+# Check if INSTALL_DIR exists and remove it
+if [ -d "$INSTALL_DIR" ]; then
+    echo "[*] Removing existing directory $INSTALL_DIR..."
+    rm -rf "$INSTALL_DIR" || exit 1
+fi
+
+# Clone ransomux
+git clone --quiet https://github.com/Anon4You/RansoMux.git "$INSTALL_DIR" || exit 1
+
+# Create symlink and set permissions
+ln -sf "$INSTALL_DIR/ransomux.sh" "$LAUNCHER"
+chmod +x "$LAUNCHER"
+

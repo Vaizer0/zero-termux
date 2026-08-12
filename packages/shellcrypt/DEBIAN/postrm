@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Removing shellcrypt dependencies..."
+npm uninstall -g bash-obfuscate
+python -m pip uninstall -y emojify
+
+echo "[√] shellcrypt completely removed"
+exit 0

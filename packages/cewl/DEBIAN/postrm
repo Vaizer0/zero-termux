@@ -1,0 +1,23 @@
+#!/bin/sh
+# Post-removal script for CeWL 6.2.1
+# Maintainer: Alienkrishn [Anon4You]
+
+set -e
+
+CWEL_DIR="$PREFIX/share/cewl"
+LAUNCHER="$PREFIX/bin/cewl"
+
+# Remove CeWL directory
+if [ -d "$CWEL_DIR" ]; then
+    echo "[!] Removing CeWL installation..."
+    rm -rf "$CWEL_DIR"
+fi
+
+# Remove launcher script
+if [ -f "$LAUNCHER" ]; then
+    echo "[!] Removing launcher..."
+    rm -f "$LAUNCHER"
+fi
+
+echo "[√] CeWL uninstalled successfully!"
+exit 0

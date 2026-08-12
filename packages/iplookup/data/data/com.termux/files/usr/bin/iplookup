@@ -1,0 +1,14 @@
+#!/bin/bash
+if [[ ! -z $1 ]]; then
+  clear
+  toilet -f smslant -F border " Ip-lookup "
+  printf "\n\e[32mGetting info please wait...\n" | pv -qL 10
+  curl ip-api.com/$1
+else
+  printf "\a\a
+Iplookup version-1.0.0 Author: Alienkrishn [Anon4You]
+is a simple script to get information of any ipaddress
+
+Usage : iplookup <ip-address>
+Example: iplookup 8.8.8.8 "
+fi

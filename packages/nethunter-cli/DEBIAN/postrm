@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+rm -rf $PREFIX/share/NETHUNTER_ROOTLESS
+rm -rf $PREFIX/bin/nh 
+rm -rf $PREFIX/bin/nethunter

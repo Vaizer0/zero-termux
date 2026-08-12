@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling Zen-C...${NC}"
+
+# Remove installed files
+rm -f $PREFIX/bin/zc
+rm -f $PREFIX/share/man/man1/zc.1 2>/dev/null
+rm -rf $PREFIX/share/zenc
+
+# Clean temporary build directory
+rm -rf $TMPDIR/zen-c 2>/dev/null
+
+echo -e "${GREEN}Zen-C completely removed${NC}"
+exit 0

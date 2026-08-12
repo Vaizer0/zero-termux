@@ -1,0 +1,49 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+# Zero-Termux: rolling version — resolve latest GitHub release at install time
+VERSION="$(curl -fsSL 'https://api.github.com/repos/cronitorio/cronitor-cli/releases/latest' 2>/dev/null | grep '"tag_name"' | cut -d'"' -f4)"
+[ -n "$VERSION" ] || { echo -e "${RED}Error: failed to resolve latest cronitor-cli release.${NC}" >&2; exit 1; }
+
+echo -e "${GREEN}Installing CronitorCLI $VERSION...${NC}"
+
+ARCH=$(uname -m)
+case $ARCH in
+    aarch64) ARCH_TYPE="arm64" ;;
+    arm*) ARCH_TYPE="arm" ;;
+    x86_64) ARCH_TYPE="amd64" ;;
+    *)
+        echo -e "${RED}Error: Unsupported architecture: $ARCH${NC}"
+        exit 1
+        ;;
+esac
+
+echo -e "${YELLOW}Detected architecture: $ARCH ($ARCH_TYPE)${NC}"
+
+DOWNLOAD_URL="https://github.com/cronitorio/cronitor-cli/releases/download/$VERSION/linux_${ARCH_TYPE}.tar.gz"
+
+curl -L -o $TMPDIR/cronitor.tar.gz $DOWNLOAD_URL || {
+    echo -e "${RED}Error: Failed to download CronitorCLI binary.${NC}"
+    exit 1
+}
+
+tar xvf $TMPDIR/cronitor.tar.gz -C $PREFIX/bin || {
+    echo -e "${RED}Error: Failed to extract CronitorCLI.${NC}"
+    exit 1
+}
+
+chmod +x $PREFIX/bin/cronitor
+
+rm -f $TMPDIR/cronitor.tar.gz
+
+echo -e "${GREEN}CronitorCLI installed successfully!${NC}"
+echo -e "${YELLOW}Usage:${NC}"
+echo "  cronitor --help"
+echo "  cronitor ping [monitor-code]"
+echo "  cronitor monitor list"
+echo "  cronitor job run [command]"
+exit 0

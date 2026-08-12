@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Removing evilginx..."
+rm -rf "$PREFIX/share/evilginx"
+rm -f "$PREFIX/bin/evilginx"
+
+echo "[√] evilginx completely removed"
+exit 0

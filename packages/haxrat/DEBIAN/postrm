@@ -1,0 +1,9 @@
+# postrm
+#!/data/data/com.termux/files/usr/bin/bash
+
+rm -f "$PREFIX/bin/haxrat"
+rm -rf "$PREFIX/share/haxrat"
+rm -rf "$HOME/haxrat"
+
+echo "HaxRat completely removed."
+exit 0

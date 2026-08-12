@@ -1,0 +1,30 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+DRSHELL_DIR="$PREFIX/share/drshell"
+LAUNCHER="$PREFIX/bin/drshell"
+
+echo "[+] Setting up DrShell (Reverse Shell Manager)..."
+[ -d "$DRSHELL_DIR" ] && rm -rf "$DRSHELL_DIR"
+
+echo "[+] Cloning repository..."
+git clone --depth 1 --quiet https://github.com/DrDataYE/DrShell.git "$DRSHELL_DIR"
+
+echo "[+] Installing dependencies..."
+cd "$DRSHELL_DIR"
+if ! python3 -m pip install --user -r requirements.txt; then
+    echo "[!] Failed to install Python dependencies" >&2
+    exit 1
+fi
+
+echo "[+] Creating launcher..."
+cat > "$LAUNCHER" <<EOF
+#!/data/data/com.termux/files/usr/bin/bash
+cd "$DRSHELL_DIR" && python3 main.py "\$@"
+EOF
+chmod 755 "$LAUNCHER"
+
+echo -e "\n[√] Installation successful!"
+echo "Usage:"
+echo "  drshell -h        Show help menu"
+exit 0

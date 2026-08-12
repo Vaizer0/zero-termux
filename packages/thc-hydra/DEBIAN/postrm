@@ -1,0 +1,16 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+rm -f $PREFIX/bin/hydra
+rm -f $PREFIX/bin/hydra-wizard.sh
+rm -f $PREFIX/bin/pw-inspector
+rm -f $PREFIX/bin/dpl4hydra.sh
+rm -f $PREFIX/bin/xhydra
+rm -f $PREFIX/etc/hydra*.csv
+rm -f $PREFIX/share/man/man1/hydra.1
+rm -f $PREFIX/share/man/man1/xhydra.1
+rm -f $PREFIX/share/man/man1/pw-inspector.1
+rm -f $PREFIX/share/pixmaps/xhydra.png
+rm -f $PREFIX/share/applications/xhydra.desktop
+rm -f $HOME/hydra.restore
+
+echo "THC-Hydra removed."

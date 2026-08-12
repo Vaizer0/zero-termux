@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling InstaGhost...${NC}"
+
+# Uninstall InstaGhost
+pip uninstall -y InstaGhost 2>/dev/null || {
+    echo -e "${YELLOW}InstaGhost not found or already uninstalled.${NC}"
+}
+
+echo -e "${GREEN}InstaGhost completely removed${NC}"
+exit 0

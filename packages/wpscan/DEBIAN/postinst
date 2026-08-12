@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+gem install wpscan
+
+echo "WPScan installed successfully."
+echo ""
+echo "Usage examples:"
+echo "  wpscan --url https://example.com"
+echo "  wpscan --url https://example.com --enumerate p,t,u"
+echo "  wpscan --url https://example.com --api-token API_KEY"
+exit 0

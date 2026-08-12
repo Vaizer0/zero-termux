@@ -1,0 +1,12 @@
+Package: termuxfetch
+Version: 2.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: bash
+Section: utils
+Priority: optional
+Description: Neofetch‑like system information tool for Termux
+ termuxfetch displays a colourful ASCII art banner along with
+ essential system information: Android version, Termux version,
+ kernel, device model, uptime, package count, CPU, memory, shell,
+ and architecture – all in a compact terminal output.

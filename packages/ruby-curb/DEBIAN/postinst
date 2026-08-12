@@ -1,0 +1,24 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+SITE_RUBY="$PREFIX/lib/ruby/site_ruby/3.4.0"
+
+cd "$TMPDIR"
+gem fetch curb
+GEM_FILE=$(ls curb-*.gem | head -n1)
+gem unpack "$GEM_FILE"
+DIR_NAME=$(ls -d curb-*/ | head -n1)
+cd "${DIR_NAME}ext"
+sed -i 's/unless PARALLEL_CONSTANT_CHECKS/return; unless PARALLEL_CONSTANT_CHECKS/' extconf.rb
+ruby extconf.rb --with-curl-lib="$PREFIX/lib" --with-curl-include="$PREFIX/include"
+make
+make install
+
+cd ..
+mkdir -p "$SITE_RUBY"
+cp -r lib/* "$SITE_RUBY/"
+cp ext/curb_core.so "$SITE_RUBY/"
+
+cd "$TMPDIR"
+rm -rf "$GEM_FILE" "$DIR_NAME"
+exit 0

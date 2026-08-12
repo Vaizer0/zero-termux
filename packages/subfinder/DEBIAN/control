@@ -1,0 +1,12 @@
+Package: subfinder
+Version: 2.14.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, golang
+Section: recon
+Priority: optional
+Homepage: https://github.com/projectdiscovery/subfinder
+Description: Fast passive subdomain enumeration tool
+ Subfinder is a subdomain discovery tool that uses passive sources
+ (certificate transparency, DNS data, search engines, etc.) to find
+ valid subdomains for a target domain.

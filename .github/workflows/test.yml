@@ -1,0 +1,46 @@
+name: Test
+
+on:
+  push:
+    branches: [ main, 'feature/**' ]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Shell syntax validation (bash -n)
+        run: |
+          set -e
+          find core scripts -type f -name '*.sh' -print0 | xargs -0 -n1 bash -n
+          bash -n install.sh
+          for f in packages/*/DEBIAN/preinst packages/*/DEBIAN/postinst packages/*/DEBIAN/prerm packages/*/DEBIAN/postrm; do
+            [ -f "$f" ] || continue
+            if head -1 "$f" | grep -q 'bash'; then bash -n "$f"; fi
+          done
+          find packages -path '*/data/*' -name '*.sh' -print0 | xargs -0 -n1 bash -n
+          echo "All shell scripts pass bash -n"
+
+      - name: Package metadata validation
+        run: bash scripts/validation/validate-packages.sh
+
+      - name: Branding regression check
+        run: bash scripts/validation/branding-check.sh
+
+      - name: Version-pin regression check
+        run: bash scripts/validation/version-pin-check.sh
+
+      - name: Stale URL audit
+        run: bash scripts/validation/stale-url-check.sh
+
+      - name: Landing page checks
+        run: |
+          set -e
+          for anchor in install features modules lang db ai editor dev npm shell ui auto tools docs; do
+            grep -q "id=\"$anchor\"" site/index.html || { echo "Missing anchor: $anchor"; exit 1; }
+          done
+          grep -q 'raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh' site/index.html || { echo "Install command missing"; exit 1; }
+          echo "Landing page checks OK"

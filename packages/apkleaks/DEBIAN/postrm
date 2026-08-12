@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+pip uninstall -y apkleaks 2>/dev/null || true
+exit 0

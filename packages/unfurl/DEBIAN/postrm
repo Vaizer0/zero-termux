@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Remove binary and symlink
+rm -f "$HOME/go/bin/unfurl" "$PREFIX/bin/unfurl"
+
+exit 0

@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+go install -trimpath -ldflags "-w -s" github.com/projectdiscovery/katana/cmd/katana@latest
+if [ ! -f "$PREFIX/bin/katana" ] && [ -f "$HOME/go/bin/katana" ]; then
+    ln -sf "$HOME/go/bin/katana" "$PREFIX/bin/katana"
+fi
+exit 0

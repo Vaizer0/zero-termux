@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+rm -rf $PREFIX/var/lib/termux_penv

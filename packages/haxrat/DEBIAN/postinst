@@ -1,0 +1,21 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "Installing HaxRat..."
+
+INSTALL_DIR="$PREFIX/share/haxrat"
+rm -rf "$INSTALL_DIR"
+
+git clone https://github.com/Anon4You/haxRat.git "$INSTALL_DIR" || exit 1
+cd "$INSTALL_DIR/server" && npm install || exit 1
+
+mkdir -p "$PREFIX/bin"
+cat > "$PREFIX/bin/haxrat" << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+cd "$PREFIX/share/haxrat/server"
+exec node index.js "$@"
+EOF
+chmod +x "$PREFIX/bin/haxrat"
+
+echo "HaxRat installed successfully."
+echo "Default login: admin / admin"
+exit 0

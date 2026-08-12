@@ -1,0 +1,12 @@
+Package: pairip
+Version: 1.3.10
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: openjdk-21
+Section: utils
+Priority: optional
+Homepage: https://telegram.me/NullRE_Channel
+Description: PairIP Protection Removal Tool
+ PairIP patcher tool that supports latest PairIP protection.
+ Used to remove latest PairIP protection from Android applications
+ for security research and reverse engineering purposes.

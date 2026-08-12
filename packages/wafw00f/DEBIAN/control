@@ -1,0 +1,14 @@
+Package: wafw00f
+Version: 2.3.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: python, python-pip
+Section: security
+Priority: optional
+Homepage: https://github.com/EnableSecurity/wafw00f
+Description: Web Application Firewall detection tool
+ Identify and fingerprint Web Application Firewalls with:
+ - 150+ WAF detection signatures
+ - HTTP request analysis
+ - Custom plugin support
+ - Evasion technique testing

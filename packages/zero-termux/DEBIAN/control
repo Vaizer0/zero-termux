@@ -1,0 +1,11 @@
+Package: zero-termux
+Version: 2.0.7
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: curl, termux-tools
+Section: utils
+Priority: optional
+Homepage: https://github.com/Vaizer0/zero-termux
+Description: Zero-Termux package manager and system helper
+ Official package manager for the Zero-Termux repository with utilities
+ for package management, system updates, and maintenance tasks.

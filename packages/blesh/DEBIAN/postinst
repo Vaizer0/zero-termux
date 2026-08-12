@@ -1,0 +1,14 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+REPO_URL="https://github.com/akinomyoga/ble.sh.git"
+WORKDIR="$TMPDIR/ble.sh"
+
+git clone -q --recursive --depth 1 --shallow-submodules "$REPO_URL" "$WORKDIR"
+
+sed -i '/^function ble\/util\/notify-broken-locale {/a\    return 0' $WORKDIR/src/util.sh
+
+make -C $WORKDIR install PREFIX=$PREFIX
+chmod +x $PREFIX/share/blesh/ble.sh
+ln -sf $PREFIX/share/blesh/ble.sh $PREFIX/bin/blesh
+rm -rf "$WORKDIR"
+

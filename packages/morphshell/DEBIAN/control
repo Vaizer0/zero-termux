@@ -1,0 +1,13 @@
+Package: morphshell
+Version: 2.0.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, tte, eza, starship, fish, bat
+Section: shell
+Priority: optional
+Homepage: https://github.com/termuxvoid/MorphShell
+Description: Sleek Termux Shell Environment with Dynamic Themes
+ MorphShell provides a sophisticated Termux shell experience with
+ intelligent prompts, syntax highlighting, and dynamic animated
+ banners that change each session. Features enhanced terminal
+ aesthetics and productivity tools for shell customization.

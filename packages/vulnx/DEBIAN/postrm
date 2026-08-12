@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+rm -f "$HOME/go/bin/vulnx" "$PREFIX/bin/vulnx"
+exit 0

@@ -1,0 +1,11 @@
+Package: emailcrawl
+Version: 1.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: python, python-lxml
+Section: utils
+Priority: optional
+Homepage: https://github.com/techenthusiast167/EMAIL-CRAWL
+Description: Professional-grade OSINT email extraction tool
+ EmailCrawl performs comprehensive web crawling to extract email addresses
+ for cybersecurity professionals, penetration testers, and analysts.

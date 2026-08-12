@@ -1,0 +1,14 @@
+Package: setoolkit
+Version: 8.0.3+git20241021-0kali1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: proot, tar, axel, nethunter-cli
+Section: security
+Priority: optional
+Homepage: https://github.com/trustedsec/social-engineer-toolkit
+Description: Social Engineering Toolkit
+ Open-source penetration testing framework featuring:
+ - Social engineering attacks
+ - Phishing campaign management
+ - Credential harvesting
+ - Multi-vector attack support

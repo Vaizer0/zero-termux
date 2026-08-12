@@ -1,0 +1,14 @@
+Package: pywhat
+Version: 5.1.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: python, python-pip
+Section: utils
+Priority: optional
+Homepage: https://github.com/bee-san/pyWhat
+Description: Identify anything - text analysis tool
+ Powerful text analysis and identification featuring:
+ - Regex pattern matching
+ - File format detection
+ - API key identification
+ - Data type recognition

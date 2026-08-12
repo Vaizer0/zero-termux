@@ -1,0 +1,9 @@
+Package: drshell
+Version: 1.0.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, openssh
+Section: net
+Priority: optional
+Homepage: https://github.com/DrDataYE/DrShell
+Description: Reverse Shell Session Manager

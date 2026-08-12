@@ -1,0 +1,11 @@
+Package: gophish
+Version: 0.12.1-zero-termux
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, golang, build-essential, sqlite
+Section: net
+Priority: optional
+Homepage: https://getgophish.com/
+Description: Open-source phishing framework
+ Gophish is a powerful and easy-to-use phishing toolkit designed for
+ security professionals to run phishing campaigns and track results.

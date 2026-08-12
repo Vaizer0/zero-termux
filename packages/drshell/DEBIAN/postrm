@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Removing DrShell..."
+rm -rf "$PREFIX/share/drshell" 2>/dev/null || true
+rm -f "$PREFIX/bin/drshell" 2>/dev/null || true
+
+echo "[*] Cleaning dependencies..."
+python3 -m pip uninstall -y -r "$PREFIX/share/drshell/requirements.txt" 2>/dev/null || true
+
+echo "[√] Uninstallation complete"
+exit 0

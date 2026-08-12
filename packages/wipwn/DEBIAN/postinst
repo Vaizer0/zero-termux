@@ -1,0 +1,32 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+set -e
+
+echo "Installing WiPWN..."
+
+INSTALL_DIR="$PREFIX/share/wipwn"
+
+# Remove old directory (if present)
+rm -rf "$INSTALL_DIR"
+
+# Clone the repository
+git clone https://github.com/anbuinfosec/wipwn.git "$INSTALL_DIR" || exit 1
+
+# Create launcher
+mkdir -p "$PREFIX/bin"
+cat > "$PREFIX/bin/wipwn" << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+cd "$PREFIX/share/wipwn"
+exec sudo python3 main.py "$@"
+EOF
+chmod +x "$PREFIX/bin/wipwn"
+
+echo
+echo "NOTE: This tool requires a rooted Android device."
+echo "Usage examples:"
+echo "  wipwn -i wlan0            # List WPS‑enabled APs on interface wlan0"
+echo "  wipwn -i wlan0 -K         # Perform Pixie Dust attack"
+echo "  wipwn -i wlan0 -b 00:11:22:33:44:55 -K"
+echo
+echo "WiPWN installation finished."
+exit 0

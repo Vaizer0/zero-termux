@@ -1,0 +1,11 @@
+Package: ruby-nokogiri
+Version: 1.19.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: ruby, pkg-config, libxml2, libxslt, gumbo-parser, gumbo-parser-static
+Section: libs
+Priority: optional
+Homepage: https://nokogiri.org/
+Description: Ruby gem for HTML/XML parsing (system libraries version)
+ Nokogiri is an HTML/XML parser for Ruby that uses system libraries.
+ This package ensures proper installation with Termux's libraries.

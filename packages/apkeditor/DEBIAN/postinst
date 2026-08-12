@@ -1,0 +1,31 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+INSTALL_DIR="$PREFIX/share/apkeditor"
+LAUNCHER="$PREFIX/bin/apkeditor"
+# Zero-Termux: rolling version — resolve latest GitHub release at install time
+APKEDITOR_VERSION="$(curl -fsSL 'https://api.github.com/repos/REAndroid/APKEditor/releases/latest' 2>/dev/null | grep '"tag_name"' | cut -d'"' -f4 | sed 's/^[vV]//')"
+[ -n "$APKEDITOR_VERSION" ] || { echo 'Error: failed to resolve latest APKEditor release' >&2; exit 1; }
+JAR_URL="https://github.com/REAndroid/APKEditor/releases/download/V${APKEDITOR_VERSION}/APKEditor-${APKEDITOR_VERSION}.jar"
+
+echo "[*] Setting up APKEditor..."
+mkdir -p "$INSTALL_DIR" && cd "$INSTALL_DIR" || exit 1
+
+echo "[*] Downloading JAR..."
+wget -q --show-progress "$JAR_URL" -O APKEditor.jar || {
+    echo -e "\n[!] Download failed. Possible fixes:"
+    echo "    1. Check internet connection"
+    echo "    2. Run: pkg install wget"
+    echo "    3. Try manual download: $JAR_URL"
+    exit 1
+}
+
+echo "[*] Creating launcher..."
+cat > "$LAUNCHER" <<EOF
+#!/data/data/com.termux/files/usr/bin/bash
+exec java -jar "$INSTALL_DIR/APKEditor.jar" "\$@"
+EOF
+
+chmod +x "$LAUNCHER" && echo -e "\n[+] APKEditor ready! Usage:\n  apkeditor -h" || {
+    echo "[!] Launcher creation failed"
+    exit 1
+}

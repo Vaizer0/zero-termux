@@ -1,0 +1,191 @@
+#!/usr/bin/env bash
+
+RED='\e[1;31m'
+GREEN='\e[1;32m'
+YELLOW='\e[1;33m'
+CYAN='\e[1;36m'
+NC='\e[0m'
+
+THEME_DIR="$TMPDIR/TermuxVoid-Theme"
+CONFIG_DIR="$HOME/.config"
+TERMUX_DIR="$HOME/.termux"
+BANNER_CONFIGURED=false
+SCRIPT_NAME=$(basename "$0")
+
+show_header() {
+    clear
+    echo -e "${CYAN}Zero-Termux Theme Installer v3.3${NC}"
+    echo -e "${GREEN}Professional terminal customization for Termux${NC}\n"
+    echo -e "${YELLOW}This script will:${NC}"
+    echo -e " • Install Fish shell and set as default"
+    echo -e " • Configure Starship prompt"
+    echo -e " • Set up Termux color scheme"
+    echo -e " • Optionally configure custom banner"
+    echo -e " • Modify MOTD display"
+    echo -e " • Clean up after installation\n"
+}
+
+cleanup() {
+    echo -e "${YELLOW}[*] Cleaning up installation files...${NC}"
+    if [ -d "$THEME_DIR" ]; then
+        rm -rf "$THEME_DIR"
+        echo -e "${GREEN}[+] Removed theme repository${NC}"
+    fi
+}
+
+set_fish_shell() {
+    current_shell=$(basename "$SHELL")
+    if [ "$current_shell" != "fish" ]; then
+        echo -e "${YELLOW}[*] Changing shell to Fish...${NC}"
+        if chsh -s fish &>/dev/null; then
+            echo -e "${GREEN}[+] Default shell changed to Fish${NC}"
+        else
+            echo fazem -e "${RED}[!] Failed to change shell${NC}"
+            exit 1
+        fi
+    else
+        echo -e "${GREEN}[✓] Fish is already the default shell${NC}"
+    fi
+}
+
+fetch_theme() {
+    echo -e "${YELLOW}[*] Downloading theme repository...${NC}"
+    [ -d "$THEME_DIR" ] && rm -rf "$THEME_DIR"
+    if git clone --depth=1 --quiet https://github.com/termuxvoid/TermuxVoid-Theme.git "$THEME_DIR"; then
+        echo -e "${GREEN}[+] Theme repository cloned successfully${NC}"
+    else
+        echo -e "${RED}[!] Failed to clone repository${NC}"
+        echo -e "${YELLOW}Please check your internet connection and try again.${NC}"
+        exit 1
+    fi
+}
+
+customize_prompt() {
+    read -p "$(echo -e "${CYAN}Enter your name for prompt (blank for default 'Zero-Termux'): ${NC}")" username
+    if [ -n "$username" ]; then
+        if sed -i "s/TermuxVoid/$username/g" "$THEME_DIR/assets/starship.toml"; then
+            echo -e "${GREEN}[+] Prompt customized with your name${NC}"
+        else
+            echo -e "${RED}[!] Failed to customize prompt${NC}"
+        fi
+    else
+        echo -e "${YELLOW}[*] Using default prompt name${NC}"
+    fi
+}
+
+setup_banner() {
+    read -p "$(echo -e "${CYAN}Configure custom banner? [y/N]: ${NC}")" banner_choice
+    if [[ "$banner_choice" =~ ^[Yy]$ ]]; then
+        BANNER_CONFIGURED=true
+        read -p "$(echo -e "${YELLOW}Enter custom banner path or blank for default: ${NC}")" banner_path
+        mkdir -p "$TERMUX_DIR"
+        if [ -z "$banner_path" ]; then
+            if [ -f "$THEME_DIR/assets/tvr.png" ]; then
+                if cp "$THEME_DIR/assets/tvr.png" "$TERMUX_DIR/"; then
+                    banner_path="$TERMUX_DIR/tvr.png"
+                    echo -e "${GREEN}[+] Using default banner${NC}"
+                else
+                    echo -e "${RED}[!] Failed to copy default banner${NC}"
+                    return
+                fi
+            fi
+        elif [ -f "$banner_path" ]; then
+            if cp "$banner_path" "$TERMUX_DIR/tvr.png"; then
+                banner_path="$TERMUX_DIR/tvr.png"
+                echo -e "${GREEN}[+] Using custom banner${NC}"
+            else
+                echo -e "${RED}[!] Failed to copy custom banner${NC}"
+                return
+            fi
+        else
+            echo -e "${RED}[!] File not found: $banner_path${NC}"
+            return
+        fi
+        if [ -f "$banner_path" ]; then
+            [ -f "$PREFIX/etc/motd" ] && rm -f "$PREFIX/etc/motd"
+            if [ -f "$THEME_DIR/assets/wlcm.sh" ]; then
+                if cp "$THEME_DIR/assets/wlcm.sh" "$TERMUX_DIR/" && chmod +x "$TERMUX_DIR/wlcm.sh"; then
+                    echo -e "${GREEN}[+] Installed welcome script to $TERMUX_DIR/wlcm.sh${NC}"
+                    if sed -i "s|#logo|bash ~/.termux/wlcm.sh\njp2a -f --colors '$banner_path'|g" "$THEME_DIR/assets/config.fish"; then
+                        echo -e "${GREEN}[+] Configured Fish to display banner${NC}"
+                    else
+                        echo -e "${RED}[!] Failed to configure Fish banner display${NC}"
+                    fi
+                else
+                    echo -e "${RED}[!] Failed to install welcome script${NC}"
+                fi
+            else
+                echo -e "${RED}[!] wlcm.sh not found in theme assets${NC}"
+            fi
+        fi
+    else
+        if [ -f "$PREFIX/etc/motd" ]; then
+            if sed -i 's/Welcome to Termux!/Welcome to Zero-Termux!/g' "$PREFIX/etc/motd"; then
+                echo -e "${GREEN}[+] Modified welcome message in motd${NC}"
+            else
+                echo -e "${RED}[!] Failed to modify welcome message${NC}"
+            fi
+            if sed -i 's|Report issues at https://termux.dev/issues|Zero-Termux https://github.com/Vaizer0/zero-termux|g' "$PREFIX/etc/motd"; then
+                echo -e "${GREEN}[+] Modified issue reporting URL in motd${NC}"
+            else
+                echo -e "${RED}[!] Failed to modify issue reporting URL${NC}"
+            fi
+        else
+            echo -e "${YELLOW}[!] motd file not found${NC}"
+        fi
+    fi
+}
+
+install_files() {
+    echo -e "${YELLOW}[*] Installing configuration files...${NC}"
+    mkdir -p "$CONFIG_DIR/fish" "$TERMUX_DIR" "$CONFIG_DIR"
+    if cp "$THEME_DIR/assets/config.fish" "$CONFIG_DIR/fish/"; then
+        echo -e "${GREEN}[+] Fish configuration installed${NC}"
+    else
+        echo -e "${RED}[!] Failed to install Fish configuration${NC}"
+    fi
+    if cp "$THEME_DIR/assets/starship.toml" "$CONFIG_DIR/"; then
+        echo -e "${GREEN}[+] Starship configuration installed${NC}"
+    else
+        echo -e "${RED}[!] Failed to install Starship configuration${NC}"
+    fi
+    if cp "$THEME_DIR/assets/colors.properties" "$TERMUX_DIR/"; then
+        echo -e "${GREEN}[+] Termux color scheme installed${NC}"
+    else
+        echo -e "${RED}[!] Failed to install color scheme${NC}"
+    fi
+    if cp "$THEME_DIR/assets/font.ttf" "$TERMUX_DIR/"; then
+        echo -e "${GREEN}[+] Termux font installed${NC}"
+    else
+        echo -e "${RED}[!] Failed to install font${NC}"
+    fi
+}
+
+complete_installation() {
+    echo -e "\n${GREEN}============================================${NC}"
+    echo -e "${GREEN}[✓] Installation completed successfully!${NC}"
+    echo -e "${GREEN}============================================${NC}"
+    echo -e "\n${RED}IMPORTANT:${NC}"
+    echo -e "1. Fully close the Termux app"
+    echo -e "2. Reopen Termux to apply changes\n"
+    echo -e "${YELLOW}Notes:${NC}"
+    echo -e "- Default shell changed to Fish"
+    echo -e "- Starship prompt configured"
+    echo -e "- Color scheme and font installed"
+    if [ "$BANNER_CONFIGURED" = true ]; then
+        echo -e "- Custom banner configured (requires jp2a)"
+        echo -e "- Welcome script installed to ~/.termux/wlcm.sh"
+    else
+        echo -e "- MOTD message modified"
+    fi
+    cleanup
+    read -p "$(echo -e "\n${CYAN}Press Enter to exit...${NC}")"
+}
+
+show_header
+set_fish_shell
+fetch_theme
+customize_prompt
+setup_banner
+install_files
+complete_installation

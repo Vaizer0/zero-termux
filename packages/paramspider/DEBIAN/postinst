@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+PARAMSPIDER_DIR="$PREFIX/share/paramspider"
+
+echo "[*] Installing ParamSpider 1.0.1..."
+[ -d "$PARAMSPIDER_DIR" ] && { echo "[*] Removing old installation..."; rm -rf "$PARAMSPIDER_DIR"; }
+
+echo "[*] Cloning repository..."
+git clone --depth=1 https://github.com/devanshbatham/paramspider.git "$PARAMSPIDER_DIR"
+
+echo "[*] Installing Python package..."
+cd "$PARAMSPIDER_DIR"
+pip install .
+
+echo -e "\n[√] ParamSpider installed successfully!"
+echo "Usage:"
+echo "  python -m paramspider -d example.com"
+echo "  paramspider -d example.com"
+echo ""
+echo "Example: paramspider -d example.com"
+exit 0

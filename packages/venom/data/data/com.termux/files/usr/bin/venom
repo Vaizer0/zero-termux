@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+venomDir="$PREFIX/var/venom"
+if [[ -d "${venomDir}" ]]; then
+  cd ${venomDir}
+  bash venom.sh
+else
+  printf "VEMOM path missing aborting...\n"
+  exit 1
+fi
+

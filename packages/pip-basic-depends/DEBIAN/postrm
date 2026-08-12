@@ -1,0 +1,16 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Removing pip-basic-depends...${NC}"
+
+# Note: We don't uninstall the Python tools as they might be used by other packages
+echo -e "${YELLOW}Note: Python packaging tools (setuptools, wheel, etc.) remain installed.${NC}"
+echo -e "${YELLOW}They are considered system utilities and won't be removed.${NC}"
+
+echo -e "${GREEN}pip-basic-depends package removed${NC}"
+echo -e "${YELLOW}Build dependencies (compilers, libraries) remain installed.${NC}"
+exit 0

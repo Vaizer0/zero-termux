@@ -1,0 +1,14 @@
+Package: ghosttrack
+Version: 1.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, python-pip
+Section: recon
+Priority: optional
+Homepage: https://github.com/HunxByts/GhostTrack
+Description: Advanced tracking and reconnaissance tool
+ OSINT and tracking tool featuring:
+ - IP address tracking
+ - Geolocation services
+ - Social media reconnaissance
+ - Data correlation analysis

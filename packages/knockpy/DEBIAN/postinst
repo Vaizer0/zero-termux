@@ -1,0 +1,17 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing knockpy 7.0.2...${NC}"
+pip install knock-subdomains || {
+    echo -e "${RED}Error: Failed to install knock-subdomains. Ensure pip is available.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}knockpy installed successfully!${NC}"
+echo "Usage:"
+echo "  knockpy --help        # Show help menu"
+echo "  knockpy -d example.com   # Enumerate subdomains"
+exit 0

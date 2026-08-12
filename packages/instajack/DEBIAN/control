@@ -1,0 +1,7 @@
+Package: instajack
+Version: 1.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: python,python-pip
+Installed-Size: 1
+Description: Instagram old account jacker

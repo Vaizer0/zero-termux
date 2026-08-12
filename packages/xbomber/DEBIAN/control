@@ -1,0 +1,13 @@
+Package: xbomber
+Version: 2.0.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, curl
+Section: utils
+Priority: optional
+Homepage: https://github.com/Anon4You/XBomber
+Description: A High-Performance SMS Bombing Tool for Educational Testing
+   XBomber is a lightweight Python script designed to test the resilience of SMS gateways by sending a high volume of messages.
+   It is optimized for the Termux environment on Android, providing a portable solution for security researchers and penetration testers.
+
+

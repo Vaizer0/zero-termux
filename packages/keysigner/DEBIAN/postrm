@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/sh
+
+echo "Removing Keysigner Python package..."
+pip uninstall -y keysigner
+
+echo "Keysigner removal complete!"

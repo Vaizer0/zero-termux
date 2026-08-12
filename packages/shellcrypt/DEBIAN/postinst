@@ -1,0 +1,17 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Installing shellcrypt dependencies..."
+npm install -g bash-obfuscate
+python -m pip install emojify
+
+echo "shellcrypt installed successfully!"
+echo ""
+echo "Usage:"
+echo "  shellcrypt --help        # Show help menu"
+echo "  shellcrypt script.sh     # Obfuscate Bash script"
+echo "  shellcrypt script.py     # Encrypt Python script"
+echo "  shellcrypt -d file       # Decode obfuscated file"
+echo ""
+echo "Features: Dual language support for Bash & Python"
+exit 0

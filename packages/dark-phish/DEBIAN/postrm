@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+rm -f "$PREFIX/bin/dark-phish"
+rm -rf "$PREFIX/share/dark-phish"
+
+echo "Dark-Phish completely removed."
+exit 0

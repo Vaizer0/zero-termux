@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Removing OWASP ZAP..."
+rm -rf "$PREFIX/share/zaproxy"
+rm -f "$PREFIX/bin/zaproxy"
+rm -f "$PREFIX/share/applications/zaproxy.desktop"
+
+echo "[√] ZAP completely removed"
+exit 0

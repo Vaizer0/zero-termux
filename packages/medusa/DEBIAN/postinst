@@ -1,0 +1,82 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+REPO="https://github.com/jmk-foofus/medusa.git"
+TMP_DIR="${TMPDIR:-/tmp}/medusa-build"
+PREFIX=${PREFIX:-/data/data/com.termux/files/usr}
+
+rm -rf "$TMP_DIR" 2>/dev/null || true
+
+git clone --depth 1 "$REPO" "$TMP_DIR"
+cd "$TMP_DIR"
+
+export CPPFLAGS="-I$PREFIX/include"
+export LDFLAGS="-L$PREFIX/lib"
+
+./configure --prefix="$PREFIX"
+
+find . -name "Makefile" -o -name "Makefile.in" | while read f; do
+    sed -i 's/aclocal-1\.17/aclocal/g; s/automake-1\.17/automake/g' "$f"
+done
+
+find src -name "*.c" -exec sed -i 's/index(/strchr(/g' {} \;
+
+cat > pthread_fix.h << 'EOF'
+#include <pthread.h>
+#ifndef PTHREAD_CANCEL_DEFERRED
+#define PTHREAD_CANCEL_DEFERRED  0
+#define PTHREAD_CANCEL_ENABLE    0
+#define PTHREAD_CANCEL_DISABLE   1
+#define PTHREAD_CANCEL_ASYNCHRONOUS  1
+extern int pthread_setcanceltype(int type, int *oldtype);
+extern int pthread_setcancelstate(int state, int *oldstate);
+extern int pthread_cancel(pthread_t thread);
+extern int pthread_attr_getinheritsched(const pthread_attr_t *attr, int *inherit);
+extern int pthread_attr_setinheritsched(pthread_attr_t *attr, int inherit);
+#endif
+EOF
+
+find src -name "*.c" -exec grep -l "pthread_" {} \; | while read f; do
+    if ! grep -q '#include "pthread_fix.h"' "$f"; then
+        sed -i '1i #include "pthread_fix.h"' "$f"
+    fi
+done
+
+cat > src/pthread_stubs.c << 'EOF'
+#include <pthread.h>
+int pthread_cancel(pthread_t thread) { return 0; }
+int pthread_setcanceltype(int type, int *oldtype) { if (oldtype) *oldtype = 0; return 0; }
+int pthread_setcancelstate(int state, int *oldstate) { if (oldstate) *oldstate = 0; return 0; }
+int pthread_attr_getinheritsched(const pthread_attr_t *attr, int *inherit) { *inherit = 0; return 0; }
+int pthread_attr_setinheritsched(pthread_attr_t *attr, int inherit) { return 0; }
+EOF
+
+gcc -c src/pthread_stubs.c -o src/pthread_stubs.o
+
+sed -i 's/^CFLAGS = /CFLAGS = -include pthread_fix.h -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -D_GNU_SOURCE /' src/Makefile
+
+make || true
+
+cd src
+gcc -std=gnu23 -include ../pthread_fix.h \
+    -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -D_GNU_SOURCE \
+    -g -O2 -rdynamic -o medusa \
+    listModules.o medusa.o medusa-thread-pool.o medusa-thread-ssl.o \
+    medusa-net.o medusa-trace.o medusa-utils.o pthread_stubs.o \
+    -ldl -lpthread -lssl -lcrypto -lssl -lcrypto \
+    -lgcrypt -lgnutls -ldl -lrt -lm
+cd ..
+
+make install
+
+cd /
+rm -rf "$TMP_DIR"
+
+echo "Medusa installed successfully."
+echo ""
+echo "Usage examples:"
+echo "  medusa -h                              # Show help"
+echo "  medusa -M ssh -h 192.168.1.1 -U users.txt -P pass.txt"
+echo "  medusa -M ftp -h target.com -u admin -P wordlist.txt"
+echo "  medusa -M http -h 192.168.1.1 -u admin -P pass.txt -m DIR:/admin"
+exit 0

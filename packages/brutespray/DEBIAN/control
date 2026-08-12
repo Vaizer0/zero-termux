@@ -1,0 +1,14 @@
+Package: brutespray
+Version: 2.6.3
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: golang, git
+Section: security
+Priority: optional
+Homepage: https://github.com/x90skysn3k/brutespray
+Description: Brute-force attacks from Nmap output
+ Automate brute-force attacks with:
+ - Nmap output parsing
+ - Multiple service support
+ - Parallel attacks
+ - Custom credential lists

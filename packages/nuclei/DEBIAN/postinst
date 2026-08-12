@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+go install -trimpath -ldflags "-w -s" github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+if [ ! -f "$PREFIX/bin/nuclei" ] && [ -f "$HOME/go/bin/nuclei" ]; then
+    ln -sf "$HOME/go/bin/nuclei" "$PREFIX/bin/nuclei"
+fi
+exit 0

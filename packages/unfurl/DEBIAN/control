@@ -1,0 +1,13 @@
+Package: unfurl
+Version: 0.4.3
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, golang
+Section: utils
+Priority: optional
+Homepage: https://github.com/tomnomnom/unfurl
+Description: Pull out bits of URLs provided on stdin
+ unfurl is a command‑line tool that extracts specific components
+ (scheme, domain, path, query parameters, etc.) from URLs passed
+ via standard input. It is useful for URL parsing and manipulation
+ in security testing and data processing pipelines.

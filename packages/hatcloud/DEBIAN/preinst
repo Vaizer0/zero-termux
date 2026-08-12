@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Clean previous installations (if any)
+rm -rf $PREFIX/share/hatcloud 2>/dev/null
+exit 0

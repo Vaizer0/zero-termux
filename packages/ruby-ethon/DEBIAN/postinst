@@ -1,0 +1,42 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+# Install the gem
+gem install ethon
+
+# Apply the patch to libc.rb
+file=$(find $PREFIX/lib/ruby/gems -name "libc.rb" -path "*/ethon/*" | head -1)
+if [ -n "$file" ]; then
+    cat > "$file" << 'EOF'
+# frozen_string_literal: true
+module Ethon
+
+  # FFI Wrapper module for Libc.
+  #
+  # @api private
+  module Libc
+    extend FFI::Library
+    ffi_lib 'c'
+
+    # :nodoc:
+    def self.windows?
+      Gem.win_platform?
+    end
+
+    unless windows?
+      def self.getdtablesize
+        1024
+      end
+
+      attach_function :free, [:pointer], :void
+    end
+  end
+end
+EOF
+    echo "Patched $file"
+else
+    echo "ethon/libc.rb not found"
+fi
+
+echo "ruby-ethon installed successfully."
+exit 0

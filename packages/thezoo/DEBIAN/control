@@ -1,0 +1,14 @@
+Package: thezoo
+Version: 0.60
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, python-pip
+Section: security
+Priority: optional
+Homepage: https://github.com/ytisf/theZoo
+Description: A repository of live malware samples
+ Malware analysis and research platform featuring:
+ - Live malware samples
+ - Research documentation
+ - Analysis tools
+ - Educational resources

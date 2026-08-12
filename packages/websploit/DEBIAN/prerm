@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d ${HOME}/.local/share/websploit ]]; then
+  rm -rf ${HOME}/.local/share/websploit
+fi

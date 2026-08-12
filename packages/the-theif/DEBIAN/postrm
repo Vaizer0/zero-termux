@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+rm -rf ~/the-theif/
+rm -rf ~/.config/the-theif.conf
+echo "unistalled finish.."

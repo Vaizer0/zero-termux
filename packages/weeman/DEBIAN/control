@@ -1,0 +1,9 @@
+Package: weeman
+Architecture: all
+Version: 1.7.1
+Maintainer: Alienkrishn [Anon4You]
+Depends: python2,git
+Suggest: maskme,shorturl
+Installet-Size: 1
+Homepage: https://github.com/evait-security/weeman
+Description: HTTP server for phishing in python2

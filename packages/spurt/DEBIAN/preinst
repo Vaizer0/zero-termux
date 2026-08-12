@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+spurtDir="$PREFIX/share/spurt"
+if [[ -d $spurtDir ]]; then
+  rm -rf $spurtDir
+fi

@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+burpsuiteDir="$PREFIX/share/burpsuite-pro"
+rm -rf $PREFIX/bin/burpsuite-pro
+if [[ -d "$burpsuiteDir" ]]; then
+  rm -rf $burpsuiteDir
+fi
+

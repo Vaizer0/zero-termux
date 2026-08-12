@@ -1,0 +1,12 @@
+Package: openbullet2
+Version: 2.0.1-0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: curl, tar, dotnet-sdk-10.0, npm, libsqlite
+Section: net
+Priority: optional
+Homepage: https://github.com/openbullet/OpenBullet2
+Description: Cross-platform automation suite powered by .NET Core
+ OpenBullet2 allows to perform requests towards a target webapp and offers
+ many tools to work with the results. It can be used for scraping, parsing
+ data, automated pentesting and much more.

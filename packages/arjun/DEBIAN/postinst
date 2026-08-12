@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+pip install -U arjun
+
+echo "Arjun installed successfully."
+echo "Basic usage:"
+echo "  arjun -h"
+echo "  arjun -u https://example.com"
+echo "  arjun -u https://example.com -o results.json"
+echo "  arjun -u https://example.com --get --no-strict"
+
+exit 0

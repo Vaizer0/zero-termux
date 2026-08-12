@@ -1,0 +1,35 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+FLUTTER_DIR="$PREFIX/opt/flutter"
+# Zero-Termux: rolling version — resolve latest GitHub release at install time
+DOWNLOAD_URL="$(curl -fsSL 'https://api.github.com/repos/termuxvoid/flutter-termux/releases/latest' 2>/dev/null | grep '"browser_download_url"' | grep '\.7z' | head -1 | cut -d'"' -f4)"
+[ -n "$DOWNLOAD_URL" ] || { echo 'Error: failed to resolve latest Flutter release' >&2; exit 1; }
+TMP_ARCHIVE="$TMPDIR/flutter.7z"
+
+echo "[*] Setting up Flutter..."
+[ -d "$FLUTTER_DIR" ] && { echo "[*] Removing existing installation..."; rm -rf "$FLUTTER_DIR"; }
+
+echo "[*] Creating installation directory..."
+mkdir -p "$PREFIX/opt"
+
+echo "[*] Downloading Flutter SDK..."
+axel -n 10 -o "$TMP_ARCHIVE" "$DOWNLOAD_URL" || { echo "[!] Download failed"; exit 1; }
+
+echo "[*] Extracting Flutter SDK..."
+7z x "$TMP_ARCHIVE" -o"$PREFIX/opt" -y > /dev/null || { echo "[!] Extraction failed"; exit 1; }
+
+echo "[*] Creating launcher..."
+cat > "$PREFIX/bin/flutter" << EOF
+#!/data/data/com.termux/files/usr/bin/bash
+exec "$FLUTTER_DIR/bin/flutter" "\$@"
+EOF
+chmod +x "$PREFIX/bin/flutter"
+
+echo "[*] Setting permissions..."
+chmod -R 755 "$FLUTTER_DIR/bin"
+
+echo -e "\n[√] Flutter installed successfully!"
+echo "Run: flutter --version"
+echo "Run: flutter doctor"
+exit 0

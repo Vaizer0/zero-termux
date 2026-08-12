@@ -1,0 +1,28 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+INSTALL_DIR="$TMPDIR/qdl-build"
+
+# Agar pehle se folder hai to remove kar do
+[ -d "$INSTALL_DIR" ] && rm -rf "$INSTALL_DIR"
+
+pip install meson
+
+git clone https://github.com/linux-msm/qdl.git "$INSTALL_DIR"
+cd "$INSTALL_DIR"
+
+sed -i 's/#error Define BYTE_ORDER to be equal to either LITTLE_ENDIAN or BIG_ENDIAN/#define BYTE_ORDER LITTLE_ENDIAN/' src/sha2.c
+
+meson setup build --prefix="$PREFIX" --buildtype=release
+meson compile -C build -j$(nproc)
+meson install -C build
+
+cd /
+rm -rf "$INSTALL_DIR"
+
+echo "qdl 3.7 installed successfully."
+echo ""
+echo "Usage:"
+echo "  qdl --help"
+echo "  qdl prog_firehose*.elf rawprogram*.xml patch*.xml"
+exit 0

@@ -1,0 +1,7 @@
+# Zero-Termux: justified pin — dependency reproducibility
+telethon==1.28.5
+prettytable==3.9.0
+colorama==0.4.6
+pyrogram==2.0.106
+tgcrypto==1.2.4
+python-dotenv==1.0.0

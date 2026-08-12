@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+PANDORA="$PREFIX/share/pandora"
+if [[ -d $PANDORA ]]; then
+  rm -rf $PANDORA
+fi

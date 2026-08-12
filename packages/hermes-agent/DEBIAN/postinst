@@ -1,0 +1,31 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+REPO="https://github.com/NousResearch/hermes-agent.git"
+# Zero-Termux: justified pin — source build at tag — reproducible build
+VERSION="2026.7.20"
+TAG="v${VERSION}"
+
+INSTALL_DIR="$PREFIX/share/hermes-agent"
+
+[ -d "$INSTALL_DIR" ] && rm -rf "$INSTALL_DIR"
+
+git clone "$REPO" "$INSTALL_DIR"
+cd "$INSTALL_DIR"
+
+# Fetch tags and checkout the correct tag
+git fetch --tags
+git checkout "$TAG" 2>/dev/null || {
+    echo "Error: Tag $TAG not found." >&2
+    exit 1
+}
+
+pip install setuptools wheel
+
+export ANDROID_API_LEVEL="$(getprop ro.build.version.sdk)"
+python -m pip install -e '.[termux]' -c constraints-termux.txt --ignore-requires-python
+
+echo "Hermes Agent installed successfully."
+echo "Run 'hermes setup' to configure."
+echo "Run 'hermes' to start."
+exit 0

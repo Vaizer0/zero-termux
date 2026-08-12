@@ -1,0 +1,12 @@
+Package: goshs
+Version: 2.1.4
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, golang
+Section: net
+Priority: optional
+Homepage: https://goshs.de/
+Description: Feature-rich single-binary file server for red teamers and developers
+ Goshs is a powerful HTTP/S · WebDAV · FTP/SFTP · SMB · LDAP/S server.
+ It supports NTLM hash capture, DNS/SMTP callbacks, TLS, authentication,
+ and share links – a robust replacement for python3 -m http.server.

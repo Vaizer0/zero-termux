@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash 
+rhawkDir="$PREFIX/var/rhawk"
+if [[ -d "$rhawkDir" ]]; then
+  rm -rf $rhawkDir
+fi

@@ -1,0 +1,95 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+logo=(
+    $' \e[47m                \e[0m  \e[1m'
+    $' \e[47m  \e[0m            \e[0;37m\e[47m .\e[0m'
+    $' \e[47m  \e[0m  \e[47m  \e[0m        \e[47m  \e[0m  \e[1m'
+    $' \e[47m  \e[0m  \e[47m  \e[0m        \e[47m  \e[0m  \e[1m'
+    $' \e[47m  \e[0m            \e[47m  \e[0m  \e[1m'
+    $' \e[47m  \e[0m            \e[0;37m\e[47m .\e[0m'
+    $' \e[47m                \e[0m  '
+)
+
+user="${USER:-termux}"
+host="$(uname -n 2>/dev/null || echo localhost)"
+os="$(uname -o)"
+termux_version="${TERMUX_VERSION:-unknown}"
+android_version="$(getprop ro.build.version.release 2>/dev/null || echo "unknown")"
+kernel_version="$(uname -r)"
+device_model="$(getprop ro.product.model 2>/dev/null || echo "Unknown device")"
+uptime="$(uptime -s)"
+packages="$(dpkg-query -f '${Package}\n' -W 2>/dev/null | wc -l)"
+shell="${SHELL##*/}"
+cpu="$(sed -n 's/^Hardware[[:space:]]*: //p' /proc/cpuinfo | head -1)"
+[[ -z "$cpu" ]] && cpu="$(sed -n 's/^Processor[[:space:]]*: //p' /proc/cpuinfo | head -1)"
+[[ -z "$cpu" ]] && cpu="Unknown ARM"
+mem="$(free -m | awk '/^Mem:/ {print $3 "MiB / " $2 "MiB"}')"
+machine="$(uname -m)"
+
+info=(
+    "\e[0m\e[36m󰣇 ${user}\e[0m@\e[32m${host}\e[0m"
+    "\e[0m\e[33m󰌋 OS:\e[0m ${os}"
+    "\e[0m\e[33m󰏗 Termux Version:\e[0m ${termux_version}"
+    "\e[0m\e[33m󱖐 Android:\e[0m ${android_version}"
+    "\e[0m\e[33m󰌆 Kernel:\e[0m ${kernel_version}"
+    "\e[0m\e[33m󰄛 Device:\e[0m ${device_model}"
+    "\e[0m\e[33m󰅐 Uptime:\e[0m ${uptime}"
+    "\e[0m\e[33m󰏗 Packages:\e[0m ${packages}"
+    "\e[0m\e[33m󰞓 CPU:\e[0m ${cpu}"
+    "\e[0m\e[33m󰍛 Memory:\e[0m ${mem}"
+    "\e[0m\e[33m󰆍 Shell:\e[0m ${shell}"
+    "\e[0m\e[33m󰢻 Aarch:\e[0m ${machine}"
+)
+
+emojis=(
+    "󰀄"
+    "󰅟"
+    "󰎆"
+    "󰒱"
+    "󰁆"
+    "󰈸"
+    "󰋼"
+    "󰙯"
+)
+bg_colors=(41 42 43 44 45 46 100 102)
+
+visible_len() {
+    echo -n "$1" | sed -E 's/\x1b\[[0-9;]*[a-zA-Z]//g' | wc -m
+}
+
+max_len=0
+for line in "${logo[@]}"; do
+    len=$(visible_len "$line")
+    (( len > max_len )) && max_len=$len
+done
+col_width=$((max_len + 2))
+
+echo -e "\e[1;34m╭──────────────────────────────────────────╮\e[0m"
+echo -e "\e[1;34m│              \e[1;37mTERMUXFETCH\e[1;34m                 │\e[0m"
+echo -e "\e[1;34m╰──────────────────────────────────────────╯\e[0m\n"
+
+for i in "${!logo[@]}"; do
+    printf "%b" "${logo[$i]}"
+    current_len=$(visible_len "${logo[$i]}")
+    spaces=$((col_width - current_len))
+    printf "%${spaces}s" ""
+    if [[ $i -lt ${#info[@]} ]]; then
+        echo -e "${info[$i]}"
+    else
+        echo
+    fi
+done
+
+for ((i=${#logo[@]}; i<${#info[@]}; i++)); do
+    printf "%${col_width}s" ""
+    echo -e "${info[$i]}"
+done
+
+echo
+printf "%${col_width}s" ""
+for idx in "${!emojis[@]}"; do
+    bg="${bg_colors[$idx]}"
+    emoji="${emojis[$idx]}"
+    printf "\e[${bg};37m %s \e[0m " "$emoji"
+done
+echo

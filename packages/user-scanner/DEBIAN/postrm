@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+pip uninstall -y user-scanner 2>/dev/null && echo "user-scanner removed." || echo "user-scanner not found."
+exit 0

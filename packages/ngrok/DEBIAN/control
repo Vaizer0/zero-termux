@@ -1,0 +1,13 @@
+Package: ngrok
+Version: 3.39.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: wget, proot, openssl
+Section: net
+Priority: optional
+Homepage: https://ngrok.com
+Description: Secure tunnels to localhost
+ ngrok is a cross-platform application that exposes local
+ development servers to the internet with secure tunnels.
+ Features include introspection, replay, and replay of
+ requests for webhook testing and debugging.

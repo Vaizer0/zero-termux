@@ -1,0 +1,19 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling linkwizard...${NC}"
+
+# Remove launcher
+if [ -f "$PREFIX/bin/linkwizard" ]; then
+    rm -f "$PREFIX/bin/linkwizard"
+    echo -e "${GREEN}Removed launcher script${NC}"
+fi
+
+# Note: The package manager will remove the shared files automatically.
+# This script only needs to remove the launcher.
+
+echo -e "${GREEN}linkwizard completely removed${NC}"
+exit 0

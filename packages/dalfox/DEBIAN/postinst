@@ -1,0 +1,24 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+# Zero-Termux: justified pin — source build at tag — reproducible build
+VERSION="3.2.0"
+BUILD_DIR="$TMPDIR/dalfox-build"
+
+mkdir -p "$BUILD_DIR"
+cd "$BUILD_DIR"
+
+curl -L -o "dalfox-${VERSION}.tar.gz" \
+  "https://github.com/hahwul/dalfox/archive/refs/tags/v${VERSION}.tar.gz"
+
+tar -xzf "dalfox-${VERSION}.tar.gz"
+cd "dalfox-${VERSION}"
+
+cargo build --release --locked
+
+install -Dm755 target/release/dalfox "$PREFIX/bin/dalfox"
+
+cd /
+rm -rf "$BUILD_DIR"
+
+exit 0

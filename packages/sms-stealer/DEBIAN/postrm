@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+rm -f "$PREFIX/bin/sms-stealer"
+rm -rf "$PREFIX/share/sms-stealer"
+
+echo "SMS‑Stealer completely removed."
+exit 0

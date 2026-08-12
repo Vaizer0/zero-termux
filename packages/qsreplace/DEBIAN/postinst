@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+set -e
+
+# Install using go install (latest version)
+go install -trimpath -ldflags "-w -s" github.com/tomnomnom/qsreplace@latest
+
+# Create symlink in $PREFIX/bin if binary is not already there
+if [ ! -f "$PREFIX/bin/qsreplace" ] && [ -f "$HOME/go/bin/qsreplace" ]; then
+    ln -sf "$HOME/go/bin/qsreplace" "$PREFIX/bin/qsreplace"
+fi
+
+exit 0

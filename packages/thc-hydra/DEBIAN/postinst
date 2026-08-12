@@ -1,0 +1,89 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+echo "Installing THC-Hydra with Termux patches ..."
+
+# Clone the repository
+echo "Cloning THC-Hydra repository..."
+rm -rf "$TMPDIR/thc-hydra" 2>/dev/null || true
+git clone https://github.com/vanhauser-thc/thc-hydra.git $TMPDIR/thc-hydra || {
+    echo "Error: Failed to clone THC-Hydra repository."
+    exit 1
+}
+
+cd $TMPDIR/thc-hydra
+
+# Patch 1: Fix man page directory in Makefile.am
+echo "Patching Makefile.am for Termux..."
+sed -i 's|^MANDIR = /man/man1/|MANDIR = /share/man/man1/|' Makefile.am
+
+# Patch 2: Disable fdsan on Termux (Android) in hydra.c
+echo "Patching hydra.c to fix fdsan error..."
+
+# Create temporary files in $TMPDIR (safe to write)
+cat > $TMPDIR/hydra_fdsan_block << 'EOF'
+#ifdef __TERMUX__
+#include <android/fdsan.h>
+#include <dlfcn.h>
+static inline void termux_disable_fdsan() {
+	// For Android 11+.
+	void *lib_handle = dlopen("libc.so", RTLD_LAZY);
+	if (lib_handle) {
+		void (*set_fdsan_error_level)(enum android_fdsan_error_level newlevel) = dlsym(lib_handle, "android_fdsan_set_error_level");
+		if (set_fdsan_error_level) {
+			set_fdsan_error_level(ANDROID_FDSAN_ERROR_LEVEL_DISABLED);
+    }
+		dlclose(lib_handle);
+	}
+}
+#endif
+EOF
+
+cat > $TMPDIR/hydra_fdsan_call << 'EOF'
+#ifdef __TERMUX__
+  termux_disable_fdsan();
+#endif
+EOF
+
+# Insert the fdsan block after the line containing "#include <term.h>"
+sed -i "/#include <term.h>/ r $TMPDIR/hydra_fdsan_block" hydra.c
+
+# Insert the call to termux_disable_fdsan() before the first printf in main
+sed -i "/  printf(\"%s %s (c) 2023 by %s & %s/ i\\
+#ifdef __TERMUX__\\
+  termux_disable_fdsan();\\
+#endif
+" hydra.c
+
+# Clean up temporary files
+rm -f $TMPDIR/hydra_fdsan_block $TMPDIR/hydra_fdsan_call
+
+# Build and install
+echo "Building THC-Hydra..."
+make clean 2>/dev/null || true
+
+sh configure --prefix=$PREFIX || {
+    echo "Error: Configuration failed."
+    exit 1
+}
+
+make || {
+    echo "Error: Compilation failed."
+    exit 1
+}
+
+make install || {
+    echo "Error: Installation failed."
+    exit 1
+}
+
+# Cleanup source
+rm -rf $TMPDIR/thc-hydra
+
+echo "THC-Hydra installed successfully!"
+echo "Usage examples:"
+echo "  hydra -l user -P passlist.txt ssh://target"
+echo "  hydra -L users.txt -p password ftp://target"
+echo "  hydra -l admin -P passwords.txt http-get://target/login"
+echo "  hydra -h for full help"
+
+exit 0

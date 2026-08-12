@@ -1,0 +1,14 @@
+Package: dnsx
+Version: 1.2.2
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: golang, git
+Section: recon
+Priority: optional
+Homepage: https://github.com/projectdiscovery/dnsx
+Description: Fast DNS toolkit for reconnaissance
+ High-performance DNS utility featuring:
+ - DNS resolution and enumeration
+ - Multiple query types (A, AAAA, CNAME, etc.)
+ - Wildcard detection
+ - Mass DNS lookups

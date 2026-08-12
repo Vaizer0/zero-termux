@@ -1,0 +1,8 @@
+Package: random-banner
+Architecture: all
+Version: 1
+Maintainer: Alienkrishn [Anon4You]
+Depends: git
+Installed-Size: 1
+Homepage: https://github.com/Alienkrishn/random_banners
+Description: random banner and quote

@@ -1,0 +1,8 @@
+Package: websploit
+Version: 4.0.5
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Installed-Size: 1
+Depends: python, python-pip, git, python-numpy 
+Homepage: https://github.com/The404Hacking/websploit
+Description: Advanced MITM framework.

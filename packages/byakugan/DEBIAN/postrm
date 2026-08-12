@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/sh
+
+set -e
+
+echo "Removing Byakugan..."
+rm -rf "$PREFIX/share/byakugan"
+rm -f "$PREFIX/bin/byakugan"
+
+echo "Byakugan has been completely uninstalled."

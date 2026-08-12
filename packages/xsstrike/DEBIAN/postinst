@@ -1,0 +1,51 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing XSStrike 3.1.6...${NC}"
+
+# Clone XSStrike repository to $PREFIX/share/xsstrike
+echo -e "${YELLOW}Cloning XSStrike repository...${NC}"
+git clone https://github.com/s0md3v/XSStrike.git $PREFIX/share/xsstrike || {
+    echo -e "${RED}Error: Failed to clone XSStrike repository.${NC}"
+    exit 1
+}
+
+# Install Python requirements
+echo -e "${YELLOW}Installing Python requirements...${NC}"
+cd $PREFIX/share/xsstrike
+if [ -f "requirements.txt" ]; then
+    pip install -r requirements.txt || {
+        echo -e "${RED}Error: Failed to install requirements.${NC}"
+        exit 1
+    }
+else
+    echo -e "${YELLOW}Warning: requirements.txt not found, installing common dependencies...${NC}"
+    pip install requests tldextract fuzzywuzzy python-Levenshtein || {
+        echo -e "${RED}Error: Failed to install common dependencies.${NC}"
+        exit 1
+    }
+fi
+
+# Create launcher script in $PREFIX/bin
+echo -e "${YELLOW}Creating launcher script...${NC}"
+cat > $PREFIX/bin/xsstrike << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+cd $PREFIX/share/xsstrike
+exec python xsstrike.py "$@"
+EOF
+
+# Make launcher executable
+chmod +x $PREFIX/bin/xsstrike
+
+echo -e "${GREEN}XSStrike installed successfully!${NC}"
+echo -e "${YELLOW}Usage examples:${NC}"
+echo "  xsstrike -u http://example.com/vuln.php?q=test"
+echo "  xsstrike --crawl -u http://example.com"
+echo "  xsstrike -l urls.txt"
+echo "  xsstrike --seeds seeds.txt"
+echo "  xsstrike --help for full options"
+exit 0

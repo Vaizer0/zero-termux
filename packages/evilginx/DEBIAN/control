@@ -1,0 +1,10 @@
+Package: evilginx
+Version: 3.3.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, golang, make
+Section: security
+Priority: optional
+Homepage: https://github.com/kgretzky/evilginx2
+Description: Advanced phishing framework with 2FA bypass
+ Standalone man-in-the-middle attack framework

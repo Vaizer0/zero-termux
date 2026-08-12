@@ -1,0 +1,8 @@
+Package: burpsuite-pro
+Version: 2026.1.5
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: curl, openjdk-21, openjdk-21-x
+Homepage: https://portswigger.net/burp/
+Description: An integrated platform for performing security testing of web applications (professional edition)
+

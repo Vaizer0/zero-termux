@@ -1,0 +1,14 @@
+#!/data/data/com.termux/files/usr/bin/bash
+HASHCAT="$PREFIX/opt/hashcat"
+GPU_HASHCAT="$HOME/.local/share/hashcat"
+if [[ -d $HASHCAT ]]; then
+  rm -rf $HASHCAT 
+else
+  mkdir -p $PREFIX/opt
+fi
+if [[ -d $GPU_HASHCAT ]]; then
+  rm -rf $GPU_HASHCAT
+  mkdir -p $GPU_HASHCAT
+else
+  mkdir -p $GPU_HASHCAT
+fi

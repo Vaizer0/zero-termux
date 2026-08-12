@@ -1,0 +1,14 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Checking device architecture..."
+ARCH=$(uname -m)
+
+if [ "$ARCH" != "aarch64" ]; then
+    echo "[!] ERROR: Device architecture $ARCH is not supported"
+    echo "[!] This package requires aarch64 (ARM64) devices only"
+    exit 1
+fi
+
+echo "[√] Architecture check passed: $ARCH"
+exit 0

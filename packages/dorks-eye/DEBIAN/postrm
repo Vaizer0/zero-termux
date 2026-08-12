@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling Dorks Eye...${NC}"
+
+if [ -f "$PREFIX/bin/dorks-eye" ]; then
+    rm -f $PREFIX/bin/dorks-eye
+    echo -e "${GREEN}Removed launcher script${NC}"
+fi
+
+if [ -d "$PREFIX/share/dorks-eye" ]; then
+    rm -rf $PREFIX/share/dorks-eye
+    echo -e "${GREEN}Removed dorks-eye repository${NC}"
+fi
+
+echo -e "${GREEN}Dorks Eye completely removed${NC}"
+exit 0

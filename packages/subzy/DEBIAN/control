@@ -1,0 +1,14 @@
+Package: subzy
+Version: 1.2.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: golang, git
+Section: security
+Priority: optional
+Homepage: https://github.com/PentestPad/subzy
+Description: Subdomain takeover vulnerability scanner
+ Automated subdomain takeover detection featuring:
+ - Multiple service provider support
+ - Concurrent scanning
+ - Custom fingerprint database
+ - JSON output format

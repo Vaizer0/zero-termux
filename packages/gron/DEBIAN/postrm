@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+rm -f "$HOME/go/bin/gron" "$PREFIX/bin/gron"
+
+exit 0

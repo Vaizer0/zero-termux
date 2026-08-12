@@ -1,0 +1,19 @@
+#!/data/data/com.termux/files/usr/bin/bash
+termsploitDir="$PREFIX/opt/termsploit"
+
+if [[ $(id -u) -eq 0 ]]
+then
+	echo -en "\e[31m(_➤)\e[0m You need to be a common user"
+  exit 1
+else
+	echo "Preparing enviroment ..."
+	if [[ -d $termsploitDir ]]
+	then
+		rm -rf $termsploitDir
+    mkdir -p $PREFIX/opt
+	else
+	    mkdir -p $PREFIX/opt
+	fi
+fi
+
+

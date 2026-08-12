@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+set -e
+
+echo "Installing Gallery‑Eye..."
+
+INSTALL_DIR="$PREFIX/share/gallery-eye"
+
+rm -rf "$INSTALL_DIR"
+git clone https://github.com/Anon4You/gallery-eye.git "$INSTALL_DIR" || exit 1
+
+mkdir -p "$PREFIX/bin"
+cat > "$PREFIX/bin/gallery-eye" << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+cd "$PREFIX/share/gallery-eye"
+exec ruby gallery-eye.rb "$@"
+EOF
+
+chmod +x "$PREFIX/bin/gallery-eye"
+
+echo "Gallery‑Eye installed successfully."
+exit 0

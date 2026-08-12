@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+if [[ -d $PREFIX/share/5luser ]]; then
+  rm -rf $PREFIX/share/5luser
+fi

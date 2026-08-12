@@ -1,0 +1,43 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+BEEF_DIR="$PREFIX/share/beef"
+LAUNCHER="$PREFIX/bin/beef"
+# Zero-Termux: justified pin — source build at tag — reproducible build
+TARBALL_URL="https://github.com/beefproject/beef/archive/refs/tags/v0.6.0.0.tar.gz"
+
+[ -d "$BEEF_DIR" ] && rm -rf "$BEEF_DIR"
+mkdir -p "$BEEF_DIR"
+
+cd "$TMPDIR"
+curl -L -o beef.tar.gz "$TARBALL_URL"
+tar -xzf beef.tar.gz --strip-components=1 -C "$BEEF_DIR"
+rm beef.tar.gz
+
+cd "$BEEF_DIR"
+rm -f Gemfile.lock
+
+# Remove curb and nokogiri from Gemfile (provided as system dependencies)
+sed -i '/^gem .curb./d' Gemfile
+sed -i '/^gem .nokogiri./d' Gemfile
+
+gem install sqlite3 -- --enable-system-libraries
+gem install bundler
+bundle install
+
+# Correct displayed version from 0.5.4.0 to 0.6.0.0
+sed -i 's/^\([[:space:]]*version:\)[[:space:]]*'\''0\.5\.4\.0'\''/\1 '\''0.6.0.0'\''/' config.yaml
+
+# Change default password from "beef" to "zero-termux"
+sed -i 's/^\([[:space:]]*passwd:\)[[:space:]]*"beef"/\1 "zero-termux"/' config.yaml
+
+cat > "$LAUNCHER" << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+cd "$PREFIX/share/beef" && exec ruby beef "$@"
+EOF
+chmod +x "$LAUNCHER"
+
+echo "BeEF v0.6.0.0 installed."
+echo "Default panel: http://127.0.0.1:3000/ui/panel (beef:zero-termux)"
+echo "Configuration: $BEEF_DIR/config.yaml"
+exit 0

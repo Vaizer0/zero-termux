@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+rm -rf $PREFIX/share/sqlscan
+rm -rf $PREFIX/bin/sqlscan
+echo sqlscan removed..

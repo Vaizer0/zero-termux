@@ -1,0 +1,12 @@
+Package: copilot-cli
+Version: 1.0.78
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, gh, glibc, clang, python, curl, tar
+Section: devel
+Priority: optional
+Homepage: https://github.com/github/copilot-cli
+Description: GitHub Copilot CLI (glibc version)
+ GitHub Copilot CLI brings AI-powered assistance to your terminal.
+ This package uses the glibc build and includes a wrapper to run
+ inside Termux's glibc environment.

@@ -1,0 +1,12 @@
+Package: termux-ai
+Version: 3.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: curl, gum, tgpt
+Section: ai
+Priority: optional
+Homepage: https://github.com/Anon4You/Termux-Ai
+Description: Interactive AI Assistant for Termux
+ Your AI companion in Termux with support for 10+ AI providers,
+ 50+ image generation models, and interactive command-line interface.
+ Provides comprehensive AI capabilities directly within Termux terminal.

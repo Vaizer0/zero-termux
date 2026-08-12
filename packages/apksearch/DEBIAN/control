@@ -1,0 +1,13 @@
+Package: apksearch
+Version: 1.3.5
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: python, python-pip
+Section: utils
+Priority: optional
+Homepage: https://abhithemodder.github.io/apksearch/
+Description: APK Search Tool for Multiple APK Websites
+ apksearch is a Python library designed to search for APK files on
+ different APK websites, such as APKPure and APKMirror. It allows
+ users to find APKs, check for available versions, and retrieve
+ download links.

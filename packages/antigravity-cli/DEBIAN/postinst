@@ -1,0 +1,134 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+# Zero-Termux: rolling version — resolve latest GitHub release at install time
+VERSION="$(curl -fsSL 'https://api.github.com/repos/google-antigravity/antigravity-cli/releases/latest' 2>/dev/null | grep '"tag_name"' | cut -d'"' -f4)"
+[ -n "$VERSION" ] || { echo 'Error: failed to resolve latest antigravity-cli release' >&2; exit 1; }
+PREFIX=${PREFIX:-/data/data/com.termux/files/usr}
+DOWNLOAD_URL="https://github.com/google-antigravity/antigravity-cli/releases/download/${VERSION}/agy_cli_linux_arm64.tar.gz"
+SHARE_DIR="$PREFIX/share/antigravity-cli"
+BIN_DIR="$PREFIX/bin"
+STAGING="$TMPDIR/antigravity-staging"
+
+mkdir -p "$SHARE_DIR" "$BIN_DIR" "$STAGING"
+
+# Download and extract
+curl -fsSL -o "$STAGING/agy.tar.gz" "$DOWNLOAD_URL"
+tar -xzf "$STAGING/agy.tar.gz" -C "$STAGING"
+
+# Locate binary
+if [ -f "$STAGING/antigravity" ]; then
+    ORIG_BIN="$STAGING/antigravity"
+elif [ -f "$STAGING/agy" ]; then
+    ORIG_BIN="$STAGING/agy"
+else
+    echo "Error: Binary not found in archive." >&2
+    exit 1
+fi
+
+PATCHED_BIN="$SHARE_DIR/agy.real"
+
+# Apply patches using Python (fixed I/O)
+python - << 'PYEOF' "$ORIG_BIN" "$PATCHED_BIN"
+import sys, struct, pathlib
+
+src = sys.argv[1]
+dst = sys.argv[2]
+
+# Read original binary
+data = bytearray(pathlib.Path(src).read_bytes())
+
+def get(off):
+    return struct.unpack_from("<I", data, off)[0]
+
+def put(off, word):
+    struct.pack_into("<I", data, off, word)
+
+lo, hi = 0, len(data)
+
+# immr/imms fixes
+for off in range(lo, hi, 4):
+    w = get(off)
+    if (w & 0x7F800000) == 0x53000000:
+        immr = (w >> 16) & 0x3F
+        imms = (w >> 10) & 0x3F
+        if immr == 42 and imms == 44:
+            put(off, (w & ~((0x3F << 16) | (0x3F << 10))) | (35 << 16) | (37 << 10))
+        elif immr == 22 and imms == 21:
+            put(off, (w & ~((0x3F << 16) | (0x3F << 10))) | (29 << 16) | (28 << 10))
+
+# two-instruction pattern
+for off in range(lo, hi-4, 4):
+    if get(off) == 0x92D3800A and get(off+4) == 0xF2E0000A:
+        put(off, 0x9280000A)
+        put(off+4, 0xD35DFD4A)
+
+# single instruction
+for off in range(lo, hi, 4):
+    if get(off) == 0xF2E00029:
+        put(off, 0xD3596129)
+
+# word rewrites
+rewrites = {
+    0xD2C20009: 0xD2C00409, 0xD2C2000A: 0xD2C0040A, 0xF2C20008: 0xF2DFF408,
+    0xF2C20009: 0xF2DFF409, 0xD2C10009: 0xD2C00209, 0xD2C1000A: 0xD2C0020A,
+    0xF2C38008: 0xF2DFF708, 0xF2C38009: 0xF2DFF709, 0x92560A6C: 0x925D0A6C,
+    0x92560A6A: 0x925D0A6A, 0xD2C3000D: 0xD2C0060D, 0xD2C3000C: 0xD2C0060C,
+    0xD2C08008: 0xD2C00108,
+}
+for off in range(lo, hi, 4):
+    w = get(off)
+    if w in rewrites:
+        put(off, rewrites[w])
+
+# three-instruction pattern
+for off in range(0, len(data)-12, 4):
+    if get(off) == 0xAA1F03E5 and get(off+4) == 0xAA1F03E6 and get(off+8) == 0xD28036E0 and (get(off+12) & 0xFC000000) == 0x94000000:
+        put(off+8, 0xD2800600)
+
+# Write patched binary
+pathlib.Path(dst).write_bytes(data)
+PYEOF
+
+chmod +x "$PATCHED_BIN"
+rm -rf "$STAGING"
+
+# Write and compile the glibc wrapper
+cat > "$TMPDIR/agy_wrapper.c" << 'EOF'
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdio.h>
+
+int main(int argc, char** argv) {
+    unsetenv("LD_PRELOAD");
+    unsetenv("LD_LIBRARY_PATH");
+    setenv("GODEBUG", "netdns=cgo", 1);
+    setenv("SSL_CERT_FILE", "/data/data/com.termux/files/usr/etc/tls/cert.pem", 1);
+
+    char* loader = "/data/data/com.termux/files/usr/glibc/lib/ld-linux-aarch64.so.1";
+    char real_bin[] = "/data/data/com.termux/files/usr/share/antigravity-cli/agy.real";
+    char lib_path[] = "/data/data/com.termux/files/usr/glibc/lib";
+
+    char** new_argv = malloc((argc + 4) * sizeof(char*));
+    if (!new_argv) return 1;
+    new_argv[0] = loader;
+    new_argv[1] = "--library-path";
+    new_argv[2] = lib_path;
+    new_argv[3] = real_bin;
+    for (int i = 1; i < argc; i++) new_argv[i + 3] = argv[i];
+    new_argv[argc + 3] = NULL;
+
+    execv(loader, new_argv);
+    perror("execv");
+    free(new_argv);
+    return 1;
+}
+EOF
+
+clang -O2 -o "$BIN_DIR/agy" "$TMPDIR/agy_wrapper.c"
+chmod +x "$BIN_DIR/agy"
+rm -f "$TMPDIR/agy_wrapper.c"
+
+echo "Antigravity CLI installed successfully."
+echo "Run 'agy' to start."
+exit 0

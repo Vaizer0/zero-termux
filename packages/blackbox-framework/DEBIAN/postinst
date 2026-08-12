@@ -1,0 +1,30 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# Post-installation script for Blackbox 2.0
+# Installs dependencies and verifies setup
+
+set -e
+
+echo "[*] Installing Python2 dependencies..."
+if ! python2 -m pip install requests passlib pexpect; then
+    echo "[!] Failed to install dependencies!" >&2
+    exit 1
+fi
+
+echo ""
+echo "[*] Verifying Blackbox installation..."
+if ! command -v blackboxpy >/dev/null; then
+    echo "[!] Error: 'blackbox' command not found!" >&2
+    echo "    Ensure the binary is in \$PREFIX/bin" >&2
+    exit 1
+fi
+
+echo ""
+echo "[*] Example usage:"
+blackboxpy --help || {
+    echo "[!] Blackbox test failed!" >&2
+    exit 1
+}
+
+echo ""
+echo "[√] Blackbox-Framework 2.0 ready. Use 'blackboxpy --help' for commands."
+exit 0

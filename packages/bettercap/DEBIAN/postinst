@@ -1,0 +1,31 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+REPO="https://github.com/bettercap/bettercap.git"
+# Zero-Termux: justified pin — source build at tag — reproducible build
+VERSION="2.41.7"
+TMP_DIR="$TMPDIR/bettercap-build"
+
+echo "[*] Installing bettercap ${VERSION}..."
+
+git clone --depth 1 --branch v${VERSION} "$REPO" "$TMP_DIR"
+cd "$TMP_DIR"
+
+echo "[*] Building..."
+make
+echo "[*] Installing..."
+make install
+
+cd /
+rm -rf "$TMP_DIR"
+
+echo ""
+echo "[✓] bettercap ${VERSION} installed successfully."
+echo ""
+echo "Usage examples:"
+echo "  bettercap -h                         # Show help"
+echo "  bettercap -eval \"net.probe on\"     # Start network probe"
+echo "  bettercap -eval \"set arp.spoof.targets 192.168.1.1; arp.spoof on\""
+echo ""
+echo "NOTE: Most features require root privileges. Run with sudo or as root."
+exit 0

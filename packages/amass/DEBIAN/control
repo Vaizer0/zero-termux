@@ -1,0 +1,12 @@
+Package: amass
+Version: 5.1.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: curl, tar
+Section: recon
+Priority: optional
+Homepage: https://owasp.org/www-project-amass/
+Description: In-depth Attack Surface Mapping and Asset Discovery
+ Amass performs network mapping of attack surfaces and external
+ asset discovery using open source information gathering and
+ active reconnaissance techniques.

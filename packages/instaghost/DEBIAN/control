@@ -1,0 +1,11 @@
+Package: instaghost
+Version: 1.0.2
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python
+Section: social
+Priority: optional
+Homepage: https://github.com/Anon4You/InstaGhost
+Description: Professional Instagram OSINT Tool
+ Simple and efficient Instagram data gathering tool for security research.
+ Provides profile analysis and information extraction capabilities.

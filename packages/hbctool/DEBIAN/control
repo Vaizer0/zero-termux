@@ -1,0 +1,12 @@
+Package: hbctool
+Version: 0.1.5-96
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: python, python-pip, curl
+Section: utils
+Priority: optional
+Homepage: https://github.com/Kirlif/HBC-Tool
+Description: Hermes Bytecode Disassembler and Assembler
+ A command-line interface for disassembling and assembling the
+ Hermes Bytecode. Provides tools for working with Hermes bytecode
+ files used in React Native applications and JavaScript engines.

@@ -1,0 +1,62 @@
+name: Build and Deploy APT Repo + Site
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: "zero-termux-pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y dpkg-dev gnupg
+          pip3 install termux-apt-repo
+
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.PRIVATE_GPG_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: Build and sign APT repository
+        run: bash scripts/build/build-repo.sh zero-termux main
+
+      - name: Assemble deployment tree (site at root, repo under /repo)
+        run: |
+          rm -rf _site
+          mkdir -p _site/repo
+          cp -r site/* _site/
+          cp -r repo/* _site/repo/
+          echo "Deployment tree:"
+          ls -la _site/
+          ls _site/repo/ | head
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./_site
+          keep_files: false
+          user_name: Vaizer0
+          user_email: vaizer0@users.noreply.github.com

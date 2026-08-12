@@ -1,0 +1,26 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing LunarVim...${NC}"
+
+# Remove existing Neovim configuration to avoid conflicts
+echo -e "${YELLOW}Removing existing Neovim config...${NC}"
+rm -rf ~/.config/nvim ~/.local/state/nvim ~/.local/share/nvim 2>/dev/null
+
+# Clone LunarVim configuration
+echo -e "${YELLOW}Cloning LunarVim configuration...${NC}"
+git clone https://github.com/LunarVim/LunarVim.git ~/.config/nvim || {
+    echo -e "${RED}Error: Failed to clone LunarVim repository.${NC}"
+    exit 1
+}
+
+# Optional: remove .git directory to avoid confusion
+rm -rf ~/.config/nvim/.git
+
+echo -e "${GREEN}LunarVim configuration installed successfully!${NC}"
+echo -e "${YELLOW}Run 'nvim' to complete the installation (plugins will be downloaded).${NC}"
+exit 0

@@ -1,0 +1,682 @@
+#!/data/data/com.termux/files/usr/bin/env python3
+"""
+EmailCrawl - Professional Email Extraction Crawler
+Advanced OSINT tool for crawling websites and extracting valid email addresses
+Author: Security Research
+Project: Email Intelligence Gathering
+"""
+
+import os
+import re
+import argparse
+import requests
+import time
+import urllib.parse
+import tldextract
+import threading
+from datetime import datetime
+from bs4 import BeautifulSoup
+from colorama import Fore, Style, init
+from collections import deque
+import json
+
+# Initialize colorama
+init(autoreset=True)
+
+# Suppress ALL warnings
+import warnings
+warnings.filterwarnings("ignore")
+
+class ColorOutput:
+    @staticmethod
+    def info(msg):
+        print(f"{Fore.CYAN}[INFO]{Style.RESET_ALL} {msg}")
+    
+    @staticmethod
+    def success(msg):
+        print(f"{Fore.GREEN}[SUCCESS]{Style.RESET_ALL} {msg}")
+    
+    @staticmethod
+    def warning(msg):
+        print(f"{Fore.YELLOW}[WARNING]{Style.RESET_ALL} {msg}")
+    
+    @staticmethod
+    def error(msg):
+        print(f"{Fore.RED}[ERROR]{Style.RESET_ALL} {msg}")
+    
+    @staticmethod
+    def email(msg):
+        print(f"{Fore.GREEN}[EMAIL]{Style.RESET_ALL} {msg}")
+    
+    @staticmethod
+    def crawling(msg):
+        print(f"{Fore.BLUE}[CRAWLING]{Style.RESET_ALL} {msg}")
+    
+    @staticmethod
+    def stats(msg):
+        print(f"{Fore.MAGENTA}[STATS]{Style.RESET_ALL} {msg}")
+
+class Config:
+    def __init__(self):
+        # Request Configuration
+        self.USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+        self.TIMEOUT = 30
+        self.MAX_RETRIES = 3
+        
+        # Crawler Configuration
+        self.MAX_PAGES = 200
+        self.MAX_DEPTH = 3
+        self.CRAWL_DELAY = 1
+        self.MAX_THREADS = 5
+        
+        # Output Configuration
+        self.OUTPUT_DIR = "emailcrawl_output"
+        
+        # Proxy Configuration
+        self.HTTP_PROXY = os.getenv('HTTP_PROXY')
+        self.SOCKS_PROXY = os.getenv('SOCKS_PROXY')
+
+class URLUtils:
+    @staticmethod
+    def is_valid_url(url):
+        try:
+            result = urllib.parse.urlparse(url)
+            return all([result.scheme, result.netloc])
+        except:
+            return False
+    
+    @staticmethod
+    def get_domain(url):
+        extracted = tldextract.extract(url)
+        return f"{extracted.domain}.{extracted.suffix}"
+    
+    @staticmethod
+    def normalize_url(url):
+        """Normalize URL for consistent comparison"""
+        parsed = urllib.parse.urlparse(url)
+        normalized = urllib.parse.urlunparse((
+            parsed.scheme,
+            parsed.netloc.lower(),
+            parsed.path,
+            '',  # params
+            '',  # query
+            ''   # fragment
+        ))
+        return normalized.rstrip('/')
+    
+    @staticmethod
+    def should_skip_url(url):
+        """Check if URL should be skipped"""
+        skip_patterns = [
+            r'cdn-cgi/l/email-protection',  # Cloudflare email protection
+            r'mailto:',  # Mailto links
+            r'tel:',  # Telephone links
+            r'javascript:',  # JavaScript links
+            r'#',  # Anchor links
+            r'\.pdf$',  # PDF files
+            r'\.jpg$|\.jpeg$|\.png$|\.gif$|\.svg$',  # Images
+            r'\.css$',  # CSS files
+            r'\.js$',  # JavaScript files
+        ]
+        
+        url_lower = url.lower()
+        return any(re.search(pattern, url_lower) for pattern in skip_patterns)
+
+class AdvancedEmailValidator:
+    def __init__(self, target_domain=None):
+        self.target_domain = target_domain
+        self.false_positive_domains = [
+            'example.com', 'domain.com', 'email.com', 'test.com',
+            'yourdomain.com', 'sentry.io', 'wixpress.com', 
+            'localhost', '127.0.0.1', 'your-email.com', 'company.com',
+            'placeholder.com', 'fake.com', 'test.org', 'example.org',
+            'email.fake', 'test.email', 'example.email'
+        ]
+        
+        self.system_patterns = [
+            r'noreply@', r'no-reply@', r'support@.*\.test', 
+            r'info@.*\.local', r'admin@.*\.local', r'root@', 
+            r'postmaster@', r'webmaster@', r'mailer@',
+            r'^[a-f0-9]{32}@',  # hex hashes
+            r'^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}@',  # UUIDs
+            r'^[0-9]+@',  # numeric-only usernames
+            r'@sentry\.',  # Sentry-related
+            r'@.*\.local$',  # Local domains
+            r'@.*\.test$',  # Test domains
+        ]
+
+    def is_valid_email(self, email):
+        """Comprehensive email validation"""
+        email_lower = email.lower()
+        
+        # Basic structural validation
+        if (len(email) < 6 or 
+            '..' in email or 
+            email.count('@') != 1 or
+            email.startswith('.') or 
+            email.endswith('.') or
+            email.count('.') < 1):
+            return False
+        
+        # Check for false positive domains
+        if any(domain in email_lower for domain in self.false_positive_domains):
+            return False
+        
+        # Check for system/automated email patterns
+        if any(re.search(pattern, email_lower) for pattern in self.system_patterns):
+            return False
+        
+        # Enhanced regex pattern for email validation
+        email_pattern = r'^[a-zA-Z0-9][a-zA-Z0-9._%+-]{0,64}@[a-zA-Z0-9][a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+        if not re.match(email_pattern, email):
+            return False
+        
+        # Check if email looks like it belongs to a real person/organization
+        return self._is_likely_real_email(email)
+    
+    def _is_likely_real_email(self, email):
+        """Determine if email appears to be from a real person/organization"""
+        username = email.split('@')[0].lower()
+        
+        # Common real email patterns
+        real_patterns = [
+            r'^[a-z]+\.[a-z]+$',  # first.last
+            r'^[a-z]+$',  # firstname
+            r'^[a-z]+[0-9]*$',  # firstname123
+            r'^[a-z][a-z0-9._-]{2,}$',  # general valid usernames
+        ]
+        
+        # Common fake/automated patterns
+        fake_patterns = [
+            r'^[a-f0-9]+$',  # hex strings
+            r'^[0-9]+$',  # numbers only
+            r'^[a-z0-9]{32}$',  # 32-char hashes
+            r'^admin$', r'^root$', r'^test$', r'^demo$',  # common test accounts
+        ]
+        
+        # Must match at least one real pattern
+        if not any(re.search(pattern, username) for pattern in real_patterns):
+            return False
+        
+        # Must NOT match any fake patterns
+        if any(re.search(pattern, username) for pattern in fake_patterns):
+            return False
+        
+        return True
+
+class EmailExtractor:
+    def __init__(self, base_url):
+        self.base_url = base_url
+        self.base_domain = URLUtils.get_domain(base_url)
+        self.validator = AdvancedEmailValidator(self.base_domain)
+        self.email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    
+    def extract_emails(self, text, source_url=None):
+        """Extract and validate emails from text"""
+        raw_emails = set(re.findall(self.email_pattern, text, re.IGNORECASE))
+        valid_emails = set()
+        
+        for email in raw_emails:
+            if self.validator.is_valid_email(email):
+                valid_emails.add(email)
+                ColorOutput.email(f"Found: {email} (from: {source_url})" if source_url else f"Found: {email}")
+        
+        return list(valid_emails)
+    
+    def extract_emails_from_html(self, html_content, source_url=None):
+        """Specialized email extraction from HTML content"""
+        emails = set()
+        
+        # Extract from visible text
+        soup = BeautifulSoup(html_content, 'html.parser')
+        visible_text = soup.get_text()
+        emails.update(self.extract_emails(visible_text, source_url))
+        
+        # Extract from meta tags
+        for meta in soup.find_all('meta'):
+            content = meta.get('content', '')
+            if content:
+                emails.update(self.extract_emails(content, source_url))
+        
+        # Extract from link hrefs (mailto links)
+        for link in soup.find_all('a', href=True):
+            href = link['href']
+            if href.startswith('mailto:'):
+                email = href[7:].split('?')[0]  # Remove mailto: and parameters
+                if self.validator.is_valid_email(email):
+                    emails.add(email)
+                    ColorOutput.email(f"Found: {email} (mailto link from: {source_url})")
+        
+        return list(emails)
+
+class WebCrawler:
+    def __init__(self, config, proxy=None):
+        self.config = config
+        self.proxy = proxy
+        self.visited_urls = set()
+        self.discovered_urls = set()
+        self.all_emails = set()
+        self.session = self._create_session()
+        self.crawl_stats = {
+            'pages_crawled': 0,
+            'emails_found': 0,
+            'start_time': None,
+            'end_time': None
+        }
+    
+    def _create_session(self):
+        session = requests.Session()
+        session.headers.update({'User-Agent': self.config.USER_AGENT})
+        
+        if self.proxy:
+            if self.proxy.startswith('socks'):
+                session.proxies = {'http': self.proxy, 'https': self.proxy}
+            else:
+                session.proxies = {'http': self.proxy, 'https': self.proxy}
+        
+        return session
+    
+    def fetch_url(self, url):
+        """Fetch URL content with error handling"""
+        try:
+            if URLUtils.should_skip_url(url):
+                return None
+                
+            response = self.session.get(url, timeout=self.config.TIMEOUT, verify=False)
+            response.raise_for_status()
+            return response.text
+        except Exception as e:
+            return None
+    
+    def discover_urls(self, start_url):
+        """Discover URLs from robots.txt, sitemap, and page content"""
+        discovered = set()
+        
+        # Discover from robots.txt
+        robots_url = urllib.parse.urljoin(start_url, '/robots.txt')
+        robots_urls = self._parse_robots_txt(robots_url)
+        discovered.update(robots_urls)
+        
+        # Discover from sitemap
+        sitemap_urls = self._parse_sitemap(start_url)
+        discovered.update(sitemap_urls)
+        
+        # Discover from initial page
+        initial_urls = self._extract_urls_from_page(start_url)
+        discovered.update(initial_urls)
+        
+        ColorOutput.info(f"Discovered {len(discovered)} initial URLs")
+        return discovered
+    
+    def _parse_robots_txt(self, robots_url):
+        """Parse robots.txt for URLs"""
+        urls = set()
+        try:
+            content = self.fetch_url(robots_url)
+            if content:
+                for line in content.split('\n'):
+                    line = line.strip()
+                    if line.startswith('Allow:') or line.startswith('Disallow:'):
+                        path = line.split(':', 1)[1].strip()
+                        if path and path != '/':
+                            full_url = urllib.parse.urljoin(robots_url, path)
+                            if URLUtils.is_valid_url(full_url):
+                                urls.add(full_url)
+                if urls:
+                    ColorOutput.success(f"Found {len(urls)} URLs in robots.txt")
+        except Exception:
+            pass
+        return urls
+    
+    def _parse_sitemap(self, base_url):
+        """Parse sitemap.xml for URLs"""
+        urls = set()
+        sitemap_urls = [
+            urllib.parse.urljoin(base_url, '/sitemap.xml'),
+            urllib.parse.urljoin(base_url, '/sitemap_index.xml'),
+        ]
+        
+        for sitemap_url in sitemap_urls:
+            try:
+                content = self.fetch_url(sitemap_url)
+                if content:
+                    soup = BeautifulSoup(content, 'lxml-xml')
+                    for loc in soup.find_all('loc'):
+                        url = loc.text.strip()
+                        if URLUtils.is_valid_url(url):
+                            urls.add(url)
+                    if urls:
+                        ColorOutput.success(f"Found {len(urls)} URLs in sitemap")
+            except Exception:
+                continue
+        
+        return urls
+    
+    def _extract_urls_from_page(self, url):
+        """Extract URLs from page content"""
+        urls = set()
+        content = self.fetch_url(url)
+        
+        if content:
+            soup = BeautifulSoup(content, 'html.parser')
+            base_domain = URLUtils.get_domain(url)
+            
+            for link in soup.find_all('a', href=True):
+                href = link['href']
+                full_url = urllib.parse.urljoin(url, href)
+                
+                if (URLUtils.is_valid_url(full_url) and 
+                    not URLUtils.should_skip_url(full_url) and
+                    URLUtils.get_domain(full_url) == base_domain):  # Stay on same domain
+                    
+                    urls.add(full_url)
+        
+        return urls
+    
+    def crawl(self, start_url, max_pages=None, max_depth=None):
+        """Main crawling function for email extraction"""
+        if max_pages is None:
+            max_pages = self.config.MAX_PAGES
+        if max_depth is None:
+            max_depth = self.config.MAX_DEPTH
+        
+        self.crawl_stats['start_time'] = datetime.now().isoformat()
+        
+        queue = deque([(start_url, 0)])
+        email_extractor = EmailExtractor(start_url)
+        
+        ColorOutput.crawling(f"Starting crawl: {start_url}")
+        ColorOutput.crawling(f"Max pages: {max_pages}, Max depth: {max_depth}")
+        
+        processed_count = 0
+        while queue and len(self.visited_urls) < max_pages:
+            url, depth = queue.popleft()
+            
+            if (url in self.visited_urls or 
+                depth > max_depth or 
+                URLUtils.should_skip_url(url)):
+                continue
+            
+            ColorOutput.crawling(f"Crawling [{processed_count + 1}/{max_pages}]: {url} (Depth: {depth})")
+            
+            content = self.fetch_url(url)
+            if content:
+                self.visited_urls.add(url)
+                processed_count += 1
+                
+                # Extract emails from this page
+                emails = email_extractor.extract_emails_from_html(content, url)
+                new_emails = set(emails) - self.all_emails
+                
+                if new_emails:
+                    self.all_emails.update(new_emails)
+                    self.crawl_stats['emails_found'] = len(self.all_emails)
+                    ColorOutput.success(f"Found {len(new_emails)} new emails on this page")
+                
+                # Discover new URLs if we haven't reached depth limit
+                if depth < max_depth:
+                    new_urls = self._extract_urls_from_page(url)
+                    for new_url in new_urls:
+                        if (new_url not in self.visited_urls and 
+                            new_url not in [u for u, d in queue] and 
+                            len(self.visited_urls) < max_pages):
+                            queue.append((new_url, depth + 1))
+                
+                time.sleep(self.config.CRAWL_DELAY)
+        
+        self.crawl_stats['end_time'] = datetime.now().isoformat()
+        self.crawl_stats['pages_crawled'] = len(self.visited_urls)
+        
+        # Calculate duration for display
+        start_dt = datetime.fromisoformat(self.crawl_stats['start_time'])
+        end_dt = datetime.fromisoformat(self.crawl_stats['end_time'])
+        self.crawl_stats['duration_seconds'] = (end_dt - start_dt).total_seconds()
+        
+        return {
+            'emails': list(self.all_emails),
+            'stats': self.crawl_stats,
+            'crawled_urls': list(self.visited_urls),
+            'target_domain': URLUtils.get_domain(start_url),
+            'crawl_completed': datetime.now().isoformat()
+        }
+
+class EmailCrawl:
+    def __init__(self, config):
+        self.config = config
+        self.results = {}
+    
+    def run_email_crawl(self, start_url, max_pages=None, max_depth=None, output_file=None, proxy=None):
+        """Main email crawling execution"""
+        ColorOutput.info("=" * 60)
+        ColorOutput.info("EMAILCRAWL - PROFESSIONAL EMAIL EXTRACTION")
+        ColorOutput.info("=" * 60)
+        ColorOutput.info(f"Target: {start_url}")
+        ColorOutput.info(f"Started: {datetime.now().isoformat()}")
+        ColorOutput.info("=" * 60)
+        
+        # Validate URL
+        if not URLUtils.is_valid_url(start_url):
+            ColorOutput.error("Invalid URL provided")
+            return
+        
+        # Create output directory
+        os.makedirs(self.config.OUTPUT_DIR, exist_ok=True)
+        
+        # Use provided proxy or config proxy
+        use_proxy = proxy or self.config.HTTP_PROXY or self.config.SOCKS_PROXY
+        
+        try:
+            # Initialize crawler
+            crawler = WebCrawler(self.config, proxy=use_proxy)
+            
+            # Perform crawling
+            crawl_results = crawler.crawl(start_url, max_pages, max_depth)
+            self.results.update(crawl_results)
+            
+            # Generate report
+            self._generate_report(output_file, start_url)
+            
+            ColorOutput.success("Email crawling completed successfully!")
+            
+        except Exception as e:
+            ColorOutput.error(f"Crawling failed: {e}")
+    
+    def _generate_report(self, output_file=None, domain=None):
+        """Generate comprehensive email report"""
+        if not output_file:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            safe_domain = "".join(c for c in domain if c.isalnum() or c in ('-', '_')).rstrip()
+            output_file = f"{self.config.OUTPUT_DIR}/emailcrawl_{safe_domain}_{timestamp}.json"
+        
+        # Ensure output directory exists
+        os.makedirs(os.path.dirname(output_file), exist_ok=True)
+        
+        # Convert datetime objects to strings for JSON serialization
+        serializable_results = self._make_serializable(self.results)
+        
+        # Save JSON report
+        try:
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(serializable_results, f, indent=2, ensure_ascii=False, default=str)
+            
+            # Print summary
+            self._print_summary()
+            
+            ColorOutput.success(f"Full report saved to: {output_file}")
+            
+            # Also save emails to text file
+            txt_file = output_file.replace('.json', '.txt')
+            with open(txt_file, 'w', encoding='utf-8') as f:
+                f.write("# EmailCrawl Results\n")
+                f.write(f"# Target: {domain}\n")
+                f.write(f"# Date: {datetime.now().isoformat()}\n")
+                f.write(f"# Emails Found: {len(self.results.get('emails', []))}\n")
+                f.write(f"# Pages Crawled: {len(self.results.get('crawled_urls', []))}\n")
+                f.write("#" * 50 + "\n\n")
+                for email in self.results.get('emails', []):
+                    f.write(f"{email}\n")
+            
+            ColorOutput.success(f"Email list saved to: {txt_file}")
+            
+        except Exception as e:
+            ColorOutput.error(f"Failed to save report: {e}")
+            self._print_summary()
+    
+    def _make_serializable(self, obj):
+        """Convert non-serializable objects to serializable formats"""
+        if isinstance(obj, dict):
+            return {k: self._make_serializable(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [self._make_serializable(item) for item in obj]
+        elif isinstance(obj, (datetime, time.struct_time)):
+            return obj.isoformat()
+        elif hasattr(obj, 'isoformat'):
+            return obj.isoformat()
+        else:
+            return obj
+    
+    def _print_summary(self):
+        """Print crawling summary"""
+        stats = self.results.get('stats', {})
+        emails = self.results.get('emails', [])
+        crawled_urls = self.results.get('crawled_urls', [])
+        
+        ColorOutput.info("\n" + "=" * 60)
+        ColorOutput.info("EMAILCRAWL - EXTRACTION SUMMARY")
+        ColorOutput.info("=" * 60)
+        
+        # Basic stats
+        ColorOutput.stats(f"Pages Crawled: {len(crawled_urls)}")
+        ColorOutput.stats(f"Unique Emails Found: {len(emails)}")
+        
+        if stats.get('duration_seconds'):
+            duration = stats['duration_seconds']
+            ColorOutput.stats(f"Crawl Duration: {duration:.2f} seconds")
+        
+        # Email domains analysis
+        if emails:
+            domains = {}
+            for email in emails:
+                domain = email.split('@')[1]
+                domains[domain] = domains.get(domain, 0) + 1
+            
+            ColorOutput.info("\nEMAIL DOMAINS DISTRIBUTION:")
+            for domain, count in sorted(domains.items(), key=lambda x: x[1], reverse=True):
+                ColorOutput.email(f"  {domain}: {count} emails")
+        
+        # Print all emails found
+        if emails:
+            ColorOutput.info("\nUNIQUE EMAILS EXTRACTED:")
+            for email in sorted(emails):
+                ColorOutput.email(f"  {email}")
+        else:
+            ColorOutput.warning("\nNo valid email addresses found during crawling")
+        
+        ColorOutput.info("=" * 60)
+
+def display_banner():
+    banner = f"""
+{Fore.GREEN}
+███████╗███╗   ███╗ █████╗ ██╗██╗       ██████╗██████╗  █████╗ ██╗    ██╗██╗     
+██╔════╝████╗ ████║██╔══██╗██║██║      ██╔════╝██╔══██╗██╔══██╗██║    ██║██║     
+█████╗  ██╔████╔██║███████║██║██║█████╗██║     ██████╔╝███████║██║ █╗ ██║██║     
+██╔══╝  ██║╚██╔╝██║██╔══██║██║██║╚════╝██║     ██╔══██╗██╔══██║██║███╗██║██║     
+███████╗██║ ╚═╝ ██║██║  ██║██║███████╗ ╚██████╗██║  ██║██║  ██║╚███╔███╔╝███████╗
+╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚══════╝  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝
+{Fore.CYAN}                    Professional Email Extraction Crawler
+{Fore.YELLOW}                         Advanced OSINT Intelligence Tool
+{Style.RESET_ALL}
+    """
+    print(banner)
+
+def display_usage():
+    """Display usage information"""
+    print(f"""
+{Fore.GREEN}EmailCrawl - Professional Email Extraction Crawler{Style.RESET_ALL}
+
+{Fore.CYAN}Usage:{Style.RESET_ALL}
+  emailcrawl https://example.com [options]
+
+{Fore.CYAN}Options:{Style.RESET_ALL}
+  --max-pages NUM        Maximum pages to crawl (default: 200)
+  --max-depth NUM        Maximum crawl depth (default: 3)
+  --output FILE          Custom output file path
+  --proxy URL            HTTP/SOCKS proxy URL
+  --delay SECONDS        Delay between requests (default: 1)
+
+{Fore.CYAN}Examples:{Style.RESET_ALL}
+  {Fore.YELLOW}# Basic email extraction{Style.RESET_ALL}
+  emailcrawl https://example.com
+
+  {Fore.YELLOW}# Deep crawl with custom limits{Style.RESET_ALL}
+  emailcrawl https://example.com --max-pages 500 --max-depth 4
+
+  {Fore.YELLOW}# With proxy and custom output{Style.RESET_ALL}
+  emailcrawl https://example.com --proxy http://proxy:8080 --output results.json
+
+  {Fore.YELLOW}# Faster crawling with reduced delay{Style.RESET_ALL}
+  emailcrawl https://example.com --delay 0.5
+
+{Fore.CYAN}Features:{Style.RESET_ALL}
+  • Advanced web crawling with configurable depth and limits
+  • Intelligent email validation with false positive filtering
+  • Extraction from visible text, meta tags, and mailto links
+  • Robots.txt and sitemap.xml parsing for URL discovery
+  • Same-domain crawling to stay focused on target
+  • JSON and TXT output formats
+  • Real-time progress and statistics
+  • Professional email validation algorithms
+
+{Fore.CYAN}Output:{Style.RESET_ALL}
+  Results are saved to 'emailcrawl_output' directory
+  Includes both JSON (full data) and TXT (email list) formats
+  Real-time email discovery with source URLs
+  Comprehensive statistics and domain analysis
+    """)
+
+def main():
+    display_banner()
+    
+    parser = argparse.ArgumentParser(
+        description='EmailCrawl - Professional Email Extraction Crawler',
+        add_help=False
+    )
+    
+    # Required arguments
+    parser.add_argument('url', nargs='?', help='Target URL for email extraction')
+    
+    # Optional arguments
+    parser.add_argument('--max-pages', type=int, default=200, help='Maximum pages to crawl (default: 200)')
+    parser.add_argument('--max-depth', type=int, default=3, help='Maximum crawl depth (default: 3)')
+    parser.add_argument('--output', help='Output file path')
+    parser.add_argument('--proxy', help='HTTP/SOCKS proxy URL')
+    parser.add_argument('--delay', type=float, default=1, help='Delay between requests in seconds (default: 1)')
+    parser.add_argument('-h', '--help', action='store_true', help='Show this help message and exit')
+    
+    args = parser.parse_args()
+    
+    # Show help if requested or no URL provided
+    if args.help or not args.url:
+        display_usage()
+        return
+    
+    # Update config with command line arguments
+    config = Config()
+    if args.proxy:
+        config.HTTP_PROXY = args.proxy
+    config.MAX_PAGES = args.max_pages
+    config.MAX_DEPTH = args.max_depth
+    config.CRAWL_DELAY = args.delay
+    
+    # Initialize and run email crawling
+    email_crawl = EmailCrawl(config)
+    email_crawl.run_email_crawl(
+        start_url=args.url,
+        max_pages=args.max_pages,
+        max_depth=args.max_depth,
+        output_file=args.output,
+        proxy=args.proxy
+    )
+
+if __name__ == '__main__':
+    main()

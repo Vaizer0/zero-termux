@@ -1,0 +1,33 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# jSQL Injection uninstaller for Termux
+
+JSQL_DIR="$PREFIX/share/jsql"
+LAUNCHER="$PREFIX/bin/jsql"
+
+# Colors
+RED='\e[31m'
+GREEN='\e[32m'
+YELLOW='\e[33m'
+BLUE='\e[34m'
+RESET='\e[0m'
+
+# Functions
+success_msg() {
+    echo -e "${GREEN}[✓] $1${RESET}"
+}
+
+# Remove launcher
+if [ -f "$LAUNCHER" ]; then
+    rm -f "$LAUNCHER"
+    success_msg "Removed launcher"
+fi
+
+# Remove installation directory
+if [ -d "$JSQL_DIR" ]; then
+    rm -rf "$JSQL_DIR"
+    success_msg "Removed installation files"
+fi
+
+success_msg "jSQL Injection completely removed"
+exit 0

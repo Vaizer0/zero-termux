@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling ia-get...${NC}"
+
+if [ -f "$PREFIX/bin/ia-get" ]; then
+    rm -f $PREFIX/bin/ia-get
+    echo -e "${GREEN}Removed binary${NC}"
+fi
+
+echo -e "${GREEN}ia-get completely removed${NC}"
+exit 0

@@ -1,0 +1,13 @@
+Package: waymap
+Version: 7.2.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python
+Section: web
+Priority: optional
+Homepage: https://waymapscanner.github.io
+Description: Fast Web Vulnerability Scanner and Security Testing Toolkit
+ Waymap is a comprehensive web application security scanner for
+ SQL Injection, XSS, Command Injection, LFI, CRLF, CORS, Open Redirect,
+ API security testing (REST/GraphQL), and WordPress vulnerability scanning.
+ Provides automation-friendly scanning with session management.

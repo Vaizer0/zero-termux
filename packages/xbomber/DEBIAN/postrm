@@ -1,0 +1,23 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling xbomber...${NC}"
+
+# Remove launcher script
+if [ -f "$PREFIX/bin/xbomber" ]; then
+    rm -f $PREFIX/bin/xbomber
+    echo -e "${GREEN}Removed launcher script${NC}"
+fi
+
+# Remove cloned repository
+if [ -d "$PREFIX/share/xbomber" ]; then
+    rm -rf $PREFIX/share/xbomber
+    echo -e "${GREEN}Removed xbomber repository${NC}"
+fi
+
+echo -e "${GREEN}xbomber completely removed${NC}"
+exit 0
+

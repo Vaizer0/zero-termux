@@ -1,0 +1,24 @@
+# Build outputs
+debs/
+repo/
+_site/
+
+# Package manager caches
+node_modules/
+__pycache__/
+*.pyc
+
+# Local GPG material — never commit private keys
+*.gpg.private
+*.key
+*.asc
+.gnupg/
+private-key*
+
+# Editor / OS cruft
+*.swp
+*~
+.DS_Store
+
+# Agent harness file (not project content)
+AGENTS.md

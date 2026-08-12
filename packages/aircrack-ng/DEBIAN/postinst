@@ -1,0 +1,30 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+REPO="https://github.com/aircrack-ng/aircrack-ng.git"
+TMP_DIR="$TMPDIR/aircrack-ng-build"
+
+git clone --depth 1 "$REPO" "$TMP_DIR"
+cd "$TMP_DIR"
+
+NOCONFIGURE=1 ./autogen.sh
+./configure --prefix="$PREFIX" --with-experimental
+make -j$(nproc)
+make install
+
+# Install airmon-ng separately
+install -Dm700 -t "$PREFIX/bin" scripts/airmon-ng
+
+cd /
+rm -rf "$TMP_DIR"
+
+echo "aircrack-ng 1.7 installed successfully."
+echo ""
+echo "Usage examples:"
+echo "  airmon-ng start wlan0    # Enable monitor mode"
+echo "  airodump-ng wlan0mon     # Capture packets"
+echo "  aircrack-ng capture.cap  # Crack WEP/WPA"
+echo "  aireplay-ng -0 5 -a AP_MAC -c CLIENT_MAC wlan0mon  # Deauth attack"
+echo ""
+echo "NOTE: Requires root privileges. Run with sudo."
+exit 0

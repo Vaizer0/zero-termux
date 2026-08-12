@@ -1,0 +1,12 @@
+Package: nvchad
+Version: 3.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, neovim, ripgrep, lua-language-server, clang, npm
+Section: editors
+Priority: optional
+Homepage: https://github.com/NvChad/NvChad
+Description: Neovim Configuration Framework
+ NvChad provides a beautiful and functional Neovim configuration
+ with IDE-like setup, themes, and plugins for enhanced development
+ experience. Pre-configured for optimal performance and usability.

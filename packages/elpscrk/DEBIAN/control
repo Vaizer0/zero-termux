@@ -1,0 +1,11 @@
+Package: elpscrk
+Version: 2.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, python-psutil
+Section: utils
+Priority: optional
+Homepage: https://github.com/D4Vinci/elpscrk
+Description: Intelligent common user-password profiler
+ Elpscrk is a password profiling tool inspired by the Mr. Robot series.
+ It generates intelligent password lists based on user information.

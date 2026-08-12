@@ -1,0 +1,27 @@
+#!/data/data/com.termux/files/usr/bin/sh
+
+set -e
+
+# Clone or update the repository
+REPO_URL="https://github.com/Anon4You/AndroVirus.git"
+INSTALL_DIR="$PREFIX/share/androvirus"
+
+if [ -d "$INSTALL_DIR" ]; then
+    echo "Removing existing installation..."
+    rm -rf "$INSTALL_DIR"
+fi
+
+echo "Cloning AndroVirus repository..."
+git clone "$REPO_URL" "$INSTALL_DIR"
+
+# Create launcher
+echo "Creating launcher..."
+cat > "$PREFIX/bin/androvirus" <<EOF
+#!/bin/sh
+cd "$INSTALL_DIR"
+bash androvirus.sh
+EOF
+
+chmod 755 "$PREFIX/bin/androvirus"
+
+echo "Installation complete. Run 'androvirus' to start the tool."

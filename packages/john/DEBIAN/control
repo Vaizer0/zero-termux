@@ -1,0 +1,9 @@
+Package: john
+Version: 1.9.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, make, clang, openssl, zlib
+Section: security
+Priority: optional
+Homepage: https://www.openwall.com/john/
+Description: John the Ripper password cracker

@@ -1,0 +1,11 @@
+Package: holehe
+Version: 1.61
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: python, python-pip
+Section: security
+Priority: optional
+Homepage: https://github.com/megadose/holehe
+Description: Email OSINT tool
+ Check if email accounts exist on 120+ platforms
+ (Twitter, Instagram, Snapchat, etc.) without direct access.

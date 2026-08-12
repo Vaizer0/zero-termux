@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling knockpy...${NC}"
+
+pip uninstall -y knock-subdomains 2>/dev/null || {
+    echo -e "${RED}Error: Failed to uninstall knock-subdomains.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}knockpy completely removed${NC}"
+exit 0

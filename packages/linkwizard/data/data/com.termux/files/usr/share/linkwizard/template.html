@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Links for "{term}"</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0a0a0a;
+            font-family: 'Courier New', monospace;
+            color: #0f0;
+            padding: 2rem;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: repeating-linear-gradient(0deg, rgba(0,255,0,0.03) 0px, rgba(0,255,0,0.03) 2px, transparent 2px, transparent 6px);
+            pointer-events: none;
+            z-index: -1;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 #0f0, -0.05em -0.025em 0 #f00; transform: skew(0deg); }
+            15% { text-shadow: -0.05em -0.025em 0 #0f0, 0.025em 0.05em 0 #f00; transform: skew(0.5deg); }
+            50% { text-shadow: 0.025em 0.05em 0 #0f0, 0.05em 0 0 #f00; transform: skew(-0.5deg); }
+            100% { text-shadow: 0.05em 0 0 #0f0, -0.05em -0.025em 0 #f00; transform: skew(0deg); }
+        }
+        .header { text-align: center; margin-bottom: 3rem; animation: glitch 3s infinite; }
+        h1 { font-size: 2.5rem; color: #0f0; text-shadow: 0 0 5px #0f0; letter-spacing: 4px; }
+        .term { background: rgba(0,0,0,0.8); border: 1px solid #0f0; display: inline-block; padding: 0.5rem 1.5rem; font-size: 1.2rem; margin: 1rem 0; }
+        .stats { background: rgba(0,0,0,0.8); border: 1px solid #f00; display: inline-block; padding: 0.5rem 1.5rem; color: #f00; margin-left: 1rem; }
+        .timestamp { color: rgba(0,255,0,0.7); font-size: 0.8rem; margin-top: 0.5rem; }
+        .cards-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap: 1.5rem; }
+        .card { background: rgba(0,0,0,0.85); border: 1px solid #0f0; transition: 0.2s; text-decoration: none; display: block; }
+        .card:hover { transform: translateY(-4px); border-color: #f00; box-shadow: 0 0 15px rgba(255,0,0,0.5); }
+        .card-content { padding: 1.5rem; }
+        .card-domain { font-size: 1.2rem; font-weight: bold; color: #0f0; margin-bottom: 0.75rem; border-left: 3px solid #0f0; padding-left: 0.75rem; }
+        .card:hover .card-domain { color: #f00; border-left-color: #f00; }
+        .card-url { font-size: 0.8rem; color: #8f8; word-break: break-all; }
+        .footer { text-align: center; margin-top: 3rem; color: #0f0; font-size: 0.7rem; opacity: 0.6; border-top: 1px solid #0f0; padding-top: 1rem; }
+        @media (max-width: 768px) { body { padding: 1rem; } .cards-container { grid-template-columns: 1fr; } h1 { font-size: 1.8rem; } }
+        body::after { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(0deg, rgba(0,0,0,0.2) 0px, rgba(0,0,0,0.2) 2px, transparent 2px, transparent 4px); pointer-events: none; z-index: 2; }
+        /* Hacker skull emoji styling */
+        .skull {
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 2rem;
+            vertical-align: middle;
+            filter: drop-shadow(0 0 2px #0f0);
+        }
+        .footer .skull {
+            font-size: 1rem;
+            margin-right: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="max-width:1200px; margin:0 auto;">
+        <div class="header">
+            <h1>
+                <span class="skull">💀</span> 
+                # LINK WIZARD 
+                <span class="skull">👾</span>
+            </h1>
+            <div>
+                <span class="term">"{term}"</span>
+                <span class="stats">{count} LINKS FOUND</span>
+            </div>
+            <div class="timestamp">[ {timestamp} ]</div>
+        </div>
+        <div class="cards-container">
+            {cards}
+        </div>
+        <div class="footer">
+            <span class="skull">💀</span> [ DUCKDUCKGO SEARCH ] :: SCAN COMPLETE :: SYSTEM READY <span class="skull">👾</span><br>
+        </div>
+    </div>
+</body>
+</html>

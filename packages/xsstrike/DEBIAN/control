@@ -1,0 +1,21 @@
+Package: xsstrike
+Version: 3.1.6
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python
+Section: web
+Priority: optional
+Homepage: https://github.com/s0md3v/XSStrike
+Description: Advanced XSS Detection and Exploitation Suite
+ XSStrike is a Cross Site Scripting detection suite equipped with multiple
+ hand-written parsers, an intelligent payload generator, a powerful fuzzing
+ engine and an incredibly fast crawler. Instead of injecting payloads and
+ checking for reflections, XSStrike analyses responses with multiple parsers
+ and then crafts payloads that are guaranteed to work by the context.
+ Features:
+ - Context-aware payload generation
+ - Multiple HTML parsers
+ - Powerful fuzzing engine
+ - Fast crawler
+ - Blind XSS support
+ - WAF detection and evasion

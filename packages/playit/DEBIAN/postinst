@@ -1,0 +1,42 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing Playit 0.16.3...${NC}"
+
+# Clone playit repository
+echo -e "${YELLOW}Cloning playit repository...${NC}"
+git clone https://github.com/playit-cloud/playit-agent.git $TMPDIR/playit || {
+    echo -e "${RED}Error: Failed to clone playit repository.${NC}"
+    exit 1
+}
+
+# Build with cargo
+echo -e "${YELLOW}Building playit with cargo (this may take a few minutes)...${NC}"
+cd $TMPDIR/playit
+cargo build --release || {
+    echo -e "${RED}Error: Failed to build playit.${NC}"
+    exit 1
+}
+
+# Install binary
+echo -e "${YELLOW}Installing playit binary...${NC}"
+install -Dm755 -t $PREFIX/bin target/release/playit-cli || {
+    echo -e "${RED}Error: Failed to install playit binary.${NC}"
+    exit 1
+}
+
+# Cleanup
+rm -rf $TMPDIR/playit
+
+echo -e "${GREEN}Playit installed successfully!${NC}"
+echo -e "${YELLOW}Note: Rust compilation warnings are normal and don't affect functionality.${NC}"
+echo -e "${YELLOW}Usage:${NC}"
+echo "  playit-cli --help"
+echo "  playit-cli tunnel"
+echo "  playit-cli agent"
+echo "  playit-cli login"
+exit 0

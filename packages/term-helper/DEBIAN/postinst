@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo "term-helper installed successfully!"
+echo ""
+echo "Usage:"
+echo "  term-helper -h       # Show help menu"
+echo "  term-helper ls       # Learn about ls command"
+echo "  term-helper grep     # Learn about grep command"
+echo ""
+echo "Explore and learn terminal commands easily!"
+exit 0

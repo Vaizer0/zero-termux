@@ -1,0 +1,17 @@
+#!/bin/sh
+# Post-installation script for ruby-nokogiri
+
+set -e
+
+echo "Installing Nokogiri 1.19.0 with system libraries..."
+
+gem install nokogiri -- --use-system-libraries
+
+echo "Verifying installation..."
+ruby -rnokogiri -e "puts Nokogiri::VERSION" || {
+    echo "Nokogiri installation failed!" >&2
+    exit 1
+}
+
+echo "Nokogiri 1.19.0 installed successfully."
+exit 0

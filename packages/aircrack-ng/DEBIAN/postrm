@@ -1,0 +1,19 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Remove all binaries from bin/
+for bin in aircrack-ng airdecap-ng packetforge-ng ivstools kstats makeivs-ng airdecloak-ng besside-ng-crawler wpaclean airolib-ng buddy-ng airmon-ng airbase-ng aireplay-ng airodump-ng airserv-ng airtun-ng airventriloquist-ng besside-ng easside-ng tkiptun-ng wesside-ng; do
+    rm -f "$PREFIX/bin/$bin"
+done
+
+# Remove libraries
+rm -f "$PREFIX/lib/libaircrack-"*.so*
+rm -f "$PREFIX/lib/libaircrack-"*.la
+
+# Remove headers
+rm -rf "$PREFIX/include/aircrack-ng"
+
+# Clean up any leftover sbin directory
+rm -rf "$PREFIX/sbin" 2>/dev/null || true
+
+echo "aircrack-ng completely removed."
+exit 0

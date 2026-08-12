@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+rhawkDir="$PREFIX/var/rhawk"
+if [[ -d "${rhawkDir}" ]]; then
+  cd ${rhawkDir}
+  php rhawk.php
+else
+  printf "RED_HAWK path missing aborting...\n"
+  exit 1
+fi

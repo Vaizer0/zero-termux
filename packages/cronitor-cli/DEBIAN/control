@@ -1,0 +1,11 @@
+Package: cronitor-cli
+Version: 31.6
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: curl, tar
+Section: utils
+Priority: optional
+Homepage: https://github.com/cronitorio/cronitor-cli
+Description: Command Line Interface for Cronitor Monitoring
+ CronitorCLI provides command-line tools for managing and monitoring
+ cron jobs, scheduled tasks, and background processes.

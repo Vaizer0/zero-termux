@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+pip install requests beautifulsoup4 colorama tldextract tabulate
+
+exit 0

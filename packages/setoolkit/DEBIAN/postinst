@@ -1,0 +1,25 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing SEToolkit via NetHunter...${NC}"
+nh apt update -y && nh apt install set -y || {
+    echo -e "${RED}Error: Failed to install SEToolkit. Ensure NetHunter CLI is properly configured.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}Creating launcher at $PREFIX/bin/setoolkit...${NC}"
+cat > "$PREFIX/bin/setoolkit" <<- EOF
+#!/data/data/com.termux/files/usr/bin/bash
+nh setoolkit "\$@"
+EOF
+
+chmod +x "$PREFIX/bin/setoolkit" || {
+    echo -e "${RED}Error: Failed to set executable permissions for setoolkit launcher.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}SEToolkit installed successfully. Run 'setoolkit' to start.${NC}"
+exit 0

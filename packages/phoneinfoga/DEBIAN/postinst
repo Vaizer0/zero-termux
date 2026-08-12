@@ -1,0 +1,48 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+# Zero-Termux: rolling version — resolve latest GitHub release at install time
+VERSION="$(curl -fsSL 'https://api.github.com/repos/sundowndev/phoneinfoga/releases/latest' 2>/dev/null | grep '"tag_name"' | cut -d'"' -f4 | sed 's/^v//')"
+[ -n "$VERSION" ] || { echo 'Error: failed to resolve latest phoneinfoga release' >&2; exit 1; }
+ARCH=$(uname -m)
+
+case "$ARCH" in
+    aarch64)
+        ARCH_SUFFIX="arm64"
+        ;;
+    x86_64)
+        ARCH_SUFFIX="x86_64"
+        ;;
+    i686)
+        ARCH_SUFFIX="386"
+        ;;
+    *)
+        echo "Unsupported architecture: $ARCH" >&2
+        exit 1
+        ;;
+esac
+
+DOWNLOAD_URL="https://github.com/sundowndev/phoneinfoga/releases/download/v${VERSION}/phoneinfoga_Linux_${ARCH_SUFFIX}.tar.gz"
+TMP_DIR="$TMPDIR/phoneinfoga-download"
+BIN_DIR="$PREFIX/bin"
+
+mkdir -p "$TMP_DIR"
+
+echo "Downloading PhoneInfoga ${VERSION} for ${ARCH}..."
+curl -fsSL -o "$TMP_DIR/phoneinfoga.tar.gz" "$DOWNLOAD_URL"
+
+echo "Extracting..."
+tar -xzf "$TMP_DIR/phoneinfoga.tar.gz" -C "$TMP_DIR"
+
+echo "Installing binary..."
+install -Dm755 "$TMP_DIR/phoneinfoga" "$BIN_DIR/phoneinfoga"
+
+rm -rf "$TMP_DIR"
+
+echo "PhoneInfoga installed successfully."
+echo ""
+echo "Usage examples:"
+echo "  phoneinfoga scan -n +1234567890"
+echo "  phoneinfoga scan -n +1234567890 -o json"
+echo "  phoneinfoga serve          # Start web interface"
+exit 0

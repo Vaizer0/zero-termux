@@ -1,0 +1,13 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling nvchad...${NC}"
+
+# Remove all nvchad/nvim directories
+rm -rf ~/.config/nvim ~/.local/state/nvim ~/.local/share/nvim 2>/dev/null
+
+echo -e "${GREEN}nvchad completely removed${NC}"
+exit 0

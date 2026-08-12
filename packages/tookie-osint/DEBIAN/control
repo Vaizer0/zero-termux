@@ -1,0 +1,12 @@
+Package: tookie-osint
+Version: 4.1fix
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python, python-pip, termux-tools
+Section: recon
+Priority: optional
+Homepage: https://github.com/Alfredredbird/tookie-osint
+Description: OSINT tool for username search across platforms
+ Tookie-OSINT is a reconnaissance tool that searches for usernames
+ across hundreds of social media and online platforms. It supports
+ multi-threading, proxy, and various output formats.

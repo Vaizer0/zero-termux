@@ -1,0 +1,17 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing subcat 1.4.0...${NC}"
+
+echo -e "${YELLOW}Installing subcat via pip...${NC}"
+pip install -U subcat || {
+    echo -e "${RED}Error: Failed to install subcat.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}subcat installed successfully!${NC}"
+exit 0

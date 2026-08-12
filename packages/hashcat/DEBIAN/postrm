@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+HASHCAT="$PREFIX/opt/hashcat"
+GPU_HASHCAT="$HOME/.local/share/hashcat"
+BIN="$PREFIX/bin/hashcat"
+
+rm -rf $HASHCAT $GPU_HASHCAT $BIN

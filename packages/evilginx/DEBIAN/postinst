@@ -1,0 +1,27 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+EVILGINX_DIR="$PREFIX/share/evilginx"
+BIN_DIR="$PREFIX/bin"
+
+echo "[*] Installing evilginx2 3.3.0..."
+[ -d "$EVILGINX_DIR" ] && { echo "[*] Removing old installation..."; rm -rf "$EVILGINX_DIR"; }
+
+echo "[*] Cloning repository..."
+git clone --depth=1 https://github.com/kgretzky/evilginx2.git "$EVILGINX_DIR"
+
+echo "[*] Building evilginx..."
+cd "$EVILGINX_DIR"
+make
+
+echo "[*] Installing binary..."
+install -Dm700 -t "$BIN_DIR" "$EVILGINX_DIR/build/evilginx"
+
+echo -e "\n[√] evilginx installed successfully!"
+echo "Usage:"
+echo "  evilginx -h          # Show help menu"
+echo "  evilginx config      # Configure phishing setup"
+echo "  evilginx run         # Start phishing server"
+echo ""
+echo "Note: Requires root privileges for port binding"
+exit 0

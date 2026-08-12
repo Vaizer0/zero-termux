@@ -1,0 +1,12 @@
+Package: nikto
+Version: 2.6.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: perl, git, openssl, openssl-tool, clang, make, cmake, curl, pkg-config
+Section: security
+Priority: optional
+Homepage: https://github.com/sullo/nikto
+Description: Comprehensive web server scanner
+ Nikto performs comprehensive tests against web servers
+ for dangerous files, outdated servers, and vulnerabilities.
+ Supports SSL, proxies, and multiple IDS evasion techniques.

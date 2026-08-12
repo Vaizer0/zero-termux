@@ -1,0 +1,50 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing theHarvester 4.8.2 via NetHunter...${NC}"
+
+# Update and install theharvester using nethunter
+nh apt update -y && nh apt install theharvester -y || {
+    echo -e "${RED}Error: Failed to install theHarvester via NetHunter.${NC}"
+    echo -e "${YELLOW}Make sure nethunter-cli is properly configured.${NC}"
+    exit 1
+}
+
+# Create multiple launcher scripts
+echo -e "${YELLOW}Creating launchers...${NC}"
+
+# Main launcher
+cat > $PREFIX/bin/theHarvester << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+exec nh theHarvester "$@"
+EOF
+
+# Alternative spelling launcher
+cat > $PREFIX/bin/theharvester << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+exec nh theharvester "$@"
+EOF
+
+# REST API launcher
+cat > $PREFIX/bin/restfulHarvest << 'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+exec nh restfulHarvest "$@"
+EOF
+
+# Make all launchers executable
+chmod +x $PREFIX/bin/theHarvester $PREFIX/bin/theharvester $PREFIX/bin/restfulHarvest
+
+echo -e "${GREEN}theHarvester installed successfully!${NC}"
+echo -e "${YELLOW}Available commands:${NC}"
+echo "  theHarvester -d example.com -l 500 -b google"
+echo "  theharvester -d target.com -b all"
+echo "  restfulHarvest --help"
+echo -e "${YELLOW}Usage examples:${NC}"
+echo "  theHarvester -d company.com -b google,bing,linkedin"
+echo "  theHarvester -d domain.com -l 1000 -b shodan"
+echo "  theHarvester -d example.com -v --filename results.xml"
+exit 0

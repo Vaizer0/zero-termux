@@ -1,0 +1,11 @@
+Package: ia-get
+Version: 0.1.3
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, rust
+Section: utils
+Priority: optional
+Homepage: https://github.com/wimpysworld/ia-get
+Description: Internet Archive Downloader Tool
+ ia-get is a command-line utility for downloading files from the
+ Internet Archive. Built with Rust for speed and reliability.

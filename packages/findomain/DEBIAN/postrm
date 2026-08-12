@@ -1,0 +1,8 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+if [ -f "$PREFIX/bin/findomain" ]; then
+    rm -f "$PREFIX/bin/findomain"
+fi
+
+echo "Findomain completely removed."
+exit 0

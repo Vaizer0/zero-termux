@@ -1,0 +1,13 @@
+Package: beef
+Version: 0.6.0.0
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: ruby, nodejs, git, make, clang, sqlite, openssl-tool, build-essential, curl, libcurl, ruby-nokogiri, ruby-curb
+Recommends: metasploit-framework
+Section: web
+Priority: optional
+Homepage: https://beefproject.com/
+Description: Browser Exploitation Framework
+ BeEF is a penetration testing tool that focuses on the web browser.
+ It allows security professionals to assess the security posture of
+ a target using client-side attack vectors.

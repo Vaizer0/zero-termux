@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+rm -f "$PREFIX/bin/beef"
+rm -rf "$PREFIX/share/beef"
+exit 0

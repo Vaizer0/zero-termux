@@ -1,0 +1,11 @@
+Package: androvirus
+Version: 3.0
+Architecture: all
+Section: security
+Maintainer: Alienkrishn [Anon4You]
+Depends: curl, git, php, cloudflared
+Priority: optional
+Homepage: https://github.com/Anon4You/AndroVirus.git
+Description: Android penetration testing framework (USE RESPONSIBLY)
+ AndroVirus is a security assessment tool designed for authorized penetration testing and educational purposes only. The tool can be used to demonstrate phishing vulnerabilities in Android systems.
+ WARNING: This tool is capable of compromising Android devices when malicious links are delivered. Use only on systems you own or have explicit permission to test. The maintainer assumes no responsibility for unauthorized or illegal use.

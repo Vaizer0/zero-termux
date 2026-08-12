@@ -1,0 +1,12 @@
+Package: cewl
+Version: 6.2.1
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, ruby, pkg-config, openssl, libxml2, libxslt, ruby-nokogiri, exiftool
+Section: utils
+Priority: optional
+Homepage: https://github.com/digininja/CeWL
+Description: Custom Word List generator (CeWL) for password cracking
+ CeWL (Custom Word List generator) is a Ruby tool that spiders a target website
+ to create a wordlist for password cracking tools like John the Ripper or Hashcat.
+ It supports depth crawling, metadata extraction, and more.

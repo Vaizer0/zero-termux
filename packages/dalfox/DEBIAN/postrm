@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+# Remove binary
+rm -f "$PREFIX/bin/dalfox"
+
+# Optional: remove any leftover build cache (safe to remove)
+rm -rf "$TMPDIR/dalfox-build" 2>/dev/null || true
+
+exit 0

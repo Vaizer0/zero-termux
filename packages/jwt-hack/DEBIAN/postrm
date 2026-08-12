@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Remove symlink
+rm -f "$PREFIX/bin/jwt-hack"
+
+# Uninstall the cargo package
+cargo uninstall jwt-hack 2>/dev/null || true
+
+echo "jwt-hack completely removed."
+exit 0

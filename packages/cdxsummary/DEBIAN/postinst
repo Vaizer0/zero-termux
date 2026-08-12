@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing cdxsummary 0.1.1...${NC}"
+pip install cdxsummary || {
+    echo -e "${RED}Error: Failed to install cdxsummary. Ensure Python and pip are available.${NC}"
+    exit 1
+}
+
+echo -e "${GREEN}cdxsummary installed successfully!${NC}"
+echo "Usage:"
+echo "  cdxsummary -h          # Show help menu"
+echo "  cdxsummary file.cdx    # Analyze CDX file"
+echo "  cdxsummary --json file.cdx  # JSON output"
+exit 0

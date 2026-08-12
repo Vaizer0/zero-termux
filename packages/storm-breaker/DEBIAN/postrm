@@ -1,0 +1,12 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -e
+
+echo "[*] Removing Storm-Breaker..."
+rm -rf "$PREFIX/share/storm-breaker"
+rm -f "$PREFIX/bin/storm-breaker"
+
+echo "[*] Cleaning Python packages..."
+pip uninstall -y -r "$PREFIX/share/storm-breaker/requirements.txt" 2>/dev/null || true
+
+echo "[√] Storm-Breaker completely removed"
+exit 0

@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling CronitorCLI...${NC}"
+
+if [ -f "$PREFIX/bin/cronitor" ]; then
+    rm -f $PREFIX/bin/cronitor
+    echo -e "${GREEN}Removed cronitor binary${NC}"
+fi
+
+echo -e "${GREEN}CronitorCLI completely removed${NC}"
+exit 0

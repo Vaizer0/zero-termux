@@ -1,0 +1,11 @@
+Package: onionsearch
+Version: 1.3
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: python, python-pip
+Section: net
+Priority: optional
+Homepage: https://github.com/megadose/OnionSearch
+Description: Scrape .onion URLs from various Tor search engines
+ OnionSearch collects onion addresses from different search engines
+ for cybersecurity research and OSINT investigations.

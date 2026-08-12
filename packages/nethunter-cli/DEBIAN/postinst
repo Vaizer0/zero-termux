@@ -1,0 +1,155 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Configuration
+NETHUNTER_BASE_DIR="$PREFIX/share/NETHUNTER_ROOTLESS"
+NETHUNTERTAR="$TMPDIR/NETHUNTER-rootfs.tar.xz"
+BASE_URL="https://kali.download/nethunter-images/current/rootfs/kali-nethunter-rootfs-minimal"
+
+# Detect architecture and set directory name
+ARCH=$(uname -m)
+case "$ARCH" in
+    aarch64) 
+        ARCH="arm64"
+        EXTRACTED_DIR="kali-arm64"
+        ;;
+    arm*) 
+        ARCH="armhf"
+        EXTRACTED_DIR="kali-armhf"
+        ;;
+    i386) 
+        ARCH="i386"
+        EXTRACTED_DIR="kali-i386"
+        ;;
+    x86_64) 
+        ARCH="amd64"
+        EXTRACTED_DIR="kali-amd64"
+        ;;
+    *) 
+        echo "Error: Unsupported architecture: $ARCH"
+        exit 1 
+        ;;
+esac
+
+NETHUNTERDIR="$NETHUNTER_BASE_DIR/$EXTRACTED_DIR"
+DOWNLOAD_URL="${BASE_URL}-${ARCH}.tar.xz"
+
+# Function to clean previous installation
+clean_previous() {
+    if [ -d "$NETHUNTER_BASE_DIR" ]; then
+        echo "Removing previous NetHunter installation..."
+        rm -rf "$NETHUNTER_BASE_DIR"
+        echo "Previous installation removed"
+    fi
+}
+
+# Function to download NetHunter rootfs
+download_nethunter() {
+    echo "Downloading NetHunter rootfs for $ARCH..."
+    
+    if command -v axel >/dev/null 2>&1; then
+        axel -o "$NETHUNTERTAR" "$DOWNLOAD_URL"
+    else
+        wget -O "$NETHUNTERTAR" "$DOWNLOAD_URL"
+    fi
+    
+    if [ $? -ne 0 ]; then
+        echo "Error: Download failed!"
+        exit 1
+    fi
+}
+
+# Function to extract rootfs
+extract_rootfs() {
+    echo "Extracting NetHunter rootfs..."
+    
+    mkdir -p "$NETHUNTER_BASE_DIR"
+    
+    proot --link2symlink tar -xf "$NETHUNTERTAR" -C "$NETHUNTER_BASE_DIR/" 2>/dev/null ||:
+    
+    if [ ! -d "$NETHUNTERDIR" ]; then
+        echo "Error: Extraction failed or directory structure unexpected!"
+        echo "Expected directory: $NETHUNTERDIR"
+        ls -la "$NETHUNTER_BASE_DIR"
+        exit 1
+    fi
+    
+    rm -f "$NETHUNTERTAR"
+    echo "Extraction completed to $NETHUNTERDIR"
+}
+
+# Function to fix resolv.conf
+fix_resolv_conf() {
+    echo "Configuring DNS resolvers..."
+    
+    mkdir -p "$NETHUNTERDIR/etc"
+    cat > "$NETHUNTERDIR/etc/resolv.conf" << EOF
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+EOF
+}
+
+# Function to create launcher scripts
+create_launchers() {
+    echo "Creating launcher scripts..."
+    
+    # Main nethunter launcher (original behavior)
+    cat > "$PREFIX/bin/nethunter" << EOF
+#!/data/data/com.termux/files/usr/bin/bash
+
+NETHUNTERDIR="$NETHUNTERDIR"
+unset LD_PRELOAD
+
+cmdline="proot --link2symlink --kill-on-exit -0 -r \$NETHUNTERDIR -b /dev -b /proc -b /sdcard -b \$HOME -b \$TMPDIR -b /system -b /vendor -w /root /usr/bin/env -i HOME=/root TERM=\$TERM LANG=\$LANG PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash"
+
+cmd="\$@"
+if [ "\$#" == "0" ]; then
+    exec \$cmdline
+else
+    exec \$cmdline -c "\$cmd"
+fi
+EOF
+
+    # nh shortcut with HOME as working directory
+    cat > "$PREFIX/bin/nh" << EOF
+#!/data/data/com.termux/files/usr/bin/bash
+
+NETHUNTERDIR="$NETHUNTERDIR"
+unset LD_PRELOAD
+
+cmdline="proot --link2symlink --kill-on-exit -0 -r \$NETHUNTERDIR -b /dev -b /proc -b /sdcard -b \$HOME -b \$TMPDIR -b /system -b /vendor -w \$HOME /usr/bin/env -i HOME=/root TERM=\$TERM LANG=\$LANG PATH=/bin:/usr/bin:/sbin:/usr/sbin /bin/bash"
+
+cmd="\$@"
+if [ "\$#" == "0" ]; then
+    exec \$cmdline
+else
+    exec \$cmdline -c "\$cmd"
+fi
+EOF
+    
+    chmod +x "$PREFIX/bin/nethunter" "$PREFIX/bin/nh"
+    echo "Launchers created: nethunter, nh"
+}
+
+# Main installation function
+install_nethunter() {
+    echo "Starting NetHunter CLI installation for $ARCH..."
+    echo "NetHunter will be installed to: $NETHUNTERDIR"
+    
+    clean_previous
+    download_nethunter
+    extract_rootfs
+    fix_resolv_conf
+    create_launchers
+    
+    echo ""
+    echo "NetHunter CLI installation completed!"
+    echo ""
+    echo "Usage:"
+    echo "  nethunter [command]  - Run command in NetHunter CLI (starts in /root)"
+    echo "  nh [command]         - Run command in NetHunter CLI (starts in \$HOME)"
+    echo ""
+    echo "NetHunter rootfs location: $NETHUNTERDIR"
+}
+
+# Directly start installation
+install_nethunter

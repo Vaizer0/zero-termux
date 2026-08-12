@@ -1,0 +1,9 @@
+#!/data/data/com.termux/files/usr/bin/bash
+ARCH=$(uname -m)
+case "$ARCH" in
+    aarch64|x86_64) exit 0 ;;
+    *)
+        echo "Error: OpenBullet2 supports only aarch64 or x86_64. Your arch: $ARCH" >&2
+        exit 1
+        ;;
+esac

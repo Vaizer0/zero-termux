@@ -1,0 +1,45 @@
+#!/bin/bash
+clear
+figlet -f slant PhoneInfo
+printf "\t\t\t\t\tVersion 1.0.0\n"
+echo -e "
+\t++--==[Phone number lookup tool
+\t++--==[From Alienkrishn Repo
+"
+API1=6e1e8b9f3961a4a6ca3b871a2af0905f
+API2=490660c0f87b102de139340a93a9a90c
+
+n=$(echo $((RANDOM %2 +1)))
+nAPI="API${n}"
+
+read -p $'\e[4mAnon4You\e[0m (\e[32mEnter/Number\e[0m) > ' number
+read -p $'\e[4mAnon4You\e[0m (\e[32mCountry/Shortname\e[0m) > ' code
+
+main()
+{ API=$1
+output=$(curl -sL "http://apilayer.net/api/validate?access_key=$API&number=$number&country_code=$code&format=2" | jq .)
+valid=$(printf "${output}" | tr -d '{"},' | grep -a 'valid' | awk '{print $2}')
+printf "\a\n\n"
+printf "${output}\n" | jq
+}
+
+main ${!nAPI}
+
+invalid=$(printf "${output}" | grep -o 'invalid_access_key')
+missing=$(printf "${output}" | grep -o 'missing_access_key')
+
+if [[ ${#number} -lt 1 ]]
+then
+echo -e "\e[91m(\e[0m!\e[91m)\e[0m Missing phone number."
+fi
+
+if [[ ${#code} -lt 1 ]]
+then
+echo -e "\e[91m(\e[0m!\e[91m)\e[0m Missing country shortname."
+fi
+
+if [[ ! ${valid} == "true" ]]
+then
+echo -e "\e[91m(\e[0m!\e[91m)\e[0m Invalid phone number."
+fi
+

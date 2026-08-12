@@ -1,0 +1,12 @@
+Package: phishmailer
+Version: 2.2
+Architecture: all
+Maintainer: Alienkrishn [Anon4You]
+Depends: git, python
+Section: web
+Priority: optional
+Homepage: https://github.com/BiZken/PhishMailer
+Description: Professional Phishing Email Generation Tool
+ PhishMailer enables rapid generation of professional phishing emails
+ for security testing and awareness training. Provides templates and
+ automation for creating realistic email security test campaigns.

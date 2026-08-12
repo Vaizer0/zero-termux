@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling LazyVim...${NC}"
+
+# Remove LazyVim configuration and data
+rm -rf ~/.config/nvim ~/.local/state/nvim ~/.local/share/nvim 2>/dev/null
+
+# Note: The global npm package `vscode-langservers-extracted` is not removed
+# because it might be used by other Neovim configurations. To remove it manually:
+#   npm uninstall -g vscode-langservers-extracted
+
+echo -e "${GREEN}LazyVim completely removed.${NC}"
+echo -e "${YELLOW}Global npm package (vscode-langservers-extracted) left installed.${NC}"
+exit 0

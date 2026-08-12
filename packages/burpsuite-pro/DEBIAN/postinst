@@ -1,0 +1,63 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Burp Suite pro Edition installer for Termux
+
+BURP_DIR="$PREFIX/share/burpsuite-pro"
+BURP_JAR="$BURP_DIR/burpsuite.jar"
+BURP_LOADER="$BURP_DIR/loader.jar"
+# Zero-Termux: justified pin — no machine-readable latest endpoint
+BURP_URL="https://portswigger.net/burp/releases/startdownload?product=pro&version=2026.1.5&type=jar"
+LOADER_URL="https://github.com/xiv3r/Burpsuite-Professional/raw/main/loader.jar"
+
+# Colors
+RED='\e[31m'
+GREEN='\e[32m'
+YELLOW='\e[33m'
+BLUE='\e[34m'
+RESET='\e[0m'
+
+# Functions
+error_msg() {
+    echo -e "${RED}[!] Error: $1${RESET}" >&2
+    exit 1
+}
+
+success_msg() {
+    echo -e "${GREEN}[✓] $1${RESET}"
+}
+
+info_msg() {
+    echo -e "${BLUE}[i] $1${RESET}"
+}
+
+# Check Termux
+[ ! -d "$PREFIX" ] && error_msg "This script is for Termux only."
+
+# Create directory
+mkdir -p "$BURP_DIR" || error_msg "Failed to create directory"
+
+# Download Burp Suite
+info_msg "Downloading Burp Suite..."
+curl -L -o "$BURP_JAR" "$BURP_URL" || error_msg "Download failed"
+
+# Download loader
+info_msg "Downloading loader..."
+curl -L -o "$BURP_LOADER" "$LOADER_URL" || error_msg "Loader download failed"
+
+# Create launcher
+LAUNCHER="$PREFIX/bin/burpsuite-pro"
+cat > "$LAUNCHER" << EOF
+#!/data/data/com.termux/files/usr/bin/bash
+java --add-opens=java.desktop/javax.swing=ALL-UNNAMED \
+     --add-opens=java.base/java.lang=ALL-UNNAMED \
+     --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED \
+     --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED \
+     --add-opens=java.base/jdk.internal.org.objectweb.asm.Opcodes=ALL-UNNAMED \
+     -javaagent:$BURP_LOADER \
+     -noverify \
+     -jar $BURP_JAR "\$@"
+EOF
+
+chmod +x "$LAUNCHER" || error_msg "Failed to make launcher executable"
+
+success_msg "Burp Suite installed successfully!"
