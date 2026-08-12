@@ -1,7 +1,7 @@
 Package: secretfinder
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: curl, python, python-pip, python-lxml, termux-tools
 Section: recon
 Priority: optional

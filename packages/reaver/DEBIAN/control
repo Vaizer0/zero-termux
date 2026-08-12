@@ -2,7 +2,7 @@ Package: reaver
 Version: 1.6.6
 Architecture: all
 Pre-Depends: root-repo
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, make, libpcap, libnl
 Section: net
 Priority: optional

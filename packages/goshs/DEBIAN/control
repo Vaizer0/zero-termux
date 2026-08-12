@@ -1,7 +1,7 @@
 Package: goshs
 Version: 2.1.4
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang
 Section: net
 Priority: optional

@@ -2,7 +2,7 @@ Package: wipwn
 Version: 1.0
 Architecture: all
 Pre-Depends: root-repo
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, wpa-supplicant, pixiewps, iw, openssl, sudo, openssh
 Section: net
 Priority: optional

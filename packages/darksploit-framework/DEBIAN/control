@@ -1,7 +1,7 @@
 Package: darksploit-framework
 Version: 2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python2, perl, wget, php
 suggest: zero-termux
 Homepage: https://github.com/ykankaya/DarkSploit

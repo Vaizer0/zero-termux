@@ -1,7 +1,7 @@
 Package: arjun
 Version: 2.2.7
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python, python-pip
 Section: web
 Priority: optional

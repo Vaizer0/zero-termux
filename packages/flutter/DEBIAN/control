@@ -1,7 +1,7 @@
 Package: flutter
 Version: 3.41.9
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Pre-Depends: x11-repo
 Depends: git, axel, which, 7zip, android-sdk
 Section: development

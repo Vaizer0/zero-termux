@@ -1,7 +1,7 @@
 Package: knockpy
 Version: 7.0.2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python, python-pip, python-cryptography
 Section: recon
 Priority: optional

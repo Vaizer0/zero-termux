@@ -1,7 +1,7 @@
 Package: medusa
 Version: 2.3-patched
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, make, automake, autoconf, libtool, clang, pkg-config, openssl, libgcrypt, gnutls, postgresql, libssh2, libcurl, sed, findutils, apr, apr-util
 Section: net
 Priority: optional

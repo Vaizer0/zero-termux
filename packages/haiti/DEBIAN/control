@@ -1,7 +1,7 @@
 Package: haiti
 Version: 4.0.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: ruby
 Section: utils
 Priority: optional

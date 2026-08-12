@@ -4,7 +4,7 @@
 
 Zero-Termux merges two ecosystems into one project:
 
-- **`core/`** — a modular CLI framework (upstream: Core-Termux): category-based tool installers with full install/update/reinstall/uninstall lifecycle.
+- **`zero/`** — a modular CLI framework (upstream: Core-Termux): category-based tool installers with full install/update/reinstall/uninstall lifecycle.
 - **`packages/`** — a signed APT repository (upstream: TermuxVoid): **228 Debian packages** served from GitHub Pages.
 
 One installer gives you both. See [UPSTREAM.md](UPSTREAM.md) for provenance and licenses.
@@ -15,21 +15,21 @@ One installer gives you both. See [UPSTREAM.md](UPSTREAM.md) for provenance and 
 bash <(curl -fsSL https://raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh)
 ```
 
-The installer: verifies dependencies → sets up directories (with one-time migration from legacy Core-Termux installs, see [MIGRATION.md](MIGRATION.md)) → clones the repo → links the `core` command → configures the signed APT repository → saves configuration.
+The installer: verifies dependencies → sets up directories → clones the repo → links the `zero` command → configures the signed APT repository → saves configuration. See [MIGRATION.md](MIGRATION.md) for the layout.
 
 > Works on Termux only. Requires `aarch64`/`arm64` (or amd64/i686) Android; no root, no systemd, no sudo.
 
-## The `core` CLI
+## The `zero` CLI
 
 ```bash
-core install <category>     # install a whole category (ai, lang, db, editor, dev, npm, shell, ui, auto)
-core install <module>       # e.g. `core install qwen-code`
-core list                   # list installed tool modules
-core show <module>          # module details
-core open <module>          # open docs/site for a module
-core update                 # pull latest repo + check tool updates
-core uninstall <module>     # remove a tool
-core reinstall <module>     # reinstall a tool
+zero install <category>     # install a whole category (ai, lang, db, editor, dev, npm, shell, ui, auto)
+zero install <module>       # e.g. `zero install qwen-code`
+zero list                   # list installed tool modules
+zero show <module>          # module details
+zero open <module>          # open docs/site for a module
+zero update                 # pull latest repo + check tool updates
+zero uninstall <module>     # remove a tool
+zero reinstall <module>     # reinstall a tool
 ```
 
 Categories:
@@ -46,7 +46,7 @@ Categories:
 | `ui` | 5 | Termux UI tooling, themes, widgets |
 | `auto` | 2 | n8n workflow automation |
 
-Every tool installer follows a uniform contract: `install_<tool>` / `uninstall_<tool>` / `update_<tool>` / `reinstall_<tool>` in `core/tools/<category>/<tool>/install.sh`.
+Every tool installer follows a uniform contract: `install_<tool>` / `uninstall_<tool>` / `update_<tool>` / `reinstall_<tool>` in `zero/tools/<category>/<tool>/install.sh`.
 
 ## The APT repository
 
@@ -76,8 +76,8 @@ A weekly maintenance workflow reports drift between pinned and latest upstream v
 ## Repository layout
 
 ```
-core/                  CLI framework (bash, no runtime deps)
-  bin/core             entry point
+zero/                  CLI framework (bash, no runtime deps)
+  bin/zero             entry point
   cli/                 command implementations
   modules/             shared logic (AI, shell, env)
   tools/<cat>/<tool>/  per-tool installers
@@ -112,7 +112,7 @@ install.sh             unified installer
 
 - **Core-Termux** (MIT, © 2026 DevCoreX) — CLI framework: https://github.com/DevCoreXOfficial/core-termux
 - **TermuxVoid** (BSD-3-Clause, © 2025 Termux Void Repo) — packages: https://github.com/termuxvoid/repo
-- package maintainer: **Alienkrishn [Anon4You]**
+- package maintainer: **Vaizer0**
 - third-party tool projects retain their own licenses — full list in [UPSTREAM.md](UPSTREAM.md)
 
 ## License

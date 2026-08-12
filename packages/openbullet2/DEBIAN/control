@@ -1,7 +1,7 @@
 Package: openbullet2
 Version: 2.0.1-0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: curl, tar, dotnet-sdk-10.0, npm, libsqlite
 Section: net
 Priority: optional

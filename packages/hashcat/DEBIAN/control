@@ -1,7 +1,7 @@
 Package: hashcat
 Version: 7.1.2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: libc++, libiconv, opencl-vendor-driver, wget, unzip, rust, python, perl
 Section: security
 Priority: optional

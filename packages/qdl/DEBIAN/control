@@ -1,7 +1,7 @@
 Package: qdl
 Version: 3.7
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, clang, libxml2, libusb, libzip, ninja, build-essential, help2man, pkg-config, termux-api, python, python-pip
 Section: utils
 Priority: optional

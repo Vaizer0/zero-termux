@@ -2,7 +2,7 @@ Package: bettercap
 Version: 2.41.7
 Architecture: all
 Pre-Depends: root-repo
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, make, golang, libpcap, libnetfilter-queue, libusb
 Section: net
 Priority: optional

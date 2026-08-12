@@ -1,7 +1,7 @@
 Package: theharvester
 Version: 4.10.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: proot, tar, axel, nethunter-cli
 Section: recon
 Priority: optional

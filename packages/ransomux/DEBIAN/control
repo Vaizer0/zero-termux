@@ -1,7 +1,7 @@
 Package: ransomux
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You] 
+Maintainer: Vaizer0
 Depends: git, libxml2, openjdk-17, apkeditor, apksigner, file, which 
 Section: security
 Priority: optional

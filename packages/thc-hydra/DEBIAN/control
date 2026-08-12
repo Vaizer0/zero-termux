@@ -1,7 +1,7 @@
 Package: thc-hydra
 Version: 9.8dev
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, make, clang, openssl, libssh, libssh2, libgcrypt, libidn, pcre, pcre2, zlib, sed
 Section: net
 Priority: optional

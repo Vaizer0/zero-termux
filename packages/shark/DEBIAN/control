@@ -1,7 +1,7 @@
 Package: shark
 Version: 2.5.1.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, curl, wget, php, unzip, 7zip, ncurses-utils, proot, resolv-conf, sox, ffmpeg, dialog
 Section: web
 Priority: optional

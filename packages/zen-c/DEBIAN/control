@@ -1,7 +1,7 @@
 Package: zen-c
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, make, clang, llvm
 Section: devel
 Priority: optional

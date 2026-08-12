@@ -2,7 +2,7 @@ Package: aircrack-ng
 Version: 1.7
 Architecture: all
 Pre-Depends: root-repo
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, make, automake, autoconf, libc++, libnl, libpcap, libsqlite, openssl, pcre, zlib, iw, ethtool, libtool, usbutils
 Section: net
 Priority: optional

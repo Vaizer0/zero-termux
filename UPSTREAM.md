@@ -7,7 +7,7 @@ Zero-Termux is a merge of two upstream projects, rebranded and modernized. All u
 ### Core-Termux
 - **Repository:** https://github.com/DevCoreXOfficial/core-termux
 - **License:** MIT — Copyright (c) 2026 DevCoreX
-- **Contributed:** the `core/` CLI framework (the `core` command, `core/cli/`, `core/commands/`, `core/modules/`, `core/utils/`, `core/tools/` category installers), the unified installer structure, and their documentation.
+- **Contributed:** the `zero/` CLI framework (the `zero` command, `zero/cli/`, `zero/commands/`, `zero/modules/`, `zero/utils/`, `zero/tools/` category installers), the unified installer structure, and their documentation.
 - **Changes:** rebranded to Zero-Termux, configuration/data paths moved (`~/.local/share/zero-termux*`), URLs updated, tool versions modernized to rolling-latest, CLI help/banner updated, and site anchors re-targeted to the Zero-Termux landing page.
 
 ### TermuxVoid
@@ -15,7 +15,7 @@ Zero-Termux is a merge of two upstream projects, rebranded and modernized. All u
 - **License:** BSD-3-Clause — Copyright (c) 2025, Termux Void Repo (full text in `LICENSES/BSD-3-Clause.txt`)
 - **Contributed:** the `packages/` tree — 228 Debian package definitions and the APT repository build infrastructure (`terminux-apt-repo` recipe in `scripts/build/build-repo.sh`).
 - **Changes:** rebranded to Zero-Termux; the `alienkrishn` package became `zero-termux`, the theme package became `zero-termux-theme`; the APT suite is `zero-termux` with a new signing key; many package installers were converted from fixed tool versions to rolling latest.
-- **Maintainer attribution:** every package `control` file retains `Maintainer: Alienkrishn [Anon4You]`, the original maintainer. Keep it that way in new packages.
+- **Maintainer:** `Maintainer: Vaizer0` in every package control file — the Zero-Termux maintainer.
 
 ## Third-party projects referenced by packages
 
@@ -35,5 +35,5 @@ Each upstream project's license governs that project; see each project's own rep
 ## Rebranding policy
 
 - User-facing strings, docs, URLs, and the site say **Zero-Termux**.
-- The `core` command, `core/` directory, and `CORE_*` internal names are retained for compatibility (documented in MIGRATION.md).
+- The `zero` command, `zero/` directory, and `ZERO_*` internal names are retained for compatibility (documented in MIGRATION.md).
 - Upstream names appear only where attribution/provenance requires them (this file, licenses, README credits, and third-party URLs listed above).

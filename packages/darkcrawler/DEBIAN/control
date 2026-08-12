@@ -1,7 +1,7 @@
 Package: darkcrawler
 Version: 2.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: tor, python, libxml2, libxslt, clang, python-lxml, git
 Section: net
 Priority: optional

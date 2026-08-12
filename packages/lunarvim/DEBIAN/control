@@ -1,7 +1,7 @@
 Package: lunarvim
 Version: 1.4.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, make, python, npm, rust, fzf, fd, ripgrep, neovim
 Section: editors
 Priority: optional

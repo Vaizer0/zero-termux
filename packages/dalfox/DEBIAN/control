@@ -1,7 +1,7 @@
 Package: dalfox
 Version: 3.2.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: rust, clang, pkg-config, openssl, openssl-tool
 Section: security
 Priority: optional

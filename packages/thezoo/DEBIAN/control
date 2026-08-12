@@ -1,7 +1,7 @@
 Package: thezoo
 Version: 0.60
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, python-pip
 Section: security
 Priority: optional

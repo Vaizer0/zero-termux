@@ -1,7 +1,7 @@
 Package: hermes-agent
 Version: 2026.7.20
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: npm, uv, git, python, clang, rust, make, pkg-config, libffi, openssl, nodejs, ripgrep, ffmpeg, python-psutil, python-pillow, python-cryptography
 Section: devel
 Priority: optional

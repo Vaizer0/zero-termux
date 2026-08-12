@@ -1,7 +1,7 @@
 Package: ruby-nokogiri
 Version: 1.19.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: ruby, pkg-config, libxml2, libxslt, gumbo-parser, gumbo-parser-static
 Section: libs
 Priority: optional

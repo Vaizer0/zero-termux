@@ -1,7 +1,7 @@
 Package: snoop
 Version: 1.4.3
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, python-psutil
 Section: utils
 Priority: optional

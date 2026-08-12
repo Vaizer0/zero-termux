@@ -1,7 +1,7 @@
 Package: drshell
 Version: 1.0.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, openssh
 Section: net
 Priority: optional

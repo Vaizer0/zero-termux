@@ -1,7 +1,7 @@
 Package: gophish
 Version: 0.12.1-zero-termux
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang, build-essential, sqlite
 Section: net
 Priority: optional

@@ -1,7 +1,7 @@
 Package: tte
 Version: 0.14.2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python, python-pip
 Section: utils
 Priority: optional

@@ -1,7 +1,7 @@
 Package: pdfcracker
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You] 
+Maintainer: Vaizer0
 Depends: qpdf
 Section: utils
 Priority: optional

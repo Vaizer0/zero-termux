@@ -1,6 +1,6 @@
 Package: phoneinfo
 Version: 1.0.1
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Architecture: all
 Depends: termux-tools,termux-exec,figlet,jq
 Installed-Size: 36

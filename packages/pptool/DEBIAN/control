@@ -1,7 +1,7 @@
 Package: pptool
 Version: 2.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: curl, python, python-pip
 Section: utils
 Priority: optional

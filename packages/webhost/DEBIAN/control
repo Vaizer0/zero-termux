@@ -1,7 +1,7 @@
 Package: webhost
 Version: 1.0.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: curl, php, python, npm, ngrok, cloudflared, figlet, openssh
 Section: net
 Priority: optional

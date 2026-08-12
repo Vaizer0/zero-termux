@@ -1,7 +1,7 @@
 Package: lazyvim
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, fzf, fd, ripgrep, neovim, npm
 Section: editors
 Priority: optional

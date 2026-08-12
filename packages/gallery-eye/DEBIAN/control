@@ -1,7 +1,7 @@
 Package: gallery-eye
 Version: 0.1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, ruby, apkeditor, apksigner
 Section: utils
 Priority: optional

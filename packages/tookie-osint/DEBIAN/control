@@ -1,7 +1,7 @@
 Package: tookie-osint
 Version: 4.1fix
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, python-pip, termux-tools
 Section: recon
 Priority: optional

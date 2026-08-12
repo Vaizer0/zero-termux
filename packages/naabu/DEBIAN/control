@@ -1,7 +1,7 @@
 Package: naabu
 Version: 2.6.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang, libcap
 Section: net
 Priority: optional

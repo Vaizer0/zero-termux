@@ -2,7 +2,7 @@ Package: shorturl
 Version: 1.0.0
 Architecture: all
 Depends: toilet,curl
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Description: URL shortner for termux
 Installed-Size: 32
 

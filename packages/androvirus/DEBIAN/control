@@ -2,7 +2,7 @@ Package: androvirus
 Version: 3.0
 Architecture: all
 Section: security
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: curl, git, php, cloudflared
 Priority: optional
 Homepage: https://github.com/Anon4You/AndroVirus.git

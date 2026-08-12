@@ -1,7 +1,7 @@
 Package: redhawk
 Version: 2.0.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, php
 Homepage: https://github.com/Tuhinshubhra/RED_HAWK 
 Installed-Size: 1

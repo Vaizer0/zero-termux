@@ -1,7 +1,7 @@
 Package: silverinstaeye
 Version: 1.0-patched
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, python-pip, python-pillow, python-numpy, build-essential, cmake, ninja, libopenblas, libandroid-execinfo, patchelf, binutils, rust
 Section: security
 Priority: optional

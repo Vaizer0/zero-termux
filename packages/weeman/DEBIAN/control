@@ -1,7 +1,7 @@
 Package: weeman
 Architecture: all
 Version: 1.7.1
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python2,git
 Suggest: maskme,shorturl
 Installet-Size: 1

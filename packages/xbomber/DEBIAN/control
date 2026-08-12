@@ -1,7 +1,7 @@
 Package: xbomber
 Version: 2.0.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, curl
 Section: utils
 Priority: optional

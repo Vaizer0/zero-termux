@@ -1,7 +1,7 @@
 Package: user-scanner
 Version: 1.3.6.6
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python, python-pip
 Section: utils
 Priority: optional

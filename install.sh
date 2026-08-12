@@ -208,37 +208,12 @@ install_dependencies() {
 }
 
 # ---------------------------------------------------------------
-# Step 2 — directories (with one-time migration)
+# Step 2 — directories
 # ---------------------------------------------------------------
-
-migrate_legacy() {
-  # One-time migration from the legacy upstream layout (see UPSTREAM.md).
-  # Only moves a directory when the new path does not exist yet.
-  local old_path new_path
-  local moved=0
-
-  while read -r old_path new_path; do
-    if [[ -e "$old_path" ]] && [[ ! -e "$new_path" ]]; then
-      log_info "Migrating $old_path → $new_path"
-      mv "$old_path" "$new_path"
-      moved=1
-    fi
-  done <<EOF
-$HOME/.local/share/core-termux $REPO_DIR
-$HOME/.local/share/core-termux-data $TOOL_DATA_DIR
-$HOME/.cache/core-termux $CACHE_DIR
-$HOME/.config/core-termux $CONFIG_DIR
-EOF
-
-  if [[ $moved -eq 1 ]]; then
-    log_info "See MIGRATION.md in the repository for details."
-  fi
-}
 
 setup_directories() {
   log_step 2 "Setting up directories"
 
-  migrate_legacy
   mkdir -p "$REPO_DIR" "$TOOL_DATA_DIR" "$CACHE_DIR" "$CONFIG_DIR"
 
   log_info "Repo    $REPO_DIR"
@@ -294,17 +269,17 @@ clone_repo() {
 }
 
 # ---------------------------------------------------------------
-# Step 4 — core command
+# Step 4 — zero command
 # ---------------------------------------------------------------
 
 create_symlink() {
-  log_step 4 "Creating core command"
+  log_step 4 "Creating zero command"
 
-  rm -f "$PREFIX/bin/core"
-  ln -sf "$REPO_DIR/core/bin/core" "$PREFIX/bin/core"
+  rm -f "$PREFIX/bin/zero"
+  ln -sf "$REPO_DIR/zero/bin/zero" "$PREFIX/bin/zero"
 
-  if [[ -L "$PREFIX/bin/core" ]]; then
-    log_ok "Symlink created: core → ${REPO_DIR}/core/bin/core"
+  if [[ -L "$PREFIX/bin/zero" ]]; then
+    log_ok "Symlink created: zero → ${REPO_DIR}/zero/bin/zero"
   else
     log_fail "Failed to create symlink"
     return 1
@@ -344,11 +319,11 @@ save_config() {
   log_step 6 "Saving configuration"
 
   cat >"$CONFIG_DIR/config" <<EOF
-core_data='$REPO_DIR'
-core_cache='$CACHE_DIR'
-core_config='$CONFIG_DIR'
-core_source='$REPO_DIR'
-core_tool_data='$TOOL_DATA_DIR'
+zero_data='$REPO_DIR'
+zero_cache='$CACHE_DIR'
+zero_config='$CONFIG_DIR'
+zero_source='$REPO_DIR'
+zero_tool_data='$TOOL_DATA_DIR'
 EOF
 
   log_ok "Configuration saved"
@@ -366,19 +341,19 @@ show_final_message() {
   echo -e "  ${P_OK}◆${P_NC}  ${P_PRIMARY}Installation Complete${P_NC}"
   separator
   echo
-  echo -e "  ${P_DIM}Run${P_NC}  ${P_HL}core${P_NC}  ${P_DIM}to get started${P_NC}"
+  echo -e "  ${P_DIM}Run${P_NC}  ${P_HL}zero${P_NC}  ${P_DIM}to get started${P_NC}"
   echo
   echo -e "  ${P_DIM}Install modules:${P_NC}"
   echo
-  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "core install lang" "Programming languages"
-  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "core install db" "Databases"
-  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "core install ai" "AI tools"
-  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "core install editor" "Code editor"
-  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "core install dev" "Dev tools"
-  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "core install npm" "Node.js tools"
-  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "core install shell" "ZSH shell"
-  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "core install ui" "Termux UI"
-  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "core install auto" "n8n"
+  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "zero install lang" "Programming languages"
+  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "zero install db" "Databases"
+  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "zero install ai" "AI tools"
+  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "zero install editor" "Code editor"
+  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "zero install dev" "Dev tools"
+  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "zero install npm" "Node.js tools"
+  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "zero install shell" "ZSH shell"
+  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "zero install ui" "Termux UI"
+  printf "    ${P_PRIMARY}%-20s${P_NC} ${P_DIM}%s${P_NC}\n" "zero install auto" "n8n"
   echo
   echo -e "  ${P_DIM}APT packages (Zero-Termux repository):${P_NC}"
   echo
@@ -396,7 +371,7 @@ show_final_message() {
 main() {
   if [[ "$SILENT_MODE" == false ]]; then
     echo
-    echo -e "${P_INFO}This will install Zero-Termux (core CLI + APT repository) on your Termux device.${P_NC}"
+    echo -e "${P_INFO}This will install Zero-Termux (zero CLI + APT repository) on your Termux device.${P_NC}"
     read -r -p "Continue? [Y/n] " answer
     case "$answer" in
       n|N|no) echo "Aborted."; exit 0 ;;

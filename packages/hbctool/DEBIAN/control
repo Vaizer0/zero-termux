@@ -1,7 +1,7 @@
 Package: hbctool
 Version: 0.1.5-96
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python, python-pip, curl
 Section: utils
 Priority: optional

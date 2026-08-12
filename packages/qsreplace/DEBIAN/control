@@ -1,7 +1,7 @@
 Package: qsreplace
 Version: 0.0.3
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang
 Section: utils
 Priority: optional

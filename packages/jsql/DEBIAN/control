@@ -1,7 +1,7 @@
 Package: jsql
 Version: 0.114
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: curl, openjdk-21
 Section: web
 Priority: optional

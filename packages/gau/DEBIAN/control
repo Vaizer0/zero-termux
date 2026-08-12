@@ -1,7 +1,7 @@
 Package: gau
 Version: 2.2.4
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang
 Section: net
 Priority: optional

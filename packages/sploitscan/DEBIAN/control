@@ -1,7 +1,7 @@
 Package: sploitscan
 Version: 0.14.3
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python, python-pip, pip-basic-depends
 Section: web
 Priority: optional

@@ -1,7 +1,7 @@
 Package: publiceye
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: curl, jq, gum
 Section: recon
 Priority: optional

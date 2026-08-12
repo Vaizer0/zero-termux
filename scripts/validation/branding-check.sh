@@ -14,7 +14,7 @@ cd "$ROOT"
 
 TOKENS='TermuxVoid|Core-Termux|CORE-TERMUX|core-termux|devcorex|termuxvoid\.github\.io|telegram\.me/nullxvoid|termuxvoid\.gpg'
 
-ALLOW_RE='termuxvoid/|TermuxVoid-Theme|Void-Fonts|Maintainer:|Alienkrishn|Anon4You|DevCoreX|Termux Void Repo|TermuxVoid lineage|\.local/share/core-termux|\.cache/core-termux|\.config/core-termux|core-termux-data|migrate_legacy|s/TermuxVoid/|upstream:? (Core-Termux|TermuxVoid)|upstream TermuxVoid|legacy Core-Termux|old Core-Termux installer|derived from the TermuxVoid repository|### (Core-Termux|TermuxVoid)|Old \(Core-Termux / TermuxVoid\)|termuxvoid\.(list|gpg)|APT suite .termuxvoid.'
+ALLOW_RE='termuxvoid/|TermuxVoid-Theme|Void-Fonts|Maintainer:|Alienkrishn|Anon4You|DevCoreX|Termux Void Repo|TermuxVoid lineage|s/TermuxVoid/|upstream:? (Core-Termux|TermuxVoid)|upstream TermuxVoid|derived from the TermuxVoid repository|### (Core-Termux|TermuxVoid)|termuxvoid\.(list|gpg)|APT suite .termuxvoid.'
 
 mapfile -t FILES < <(find . -type f \
   -not -path './.git/*' \

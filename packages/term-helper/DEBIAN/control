@@ -1,7 +1,7 @@
 Package: term-helper
 Version: 1.1.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: curl, pv
 Section: utils
 Priority: optional

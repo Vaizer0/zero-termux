@@ -1,7 +1,7 @@
 Package: bitb-framework
 Version: 1.2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Installed-Size: 2
 Depends: php, git, python, curl, wget
 Suggests: zero-termux

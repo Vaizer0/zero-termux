@@ -1,7 +1,7 @@
 Package: pip-basic-depends
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, build-essential, cmake, ninja, libopenblas, libandroid-execinfo, patchelf, binutils, rust, libxml2, libxslt
 Section: devel
 Priority: optional

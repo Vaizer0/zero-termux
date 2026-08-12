@@ -1,7 +1,7 @@
 Package: ghidra
 Version: 12.0.4
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: openjdk-21, unzip, python,wget
 Section: utils
 Priority: optional

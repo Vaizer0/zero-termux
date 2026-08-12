@@ -1,7 +1,7 @@
 Package: commix
 Version: 4.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python, python-pip, git
 Section: web
 Priority: optional

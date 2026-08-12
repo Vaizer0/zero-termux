@@ -1,7 +1,7 @@
 Package: zaproxy
 Version: 2026.03.02
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: openjdk-21, python, tar
 Section: security
 Priority: optional

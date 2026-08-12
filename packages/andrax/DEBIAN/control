@@ -1,7 +1,7 @@
 Package: andrax
 Version: 5-2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: proot, tar, axel
 Installed-Size: 12060343
 Section: utils

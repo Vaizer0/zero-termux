@@ -1,7 +1,7 @@
 Package: ghauri
 Version: 1.4.2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python
 Section: web
 Priority: optional

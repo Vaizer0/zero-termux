@@ -1,7 +1,7 @@
 Package: ngrok
 Version: 3.39.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: wget, proot, openssl
 Section: net
 Priority: optional

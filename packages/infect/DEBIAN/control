@@ -1,7 +1,7 @@
 Package: infect
 Version: 1.03
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: apkeditor, apktool, metasploit-framework, apksigner, libxml2
 Section: security
 Priority: optional

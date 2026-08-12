@@ -1,7 +1,7 @@
 Package: cewl
 Version: 6.2.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, ruby, pkg-config, openssl, libxml2, libxslt, ruby-nokogiri, exiftool
 Section: utils
 Priority: optional
