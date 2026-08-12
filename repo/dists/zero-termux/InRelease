@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Codename: termux
+Version: 1
+Architectures: all
+Description: zero-termux repository
+Suite: zero-termux
+Date: Wed, 12 Aug 2026 20:58:53 UTC
+Components: main
+MD5Sum:
+ 4d184d58a4059553082167270bd80a69 177987 main/binary-all/Packages
+ 72a15623ad4350badcf390fc69b6c4ce 58644 main/binary-all/Packages.xz
+ fb6d67b72a26bf32e5d835f0c428e99a 135232 main/Contents-all.xz
+ 444a857d2d2bc364a46728cddafde3e8 3607398 main/Contents-all
+SHA1:
+ bf3acfb3b11916ea255621165221b2728e51b814 177987 main/binary-all/Packages
+ e40fcda9b4db53ba80a45f3af0e73dff08717a25 58644 main/binary-all/Packages.xz
+ 3e2d68bfd78d1592d6eac9c324bee834a137bb5f 135232 main/Contents-all.xz
+ c427abf5af525abd7c9b30bbeb3370d49cc8d458 3607398 main/Contents-all
+SHA256:
+ d38bc6d586f3b53b9ca26657f5c60fd4f4adf2638f821bac0892241102fca894 177987 main/binary-all/Packages
+ 74bbc43e34cf85c81fac3e482b8415d473ce6786e429987045deb7e97a8e039d 58644 main/binary-all/Packages.xz
+ c18f2e08bc2d0c533d9104c90dc817f4ff02ce33f24b985220ea2ab1049bedd5 135232 main/Contents-all.xz
+ d7861da85a96113b8e1e72eb732ac5351eee83ad7910d89e8e673628bd3f99dc 3607398 main/Contents-all
+SHA512:
+ ccd515657f4901717bda3580a4dd83f88ab8f0714b272e2db4fc5285bf7fa5964199eb1f73dc85b18f6b923bc4bf754c9dbd029e258d655523a4ba6609f6977f 177987 main/binary-all/Packages
+ 0fe055482bba7a1a92bafd54797ef788b9d699b5e6a583e4655253ccc7a3c4fe4a7d063cdacff54247ae9e2eb5128175face6194adb3347487bd6d030a7a1528 58644 main/binary-all/Packages.xz
+ 18de1ee1850a998db117e12f6a06a582face3a6169558a94394cfb6eca692166b718dc2bb3a2f3bd2d378c5f92975955c8e8e95eba968b8e665e59e79bf4335f 135232 main/Contents-all.xz
+ 398b3a535e26122fa12ba0766b43c5fcba5d8920b1ad3874216d346590ea887b776118582779c837e1189ad70845de7a6bd71e144d307732c0a72c190d513e4a 3607398 main/Contents-all
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYIAB0WIQTfLH/Nq/lt9CmOlTuwx+x8G7nElAUCanzejwAKCRCwx+x8G7nE
+lHVeAQDSbJ7dcdXsXMfjX+5YW2GB9x8CKZeVU4VRg/N2FhX29QEA1UpAYbOlaqEc
+0sS5hr+NON3i16cNHCWpj6A5ZxA/mA8=
+=O5M1
+-----END PGP SIGNATURE-----
