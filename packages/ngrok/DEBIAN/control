@@ -1,11 +1,11 @@
 Package: ngrok
 Version: 3.39.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: wget, proot, openssl
 Section: net
 Priority: optional
-Homepage: https://ngrok.com
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Secure tunnels to localhost
  ngrok is a cross-platform application that exposes local
  development servers to the internet with secure tunnels.

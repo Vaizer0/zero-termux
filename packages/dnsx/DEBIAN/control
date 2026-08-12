@@ -1,11 +1,11 @@
 Package: dnsx
 Version: 1.2.2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: golang, git
 Section: recon
 Priority: optional
-Homepage: https://github.com/projectdiscovery/dnsx
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Fast DNS toolkit for reconnaissance
  High-performance DNS utility featuring:
  - DNS resolution and enumeration

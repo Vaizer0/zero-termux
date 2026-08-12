@@ -1,11 +1,11 @@
 Package: ghosttrack
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, python-pip
 Section: recon
 Priority: optional
-Homepage: https://github.com/HunxByts/GhostTrack
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Advanced tracking and reconnaissance tool
  OSINT and tracking tool featuring:
  - IP address tracking

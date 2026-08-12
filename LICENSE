@@ -21,12 +21,5 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
----
-
-Parts of this repository (the `packages/` tree — Debian packages and their
-maintainer scripts) are derived from the TermuxVoid repository and remain
-licensed under the BSD 3-Clause License, copyright (c) 2025, Termux Void
-Repo. See LICENSES/BSD-3-Clause.txt for the full text.
-
 Third-party software installed by these packages is governed by its own
-licenses. See UPSTREAM.md for provenance.
+licenses.

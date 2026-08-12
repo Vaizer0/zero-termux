@@ -2,11 +2,11 @@ Package: bettercap
 Version: 2.41.7
 Architecture: all
 Pre-Depends: root-repo
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, make, golang, libpcap, libnetfilter-queue, libusb
 Section: net
 Priority: optional
-Homepage: https://www.bettercap.org/
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Swiss army knife for network attacks and monitoring
  bettercap is a powerful, flexible and portable tool for network
  reconnaissance and attacks, including sniffing, spoofing, and MITM.

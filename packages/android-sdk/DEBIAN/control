@@ -1,12 +1,12 @@
 Package: android-sdk
 Version: 36.0.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: openjdk-21, 7zip, axel
 Suggests: cmake, ninja-build
 Section: development
 Priority: optional
-Homepage: https://developer.android.com
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Android SDK built using musl libc, supporting multiple architectures.
  Provides Android NDK 29.0.14206865 and CMake 4.1.2.
  Includes:

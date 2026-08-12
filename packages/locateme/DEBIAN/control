@@ -2,6 +2,6 @@ Package: locateme
 Version: 1.2
 Architecture: all
 Installed-Size: 202
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: php,jq,openssh,figlet
 Description: Live location tracker using google maps

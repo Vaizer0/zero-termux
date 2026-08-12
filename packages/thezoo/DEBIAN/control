@@ -1,11 +1,11 @@
 Package: thezoo
 Version: 0.60
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, python-pip
 Section: security
 Priority: optional
-Homepage: https://github.com/ytisf/theZoo
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: A repository of live malware samples
  Malware analysis and research platform featuring:
  - Live malware samples

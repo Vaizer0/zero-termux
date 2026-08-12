@@ -1,60 +1,60 @@
 # Migrating to Zero-Termux
 
-Zero-Termux supersedes the upstream Core-Termux layout. This page covers what changed and how existing installs migrate.
+Zero-Termux is the successor project that merges its upstream CLI framework and package repository under one name. This page documents the current layout — no legacy migration is required, since Zero-Termux has always installed into its own `zero-termux` paths.
 
-## What changed
+## What the installer creates
 
-| Old (Core-Termux / TermuxVoid) | New (Zero-Termux) |
+| Item | Path / value |
 |---|---|
-| `~/.local/share/core-termux` (repo) | `~/.local/share/zero-termux` |
-| `~/.local/share/core-termux-data` (tool data) | `~/.local/share/zero-termux-data` |
-| `~/.cache/core-termux` | `~/.cache/zero-termux` |
-| `~/.config/core-termux` | `~/.config/zero-termux` |
-| APT suite `termuxvoid` | APT suite `zero-termux` |
-| GPG key `termuxvoid.gpg` | GPG key `zero-termux.gpg` |
-| Symlink `$PREFIX/bin/core` → old repo | `$PREFIX/bin/core` → `~/.local/share/zero-termux/core/bin/core` |
+| Repository clone | `~/.local/share/zero-termux` |
+| Tool data | `~/.local/share/zero-termux-data` |
+| Cache | `~/.cache/zero-termux` |
+| Config | `~/.config/zero-termux` |
+| CLI command | `zero` (`$PREFIX/bin/zero` → `zero-termux/zero/bin/zero`) |
+| APT source | `$PREFIX/etc/apt/sources.list.d/zero-termux.list` |
+| Signing key | `$PREFIX/etc/apt/trusted.gpg.d/zero-termux.gpg` |
 
-## The `core` command doesn't change
+## The `zero` command
 
-The CLI entry point is still the `core` command, and the `core/` tree retains its internal names. `core open <module>`, `core install <category>`, and the tool installers work exactly as before — they just resolve to the zero-termux paths above.
+`zero` is the CLI entry point. The repository tree mirrors its structure:
 
-## Automatic migration
+```
+zero/
+  bin/zero           entry point (symlinked as $PREFIX/bin/zero)
+  cli/               command implementations
+  modules/           shared logic
+  tools/<cat>/<tool>/  per-tool installers
+```
 
-The new installer performs a **one-time migration** (step 2) if it detects legacy directories:
+Usage:
 
-1. If `~/.local/share/zero-termux` does not exist but `~/.local/share/core-termux` does, the old repo directory is moved to the new path.
-2. The same move applies to the data, cache, and config directories, if present.
-3. Only then does the installer clone the new repository (skipped when the target already exists) and re-link `core`.
-
-Already-installed tools and modules keep their data — the move preserves the directories in place. The legacy path is only migrated once; after that, installs are purely Zero-Termux.
+```bash
+zero install <category>    # e.g. zero install ai
+zero install <module>      # e.g. zero install ai --opencode
+zero list                  # list tools per category
+zero show <module>         # module details
+zero open <module>         # open docs/site
+zero update                # pull latest repo + check tool updates
+zero uninstall <module>
+zero reinstall <module>
+```
 
 ## The APT repository
 
-TermuxVoid's own `termuxvoid.list` source is **not touched** by the migration (it is third-party config). Zero-Termux adds its own source:
+Zero-Termux adds its own signed repository:
 
 ```
 deb [trusted=yes arch=all] https://vaizer0.github.io/zero-termux/repo zero-termux main
 ```
 
-with the signing key at `$PREFIX/etc/apt/trusted.gpg.d/zero-termux.gpg`.
+with the signing key at `$PREFIX/etc/apt/trusted.gpg.d/zero-termux.gpg`. Zero-Termux only manages its own files; any third-party sources are not touched.
 
-To switch repositories explicitly (optional):
-
-```bash
-pkg remove alienkrishn termuxvoid-theme   # old packages, if installed
-rm $PREFIX/etc/apt/sources.list.d/termuxvoid.list  # only if you want to drop the old source
-pkg update
-pkg install zero-termux zero-termux-theme # new counterparts, if desired
-```
-
-(For a fresh install none of this is needed — the installer does it all.)
-
-## Uninstalling legacy installs
+## Reinstalling / switching
 
 ```bash
-core --help                 # confirm it points at zero-termux
+bash <(curl -fsSL https://raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh)
+zero --version        # confirm the command resolves
 ls ~/.local/share/zero-termux
-pkg list-installed | grep -i termux
 ```
 
-If you previously installed via the old Core-Termux installer and the migration step ran, you are done: nothing else to clean up.
+No cleanup of past upstream installs is needed for new users; if you previously experimented with the upstream project, reinstalling with this installer places everything under the `zero-termux` paths above.

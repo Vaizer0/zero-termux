@@ -1,11 +1,11 @@
 Package: paramspider
 Version: 1.0.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, python-pip
 Section: security
 Priority: optional
-Homepage: https://github.com/devanshbatham/paramspider
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Parameter discovery suite for web applications
  Mine parameters from web archives with:
  - Wayback Machine integration

@@ -2,6 +2,6 @@ Package: powerdos
 Version: 1.0.1
 Architecture: all
 Depends: python
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Description: A multi-threaded Denial of Service tool made in Python
 Installed-Size: 32

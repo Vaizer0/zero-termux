@@ -2,6 +2,6 @@ Package: webserver
 Architecture: all
 Version: 1.2
 Installed-Size: 4.0
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Description: a simple webserver for termux
 Depends: php, figlet, openssh

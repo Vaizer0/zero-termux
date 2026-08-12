@@ -16,7 +16,7 @@ Every package is built from source at install time on your device, from pinned o
 
 - **APT signing.** The repository is signed with a dedicated Zero-Termux GPG key. Releases ship the public key as `assets/zero-termux.gpg`; the private key lives only in GitHub Actions secrets (`PRIVATE_GPG_KEY`, `GPG_PASSPHRASE`) and is never committed.
 - **Supply chain.** Rolling tools resolve latest versions from the official registry (npm/pip/gem/cargo/go) or the upstream project's GitHub release at install time. Pinned versions are limited to source-tag builds and are documented with justification comments.
-- **Upstream provenance.** Package maintainer attribution and third-party repository URLs are preserved; see `UPSTREAM.md`.
+- **Third-party URLs.** Downloads and clones point at each tool's official source repository, never at this project's infrastructure.
 
 ## Responsible Disclosure
 

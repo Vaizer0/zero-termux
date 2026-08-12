@@ -9,9 +9,9 @@ cd "$ROOT"
 
 STALE_RE='termuxvoid\.github\.io|telegram\.me/nullxvoid|devcorex-web\.vercel\.app|DevCoreXOfficial/zero-termux|termuxvoid\.gpg|sources\.list\.d/termuxvoid|TermuxVoid/repo'
 
-ALLOW_RE='github\.com/termuxvoid/|DevCoreXOfficial/nvchad-termux|rm \$PREFIX/etc/apt/sources\.list\.d/termuxvoid\.list|GPG key .termuxvoid\.gpg.'
+ALLOW_RE='github\.com/termuxvoid/|DevCoreXOfficial/nvchad-termux'
 
-mapfile -t FILES < <(find . -type f \
+VIOLATIONS="$(find . -type f \
   -not -path './.git/*' \
   -not -path './debs/*' \
   -not -path './repo/*' \
@@ -19,9 +19,10 @@ mapfile -t FILES < <(find . -type f \
   -not -name 'branding-check.sh' \
   -not -name 'stale-url-check.sh' \
   -not -name 'version-pin-check.sh' \
-  -not -name 'validate-packages.sh')
-
-VIOLATIONS="$(rg -i --no-messages -e "$STALE_RE" "${FILES[@]}" 2>/dev/null | rg -iv -e "$ALLOW_RE" || true)"
+  -not -name 'validate-packages.sh' \
+  -print0 2>/dev/null \
+  | xargs -0 -r rg -i --no-messages -e "$STALE_RE" 2>/dev/null \
+  | rg -iv -e "$ALLOW_RE" || true)"
 
 if [ -n "$VIOLATIONS" ]; then
   echo "$VIOLATIONS"

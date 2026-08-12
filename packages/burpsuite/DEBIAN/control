@@ -1,7 +1,7 @@
 Package: burpsuite
 Version: 2026.1.2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: curl, openjdk-21, openjdk-21-x
-Homepage: https://portswigger.net/burp/
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: An integrated platform for performing security testing of web applications (community edition)

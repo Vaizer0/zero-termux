@@ -1,7 +1,7 @@
 Package: 5luser
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
-Homepage: https://github.com/Anon4You/5LUser 
+Maintainer: Vaizer0
+Homepage: https://github.com/Vaizer0/zero-termux
 Depends: git, python, python-pip
 Description: get unlimited 5 letters instagram unused usernames

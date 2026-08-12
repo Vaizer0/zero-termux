@@ -1,11 +1,11 @@
 Package: pip-basic-depends
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, build-essential, cmake, ninja, libopenblas, libandroid-execinfo, patchelf, binutils, rust, libxml2, libxslt
 Section: devel
 Priority: optional
-Homepage: https://alienkrishn.page.gd
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Essential build dependencies for Python packages
  Provides all necessary build tools and libraries required for compiling
  Python packages with pip. This includes:

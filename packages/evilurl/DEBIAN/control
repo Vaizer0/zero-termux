@@ -1,11 +1,11 @@
 Package: evilurl
 Version: 3.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, python-pip
 Section: security
 Priority: optional
-Homepage: https://github.com/UndeadSec/EvilURL
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Generate unicode evil domains for IDN homograph attacks
  Create homograph phishing domains with:
  - Unicode character substitution

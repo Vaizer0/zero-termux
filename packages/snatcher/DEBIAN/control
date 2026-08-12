@@ -1,8 +1,8 @@
 Package: snatcher
 Version: 1.0.2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
-Homepage: https://github.com/Anon4You/snatcher
+Maintainer: Vaizer0
+Homepage: https://github.com/Vaizer0/zero-termux
 Depends: git,php,curl,nodejs,python,python-pip,openssh,cloudflared
 Description: Snatcher - Capture Images from Victim's Camera
 

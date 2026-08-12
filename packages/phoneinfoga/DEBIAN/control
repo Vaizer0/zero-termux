@@ -1,11 +1,11 @@
 Package: phoneinfoga
 Version: 2.11.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: curl, tar
 Section: recon
 Priority: optional
-Homepage: https://github.com/sundowndev/phoneinfoga
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Phone number intelligence framework
  PhoneInfoga is a reconnaissance tool for phone numbers.
  It collects information from various sources and presents

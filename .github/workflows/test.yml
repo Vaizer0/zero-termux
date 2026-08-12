@@ -15,7 +15,7 @@ jobs:
       - name: Shell syntax validation (bash -n)
         run: |
           set -e
-          find core scripts -type f -name '*.sh' -print0 | xargs -0 -n1 bash -n
+          find zero scripts -type f -name '*.sh' -print0 | xargs -0 -n1 bash -n
           bash -n install.sh
           for f in packages/*/DEBIAN/preinst packages/*/DEBIAN/postinst packages/*/DEBIAN/prerm packages/*/DEBIAN/postrm; do
             [ -f "$f" ] || continue

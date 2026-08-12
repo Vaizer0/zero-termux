@@ -1,7 +1,7 @@
 Package: pandora
 Version: 3.2.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
-Homepage: https://github.com/MrSanZz/pandora
+Maintainer: Vaizer0
+Homepage: https://github.com/Vaizer0/zero-termux
 Depends: git, python, wget, curl
 Description: open source osint tool

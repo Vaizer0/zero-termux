@@ -1,11 +1,11 @@
 Package: 9router
 Version: 0.5.35
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: npm
 Section: net
 Priority: optional
-Homepage: https://9router.com/
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Smart gateway between your tools and 60+ AI providers
  9Router provides a smart 3‑tier fallback system to maximize your
  AI subscriptions across providers (Cursor, Claude Code, Codex,

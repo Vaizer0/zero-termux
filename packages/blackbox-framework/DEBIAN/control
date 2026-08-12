@@ -1,11 +1,11 @@
 Package: blackbox-framework
 Version: 2.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python2
 Section: utils
 Priority: optional
-Homepage: https://github.com/jothatron/blackbox
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: A Python-based network analysis and exploitation toolkit
  Blackbox is a modular security tool for network scanning, exploitation,
  and post-exploitation. It requires Python 2 and supports multiple attack vectors.

@@ -1,11 +1,11 @@
 Package: nuclei
 Version: 3.11.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang
 Section: web
 Priority: optional
-Homepage: https://nuclei.projectdiscovery.io/
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Fast and customizable vulnerability scanner
  nuclei is used to send requests across targets based on a template
  leading to zero false positives and providing fast scanning

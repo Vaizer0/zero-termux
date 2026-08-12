@@ -1,10 +1,10 @@
 Package: evilginx
 Version: 3.3.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang, make
 Section: security
 Priority: optional
-Homepage: https://github.com/kgretzky/evilginx2
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Advanced phishing framework with 2FA bypass
  Standalone man-in-the-middle attack framework

@@ -1,11 +1,11 @@
 Package: dorks-eye
 Version: 2.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, python-pip, pip-basic-depends, python-cryptography, libffi, libiconv
 Section: recon
 Priority: optional
-Homepage: https://github.com/BullsEye0/dorks-eye
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Google Hacking Dork Scraping and Searching Tool
  Dorks Eye collects potentially vulnerable web pages and applications
  using search engine dorks. Supports 5 search engines for comprehensive

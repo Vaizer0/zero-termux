@@ -1,11 +1,11 @@
 Package: theharvester
 Version: 4.10.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: proot, tar, axel, nethunter-cli
 Section: recon
 Priority: optional
-Homepage: https://github.com/laramies/theHarvester
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: E-mail, Subdomain, and Name Harvester
  theHarvester is a tool for gathering e-mails, subdomains, hosts,
  employee names, open ports and banners from different public sources

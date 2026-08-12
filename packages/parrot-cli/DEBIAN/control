@@ -1,11 +1,11 @@
 Package: parrot-cli
 Version: 6.3
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: proot, tar, axel
 Section: net
 Priority: optional
-Homepage: https://www.parrotsec.org/
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Parrot Security OS 6.3 (Lorikeet) for Termux
  Provides Parrot Security OS 6.3 environment within Termux using
  PRoot containerization. Includes comprehensive security tools,

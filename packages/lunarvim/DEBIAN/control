@@ -1,11 +1,11 @@
 Package: lunarvim
 Version: 1.4.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, make, python, npm, rust, fzf, fd, ripgrep, neovim
 Section: editors
 Priority: optional
-Homepage: https://www.lunarvim.org/
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: IDE layer for Neovim with sane defaults
  LunarVim provides a modern, feature-rich Neovim configuration
  with sensible defaults, LSP support, and extensive plugin

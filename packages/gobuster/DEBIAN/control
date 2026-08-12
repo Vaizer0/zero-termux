@@ -1,11 +1,11 @@
 Package: gobuster
 Version: 3.8.2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: golang, git
 Section: security
 Priority: optional
-Homepage: https://github.com/OJ/gobuster
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Directory/file & DNS busting tool written in Go
  Fast directory and file brute-forcing tool featuring:
  - Multiple busting modes (dir, dns, vhost)

@@ -1,11 +1,11 @@
 Package: scanqli
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, python-lxml, python-numpy
 Section: web
 Priority: optional
-Homepage: https://github.com/bambish/ScanQLi
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: SQL injection scanner and vulnerability detection tool
  ScanQLi is an automated SQL injection scanning tool that
  detects and exploits SQL injection vulnerabilities in web

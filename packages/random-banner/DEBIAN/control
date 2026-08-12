@@ -1,8 +1,8 @@
 Package: random-banner
 Architecture: all
 Version: 1
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git
 Installed-Size: 1
-Homepage: https://github.com/Alienkrishn/random_banners
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: random banner and quote

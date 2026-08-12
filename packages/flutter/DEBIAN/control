@@ -1,12 +1,12 @@
 Package: flutter
 Version: 3.41.9
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Pre-Depends: x11-repo
 Depends: git, axel, which, 7zip, android-sdk
 Section: development
 Priority: optional
-Homepage: https://flutter.dev
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Google's UI toolkit for building native apps
  Cross-platform app development with:
  - Hot reload development

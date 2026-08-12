@@ -1,11 +1,11 @@
 Package: nikto
 Version: 2.6.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: perl, git, openssl, openssl-tool, clang, make, cmake, curl, pkg-config
 Section: security
 Priority: optional
-Homepage: https://github.com/sullo/nikto
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Comprehensive web server scanner
  Nikto performs comprehensive tests against web servers
  for dangerous files, outdated servers, and vulnerabilities.

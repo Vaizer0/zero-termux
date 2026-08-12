@@ -1,11 +1,11 @@
 Package: storm-breaker
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, php
 Section: security
 Priority: optional
-Homepage: https://github.com/ultrasecurity/Storm-Breaker
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Social Engineering Toolkit
  Advanced phishing tool with:
  - Multiple attack vectors

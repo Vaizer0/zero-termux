@@ -1,8 +1,8 @@
 Package: sqlscan
 Version: 1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git,curl
-Homepage: https://github.com/machine1337/sqlscan
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: A small and an efficient tool to find SQL injection vulnerability in a websites.
 

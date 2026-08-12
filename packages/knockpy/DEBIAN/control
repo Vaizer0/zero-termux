@@ -1,11 +1,11 @@
 Package: knockpy
 Version: 7.0.2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python, python-pip, python-cryptography
 Section: recon
 Priority: optional
-Homepage: https://github.com/guelfoweb/knock
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Subdomain enumeration and reconnaissance tool
  Advanced subdomain discovery featuring:
  - Multiple enumeration techniques

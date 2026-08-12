@@ -1,11 +1,11 @@
 Package: subjack
 Version: 3.0.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: golang, git
 Section: security
 Priority: optional
-Homepage: https://github.com/haccer/subjack
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Subdomain Takeover tool written in Go
  Automated subdomain takeover detection featuring:
  - Multiple service provider support

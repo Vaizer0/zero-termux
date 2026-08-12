@@ -1,11 +1,11 @@
 Package: maigret
 Version: 0.6.2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python, python-lxml, python-pillow, python-psutil, rust, make, pkg-config, cmake
 Section: recon
 Priority: optional
-Homepage: https://maigret.readthedocs.io
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: OSINT username search tool with 3000+ sites
  Maigret collects information about a given username across
  thousands of social networks and websites. It provides

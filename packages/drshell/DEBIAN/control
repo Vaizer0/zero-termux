@@ -1,9 +1,9 @@
 Package: drshell
 Version: 1.0.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, openssh
 Section: net
 Priority: optional
-Homepage: https://github.com/DrDataYE/DrShell
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Reverse Shell Session Manager
