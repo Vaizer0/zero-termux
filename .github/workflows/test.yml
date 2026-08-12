@@ -12,6 +12,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install package dependencies
+        # Validators (branding, pins, stale URLs, docs/site) use ripgrep (rg).
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ripgrep
+
       - name: Shell syntax validation (bash -n)
         run: |
           set -e
