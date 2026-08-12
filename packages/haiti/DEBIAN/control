@@ -1,11 +1,11 @@
 Package: haiti
 Version: 4.0.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: ruby
 Section: utils
 Priority: optional
-Homepage: https://github.com/noraj/haiti
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Hash type identifier (CLI tool)
  haiti (Hash Type Identifier) is a command-line tool that identifies
  the type of a given hash using a large database of hash formats.

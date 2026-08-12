@@ -1,11 +1,11 @@
 Package: d-tect
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python2
 Section: net
 Priority: optional
-Homepage: https://github.com/bibortone/D-Tech
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: D-TECT - Pentest the Modern Web
  All-in-One penetration testing tool for information gathering
  and vulnerability detection (sub‑domain scan, port scan,

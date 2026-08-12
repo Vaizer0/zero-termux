@@ -1,7 +1,7 @@
 Package: zero-termux
 Version: 2.0.7
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: curl, termux-tools
 Section: utils
 Priority: optional

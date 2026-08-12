@@ -1,11 +1,11 @@
 Package: lazyvim
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, fzf, fd, ripgrep, neovim, npm
 Section: editors
 Priority: optional
-Homepage: https://www.lazyvim.org/
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Modern Neovim configuration framework
  LazyVim provides a powerful, extensible Neovim setup with
  pre‑configured plugins, keymaps, and IDE‑like features for

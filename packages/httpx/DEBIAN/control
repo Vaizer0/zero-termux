@@ -1,11 +1,11 @@
 Package: httpx
 Version: 1.9.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang
 Section: web
 Priority: optional
-Homepage: https://docs.projectdiscovery.io/tools/httpx
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Fast and Multi-Purpose HTTP Toolkit by ProjectDiscovery
  httpx is a lightning-fast HTTP client that allows running multiple probes
  using retryablehttp library. It is designed for security professionals

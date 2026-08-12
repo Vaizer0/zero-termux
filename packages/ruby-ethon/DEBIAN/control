@@ -1,11 +1,11 @@
 Package: ruby-ethon
 Version: 0.18.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: ruby, libcurl, libffi, sed, findutils
 Section: ruby
 Priority: optional
-Homepage: https://github.com/typhoeus/ethon
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Ruby HTTP client library (libcurl wrapper)
  Ethon is a lightweight HTTP client wrapper around libcurl,
  providing easy access to curl features. It is used by the

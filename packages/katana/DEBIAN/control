@@ -1,11 +1,11 @@
 Package: katana
 Version: 1.6.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang
 Section: web
 Priority: optional
-Homepage: https://github.com/projectdiscovery/katana
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Fast, passive and active web crawler
  katana is a next-generation crawling and spidering framework designed
  for speed and efficiency. It supports standard and headless crawling,

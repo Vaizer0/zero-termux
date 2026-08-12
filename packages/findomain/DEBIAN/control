@@ -1,11 +1,11 @@
 Package: findomain
 Version: 10.0.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, rust, make, cmake
 Section: net
 Priority: optional
-Homepage: https://github.com/Findomain/Findomain
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: The fastest and complete solution for domain recognition
  Findomain is a high‑performance subdomain enumerator that uses
  certificate transparency logs, DNS data, and multiple public APIs.

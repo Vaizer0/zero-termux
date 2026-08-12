@@ -1,8 +1,8 @@
 Package: websploit
 Version: 4.0.5
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Installed-Size: 1
 Depends: python, python-pip, git, python-numpy 
-Homepage: https://github.com/The404Hacking/websploit
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Advanced MITM framework.

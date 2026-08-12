@@ -1,7 +1,7 @@
 # Contributing to Zero-Termux
 
 Thank you for your interest in contributing. Zero-Termux merges two ecosystems:
-- **`core/`** — the modular CLI framework: module installers under `core/tools/<category>/<tool>/install.sh` with the `install_/uninstall_/update_/reinstall_<tool>` contract.
+- **`zero/`** — the modular CLI framework: module installers under `zero/tools/<category>/<tool>/install.sh` with the `install_/uninstall_/update_/reinstall_<tool>` contract.
 - **`packages/`** — the APT repository: Debian package dirs under `packages/<name>/` with `DEBIAN/control` and lifecycle scripts.
 
 PRs may be closed without review if they break the rules below.
@@ -34,7 +34,7 @@ Required fields:
 
 `Package`, `Version`, `Architecture` (use `all`), `Maintainer`, `Depends`, `Section`, `Priority`, `Homepage`, `Description`. List every runtime dependency under `Depends`; apt installs them for you.
 
-Keep the `Maintainer: Alienkrishn [Anon4You]` field untouched — it records provenance of the original TermuxVoid packages.
+Keep the `Maintainer: Vaizer0` field — it identifies the Zero-Termux maintainer.
 
 ### preinst
 

@@ -1,11 +1,11 @@
 Package: trufflehog
 Version: 3.96.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang
 Section: security
 Priority: optional
-Homepage: https://github.com/trufflesecurity/trufflehog
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Find leaked credentials and secrets in code and data
  TruffleHog scans Git repositories, file systems, and other sources
  to detect accidentally exposed secrets, API keys, passwords, and

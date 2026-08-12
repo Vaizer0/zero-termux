@@ -1,11 +1,11 @@
 Package: ffmpegp
 Version: 1.30
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python, python-pip, jq, ffmpeg
 Section: utils
 Priority: optional
-Homepage: https://github.com/ankushbhagats/ffmpegp
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Python Utility for FFmpeg and FFprobe Operations
  ffmpegp simplifies working with media files using FFprobe and FFmpeg.
  Provides easy extraction of media details, format conversions, and

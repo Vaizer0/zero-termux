@@ -3,5 +3,5 @@ Version: 2.0
 Architecture: all
 Depends: python,python-pip
 Installed-Size: 1
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Description: telegram autoreport script

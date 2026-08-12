@@ -1,11 +1,11 @@
 Package: sqlmap
 Version: 1.10.7
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python, python-pip
 Section: web
 Priority: optional
-Homepage: https://sqlmap.org/
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Automatic SQL Injection and Database Takeover Tool
  sqlmap is an open source penetration testing tool that automates the process
  of detecting and exploiting SQL injection flaws and taking over of database

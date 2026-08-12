@@ -1,11 +1,11 @@
 Package: openbullet
 Version: 1.0.2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, python-pip
 Section: security
 Priority: optional
-Homepage: https://github.com/esfelurm/OpenBullet.git
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: A tool for running openbullet configurations
  Automated security testing tool featuring:
  - Credential stuffing attacks

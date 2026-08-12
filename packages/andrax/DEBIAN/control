@@ -1,12 +1,12 @@
 Package: andrax
 Version: 5-2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: proot, tar, axel
 Installed-Size: 12060343
 Section: utils
 Priority: optional
-Homepage: https://gitlab.com/crk-mythical/andrax-hackers-platform-v5-2
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Android Penetration Testing OS (rootless)
  Andrax is a complete penetration testing environment for Android,
  packaged as a proot-based rootless OS. Includes hundreds of tools

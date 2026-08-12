@@ -1,9 +1,9 @@
 Package: darksploit-framework
 Version: 2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python2, perl, wget, php
 suggest: zero-termux
-Homepage: https://github.com/ykankaya/DarkSploit
+Homepage: https://github.com/Vaizer0/zero-termux
 Installed-Size: 1
 Description: Darksploit is a tool to run and create exploits

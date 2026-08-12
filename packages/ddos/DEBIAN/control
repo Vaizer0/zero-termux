@@ -1,11 +1,11 @@
 Package: ddos
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, python-pip
 Section: net
 Priority: optional
-Homepage: https://github.com/the-deepnet/ddos
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: DDoS attack script with 36+ attack methods
  A powerful DDoS (Distributed Denial of Service) attack tool with
  36+ attack methods for network stress testing and security research.

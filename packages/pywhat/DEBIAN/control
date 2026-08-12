@@ -1,11 +1,11 @@
 Package: pywhat
 Version: 5.1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python, python-pip
 Section: utils
 Priority: optional
-Homepage: https://github.com/bee-san/pyWhat
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Identify anything - text analysis tool
  Powerful text analysis and identification featuring:
  - Regex pattern matching

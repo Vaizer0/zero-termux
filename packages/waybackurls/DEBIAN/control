@@ -1,11 +1,11 @@
 Package: waybackurls
 Version: 0.1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: golang, git
 Section: recon
 Priority: optional
-Homepage: https://github.com/tomnomnom/waybackurls
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Fetch known URLs from Wayback Machine archives
  Extract historical URLs from Wayback Machine with:
  - Domain-based URL discovery

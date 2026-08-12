@@ -1,11 +1,11 @@
 Package: publiceye
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: curl, jq, gum
 Section: recon
 Priority: optional
-Homepage: https://github.com/Anon4You/publiceye
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Comprehensive OSINT Tool for Information Lookup
  PublicEye is a comprehensive OSINT tool that provides various
  information lookup services including phone numbers, email addresses,

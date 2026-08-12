@@ -1,11 +1,11 @@
 Package: vulnx
 Version: 2.0.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang
 Section: utils
 Priority: optional
-Homepage: https://github.com/projectdiscovery/vulnx
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Modern CLI for exploring vulnerability data with powerful search, filtering, and analysis capabilities.
  vulnx is a command-line tool for searching and analyzing vulnerability data
  (CVEs) using advanced filters like severity, vendor, product, CVSS score,

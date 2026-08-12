@@ -1,11 +1,11 @@
 Package: arsenal-ng
 Version: 1.5
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang, make
 Section: utils
 Priority: optional
-Homepage: https://github.com/halilkirazkaya/arsenal-ng
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Fast command launcher with 200+ cybersecurity cheat-sheets
  Arsenal-ng is a Go-based command library that provides quick access
  to over 200 cybersecurity cheat-sheets. Just install and start hacking.

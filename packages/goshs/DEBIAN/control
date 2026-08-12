@@ -1,11 +1,11 @@
 Package: goshs
 Version: 2.1.4
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang
 Section: net
 Priority: optional
-Homepage: https://goshs.de/
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Feature-rich single-binary file server for red teamers and developers
  Goshs is a powerful HTTP/S · WebDAV · FTP/SFTP · SMB · LDAP/S server.
  It supports NTLM hash capture, DNS/SMTP callbacks, TLS, authentication,

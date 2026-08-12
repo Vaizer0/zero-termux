@@ -1,11 +1,11 @@
 Package: catsay
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python
 Section: games
 Priority: optional
-Homepage: https://github.com/Anon4You/catsay
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: terminal-based feline messenger inspired by cowsay
  A Python-based program that displays messages inside dynamic speech
  bubbles with various cat ASCII art designs. Supports custom cat

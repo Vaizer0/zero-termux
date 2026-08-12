@@ -1,11 +1,11 @@
 Package: ffuf
 Version: 2.2.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang
 Section: web
 Priority: optional
-Homepage: https://github.com/ffuf/ffuf
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Fast web fuzzer written in Go
  ffuf is a fast web fuzzer that allows flexible and efficient
  directory and parameter brute‑forcing with various input methods.

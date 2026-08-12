@@ -1,11 +1,11 @@
 Package: xsstrike
 Version: 3.1.6
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python
 Section: web
 Priority: optional
-Homepage: https://github.com/s0md3v/XSStrike
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Advanced XSS Detection and Exploitation Suite
  XSStrike is a Cross Site Scripting detection suite equipped with multiple
  hand-written parsers, an intelligent payload generator, a powerful fuzzing

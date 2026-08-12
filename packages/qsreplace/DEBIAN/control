@@ -1,11 +1,11 @@
 Package: qsreplace
 Version: 0.0.3
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang
 Section: utils
 Priority: optional
-Homepage: https://github.com/tomnomnom/qsreplace
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Accept URLs on stdin, replace all query string values with a user-supplied value
  qsreplace is a command‑line tool that reads a list of URLs from standard input,
  replaces every query parameter value with a string provided by the user, and

@@ -1,11 +1,11 @@
 Package: gron
 Version: 0.7.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang
 Section: utils
 Priority: optional
-Homepage: https://github.com/tomnomnom/gron
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Make JSON greppable
  gron transforms JSON into discrete assignments, making it easier
  to grep for specific keys and values. It is useful for extracting

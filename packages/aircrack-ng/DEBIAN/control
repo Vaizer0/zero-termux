@@ -2,11 +2,11 @@ Package: aircrack-ng
 Version: 1.7
 Architecture: all
 Pre-Depends: root-repo
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, make, automake, autoconf, libc++, libnl, libpcap, libsqlite, openssl, pcre, zlib, iw, ethtool, libtool, usbutils
 Section: net
 Priority: optional
-Homepage: https://www.aircrack-ng.org/
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Wireless network security auditing suite
  aircrack-ng is a complete suite of tools for assessing WiFi network
  security. It captures and analyzes packets, performs attacks,

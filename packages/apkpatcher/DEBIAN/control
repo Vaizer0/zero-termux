@@ -1,9 +1,9 @@
 Package: apkpatcher
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You] 
+Maintainer: Vaizer0
 Depends: git, libxml2, openjdk-17, apkeditor, apksigner 
 Section: utils
 Priority: optional
-Homepage: https://github.com/Anon4You/APKpatcher
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Advanced APK Modification Tool 

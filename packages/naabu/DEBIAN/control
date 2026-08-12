@@ -1,11 +1,11 @@
 Package: naabu
 Version: 2.6.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang, libcap
 Section: net
 Priority: optional
-Homepage: https://github.com/projectdiscovery/naabu
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Fast port scanner written in Go
  naabu is a fast port scanner designed for reconnaissance and
  network enumeration. It supports SYN, CONNECT, and UDP scans

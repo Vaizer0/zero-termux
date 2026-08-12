@@ -1,11 +1,11 @@
 Package: jwt-hack
 Version: 2.6.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: make, openssl, rust, perl, pkg-config
 Section: utils
 Priority: optional
-Homepage: https://jwt-hack.hahwul.com/
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: JWT security testing and exploitation tool
  jwt-hack is a command-line tool for testing JSON Web Tokens,
  including signing, forging, and exploiting vulnerabilities like

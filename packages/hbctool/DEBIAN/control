@@ -1,11 +1,11 @@
 Package: hbctool
 Version: 0.1.5-96
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python, python-pip, curl
 Section: utils
 Priority: optional
-Homepage: https://github.com/Kirlif/HBC-Tool
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Hermes Bytecode Disassembler and Assembler
  A command-line interface for disassembling and assembling the
  Hermes Bytecode. Provides tools for working with Hermes bytecode

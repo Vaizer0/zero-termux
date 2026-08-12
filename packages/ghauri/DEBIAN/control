@@ -1,11 +1,11 @@
 Package: ghauri
 Version: 1.4.2
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python
 Section: web
 Priority: optional
-Homepage: https://github.com/r0oth3x49/ghauri
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Advanced Cross-Platform SQL Injection Scanner
  Ghauri is an advanced SQL injection scanner and exploitation tool
  that automates the process of detecting and exploiting SQL injection

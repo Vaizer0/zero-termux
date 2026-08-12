@@ -1,11 +1,11 @@
 Package: subzy
 Version: 1.2.1
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: golang, git
 Section: security
 Priority: optional
-Homepage: https://github.com/PentestPad/subzy
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Subdomain takeover vulnerability scanner
  Automated subdomain takeover detection featuring:
  - Multiple service provider support

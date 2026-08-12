@@ -1,9 +1,9 @@
 Package: redhawk
 Version: 2.0.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, php
-Homepage: https://github.com/Tuhinshubhra/RED_HAWK 
+Homepage: https://github.com/Vaizer0/zero-termux
 Installed-Size: 1
 Description: All in one tool for Information Gathering, Vulnerability Scanning and Crawling
 

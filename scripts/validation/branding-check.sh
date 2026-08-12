@@ -14,9 +14,9 @@ cd "$ROOT"
 
 TOKENS='TermuxVoid|Core-Termux|CORE-TERMUX|core-termux|devcorex|termuxvoid\.github\.io|telegram\.me/nullxvoid|termuxvoid\.gpg'
 
-ALLOW_RE='termuxvoid/|TermuxVoid-Theme|Void-Fonts|Maintainer:|Alienkrishn|Anon4You|DevCoreX|Termux Void Repo|TermuxVoid lineage|\.local/share/core-termux|\.cache/core-termux|\.config/core-termux|core-termux-data|migrate_legacy|s/TermuxVoid/|upstream:? (Core-Termux|TermuxVoid)|upstream TermuxVoid|legacy Core-Termux|old Core-Termux installer|derived from the TermuxVoid repository|### (Core-Termux|TermuxVoid)|Old \(Core-Termux / TermuxVoid\)|termuxvoid\.(list|gpg)|APT suite .termuxvoid.'
+ALLOW_RE='termuxvoid/|TermuxVoid-Theme|Void-Fonts|Maintainer:|Alienkrishn|Anon4You|DevCoreX'
 
-mapfile -t FILES < <(find . -type f \
+VIOLATIONS="$(find . -type f \
   -not -path './.git/*' \
   -not -path './debs/*' \
   -not -path './repo/*' \
@@ -26,9 +26,10 @@ mapfile -t FILES < <(find . -type f \
   -not -name 'branding-check.sh' \
   -not -name 'stale-url-check.sh' \
   -not -name 'version-pin-check.sh' \
-  -not -name 'validate-packages.sh')
-
-VIOLATIONS="$(rg -i --no-messages -e "$TOKENS" "${FILES[@]}" 2>/dev/null | rg -iv -e "$ALLOW_RE" || true)"
+  -not -name 'validate-packages.sh' \
+  -print0 2>/dev/null \
+  | xargs -0 -r rg -i --no-messages -e "$TOKENS" 2>/dev/null \
+  | rg -iv -e "$ALLOW_RE" || true)"
 
 if [ -n "$VIOLATIONS" ]; then
   echo "$VIOLATIONS"

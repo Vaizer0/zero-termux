@@ -1,11 +1,11 @@
 Package: shellcrypt
 Version: 2.0.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: python, nodejs, figlet
 Section: security
 Priority: optional
-Homepage: https://github.com/Anon4You/ShellCrypt
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Professional code obfuscation tool for Bash and Python
  Dual language obfuscation/decode tool featuring:
  - Bash script obfuscation

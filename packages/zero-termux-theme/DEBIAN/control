@@ -1,7 +1,7 @@
 Package: zero-termux-theme
 Version: 3.3
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: fish, starship, git, jp2a, eza
 Description: Professional terminal customization for Termux
  A complete theme package for Termux including:

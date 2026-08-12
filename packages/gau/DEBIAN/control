@@ -1,11 +1,11 @@
 Package: gau
 Version: 2.2.4
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, golang
 Section: net
 Priority: optional
-Homepage: https://github.com/lc/gau
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Fetch known URLs from AlienVault OTX, Wayback Machine, Common Crawl
  gau (getallurls) fetches known URLs from AlienVault's Open Threat Exchange,
  the Wayback Machine, Common Crawl and URLScan for any given domain.

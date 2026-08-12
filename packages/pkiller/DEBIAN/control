@@ -1,11 +1,11 @@
 Package: pkiller
 Version: 1.0
 Architecture: all
-Maintainer: Alienkrishn [Anon4You]
+Maintainer: Vaizer0
 Depends: git, python, asciibanner, apkeditor, apksigner
 Section: utils
 Priority: optional
-Homepage: https://github.com/Anon4You/PKiller
+Homepage: https://github.com/Vaizer0/zero-termux
 Description: Automated PairIP License Removal Tool for Android APKs
  PKiller is an automated tool designed to remove PairIP license
  protection from Android APK files. Streamlines the process of
