@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Command Reference — Zero-Termux</title>
+<meta name="description" content="Full reference for all Zero-Termux CLI commands: install, update, uninstall, reinstall, list, show, open, init, brain, env, pg, voice.">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="diamond">◈</span> Zero-Termux</a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="docs.html">Docs</a>
+      <a href="commands.html">Commands</a>
+      <a href="modules.html">Modules</a>
+      <a href="packages.html">Packages</a>
+      <a href="guides.html">Guides</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="contributing.html">Contributing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="page-head">
+    <div class="crumb">/ commands</div>
+    <h1>Command reference</h1>
+    <p>All <span class="mono">zero</span> commands, generated from the CLI implementation in <span class="mono">zero/cli/commands/</span>.</p>
+  </div>
+
+  <div class="searchbar">
+    <span class="icon">⌕</span>
+    <input type="text" data-search="commands" placeholder="Filter commands… (e.g. install, brain, open)" aria-label="Filter commands">
+  </div>
+  <p class="search-meta"></p>
+
+  <div class="explorer-init note"><strong>Loading</strong> Loading command data…</div>
+  <div data-explorer="commands"></div>
+
+  <h2 style="margin-top:2rem">Common patterns</h2>
+  <table>
+    <thead><tr><th>Goal</th><th>Command</th></tr></thead>
+    <tbody>
+      <tr><td>Fresh install</td><td><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh)</code></td></tr>
+      <tr><td>AI tooling</td><td><code>zero install ai --qwen-code --ollama</code></td></tr>
+      <tr><td>Dev essentials</td><td><code>zero install dev --gh --fzf --jq --bat</code></td></tr>
+      <tr><td>Everything updated</td><td><code>zero update zero &amp;&amp; zero update ai &amp;&amp; pkg upgrade</code></td></tr>
+      <tr><td>Recover a broken tool</td><td><code>zero reinstall &lt;module&gt; --&lt;tool&gt;</code></td></tr>
+      <tr><td>APT package</td><td><code>pkg install &lt;name&gt;</code></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  <div class="mono">◈ Zero-Termux — modular dev environment &amp; APT repository for Termux</div>
+  <div><a href="https://github.com/Vaizer0/zero-termux">github.com/Vaizer0/zero-termux</a> · MIT · © <span data-year>2026</span></div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

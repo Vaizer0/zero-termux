@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contributing — Zero-Termux</title>
+<meta name="description" content="How to contribute to Zero-Termux: tool contract, version policy, validation, PR flow.">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="diamond">◈</span> Zero-Termux</a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="docs.html">Docs</a>
+      <a href="commands.html">Commands</a>
+      <a href="modules.html">Modules</a>
+      <a href="packages.html">Packages</a>
+      <a href="guides.html">Guides</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="contributing.html">Contributing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap prose">
+  <div class="page-head">
+    <div class="crumb">/ contributing</div>
+    <h1>Contributing</h1>
+    <p>Packages, module installers, docs and site content are all welcome. The full guide lives in <a href="https://github.com/Vaizer0/zero-termux/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a> — this page covers the essentials.</p>
+  </div>
+
+  <h2>The tool contract</h2>
+  <p>Each tool is <span class="mono">zero/tools/&lt;category&gt;/&lt;tool&gt;/install.sh</span>, exporting exactly:</p>
+  <pre><code>install_&lt;tool&gt;()      # install + verify the binary runs
+update_&lt;tool&gt;()       # re-resolve latest and update
+reinstall_&lt;tool&gt;()    # uninstall + install
+uninstall_&lt;tool&gt;()    # remove only what was created
+_&lt;tool&gt;_dependencies() # deps installed first</code></pre>
+  <ul>
+    <li><strong>Install = verify.</strong> The final step confirms the command exists; fail loudly otherwise.</li>
+    <li><strong>Update = re-resolve latest.</strong> Rolling tools must not be pinned.</li>
+    <li><strong>Uninstall = clean.</strong> Remove only what the tool created.</li>
+    <li>Wire the tool into the category dispatch (<span class="mono">zero/modules/&lt;cat&gt;.sh</span>), write a <span class="mono">README.md</span>, test all four verbs, regenerate site data.</li>
+  </ul>
+
+  <h2>Version policy</h2>
+  <ul>
+    <li>Rolling user-facing tools → <strong>latest</strong> (npm <span class="mono">@latest</span>, GitHub <span class="mono">/releases/latest</span>); no stale fallbacks.</li>
+    <li>Pins only for build-critical/source-tag cases, each with <span class="mono"># Zero-Termux: justified pin — &lt;reason&gt;</span> plus a manifest entry in <span class="mono">scripts/validation/version-pin-check.sh</span>. CI fails on unapproved pins.</li>
+    <li>Debian <span class="mono">Version:</span> is the package revision — not the tool version.</li>
+  </ul>
+
+  <h2>Packages</h2>
+  <ul>
+    <li><span class="mono">packages/&lt;name&gt;/DEBIAN/{control,preinst,postinst,postrm}</span>; <span class="mono">Maintainer: Vaizer0</span>, <span class="mono">Architecture: all</span>, every runtime dependency in <span class="mono">Depends</span>.</li>
+    <li><span class="mono">postinst</span> builds the tool from its official source and exposes the command via a <span class="mono">$PREFIX/bin</span> symlink. Don't mutate <span class="mono">$PATH</span>. Data may go under <span class="mono">$PREFIX/share</span> / <span class="mono">$PREFIX/lib</span>; themes/shell configs may write <span class="mono">$HOME</span> — document it and mirror it in <span class="mono">postrm</span>.</li>
+    <li>Keep <span class="mono">DEBIAN/</span> dirs and scripts executable — <span class="mono">build-repo.sh</span> normalizes only DEBIAN dirs; never blanket-<span class="mono">chmod</span> package trees.</li>
+    <li>Add the package to <span class="mono">assets/PACKAGES.md</span> under the right category and regenerate site data.</li>
+  </ul>
+
+  <h2>Validation (all run in CI)</h2>
+  <table>
+    <thead><tr><th>Check</th><th>Script</th><th>Fails on</th></tr></thead>
+    <tbody>
+      <tr><td>Packages</td><td><span class="mono">validate-packages.sh</span></td><td>missing control fields, dupes, non-executable scripts</td></tr>
+      <tr><td>Branding</td><td><span class="mono">branding-check.sh</span></td><td>old-brand references outside the allowlist</td></tr>
+      <tr><td>Version pins</td><td><span class="mono">version-pin-check.sh</span></td><td>pins without a justified manifest entry</td></tr>
+      <tr><td>Stale URLs</td><td><span class="mono">stale-url-check.sh</span></td><td>dead upstream URLs</td></tr>
+      <tr><td>Docs/site</td><td><span class="mono">doc-links-check.sh</span></td><td>broken links, stale counts, unwanted URLs, wrong install command</td></tr>
+    </tbody>
+  </table>
+  <p>Local run: <span class="mono">bash -n</span> everything, then <span class="mono">for s in scripts/validation/*.sh; do bash "$s"; done</span>, then <span class="mono">python3 scripts/site/generate-data.py</span>.</p>
+
+  <h2>Pull requests</h2>
+  <ol class="steps">
+    <li>Branch from <span class="mono">main</span>: <span class="mono">git checkout -b &lt;scope&gt;/&lt;summary&gt; main</span>.</li>
+    <li>One logical change per commit; message style <span class="mono">type(scope): summary</span>.</li>
+    <li>Run the validators and fix failures <strong>in the same PR</strong>.</li>
+    <li>Never weaken validation to get CI green. Don't commit build artifacts or key material.</li>
+  </ol>
+</div>
+
+<footer>
+  <div class="mono">◈ Zero-Termux — modular dev environment &amp; APT repository for Termux</div>
+  <div><a href="https://github.com/Vaizer0/zero-termux">github.com/Vaizer0/zero-termux</a> · MIT · © <span data-year>2026</span></div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

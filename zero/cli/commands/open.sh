@@ -44,7 +44,7 @@ open_main() {
 
 open_help() {
 	echo
-	box "Core Open"
+	box "Zero Open"
 	echo
 	log_info "Usage: zero open <target>"
 	echo

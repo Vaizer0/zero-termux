@@ -7,7 +7,7 @@ install_main() {
 
   if [[ $# -eq 0 ]]; then
     echo
-    box "Core Install"
+    box "Zero Install"
     echo
     log_info "Usage: zero install <target>"
     log_info "Usage: zero install <target> --tool1 --tool2"

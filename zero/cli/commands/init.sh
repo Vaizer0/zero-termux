@@ -7,7 +7,7 @@ LOG_FILE="$ZERO_CACHE/init_project.log"
 
 init_help() {
 	echo
-	box "Core Project Initializer"
+	box "Zero Project Initializer"
 	echo
 	log_info "Usage: zero init <template>"
 	echo

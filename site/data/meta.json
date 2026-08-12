@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "repo": "https://github.com/Vaizer0/zero-termux",
+  "site": "https://vaizer0.github.io/zero-termux",
+  "install_url": "https://raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh",
+  "apt_suite": "zero-termux",
+  "apt_url": "https://vaizer0.github.io/zero-termux/repo",
+  "package_count": 228,
+  "tool_count": 99,
+  "category_count": 9,
+  "command_count": 13
+}

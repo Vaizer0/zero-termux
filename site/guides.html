@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guides — Zero-Termux</title>
+<meta name="description" content="Zero-Termux guides: installation options, customization, troubleshooting, migration.">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="diamond">◈</span> Zero-Termux</a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="docs.html">Docs</a>
+      <a href="commands.html">Commands</a>
+      <a href="modules.html">Modules</a>
+      <a href="packages.html">Packages</a>
+      <a href="guides.html">Guides</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="contributing.html">Contributing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap prose">
+  <div class="page-head">
+    <div class="crumb">/ guides</div>
+    <h1>Guides</h1>
+    <p>Practical how-tos: installation, customization, troubleshooting, and migration.</p>
+  </div>
+
+  <h2>Installation</h2>
+  <p>Requires a working Termux on aarch64, arm64, amd64 or i686. The installer uses only bash and standard Termux tools:</p>
+  <pre><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh)</code></pre>
+  <p>What it does, step by step:</p>
+  <ol class="steps">
+    <li>Verifies and installs dependencies: <span class="mono">tput git glow gh rg jq bat curl</span>.</li>
+    <li>Creates the Zero-Termux directories under <span class="mono">$HOME</span> / <span class="mono">$PREFIX</span>.</li>
+    <li>Clones this repository (or pulls updates on re-run).</li>
+    <li>Symlinks the <span class="mono">zero</span> command into <span class="mono">$PREFIX/bin/zero</span>.</li>
+    <li>Adds the signed APT repository (sources list + GPG key) and runs <span class="mono">apt update</span>.</li>
+    <li>Saves the configuration (<span class="mono">zero_data</span>, <span class="mono">zero_cache</span>, <span class="mono">zero_config</span>, <span class="mono">zero_source</span>, <span class="mono">zero_tool_data</span>).</li>
+    <li>Prints a summary with next steps.</li>
+  </ol>
+  <div class="note"><strong>Offline check</strong> The installer needs network access to GitHub and the GPG-signed repo. If <span class="mono">apt update</span> fails, verify connectivity; the repo is served from GitHub Pages.</div>
+
+  <h2>Customization</h2>
+  <ul>
+    <li><strong>Which tools:</strong> install per-tool with <span class="mono">zero install &lt;module&gt; --&lt;tool&gt;</span> instead of whole categories.</li>
+    <li><strong>Environment variables:</strong> <span class="mono">zero env set KEY value</span> / <span class="mono">zero env unset KEY</span> / <span class="mono">zero env ls</span>.</li>
+    <li><strong>Shell:</strong> the <span class="mono">shell</span> module sets up ZSH with Oh My Zsh, powerlevel10k and plugins.</li>
+    <li><strong>UI:</strong> <span class="mono">ui</span> module: fonts, cursor, extra keys, welcome banner.</li>
+    <li><strong>Memories:</strong> <span class="mono">zero brain init</span> then <span class="mono">zero brain save</span> / <span class="mono">zero brain search</span>.</li>
+  </ul>
+
+  <h2>Updating</h2>
+  <table>
+    <thead><tr><th>What</th><th>Command</th></tr></thead>
+    <tbody>
+      <tr><td>Framework</td><td><code>zero update zero</code> (git pull; the installer also updates)</td></tr>
+      <tr><td>One module</td><td><code>zero update &lt;module&gt; [--tool …]</code></td></tr>
+      <tr><td>APT packages</td><td><code>apt update &amp;&amp; pkg upgrade</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Troubleshooting</h2>
+  <table>
+    <thead><tr><th>Symptom</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td><code>zero: command not found</code></td><td>Check the symlink: <code>ls -l $PREFIX/bin/zero</code>; re-run the installer.</td></tr>
+      <tr><td><code>curl: command not found</code></td><td><code>pkg install curl</code> first.</td></tr>
+      <tr><td><code>apt update</code> fails on the repo</td><td>Connectivity to vaizer0.github.io; re-check the sources line and key file.</td></tr>
+      <tr><td>Whole-module install is slow</td><td>Expected for <code>ai</code> (1–2 h). Install per-tool instead.</td></tr>
+      <tr><td>Tool version looks stale</td><td>Rolling tools resolve latest at install time; <code>zero update &lt;module&gt;</code> re-resolves.</td></tr>
+      <tr><td>GPG verify fails</td><td>Re-download the public key from <code>https://vaizer0.github.io/zero-termux/zero-termux.gpg</code>; fingerprint <code>DF2C7FCD…C494</code>.</td></tr>
+      <tr><td>Broken tool install</td><td><code>zero reinstall &lt;module&gt; --&lt;tool&gt;</code>.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Migration from an earlier setup</h2>
+  <p>Zero-Termux keeps its own layout and does not overwrite an existing <span class="mono">~/.zshrc</span>, npm global prefix, or project configs — the <span class="mono">shell</span> module appends its own setup rather than replacing yours. Notes:</p>
+  <ul>
+    <li>Framework data: <span class="mono">$HOME/.local/share/zero-termux</span> (data), <span class="mono">$HOME/.cache/zero-termux</span> (cache), config under <span class="mono">~/.config/zero-termux</span>.</li>
+    <li>Binary entry point: <span class="mono">$PREFIX/bin/zero</span> (symlink — remove it to uninstall the CLI).</li>
+    <li>APT: the repo is added under <span class="mono">$PREFIX/etc/apt/sources.list.d/zero-termux.list</span>; removing that file + the key disables it.</li>
+    <li>Packages remove cleanly with <span class="mono">pkg remove &lt;name&gt;</span>; the CLI ecosystem with <span class="mono">zero uninstall &lt;module&gt;</span>.</li>
+  </ul>
+</div>
+
+<footer>
+  <div class="mono">◈ Zero-Termux — modular dev environment &amp; APT repository for Termux</div>
+  <div><a href="https://github.com/Vaizer0/zero-termux">github.com/Vaizer0/zero-termux</a> · MIT · © <span data-year>2026</span></div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

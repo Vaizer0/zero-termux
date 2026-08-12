@@ -12,6 +12,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install package dependencies
+        # Validators (branding, pins, stale URLs, docs/site) use ripgrep (rg).
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ripgrep
+
       - name: Shell syntax validation (bash -n)
         run: |
           set -e
@@ -44,3 +48,6 @@ jobs:
           done
           grep -q 'raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh' site/index.html || { echo "Install command missing"; exit 1; }
           echo "Landing page checks OK"
+
+      - name: Docs, site links & generated-data freshness
+        run: bash scripts/validation/doc-links-check.sh

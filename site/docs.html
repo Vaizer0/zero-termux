@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentation — Zero-Termux</title>
+<meta name="description" content="Zero-Termux documentation: quick start, CLI usage, APT repository, version policy.">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="diamond">◈</span> Zero-Termux</a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="docs.html">Docs</a>
+      <a href="commands.html">Commands</a>
+      <a href="modules.html">Modules</a>
+      <a href="packages.html">Packages</a>
+      <a href="guides.html">Guides</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="contributing.html">Contributing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap prose">
+  <div class="page-head">
+    <div class="crumb">/ docs</div>
+    <h1>Documentation</h1>
+    <p>The complete guide to Zero-Termux — install, use, update, and remove.</p>
+  </div>
+
+  <div class="grid anchor-cards" style="margin-top:1.5rem">
+    <a class="card" href="commands.html"><h3>Commands</h3><p>All 13 <span class="mono">zero</span> commands with syntax and examples.</p></a>
+    <a class="card" href="modules.html"><h3>Modules</h3><p>99 tools across 9 categories, searchable.</p></a>
+    <a class="card" href="packages.html"><h3>Packages</h3><p>228-package signed APT repository.</p></a>
+    <a class="card" href="guides.html"><h3>Guides</h3><p>How-to and troubleshooting.</p></a>
+  </div>
+
+  <h2>Quick start</h2>
+  <ol class="steps">
+    <li>Run the installer (Termux):</li>
+  </ol>
+  <pre><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh)</code></pre>
+  <ol class="steps" style="counter-reset:step 1">
+    <li>Verify: <span class="mono">zero --version</span> prints the framework version and <span class="mono">zero list ai</span> shows tools with installed state.</li>
+    <li>Install what you need — a module or individual tools:</li>
+  </ol>
+  <pre><code>zero install dev --gh --fzf --jq
+zero install ai --qwen-code
+zero install shell</code></pre>
+  <ol class="steps" style="counter-reset:step 3">
+    <li>Open the docs site any time: <span class="mono">zero open</span> (or <span class="mono">zero open ai</span> for a module anchor).</li>
+  </ol>
+
+  <div class="note"><strong>What the installer does</strong> Installs dependencies (tput, git, glow, gh, rg, jq, bat, curl), creates the Zero-Termux directories, clones/updates the repository, symlinks <span class="mono">$PREFIX/bin/zero</span>, configures the signed APT repository and runs <span class="mono">apt update</span>, saves configuration, prints a summary. Re-running it updates an existing install.</div>
+
+  <h2>CLI usage</h2>
+  <p>Every command follows <span class="mono">zero &lt;command&gt; [target] [--tool …]</span>. Targets are the 9 modules: <span class="mono">ai lang db editor dev npm shell ui auto</span>.</p>
+  <ul>
+    <li><span class="mono">zero install &lt;module&gt;</span> — whole category, or</li>
+    <li><span class="mono">zero install &lt;module&gt; --tool1 --tool2</span> — selected tools only.</li>
+    <li><span class="mono">zero list &lt;module&gt;</span> shows what exists and what is installed; <span class="mono">zero show &lt;module&gt; --&lt;tool&gt;</span> prints help for one tool.</li>
+    <li>Updates: <span class="mono">zero update zero</span> (framework), <span class="mono">zero update &lt;module&gt;</span> (tools), <span class="mono">pkg upgrade</span> (APT packages).</li>
+    <li>Removal: <span class="mono">zero uninstall &lt;module&gt; [--tool …]</span>; broken installs recover with <span class="mono">zero reinstall &lt;module&gt;</span>.</li>
+  </ul>
+  <p>The full reference is on the <a href="commands.html">commands page</a>.</p>
+
+  <h2>APT repository</h2>
+  <p>228 packages, GPG-signed on every build, served from <span class="mono">https://vaizer0.github.io/zero-termux/repo</span> (suite <span class="mono">zero-termux</span>). The installer configures it; manual setup:</p>
+  <pre><code>echo "deb [trusted=yes arch=all] https://vaizer0.github.io/zero-termux/repo zero-termux main" \
+  &gt; "$PREFIX/etc/apt/sources.list.d/zero-termux.list"
+
+curl -fsSL https://vaizer0.github.io/zero-termux/zero-termux.gpg \
+  -o "$PREFIX/etc/apt/trusted.gpg.d/zero-termux.gpg"
+
+apt update
+pkg search &lt;name&gt;    # browse
+pkg install &lt;name&gt;   # install</code></pre>
+  <p>Verify the key fingerprint: <span class="mono">DF2C7FCDABF96DF4298E953BB0C7EC7C1BB9C494</span>. Browse the catalog on the <a href="packages.html">packages page</a> or in <a href="https://github.com/Vaizer0/zero-termux/blob/main/assets/PACKAGES.md">assets/PACKAGES.md</a>.</p>
+
+  <h2>Version policy</h2>
+  <ul>
+    <li><strong>Rolling tools → latest.</strong> Registry installs use <span class="mono">@latest</span>; GitHub-release binaries resolve the newest release at install time via the GitHub API (no stale fallback — clear error if unreachable).</li>
+    <li><strong>Pins are the exception.</strong> Build-critical/source-tag pins carry a <span class="mono"># Zero-Termux: justified pin — &lt;reason&gt;</span> comment plus a manifest entry; CI fails on any new unapproved pin.</li>
+    <li><strong>Package <span class="mono">Version:</span> ≠ tool version.</strong> It is the package revision. The installed tool's version is whatever upstream latest resolves to.</li>
+    <li>A weekly <a href="architecture.html#workflows">maintenance workflow</a> reports drift between justified pins and latest upstream.</li>
+  </ul>
+
+  <h2>Next steps</h2>
+  <ul>
+    <li><a href="guides.html">Guides</a> — installation options, customization, troubleshooting, migration.</li>
+    <li><a href="architecture.html">Architecture</a> — how the pieces fit together.</li>
+    <li><a href="security.html">Security</a> — signing model and what runs on your device.</li>
+    <li><a href="contributing.html">Contributing</a> — add a tool or a package.</li>
+  </ul>
+</div>
+
+<footer>
+  <div class="mono">◈ Zero-Termux — modular dev environment &amp; APT repository for Termux</div>
+  <div><a href="https://github.com/Vaizer0/zero-termux">github.com/Vaizer0/zero-termux</a> · MIT · © <span data-year>2026</span></div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@ uninstall_main() {
 
   if [[ $# -eq 0 ]]; then
     echo
-    box "Core Uninstall"
+    box "Zero Uninstall"
     echo
     log_info "Usage: zero uninstall <target>"
     log_info "Usage: zero uninstall <target> --tool1 --tool2"

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modules &amp; Tools — Zero-Termux</title>
+<meta name="description" content="Searchable catalog of 99 Zero-Termux tools across 9 modules: ai, lang, db, editor, dev, npm, shell, ui, auto.">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="diamond">◈</span> Zero-Termux</a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="docs.html">Docs</a>
+      <a href="commands.html">Commands</a>
+      <a href="modules.html">Modules</a>
+      <a href="packages.html">Packages</a>
+      <a href="guides.html">Guides</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="contributing.html">Contributing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="page-head">
+    <div class="crumb">/ modules</div>
+    <h1>Modules &amp; tools</h1>
+    <p>99 tools across 9 categories, generated from <span class="mono">zero/tools/</span>. Install a category with <span class="mono">zero install &lt;module&gt;</span> or one tool with <span class="mono">zero install &lt;module&gt; --&lt;tool&gt;</span>.</p>
+  </div>
+
+  <div class="searchbar">
+    <span class="icon">⌕</span>
+    <input type="text" data-search="modules" placeholder="Search tools and modules… (e.g. opencode, postgresql, tmux)" aria-label="Search tools">
+  </div>
+  <div class="searchbar" style="margin-top:0.5rem; max-width:34rem">
+    <span class="icon">▤</span>
+    <select data-cat="modules" aria-label="Filter by category" style="flex:1; background:none; border:0; outline:0; color:var(--text); font-family:var(--mono); font-size:0.9rem">
+      <option value="all">All categories</option>
+    </select>
+  </div>
+  <p class="search-meta"></p>
+
+  <div class="explorer-init note"><strong>Loading</strong> Loading module data…</div>
+  <div data-explorer="modules"></div>
+</div>
+
+<footer>
+  <div class="mono">◈ Zero-Termux — modular dev environment &amp; APT repository for Termux</div>
+  <div><a href="https://github.com/Vaizer0/zero-termux">github.com/Vaizer0/zero-termux</a> · MIT · © <span data-year>2026</span></div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

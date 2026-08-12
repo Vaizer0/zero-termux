@@ -6,7 +6,7 @@ import "@/utils/colors"
 show_main() {
 	if [[ $# -eq 0 ]]; then
 		echo
-		box "Core Show"
+		box "Zero Show"
 		echo
 		log_info "Usage: zero show <module> --<tool>"
 		echo
