@@ -28,6 +28,7 @@ jobs:
           rm -rf _site
           mkdir -p _site
           cp -r site/* _site/
+          cp assets/zero-termux.gpg _site/
 
       # keep_files: true preserves the APT repository (repo/) deployed by
       # build-repo.yml. Both workflows share the zero-termux-pages concurrency
