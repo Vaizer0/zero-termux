@@ -6,32 +6,32 @@ Version: 1
 Architectures: all
 Description: zero-termux repository
 Suite: zero-termux
-Date: Wed, 12 Aug 2026 21:01:50 UTC
+Date: Wed, 12 Aug 2026 21:26:48 UTC
 Components: main
 MD5Sum:
- 02b3b4a6b094f1417fd00c1835cbe8aa 174559 main/binary-all/Packages
- b1de82986a3e252ff7ed6b389aac3db4 58548 main/binary-all/Packages.xz
- fb6d67b72a26bf32e5d835f0c428e99a 135232 main/Contents-all.xz
+ 793550cff11753fb6b00b9ef9d70f648 177987 main/binary-all/Packages
+ 6a94d95f1f9242bab9f950e72ee61690 58620 main/binary-all/Packages.xz
  444a857d2d2bc364a46728cddafde3e8 3607398 main/Contents-all
+ fb6d67b72a26bf32e5d835f0c428e99a 135232 main/Contents-all.xz
 SHA1:
- 36de550cce49d64cede03357f8bd7d9330fee36c 174559 main/binary-all/Packages
- b5b270f6d843a2e898bcd8305456b3355fcb74ec 58548 main/binary-all/Packages.xz
- 3e2d68bfd78d1592d6eac9c324bee834a137bb5f 135232 main/Contents-all.xz
+ bd3cd7a27e87b0d33aca1530836fb3a130c8d565 177987 main/binary-all/Packages
+ f9e262a310afcfddcdfc42b04b220f908146814d 58620 main/binary-all/Packages.xz
  c427abf5af525abd7c9b30bbeb3370d49cc8d458 3607398 main/Contents-all
+ 3e2d68bfd78d1592d6eac9c324bee834a137bb5f 135232 main/Contents-all.xz
 SHA256:
- 9d7618741bbb162ca719b2da6c521b33ebe3d81bbffa896983fc9bc8e2c4cbdf 174559 main/binary-all/Packages
- 46523ff445edea07dfb7eefb9e14624046cd4546cc2a503f253907b4bddf8c2d 58548 main/binary-all/Packages.xz
- c18f2e08bc2d0c533d9104c90dc817f4ff02ce33f24b985220ea2ab1049bedd5 135232 main/Contents-all.xz
+ afda8266e45d9b587ed49e56d4ff6769d25e097b002b02664ee5acfed32fba4b 177987 main/binary-all/Packages
+ f1ae998bc51130071e625b92fde1171d0426c145525779f99bc9948f661f9e7a 58620 main/binary-all/Packages.xz
  d7861da85a96113b8e1e72eb732ac5351eee83ad7910d89e8e673628bd3f99dc 3607398 main/Contents-all
+ c18f2e08bc2d0c533d9104c90dc817f4ff02ce33f24b985220ea2ab1049bedd5 135232 main/Contents-all.xz
 SHA512:
- 02dc99a5a033af7f924e3a08b888073558c2c5cadf7f686dfa4287b112b0f34aa5b30f5c67b0d9b291b071af9d4559eac041bfce910257a85353b0709e5341d4 174559 main/binary-all/Packages
- ece45ac2239a736be1ca8f2ac94b0bcb0043a2df70034ccbc58e6fe6d246582ea35b96276d5a4a6c091dba912967b3219638e5b6afbec608fdb4e0e5c0344abf 58548 main/binary-all/Packages.xz
- 18de1ee1850a998db117e12f6a06a582face3a6169558a94394cfb6eca692166b718dc2bb3a2f3bd2d378c5f92975955c8e8e95eba968b8e665e59e79bf4335f 135232 main/Contents-all.xz
+ 4774f027312549186004b6c9cd29b7da98cb26d2534c340f08e2c4390a6e24bddbaf4cc14c7f1bf23bb3c002eaa2c0773766aaec5887c0c46f68243e32c97d52 177987 main/binary-all/Packages
+ ed09d0cb525259d4aad09343c4fbae1789f3acea84229862485d04c9ef5e69c3b378429af75b3033852b65dbd1d25c6355d9a57fdfae120b58bd41a1b795034e 58620 main/binary-all/Packages.xz
  398b3a535e26122fa12ba0766b43c5fcba5d8920b1ad3874216d346590ea887b776118582779c837e1189ad70845de7a6bd71e144d307732c0a72c190d513e4a 3607398 main/Contents-all
+ 18de1ee1850a998db117e12f6a06a582face3a6169558a94394cfb6eca692166b718dc2bb3a2f3bd2d378c5f92975955c8e8e95eba968b8e665e59e79bf4335f 135232 main/Contents-all.xz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYIAB0WIQTfLH/Nq/lt9CmOlTuwx+x8G7nElAUCanzfQAAKCRCwx+x8G7nE
-lCIqAP9V9oF9USkM6U5moNw1O3rqLbNTtnqj4wUB3m8Yce3p7gEAl+UM+HwbZjnd
-0QEfk1RkKJIoRG6TigbpTS/4alOZYwg=
-=/gAn
+iHUEARYIAB0WIQTfLH/Nq/lt9CmOlTuwx+x8G7nElAUCanzlGgAKCRCwx+x8G7nE
+lK7kAQDUErfS9RDZb0KL+Rcai91k4X0UY9d1Eskg8moto6HNhwD9EhBsIx98Nno2
+zeMB76VDiVl2wl1bTiOon6r8/sUIvwM=
+=Cgc/
 -----END PGP SIGNATURE-----

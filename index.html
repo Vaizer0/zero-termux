@@ -179,7 +179,7 @@
     <h1>Your Termux, <span class="zero">zero</span> setup friction.</h1>
     <p class="tagline">
       Zero-Termux is a modular development environment and a signed APT repository for Termux —
-      one installer gives you the <code>zero</code> CLI with 100+ tools and direct access to 228 packages.
+      one installer gives you the <code>core</code> CLI with 100+ tools and direct access to 228 packages.
     </p>
 
     <div class="install-box">
@@ -196,12 +196,12 @@
 <span class="c">  ◆  1/7  Verifying dependencies          ✔ All dependencies present</span>
 <span class="c">  ◆  2/7  Setting up directories          ✔ Directories created</span>
 <span class="c">  ◆  3/7  Cloning repository              ✔ Repository cloned</span>
-<span class="c">  ◆  4/7  Creating zero command           ✔ Symlink created: zero → …/zero-termux/zero/bin/zero</span>
+<span class="c">  ◆  4/7  Creating core command           ✔ Symlink created: core → …/zero-termux/core/bin/core</span>
 <span class="c">  ◆  5/7  Configuring APT repository      ✔ GPG key installed</span>
 <span class="c">  ◆  6/7  Saving configuration            ✔ Configuration saved</span>
 <span class="ok">  ◆  7/7  Finalizing                      ✔ Installation Complete</span>
 
-<span class="prompt">$</span> zero install ai
+<span class="prompt">$</span> core install ai
 <span class="hl">  ◈ Installing AI tools (rolling — latest versions) ◈</span>
 <span class="c">  qwen-code … opencode … claude-code … gemini-cli … done</span>
 
@@ -214,13 +214,13 @@
 
   <section id="features">
     <h2><span class="hash">#</span> Features</h2>
-    <p class="lead">Two ecosystems, one command. The <code>zero</code> CLI manages module installs; the APT repository provides Debian packages — both rolling to latest versions.</p>
+    <p class="lead">Two ecosystems, one command. The <code>core</code> CLI manages module installs; the APT repository provides Debian packages — both rolling to latest versions.</p>
     <div class="grid">
-      <div class="card"><h3><span class="ic">◈</span>Modular CLI</h3><p><code>zero install lang · db · ai · editor · dev · npm · shell · ui · auto</code> — category-based installers with install/update/reinstall/uninstall lifecycle.</p></div>
+      <div class="card"><h3><span class="ic">◈</span>Modular CLI</h3><p><code>core install lang · db · ai · editor · dev · npm · shell · ui · auto</code> — category-based installers with install/update/reinstall/uninstall lifecycle.</p></div>
       <div class="card"><h3><span class="ic">▣</span>228 APT packages</h3><p>Security, recon, net, web, and dev tools as signed Debian packages — installed and upgraded with plain <code>pkg</code>.</p></div>
       <div class="card"><h3><span class="ic">↻</span>Rolling versions</h3><p>Registry tools track <code>@latest</code>; GitHub-release binaries resolve the newest release at install time. No stale pins.</p></div>
       <div class="card"><h3><span class="ic">🔑</span>Signed repository</h3><p>Every release is GPG-signed. The public key ships as <code>assets/zero-termux.gpg</code>; the private key never leaves CI secrets.</p></div>
-      <div class="card"><h3><span class="ic">⚡</span>One-line install</h3><p>The installer sets up dependencies, clones the repo, links <code>zero</code>, and configures the APT source — with one-time migration from legacy installs.</p></div>
+      <div class="card"><h3><span class="ic">⚡</span>One-line install</h3><p>The installer sets up dependencies, clones the repo, links <code>core</code>, and configures the APT source — with one-time migration from legacy installs.</p></div>
       <div class="card"><h3><span class="ic">☰</span>Transparent</h3><p>Every package installs from source on-device with visible <code>DEBIAN/</code> scripts, and a CI test suite guards branding, pins, and stale URLs.</p></div>
     </div>
   </section>
@@ -229,15 +229,15 @@
     <h2><span class="hash">#</span> Modules</h2>
     <p class="lead">Install whole categories with one command. Each module installs individual tools with their own lifecycle:</p>
     <div class="chips">
-      <a class="chip" href="#lang"><span class="m">lang</span><span class="c">zero install lang</span></a>
-      <a class="chip" href="#db"><span class="m">db</span><span class="c">zero install db</span></a>
-      <a class="chip" href="#ai"><span class="m">ai</span><span class="c">zero install ai</span></a>
-      <a class="chip" href="#editor"><span class="m">editor</span><span class="c">zero install editor</span></a>
-      <a class="chip" href="#dev"><span class="m">dev</span><span class="c">zero install dev</span></a>
-      <a class="chip" href="#npm"><span class="m">npm</span><span class="c">zero install npm</span></a>
-      <a class="chip" href="#shell"><span class="m">shell</span><span class="c">zero install shell</span></a>
-      <a class="chip" href="#ui"><span class="m">ui</span><span class="c">zero install ui</span></a>
-      <a class="chip" href="#auto"><span class="m">auto</span><span class="c">zero install auto</span></a>
+      <a class="chip" href="#lang"><span class="m">lang</span><span class="c">core install lang</span></a>
+      <a class="chip" href="#db"><span class="m">db</span><span class="c">core install db</span></a>
+      <a class="chip" href="#ai"><span class="m">ai</span><span class="c">core install ai</span></a>
+      <a class="chip" href="#editor"><span class="m">editor</span><span class="c">core install editor</span></a>
+      <a class="chip" href="#dev"><span class="m">dev</span><span class="c">core install dev</span></a>
+      <a class="chip" href="#npm"><span class="m">npm</span><span class="c">core install npm</span></a>
+      <a class="chip" href="#shell"><span class="m">shell</span><span class="c">core install shell</span></a>
+      <a class="chip" href="#ui"><span class="m">ui</span><span class="c">core install ui</span></a>
+      <a class="chip" href="#auto"><span class="m">auto</span><span class="c">core install auto</span></a>
     </div>
 
     <div class="grid">
@@ -270,11 +270,11 @@
 
   <section id="docs">
     <h2><span class="hash">#</span> Documentation</h2>
-    <p class="lead">From inside the CLI, <code>zero open zero</code> opens this site, and <code>zero open &lt;module&gt;</code> jumps to a category. Everything else lives in the repository:</p>
+    <p class="lead">From inside the CLI, <code>core open core</code> opens this site, and <code>core open &lt;module&gt;</code> jumps to a category. Everything else lives in the repository:</p>
     <div class="links-grid">
       <a href="https://github.com/Vaizer0/zero-termux" target="_blank" rel="noopener"><span class="l">README.md</span><span class="d">Quick start, usage, and architecture</span></a>
       <a href="https://github.com/Vaizer0/zero-termux/blob/main/UPSTREAM.md" target="_blank" rel="noopener"><span class="l">UPSTREAM.md</span><span class="d">Upstream projects and provenance</span></a>
-      <a href="https://github.com/Vaizer0/zero-termux/blob/main/MIGRATION.md" target="_blank" rel="noopener"><span class="l">MIGRATION.md</span><span class="d">Project structure and upgrade notes</span></a>
+      <a href="https://github.com/Vaizer0/zero-termux/blob/main/MIGRATION.md" target="_blank" rel="noopener"><span class="l">MIGRATION.md</span><span class="d">Migrating from legacy Core-Termux installs</span></a>
       <a href="https://github.com/Vaizer0/zero-termux/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener"><span class="l">CONTRIBUTING.md</span><span class="d">Package layout, version policy, CI gates</span></a>
       <a href="https://github.com/Vaizer0/zero-termux/blob/main/SECURITY.md" target="_blank" rel="noopener"><span class="l">SECURITY.md</span><span class="d">Security policy and responsible disclosure</span></a>
       <a href="https://github.com/Vaizer0/zero-termux/releases" target="_blank" rel="noopener"><span class="l">Releases</span><span class="d">Signed repository releases</span></a>
