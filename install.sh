@@ -275,6 +275,7 @@ clone_repo() {
 create_symlink() {
   log_step 4 "Creating zero command"
 
+  mkdir -p "$PREFIX/bin"
   rm -f "$PREFIX/bin/zero"
   ln -sf "$REPO_DIR/zero/bin/zero" "$PREFIX/bin/zero"
 
