@@ -1,0 +1,1826 @@
+[
+  {
+    "name": "5luser",
+    "version": "1.0",
+    "description": "get unlimited 5 letters instagram unused usernames",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Defensive Tools",
+    "install": "pkg install 5luser"
+  },
+  {
+    "name": "9router",
+    "version": "0.5.35",
+    "description": "Smart gateway between your tools and 60+ AI providers",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "AI & Productivity",
+    "install": "pkg install 9router"
+  },
+  {
+    "name": "afrog",
+    "version": "3.5.6",
+    "description": "Fast vulnerability scanner with custom PoCs (afrog)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install afrog"
+  },
+  {
+    "name": "aircrack-ng",
+    "version": "1.7",
+    "description": "Wireless network security auditing suite",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install aircrack-ng"
+  },
+  {
+    "name": "amass",
+    "version": "5.1.1",
+    "description": "In-depth Attack Surface Mapping and Asset Discovery",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install amass"
+  },
+  {
+    "name": "andrax",
+    "version": "5-2",
+    "description": "Android Penetration Testing OS (rootless)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Mobile Development",
+    "install": "pkg install andrax"
+  },
+  {
+    "name": "androdos",
+    "version": "1.0.0",
+    "description": "Denials of service(DoS) attack tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install androdos"
+  },
+  {
+    "name": "android-sdk",
+    "version": "36.0.0",
+    "description": "Android SDK built using musl libc, supporting multiple architectures.",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Mobile Development",
+    "install": "pkg install android-sdk"
+  },
+  {
+    "name": "androvirus",
+    "version": "3.0",
+    "description": "Android penetration testing framework (USE RESPONSIBLY)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install androvirus"
+  },
+  {
+    "name": "antigravity-cli",
+    "version": "1.1.11",
+    "description": "AI‑powered coding assistant (glibc wrapper for Termux)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "AI & Productivity",
+    "install": "pkg install antigravity-cli"
+  },
+  {
+    "name": "antisplit",
+    "version": "1.2",
+    "description": "APK Split Package Combiner and Modifier",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install antisplit"
+  },
+  {
+    "name": "apkeditor",
+    "version": "1.4.9",
+    "description": "Lightweight APK modification tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install apkeditor"
+  },
+  {
+    "name": "apkgen-cli",
+    "version": "1.4.0",
+    "description": "CLI tool to quickly generate Android APKs from local templates",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Mobile Development",
+    "install": "pkg install apkgen-cli"
+  },
+  {
+    "name": "apkleaks",
+    "version": "2.6.3",
+    "description": "Scanning APK file for URIs, endpoints & secrets.",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install apkleaks"
+  },
+  {
+    "name": "apkpatcher",
+    "version": "1.0",
+    "description": "Advanced APK Modification Tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install apkpatcher"
+  },
+  {
+    "name": "apksearch",
+    "version": "1.3.5",
+    "description": "APK Search Tool for Multiple APK Websites",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install apksearch"
+  },
+  {
+    "name": "arjun",
+    "version": "2.2.7",
+    "description": "HTTP parameter discovery suite",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install arjun"
+  },
+  {
+    "name": "arsenal-ng",
+    "version": "1.5",
+    "description": "Fast command launcher with 200+ cybersecurity cheat-sheets",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "System Tools",
+    "install": "pkg install arsenal-ng"
+  },
+  {
+    "name": "asciibanner",
+    "version": "2.1.0",
+    "description": "A feature-rich FIGlet-compatible ASCII art generator with color support and font previews",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Text & Utilities",
+    "install": "pkg install asciibanner"
+  },
+  {
+    "name": "beef",
+    "version": "0.6.0.0",
+    "description": "Browser Exploitation Framework",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install beef"
+  },
+  {
+    "name": "bettercap",
+    "version": "2.41.7",
+    "description": "Swiss army knife for network attacks and monitoring",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install bettercap"
+  },
+  {
+    "name": "bitb-framework",
+    "version": "1.2",
+    "description": "Phishing technique that simulates a browser window within the browser to spoof a legitimate domain.",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Defensive Tools",
+    "install": "pkg install bitb-framework"
+  },
+  {
+    "name": "blackbird",
+    "version": "1.0",
+    "description": "OSINT tool for username and email searches across 600+ platforms",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install blackbird"
+  },
+  {
+    "name": "blackbox-framework",
+    "version": "2.0",
+    "description": "A Python-based network analysis and exploitation toolkit",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install blackbox-framework"
+  },
+  {
+    "name": "blackhat",
+    "version": "1.0",
+    "description": "blackhat hacking sources",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Defensive Tools",
+    "install": "pkg install blackhat"
+  },
+  {
+    "name": "blesh",
+    "version": "0.4.0-devel4",
+    "description": "Bash Line Editor (ble.sh) – interactive command line editing",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "System Tools",
+    "install": "pkg install blesh"
+  },
+  {
+    "name": "blutter",
+    "version": "1.0",
+    "description": "Flutter/Dart Binary Analysis and Reverse Engineering",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install blutter"
+  },
+  {
+    "name": "breacher",
+    "version": "1.0",
+    "description": "Multi-threaded URL brute-forcer for hidden paths",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install breacher"
+  },
+  {
+    "name": "brutespray",
+    "version": "2.6.3",
+    "description": "Brute-force attacks from Nmap output",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install brutespray"
+  },
+  {
+    "name": "bun",
+    "version": "1.3.14",
+    "description": "Incredibly fast JavaScript runtime (glibc wrapper for Termux)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install bun"
+  },
+  {
+    "name": "burpsuite",
+    "version": "2026.1.2",
+    "description": "An integrated platform for performing security testing of web applications (community edition)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install burpsuite"
+  },
+  {
+    "name": "burpsuite-pro",
+    "version": "2026.1.5",
+    "description": "An integrated platform for performing security testing of web applications (professional edition)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install burpsuite-pro"
+  },
+  {
+    "name": "byakugan",
+    "version": "1.0.5",
+    "description": "Advanced footprinting tool for Termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install byakugan"
+  },
+  {
+    "name": "catsay",
+    "version": "1.0",
+    "description": "terminal-based feline messenger inspired by cowsay",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Text & Utilities",
+    "install": "pkg install catsay"
+  },
+  {
+    "name": "cctvip",
+    "version": "1.0.0",
+    "description": "A collection of open cctv camera ip",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Defensive Tools",
+    "install": "pkg install cctvip"
+  },
+  {
+    "name": "cdxsummary",
+    "version": "0.1.1",
+    "description": "CDX summary and analysis tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install cdxsummary"
+  },
+  {
+    "name": "cewl",
+    "version": "6.2.1",
+    "description": "Custom Word List generator (CeWL) for password cracking",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install cewl"
+  },
+  {
+    "name": "claude-code",
+    "version": "2.1.220",
+    "description": "Claude Code - AI coding assistant by Anthropic",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "AI & Productivity",
+    "install": "pkg install claude-code"
+  },
+  {
+    "name": "cloudflare-gui",
+    "version": "1.0",
+    "description": "Stylish GUI for Cloudflare Tunnels",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install cloudflare-gui"
+  },
+  {
+    "name": "commix",
+    "version": "4.1",
+    "description": "Automated All-in-One OS Command Injection and Exploitation Tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install commix"
+  },
+  {
+    "name": "copilot-cli",
+    "version": "1.0.78",
+    "description": "GitHub Copilot CLI (glibc version)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "AI & Productivity",
+    "install": "pkg install copilot-cli"
+  },
+  {
+    "name": "cronitor-cli",
+    "version": "31.6",
+    "description": "Command Line Interface for Cronitor Monitoring",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install cronitor-cli"
+  },
+  {
+    "name": "cupp",
+    "version": "3.3.0",
+    "description": "Common User Passwords Profiler (CUPP)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install cupp"
+  },
+  {
+    "name": "d-tect",
+    "version": "1.0",
+    "description": "D-TECT - Pentest the Modern Web",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install d-tect"
+  },
+  {
+    "name": "dalfox",
+    "version": "3.2.0",
+    "description": "Fast parameter analysis and XSS scanning tool (v3 in Rust)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install dalfox"
+  },
+  {
+    "name": "dark-phish",
+    "version": "2.3.0",
+    "description": "Powerful Phishing Tool with 50+ templates",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install dark-phish"
+  },
+  {
+    "name": "darkcrawler",
+    "version": "2.0",
+    "description": "CLI tool to crawl .onion sites and generate threat reports",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install darkcrawler"
+  },
+  {
+    "name": "darksploit-framework",
+    "version": "2",
+    "description": "Darksploit is a tool to run and create exploits",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install darksploit-framework"
+  },
+  {
+    "name": "darkterm",
+    "version": "2.0",
+    "description": "Advanced Ethical Hacking Framework for Termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install darkterm"
+  },
+  {
+    "name": "ddos",
+    "version": "1.0",
+    "description": "DDoS attack script with 36+ attack methods",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install ddos"
+  },
+  {
+    "name": "dirsearch",
+    "version": "0.5.0",
+    "description": "Web path scanner",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install dirsearch"
+  },
+  {
+    "name": "dnsx",
+    "version": "1.2.2",
+    "description": "Fast DNS toolkit for reconnaissance",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install dnsx"
+  },
+  {
+    "name": "dorks-eye",
+    "version": "2.0",
+    "description": "Google Hacking Dork Scraping and Searching Tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install dorks-eye"
+  },
+  {
+    "name": "dpt-shell",
+    "version": "2.15.0",
+    "description": "DPT Shell - Dex Protection Tool Shell dpt-shell is an Android Dex protection shell that hollows out Dex method implementations and reconstructs them at runtime.",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install dpt-shell"
+  },
+  {
+    "name": "drshell",
+    "version": "1.0.1",
+    "description": "Reverse Shell Session Manager",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install drshell"
+  },
+  {
+    "name": "elpscrk",
+    "version": "2.0",
+    "description": "Intelligent common user-password profiler",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install elpscrk"
+  },
+  {
+    "name": "emailcrawl",
+    "version": "1.0",
+    "description": "Professional-grade OSINT email extraction tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install emailcrawl"
+  },
+  {
+    "name": "enctool",
+    "version": "1.0",
+    "description": "encrypt or decrypt bash file and encrypt python in Marshal format",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "System Tools",
+    "install": "pkg install enctool"
+  },
+  {
+    "name": "evilginx",
+    "version": "3.3.0",
+    "description": "Advanced phishing framework with 2FA bypass",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install evilginx"
+  },
+  {
+    "name": "evilurl",
+    "version": "3.0",
+    "description": "Generate unicode evil domains for IDN homograph attacks",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install evilurl"
+  },
+  {
+    "name": "ffmpegp",
+    "version": "1.30",
+    "description": "Python Utility for FFmpeg and FFprobe Operations",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install ffmpegp"
+  },
+  {
+    "name": "ffuf",
+    "version": "2.2.1",
+    "description": "Fast web fuzzer written in Go",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install ffuf"
+  },
+  {
+    "name": "findomain",
+    "version": "10.0.1",
+    "description": "The fastest and complete solution for domain recognition",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install findomain"
+  },
+  {
+    "name": "flutter",
+    "version": "3.41.9",
+    "description": "Google's UI toolkit for building native apps",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Mobile Development",
+    "install": "pkg install flutter"
+  },
+  {
+    "name": "fscan",
+    "version": "2.1.3",
+    "description": "Intranet penetration test tool for scanning vulnerabilities",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install fscan"
+  },
+  {
+    "name": "fuckyou",
+    "version": "1.0.1",
+    "description": "A powerful and customizable password list generator written in Bash.",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install fuckyou"
+  },
+  {
+    "name": "gallery-eye",
+    "version": "0.1.0",
+    "description": "Silent gallery exfiltration via Telegram bot",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install gallery-eye"
+  },
+  {
+    "name": "gau",
+    "version": "2.2.4",
+    "description": "Fetch known URLs from AlienVault OTX, Wayback Machine, Common Crawl",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install gau"
+  },
+  {
+    "name": "ghauri",
+    "version": "1.4.2",
+    "description": "Advanced Cross-Platform SQL Injection Scanner",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install ghauri"
+  },
+  {
+    "name": "ghidra",
+    "version": "12.0.4",
+    "description": "NSA Reverse Engineering Framework",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install ghidra"
+  },
+  {
+    "name": "ghosttrack",
+    "version": "1.0",
+    "description": "Advanced tracking and reconnaissance tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install ghosttrack"
+  },
+  {
+    "name": "gitleaks",
+    "version": "8.30.1",
+    "description": "Detect hard-coded secrets and sensitive data in Git repositories",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install gitleaks"
+  },
+  {
+    "name": "gobuster",
+    "version": "3.8.2",
+    "description": "Directory/file & DNS busting tool written in Go",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install gobuster"
+  },
+  {
+    "name": "gophish",
+    "version": "0.12.1-zero-termux",
+    "description": "Open-source phishing framework",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install gophish"
+  },
+  {
+    "name": "goshs",
+    "version": "2.1.4",
+    "description": "Feature-rich single-binary file server for red teamers and developers",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install goshs"
+  },
+  {
+    "name": "gowitness",
+    "version": "3.1.1",
+    "description": "Web screenshot utility using headless Chrome",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install gowitness"
+  },
+  {
+    "name": "gron",
+    "version": "0.7.1",
+    "description": "Make JSON greppable",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Data Analysis",
+    "install": "pkg install gron"
+  },
+  {
+    "name": "haiti",
+    "version": "4.0.0",
+    "description": "Hash type identifier (CLI tool)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install haiti"
+  },
+  {
+    "name": "hashcat",
+    "version": "7.1.2",
+    "description": "World's fastest and most advanced password recovery utility",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install hashcat"
+  },
+  {
+    "name": "hashid",
+    "version": "3.1.4",
+    "description": "Advanced hash identifier",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install hashid"
+  },
+  {
+    "name": "hatcloud",
+    "version": "1.0.0",
+    "description": "CloudFlare detector and information gatherer",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install hatcloud"
+  },
+  {
+    "name": "haxrat",
+    "version": "1.0.1",
+    "description": "Cloud-based remote Android management suite",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install haxrat"
+  },
+  {
+    "name": "hbctool",
+    "version": "0.1.5-96",
+    "description": "Hermes Bytecode Disassembler and Assembler",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install hbctool"
+  },
+  {
+    "name": "hermes-agent",
+    "version": "2026.7.20",
+    "description": "AI-powered coding assistant and workflow automation tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "AI & Productivity",
+    "install": "pkg install hermes-agent"
+  },
+  {
+    "name": "holehe",
+    "version": "1.61",
+    "description": "Email OSINT tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install holehe"
+  },
+  {
+    "name": "hound",
+    "version": "0.2",
+    "description": "Simple and light tool for information gathering and capture exact GPS coordinates",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install hound"
+  },
+  {
+    "name": "httpx",
+    "version": "1.9.0",
+    "description": "Fast and Multi-Purpose HTTP Toolkit by ProjectDiscovery",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install httpx"
+  },
+  {
+    "name": "hunner-framework",
+    "version": "1.0",
+    "description": "Open Source Penetration Testing Framework",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install hunner-framework"
+  },
+  {
+    "name": "ia-get",
+    "version": "0.1.3",
+    "description": "Internet Archive Downloader Tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install ia-get"
+  },
+  {
+    "name": "infect",
+    "version": "1.03",
+    "description": "Android APK backdoor injector with Meterpreter support",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install infect"
+  },
+  {
+    "name": "instaghost",
+    "version": "1.0.2",
+    "description": "Professional Instagram OSINT Tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install instaghost"
+  },
+  {
+    "name": "instajack",
+    "version": "1.0",
+    "description": "Instagram old account jacker",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install instajack"
+  },
+  {
+    "name": "ip-changer",
+    "version": "1.0",
+    "description": "A powerful and easy-to-use tool to change your IP address automatically",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "System Tools",
+    "install": "pkg install ip-changer"
+  },
+  {
+    "name": "ipinfo",
+    "version": "1.0",
+    "description": "Ip address information gathering tool for termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install ipinfo"
+  },
+  {
+    "name": "iplookup",
+    "version": "1.0.0",
+    "description": "Ip address info gethering script..",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install iplookup"
+  },
+  {
+    "name": "john",
+    "version": "1.9.0",
+    "description": "John the Ripper password cracker",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install john"
+  },
+  {
+    "name": "jsql",
+    "version": "0.114",
+    "description": "Lightweight database information finder from a server",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install jsql"
+  },
+  {
+    "name": "jwt-hack",
+    "version": "2.6.0",
+    "description": "JWT security testing and exploitation tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install jwt-hack"
+  },
+  {
+    "name": "katana",
+    "version": "1.6.1",
+    "description": "Fast, passive and active web crawler",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install katana"
+  },
+  {
+    "name": "kerbrute",
+    "version": "1.0.3",
+    "description": "Kerberos brute force and enumeration tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install kerbrute"
+  },
+  {
+    "name": "keysigner",
+    "version": "4.0",
+    "description": "APK signing tool for Termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install keysigner"
+  },
+  {
+    "name": "kimi-code",
+    "version": "0.32.0",
+    "description": "AI-powered coding assistant for the terminal",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "AI & Productivity",
+    "install": "pkg install kimi-code"
+  },
+  {
+    "name": "knockpy",
+    "version": "7.0.2",
+    "description": "Subdomain enumeration and reconnaissance tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install knockpy"
+  },
+  {
+    "name": "lazyvim",
+    "version": "1.0",
+    "description": "Modern Neovim configuration framework",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install lazyvim"
+  },
+  {
+    "name": "linkwizard",
+    "version": "1.0",
+    "description": "Powerful profile link finder for Termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install linkwizard"
+  },
+  {
+    "name": "local2onion",
+    "version": "1.0",
+    "description": "Expose your localhost on the DARKWEB using termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Defensive Tools",
+    "install": "pkg install local2onion"
+  },
+  {
+    "name": "locateme",
+    "version": "1.2",
+    "description": "Live location tracker using google maps",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install locateme"
+  },
+  {
+    "name": "lunarvim",
+    "version": "1.4.0",
+    "description": "IDE layer for Neovim with sane defaults",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install lunarvim"
+  },
+  {
+    "name": "maigret",
+    "version": "0.6.2",
+    "description": "OSINT username search tool with 3000+ sites",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install maigret"
+  },
+  {
+    "name": "mantra",
+    "version": "3.1",
+    "description": "API key hunter for JS files and web pages",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install mantra"
+  },
+  {
+    "name": "maskme",
+    "version": "1.0.0",
+    "description": "Give a Mask to Phishing URL like a PRO",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Defensive Tools",
+    "install": "pkg install maskme"
+  },
+  {
+    "name": "medusa",
+    "version": "2.3-patched",
+    "description": "Parallel network login brute-forcer",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install medusa"
+  },
+  {
+    "name": "metabigor",
+    "version": "2.1.0",
+    "description": "OSINT tool without API keys",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install metabigor"
+  },
+  {
+    "name": "metasploit-framework",
+    "version": "6.4.142-dev",
+    "description": "Penetration testing framework",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install metasploit-framework"
+  },
+  {
+    "name": "mimocode",
+    "version": "0.1.10",
+    "description": "AI‑powered coding assistant (glibc wrapper for Termux)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "AI & Productivity",
+    "install": "pkg install mimocode"
+  },
+  {
+    "name": "mkwebapp",
+    "version": "1.0.0",
+    "description": "Tool to create Termux .deb packages for websites",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install mkwebapp"
+  },
+  {
+    "name": "mmx-cli",
+    "version": "1.0.19",
+    "description": "CLI tool for MiniMax AI",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "AI & Productivity",
+    "install": "pkg install mmx-cli"
+  },
+  {
+    "name": "morphshell",
+    "version": "2.0.1",
+    "description": "Sleek Termux Shell Environment with Dynamic Themes",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "System Tools",
+    "install": "pkg install morphshell"
+  },
+  {
+    "name": "mtcr-apply",
+    "version": "1.1.0",
+    "description": "MTCR Patch Application Tool for Android APKs",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install mtcr-apply"
+  },
+  {
+    "name": "naabu",
+    "version": "2.6.1",
+    "description": "Fast port scanner written in Go",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install naabu"
+  },
+  {
+    "name": "nethunter-cli",
+    "version": "2025.4",
+    "description": "Kali NetHunter Rootless Edition CLI",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install nethunter-cli"
+  },
+  {
+    "name": "ngrok",
+    "version": "3.39.1",
+    "description": "Secure tunnels to localhost",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install ngrok"
+  },
+  {
+    "name": "nikto",
+    "version": "2.6.0",
+    "description": "Comprehensive web server scanner",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install nikto"
+  },
+  {
+    "name": "nuclei",
+    "version": "3.11.0",
+    "description": "Fast and customizable vulnerability scanner",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install nuclei"
+  },
+  {
+    "name": "numinfo",
+    "version": "1.0",
+    "description": "Phone number intelligence and lookup tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install numinfo"
+  },
+  {
+    "name": "nvchad",
+    "version": "3.0",
+    "description": "Neovim Configuration Framework",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install nvchad"
+  },
+  {
+    "name": "onionsearch",
+    "version": "1.3",
+    "description": "Scrape .onion URLs from various Tor search engines",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install onionsearch"
+  },
+  {
+    "name": "openbullet",
+    "version": "1.0.2",
+    "description": "A tool for running openbullet configurations",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install openbullet"
+  },
+  {
+    "name": "openbullet2",
+    "version": "2.0.1-0",
+    "description": "Cross-platform automation suite powered by .NET Core",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install openbullet2"
+  },
+  {
+    "name": "openclaude",
+    "version": "0.27.0",
+    "description": "Open‑source coding‑agent CLI for cloud and local LLMs",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "AI & Productivity",
+    "install": "pkg install openclaude"
+  },
+  {
+    "name": "opencode",
+    "version": "1.18.15",
+    "description": "AI‑powered coding assistant (glibc version)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "AI & Productivity",
+    "install": "pkg install opencode"
+  },
+  {
+    "name": "pairip",
+    "version": "1.3.10",
+    "description": "PairIP Protection Removal Tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install pairip"
+  },
+  {
+    "name": "pandora",
+    "version": "3.2.0",
+    "description": "open source osint tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install pandora"
+  },
+  {
+    "name": "paramspider",
+    "version": "1.0.1",
+    "description": "Parameter discovery suite for web applications",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install paramspider"
+  },
+  {
+    "name": "parrot-cli",
+    "version": "6.3",
+    "description": "Parrot Security OS 6.3 (Lorikeet) for Termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install parrot-cli"
+  },
+  {
+    "name": "pdfcracker",
+    "version": "1.0",
+    "description": "A powerful yet simple PDF password recovery tool designed for security professionals and ethical hackers.",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install pdfcracker"
+  },
+  {
+    "name": "phishmailer",
+    "version": "2.2",
+    "description": "Professional Phishing Email Generation Tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install phishmailer"
+  },
+  {
+    "name": "phoneinfo",
+    "version": "1.0.1",
+    "description": "Phone number lookup tool for termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install phoneinfo"
+  },
+  {
+    "name": "phoneinfoga",
+    "version": "2.11.0",
+    "description": "Phone number intelligence framework",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install phoneinfoga"
+  },
+  {
+    "name": "phoneintel",
+    "version": "1.1.1",
+    "description": "Phone number intelligence and validation tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install phoneintel"
+  },
+  {
+    "name": "phonesploit-pro",
+    "version": "1.61",
+    "description": "Android hacking tool with ADB",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install phonesploit-pro"
+  },
+  {
+    "name": "photon",
+    "version": "1.3.2",
+    "description": "Lightweight web crawler for OSINT and reconnaissance",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install photon"
+  },
+  {
+    "name": "pip-basic-depends",
+    "version": "1.0",
+    "description": "Essential build dependencies for Python packages",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Data Analysis",
+    "install": "pkg install pip-basic-depends"
+  },
+  {
+    "name": "pkiller",
+    "version": "1.0",
+    "description": "Automated PairIP License Removal Tool for Android APKs",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install pkiller"
+  },
+  {
+    "name": "playit",
+    "version": "0.17.1",
+    "description": "Global Proxy for Server Hosting Without Port Forwarding",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install playit"
+  },
+  {
+    "name": "powerdos",
+    "version": "1.0.1",
+    "description": "A multi-threaded Denial of Service tool made in Python",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install powerdos"
+  },
+  {
+    "name": "pptool",
+    "version": "2.0",
+    "description": "Python tool to find the loading addresses of Dart objects in libapp.so through their pool pointer offset.",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install pptool"
+  },
+  {
+    "name": "publiceye",
+    "version": "1.0",
+    "description": "Comprehensive OSINT Tool for Information Lookup",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install publiceye"
+  },
+  {
+    "name": "python-pandas",
+    "version": "3.0.5",
+    "description": "Powerhouse data analysis toolkit",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Data Analysis",
+    "install": "pkg install python-pandas"
+  },
+  {
+    "name": "pywhat",
+    "version": "5.1.0",
+    "description": "Identify anything - text analysis tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install pywhat"
+  },
+  {
+    "name": "qdl",
+    "version": "3.7",
+    "description": "Qualcomm Download Tool (QDL) for EDL flashing",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install qdl"
+  },
+  {
+    "name": "qsreplace",
+    "version": "0.0.3",
+    "description": "Accept URLs on stdin, replace all query string values with a user-supplied value",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install qsreplace"
+  },
+  {
+    "name": "random-banner",
+    "version": "1",
+    "description": "random banner and quote",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Text & Utilities",
+    "install": "pkg install random-banner"
+  },
+  {
+    "name": "rang3r",
+    "version": "1.0",
+    "description": "Multi-threaded IP + port scanner",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install rang3r"
+  },
+  {
+    "name": "ransomux",
+    "version": "1.0",
+    "description": "Ramsomware making tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install ransomux"
+  },
+  {
+    "name": "reaver",
+    "version": "1.6.6",
+    "description": "Brute force WPS PINs and recover WPA/WPA2 passphrases",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install reaver"
+  },
+  {
+    "name": "redhawk",
+    "version": "2.0.0",
+    "description": "All in one tool for Information Gathering, Vulnerability Scanning and Crawling",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install redhawk"
+  },
+  {
+    "name": "rkpairip",
+    "version": "5.2",
+    "description": "Remove Pairip Protection and Rebuild APKs",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reverse Engineering",
+    "install": "pkg install rkpairip"
+  },
+  {
+    "name": "ruby-curb",
+    "version": "1.3.5",
+    "description": "Ruby bindings for libcurl",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "System Tools",
+    "install": "pkg install ruby-curb"
+  },
+  {
+    "name": "ruby-ethon",
+    "version": "0.18.0",
+    "description": "Ruby HTTP client library (libcurl wrapper)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "System Tools",
+    "install": "pkg install ruby-ethon"
+  },
+  {
+    "name": "ruby-nokogiri",
+    "version": "1.19.0",
+    "description": "Ruby gem for HTML/XML parsing (system libraries version)",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "System Tools",
+    "install": "pkg install ruby-nokogiri"
+  },
+  {
+    "name": "scanqli",
+    "version": "1.0",
+    "description": "SQL injection scanner and vulnerability detection tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install scanqli"
+  },
+  {
+    "name": "secretfinder",
+    "version": "1.0",
+    "description": "Discover sensitive data (API keys, access tokens, JWT, etc.) in JavaScript files",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install secretfinder"
+  },
+  {
+    "name": "setoolkit",
+    "version": "8.0.3+git20241021-0kali1",
+    "description": "Social Engineering Toolkit",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install setoolkit"
+  },
+  {
+    "name": "shark",
+    "version": "2.5.1.1",
+    "description": "Future of Phishing with less delay",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install shark"
+  },
+  {
+    "name": "shellcrypt",
+    "version": "2.0.0",
+    "description": "Professional code obfuscation tool for Bash and Python",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "System Tools",
+    "install": "pkg install shellcrypt"
+  },
+  {
+    "name": "sherlock",
+    "version": "0.16.0",
+    "description": "Hunt down social media accounts by username",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install sherlock"
+  },
+  {
+    "name": "shorturl",
+    "version": "1.0.0",
+    "description": "URL shortner for termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Defensive Tools",
+    "install": "pkg install shorturl"
+  },
+  {
+    "name": "silverinstaeye",
+    "version": "1.0-patched",
+    "description": "Instagram information gathering tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install silverinstaeye"
+  },
+  {
+    "name": "slowhttptest",
+    "version": "1.9.0",
+    "description": "Application Layer Denial of Service attack simulator",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install slowhttptest"
+  },
+  {
+    "name": "sms-stealer",
+    "version": "0.1.0",
+    "description": "Silent SMS interceptor via Telegram bot",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install sms-stealer"
+  },
+  {
+    "name": "snatcher",
+    "version": "1.0.2",
+    "description": "Snatcher - Capture Images from Victim's Camera",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install snatcher"
+  },
+  {
+    "name": "snoop",
+    "version": "1.4.3",
+    "description": "Information gathering tool using online resources",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install snoop"
+  },
+  {
+    "name": "spider",
+    "version": "2.0",
+    "description": "telegram autoreport script",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install spider"
+  },
+  {
+    "name": "sploitscan",
+    "version": "0.14.3",
+    "description": "Exploit Intelligence Gathering and Analysis Tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install sploitscan"
+  },
+  {
+    "name": "spurt",
+    "version": "1.9.0",
+    "description": "HTTP stress testing tool that can overload web servers.",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install spurt"
+  },
+  {
+    "name": "sqlmap",
+    "version": "1.10.7",
+    "description": "Automatic SQL Injection and Database Takeover Tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install sqlmap"
+  },
+  {
+    "name": "sqlscan",
+    "version": "1",
+    "description": "A small and an efficient tool to find SQL injection vulnerability in a websites.",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install sqlscan"
+  },
+  {
+    "name": "storm-breaker",
+    "version": "1.0",
+    "description": "Social Engineering Toolkit",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install storm-breaker"
+  },
+  {
+    "name": "subcat",
+    "version": "1.4.0",
+    "description": "Lightning-fast Passive Subdomain Discovery Tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install subcat"
+  },
+  {
+    "name": "subfinder",
+    "version": "2.14.0",
+    "description": "Fast passive subdomain enumeration tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install subfinder"
+  },
+  {
+    "name": "subjack",
+    "version": "3.0.0",
+    "description": "Subdomain Takeover tool written in Go",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install subjack"
+  },
+  {
+    "name": "subzy",
+    "version": "1.2.1",
+    "description": "Subdomain takeover vulnerability scanner",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install subzy"
+  },
+  {
+    "name": "superfile",
+    "version": "1.6.0",
+    "description": "Terminal file manager with modern features",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install superfile"
+  },
+  {
+    "name": "takeover",
+    "version": "0.2",
+    "description": "Subdomain takeover detection tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install takeover"
+  },
+  {
+    "name": "term-helper",
+    "version": "1.1.1",
+    "description": "Terminal command helper and cheatsheet tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install term-helper"
+  },
+  {
+    "name": "termsploit",
+    "version": "1.0.1",
+    "description": "Pentesting framework for Termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install termsploit"
+  },
+  {
+    "name": "termux-ai",
+    "version": "3.0",
+    "description": "Interactive AI Assistant for Termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "AI & Productivity",
+    "install": "pkg install termux-ai"
+  },
+  {
+    "name": "termux-desktop",
+    "version": "1.0.7",
+    "description": "termux xfce4 desktop gui with Hacker themes and icona",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install termux-desktop"
+  },
+  {
+    "name": "termux-desktop-wallpapers",
+    "version": "1.0",
+    "description": "Wallpapers for termux-desktop",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install termux-desktop-wallpapers"
+  },
+  {
+    "name": "termux-media-downloader",
+    "version": "2.1",
+    "description": "A high-performance media downloader for Termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "AI & Productivity",
+    "install": "pkg install termux-media-downloader"
+  },
+  {
+    "name": "termux-penv",
+    "version": "2.0.1",
+    "description": "Termux Penv - Simplify Chroot Environments in Termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install termux-penv"
+  },
+  {
+    "name": "termuxfetch",
+    "version": "2.0",
+    "description": "Neofetch‑like system information tool for Termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "System Tools",
+    "install": "pkg install termuxfetch"
+  },
+  {
+    "name": "thc-hydra",
+    "version": "9.8dev",
+    "description": "Parallelized Login Cracker Supporting Numerous Protocols",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install thc-hydra"
+  },
+  {
+    "name": "the-theif",
+    "version": "2.1",
+    "description": "A tool that can hijack cookies and transmit them to Telegram using the API.",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install the-theif"
+  },
+  {
+    "name": "theharvester",
+    "version": "4.10.1",
+    "description": "E-mail, Subdomain, and Name Harvester",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install theharvester"
+  },
+  {
+    "name": "thezoo",
+    "version": "0.60",
+    "description": "A repository of live malware samples",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Malware Analysis",
+    "install": "pkg install thezoo"
+  },
+  {
+    "name": "tookie-osint",
+    "version": "4.1fix",
+    "description": "OSINT tool for username search across platforms",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install tookie-osint"
+  },
+  {
+    "name": "trufflehog",
+    "version": "3.96.0",
+    "description": "Find leaked credentials and secrets in code and data",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install trufflehog"
+  },
+  {
+    "name": "tte",
+    "version": "0.14.2",
+    "description": "Terminal Text Effects and Animation Library",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "System Tools",
+    "install": "pkg install tte"
+  },
+  {
+    "name": "unfurl",
+    "version": "0.4.3",
+    "description": "Pull out bits of URLs provided on stdin",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install unfurl"
+  },
+  {
+    "name": "user-scanner",
+    "version": "1.3.6.6",
+    "description": "2-in-1 Email & Username OSINT suite",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install user-scanner"
+  },
+  {
+    "name": "vedic",
+    "version": "2.0.6",
+    "description": "World's first Sanskrit programming language",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Mobile Development",
+    "install": "pkg install vedic"
+  },
+  {
+    "name": "venom",
+    "version": "1.0.3",
+    "description": "An automated phishing tool for absolute beginners",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install venom"
+  },
+  {
+    "name": "void-fonts",
+    "version": "1.0",
+    "description": "Custom font collection for Termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Customization",
+    "install": "pkg install void-fonts"
+  },
+  {
+    "name": "vulnx",
+    "version": "2.0.1",
+    "description": "Modern CLI for exploring vulnerability data with powerful search, filtering, and analysis capabilities.",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install vulnx"
+  },
+  {
+    "name": "wacli",
+    "version": "0.13.0",
+    "description": "Command-line tool for WhatsApp chat management",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install wacli"
+  },
+  {
+    "name": "wafw00f",
+    "version": "2.3.1",
+    "description": "Web Application Firewall detection tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install wafw00f"
+  },
+  {
+    "name": "waybackurls",
+    "version": "0.1.0",
+    "description": "Fetch known URLs from Wayback Machine archives",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install waybackurls"
+  },
+  {
+    "name": "waymap",
+    "version": "7.2.0",
+    "description": "Fast Web Vulnerability Scanner and Security Testing Toolkit",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install waymap"
+  },
+  {
+    "name": "webhost",
+    "version": "1.0.0",
+    "description": "Serve local directories and expose via tunnels",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install webhost"
+  },
+  {
+    "name": "webinfo",
+    "version": "3.0",
+    "description": "Website information gathering",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install webinfo"
+  },
+  {
+    "name": "webserver",
+    "version": "1.2",
+    "description": "a simple webserver for termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install webserver"
+  },
+  {
+    "name": "websploit",
+    "version": "4.0.5",
+    "description": "Advanced MITM framework.",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install websploit"
+  },
+  {
+    "name": "weeman",
+    "version": "1.7.1",
+    "description": "HTTP server for phishing in python2",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Social Engineering",
+    "install": "pkg install weeman"
+  },
+  {
+    "name": "whatbreach",
+    "version": "0.3.0",
+    "description": "OSINT tool to discover email breaches",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Information Gathering",
+    "install": "pkg install whatbreach"
+  },
+  {
+    "name": "whatsapp-cli",
+    "version": "1.3.3",
+    "description": "Standalone CLI for WhatsApp using multidevice protocol",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous Utilities",
+    "install": "pkg install whatsapp-cli"
+  },
+  {
+    "name": "wipwn",
+    "version": "1.0",
+    "description": "Fast automated WiFi WPS PIN cracking tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Attack Tools",
+    "install": "pkg install wipwn"
+  },
+  {
+    "name": "wordlists",
+    "version": "1.1-0",
+    "description": "Security wordlists collection (rockyou.txt + SecLists subset).",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install wordlists"
+  },
+  {
+    "name": "wpscan",
+    "version": "4.0.0",
+    "description": "WordPress vulnerability scanner",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install wpscan"
+  },
+  {
+    "name": "xbomber",
+    "version": "2.0.0",
+    "description": "A High-Performance SMS Bombing Tool for Educational Testing",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install xbomber"
+  },
+  {
+    "name": "xss-loader",
+    "version": "1.0",
+    "description": "XSS payload generator and loader tool",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install xss-loader"
+  },
+  {
+    "name": "xsstrike",
+    "version": "3.1.6",
+    "description": "Advanced XSS Detection and Exploitation Suite",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Reconnaissance & Scanning",
+    "install": "pkg install xsstrike"
+  },
+  {
+    "name": "zaproxy",
+    "version": "2026.03.02",
+    "description": "OWASP Zed Attack Proxy",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Web Security & Tunneling",
+    "install": "pkg install zaproxy"
+  },
+  {
+    "name": "zen-c",
+    "version": "1.0",
+    "description": "High-level Systems Programming Language compiling to C",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Mobile Development",
+    "install": "pkg install zen-c"
+  },
+  {
+    "name": "zero-termux",
+    "version": "2.0.7",
+    "description": "Zero-Termux package manager and system helper",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Miscellaneous",
+    "install": "pkg install zero-termux"
+  },
+  {
+    "name": "zero-termux-theme",
+    "version": "3.3",
+    "description": "Professional terminal customization for Termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Customization",
+    "install": "pkg install zero-termux-theme"
+  },
+  {
+    "name": "zipcracker",
+    "version": "1.0",
+    "description": "A powerful yet simple ZIP archive password recovery tool designed for Termux",
+    "homepage": "https://github.com/Vaizer0/zero-termux",
+    "category": "Password Tools",
+    "install": "pkg install zipcracker"
+  }
+]

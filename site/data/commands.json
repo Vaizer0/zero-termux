@@ -1,0 +1,213 @@
+[
+  {
+    "name": "--version",
+    "summary": "Show the installed Zero-Termux version.",
+    "syntax": "zero --version",
+    "args": [],
+    "examples": [
+      "zero --version"
+    ],
+    "notes": "Prints the framework version (ZERO_VERSION)."
+  },
+  {
+    "name": "install",
+    "summary": "Install a module (whole category) or specific tools.",
+    "syntax": "zero install <target> [--tool1 --tool2 …]",
+    "args": [
+      [
+        "target",
+        "module: ai, lang, db, editor, dev, npm, shell, ui, auto"
+      ],
+      [
+        "--tool",
+        "one or more tools of that module, e.g. --qwen-code --ollama"
+      ]
+    ],
+    "examples": [
+      "zero install ai",
+      "zero install ai --qwen-code --ollama",
+      "zero install db --postgresql"
+    ],
+    "notes": "With no --tool flags, the whole category is installed. AI installs are large and slow (1–2 h)."
+  },
+  {
+    "name": "update",
+    "summary": "Update the framework or installed modules/tools.",
+    "syntax": "zero update <target> [--tool1 --tool2 …]",
+    "args": [
+      [
+        "target",
+        "module, or `zero` to update only the framework (git pull)"
+      ]
+    ],
+    "examples": [
+      "zero update zero",
+      "zero update ai",
+      "zero update npm --ncu"
+    ],
+    "notes": "Lang updates map to `pkg upgrade`; other modules update their tools' per-tool update hooks."
+  },
+  {
+    "name": "uninstall",
+    "summary": "Remove a module or specific tools.",
+    "syntax": "zero uninstall <target> [--tool1 --tool2 …]",
+    "args": [
+      [
+        "target",
+        "module to remove"
+      ]
+    ],
+    "examples": [
+      "zero uninstall npm",
+      "zero uninstall ai --ollama"
+    ],
+    "notes": "Runs each tool's uninstall hook."
+  },
+  {
+    "name": "reinstall",
+    "summary": "Uninstall then reinstall a module or tools.",
+    "syntax": "zero reinstall <target> [--tool1 --tool2 …]",
+    "args": [
+      [
+        "target",
+        "module to reinstall"
+      ]
+    ],
+    "examples": [
+      "zero reinstall editor"
+    ],
+    "notes": "Useful for recovering a broken tool installation."
+  },
+  {
+    "name": "list",
+    "summary": "List the tools available in a module.",
+    "syntax": "zero list <target>",
+    "args": [
+      [
+        "target",
+        "module to list (bare `zero list` shows targets)"
+      ]
+    ],
+    "examples": [
+      "zero list ai",
+      "zero list dev"
+    ],
+    "notes": "Shows each tool with its installed state where detectable."
+  },
+  {
+    "name": "show",
+    "summary": "Show help/documentation for a specific tool.",
+    "syntax": "zero show <module> --<tool>",
+    "args": [
+      [
+        "module",
+        "module of the tool"
+      ],
+      [
+        "--tool",
+        "tool name"
+      ]
+    ],
+    "examples": [
+      "zero show ai --opencode",
+      "zero show dev --gh"
+    ],
+    "notes": ""
+  },
+  {
+    "name": "open",
+    "summary": "Open Zero-Termux documentation in the browser.",
+    "syntax": "zero open <target>",
+    "args": [
+      [
+        "target",
+        "site anchor: zero, help, zero-termux, or a module (ai, lang, …)"
+      ]
+    ],
+    "examples": [
+      "zero open",
+      "zero open ai"
+    ],
+    "notes": "Opens the GitHub Pages site; module targets anchor to the homepage sections."
+  },
+  {
+    "name": "init",
+    "summary": "Configure an existing project.",
+    "syntax": "zero init <template>",
+    "args": [
+      [
+        "template",
+        "project template, e.g. next, react"
+      ]
+    ],
+    "examples": [
+      "zero init next"
+    ],
+    "notes": "Run inside the project directory."
+  },
+  {
+    "name": "brain",
+    "summary": "Second brain — save, search, and manage memories.",
+    "syntax": "zero brain <subcommand>",
+    "args": [
+      [
+        "subcommand",
+        "init, save, search (and dashboard views)"
+      ]
+    ],
+    "examples": [
+      "zero brain init",
+      "zero brain save",
+      "zero brain search"
+    ],
+    "notes": "Stores memories locally (and optionally a GitHub repo on init)."
+  },
+  {
+    "name": "env",
+    "summary": "Manage user-scoped environment variables.",
+    "syntax": "zero env <set|unset|ls> [-key value]",
+    "args": [
+      [
+        "subcommand",
+        "set, unset, ls"
+      ]
+    ],
+    "examples": [
+      "zero env set KEY value",
+      "zero env unset KEY",
+      "zero env ls"
+    ],
+    "notes": "Variables are stored per-user and loaded into the shell session."
+  },
+  {
+    "name": "pg",
+    "summary": "PostgreSQL database manager.",
+    "syntax": "zero pg <command>",
+    "args": [
+      [
+        "command",
+        "start, stop, restart (and related server commands)"
+      ]
+    ],
+    "examples": [
+      "zero pg start"
+    ],
+    "notes": "Manages the local Termux PostgreSQL instance."
+  },
+  {
+    "name": "voice",
+    "summary": "Speech-to-agent — record voice, review in nvim, send to an AI agent.",
+    "syntax": "zero voice [agent]",
+    "args": [
+      [
+        "agent",
+        "opencode | claude-code (default opencode)"
+      ]
+    ],
+    "examples": [
+      "zero voice",
+      "zero voice claude-code"
+    ],
+    "notes": "Requires a microphone and a terminal audio solution on Termux."
+  }
+]

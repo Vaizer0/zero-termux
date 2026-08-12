@@ -44,3 +44,6 @@ jobs:
           done
           grep -q 'raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh' site/index.html || { echo "Install command missing"; exit 1; }
           echo "Landing page checks OK"
+
+      - name: Docs, site links & generated-data freshness
+        run: bash scripts/validation/doc-links-check.sh

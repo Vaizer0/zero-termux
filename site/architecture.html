@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architecture — Zero-Termux</title>
+<meta name="description" content="How Zero-Termux is built: CLI framework, APT packages, CI/CD, GitHub Pages deployment.">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="diamond">◈</span> Zero-Termux</a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="docs.html">Docs</a>
+      <a href="commands.html">Commands</a>
+      <a href="modules.html">Modules</a>
+      <a href="packages.html">Packages</a>
+      <a href="guides.html">Guides</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="contributing.html">Contributing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap prose">
+  <div class="page-head">
+    <div class="crumb">/ architecture</div>
+    <h1>Architecture</h1>
+    <p>Two ecosystems in one repository: the <span class="mono">zero</span> CLI framework and the signed APT repository, both deployed to GitHub Pages.</p>
+  </div>
+
+  <h2>Overview</h2>
+  <pre><code>User on Termux
+    │  bash &lt;(curl … install.sh)
+    ▼
+┌─────────────────────────────┐      ┌──────────────────────────┐
+│ Installer (install.sh)      │      │ zero CLI (bash, no       │
+│ deps → dirs → clone →       │───▶  │ runtime deps)            │
+│ symlink → APT repo → config │      │ 13 commands, 9 modules,  │
+└─────────────────────────────┘      │ 99 tool installers       │
+                                     └────────────┬─────────────┘
+                                                  │ zero install &lt;cat&gt;
+                                                  ▼
+                                     tool installers resolve LATEST
+                                     from official npm/pip/GitHub API
+
+┌─────────────────────────────────────────────────────────────────┐
+│ GitHub Actions                                                  │
+│ test.yml        bash -n + validators (packages, branding,       │
+│                 pins, stale URLs, docs links, landing checks)   │
+│ build-repo.yml  dpkg-deb → termux-apt-repo → gpg sign           │
+│                 → assemble _site (site + repo/ + public key)    │
+│ pages.yml       site-only deploy (keep_files preserves /repo)   │
+│ maintenance.yml weekly drift report (justified pins vs latest)  │
+└─────────────────────────────────────────────────────────────────┘
+                            │ deploy gh-pages
+                            ▼
+                  https://vaizer0.github.io/zero-termux/
+                  ├── site pages (docs, explorers)
+                  ├── repo/        (InRelease, signed)
+                  └── zero-termux.gpg (public key)</code></pre>
+
+  <h2>Install flow</h2>
+  <ol class="steps">
+    <li>Installer installs dependencies (<span class="mono">tput git glow gh rg jq bat curl</span>).</li>
+    <li>Creates Zero-Termux directories; clones the repo (or updates it).</li>
+    <li>Symlinks <span class="mono">$PREFIX/bin/zero</span>.</li>
+    <li>Writes the APT sources line + installs the GPG key; runs <span class="mono">apt update</span>.</li>
+    <li>Saves configuration; prints summary.</li>
+  </ol>
+
+  <h2>CLI framework</h2>
+  <div class="two-col">
+    <div>
+      <h3>Dispatch</h3>
+      <p><span class="mono">zero/bin/zero</span> resolves symlinks, loads the environment, and dispatches to <span class="mono">zero/cli/commands/&lt;cmd&gt;.sh</span>, which exports <span class="mono">&lt;cmd&gt;_main</span>. Shared utilities live in <span class="mono">zero/utils/</span> (bootstrap/import, env, colors, log, version).</p>
+    </div>
+    <div>
+      <h3>Modules → tools</h3>
+      <p><span class="mono">zero/modules/&lt;cat&gt;.sh</span> defines the category installers; <span class="mono">zero/tools/&lt;cat&gt;/&lt;tool&gt;/install.sh</span> exports <span class="mono">install_/update_/reinstall_/uninstall_&lt;tool&gt;</span>. The <span class="mono">ai</span> category imports an aggregate <span class="mono">all.sh</span>.</p>
+    </div>
+  </div>
+  <p>Commands: <a href="commands.html">full reference</a> · Module catalog: <a href="modules.html">modules</a>.</p>
+
+  <h2 id="workflows">APT repository &amp; signing</h2>
+  <ol class="steps">
+    <li><span class="mono">build-repo.yml</span> runs <span class="mono">scripts/build/build-repo.sh</span>: builds each <span class="mono">packages/*</span> dir with <span class="mono">dpkg-deb</span>, indexes with <span class="mono">termux-apt-repo</span>, signs <span class="mono">Release</span> (→ <span class="mono">InRelease</span>) with the ed25519 key in GitHub secrets.</li>
+    <li>The workflow assembles <span class="mono">_site</span>: <span class="mono">site/*</span> at root, <span class="mono">repo/*</span> under <span class="mono">/repo</span>, <span class="mono">assets/zero-termux.gpg</span> at root.</li>
+    <li><span class="mono">peaceiris/actions-gh-pages</span> deploys to <span class="mono">gh-pages</span>; <span class="mono">pages.yml</span> deploys site-only changes with <span class="mono">keep_files: true</span> so <span class="mono">/repo</span> survives.</li>
+    <li>Both deploy workflows share the <span class="mono">zero-termux-pages</span> concurrency group — site and repo deploys never collide.</li>
+  </ol>
+
+  <h2>Directory layout</h2>
+  <pre><code>zero/                          CLI framework (bash, no runtime deps)
+  bin/zero                     entry point
+  cli/commands/&lt;cmd&gt;.sh        one file per command
+  modules/&lt;cat&gt;.sh             category install/update/uninstall logic
+  tools/&lt;cat&gt;/&lt;tool&gt;/          per-tool installers + README.md
+  utils/                       bootstrap, env, colors, log, version
+packages/&lt;name&gt;/DEBIAN/        package definitions (control + lifecycle)
+scripts/
+  build/build-repo.sh          dpkg-deb + termux-apt-repo + gpg sign
+  validation/                  CI validators
+  version-check/               rolling-version drift reporter
+  maintenance/                 weekly scheduled checks
+  site/generate-data.py        regenerates site/data/*.json
+site/                          website (multi-page, data-driven)
+  data/*.json                  generated from the repo
+assets/                        PACKAGES.md + zero-termux.gpg (public key)
+.github/workflows/             build-repo, test, pages, maintenance
+install.sh                     unified installer</code></pre>
+
+  <h2>Data flow for the website</h2>
+  <p>The site is data-driven: <span class="mono">python3 scripts/site/generate-data.py</span> scans <span class="mono">zero/cli/commands</span>, <span class="mono">zero/tools/*/*</span>, <span class="mono">packages/*/DEBIAN/control</span> (and the category map in <span class="mono">assets/PACKAGES.md</span>) and writes <span class="mono">site/data/{meta,commands,modules,packages}.json</span>. The explorer pages fetch those JSON files at runtime. Changing tools or packages means regenerating the JSON — CI fails if the site is out of date.</p>
+</div>
+
+<footer>
+  <div class="mono">◈ Zero-Termux — modular dev environment &amp; APT repository for Termux</div>
+  <div><a href="https://github.com/Vaizer0/zero-termux">github.com/Vaizer0/zero-termux</a> · MIT · © <span data-year>2026</span></div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
