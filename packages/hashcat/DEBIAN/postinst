@@ -10,12 +10,14 @@ print_error() { echo -e "${RED}[!] Error: $1${NC}"; exit 1; }
 
 [ -d "$HASHCAT_DIR" ] && { rm -rf "$HASHCAT_DIR" || print_error "Failed to remove existing directory"; }
 
-# Zero-Termux: justified pin — source build at tag — reproducible build
-wget --show-progress -q --progress=bar:force:noscroll -O "$TMPDIR/hashcat-7.1.2.zip" \
-https://github.com/hashcat/hashcat/archive/refs/tags/v7.1.2.zip || print_error "Download failed"
+# Zero-Termux: rolling — resolve latest upstream release tag at install time
+VERSION="$(curl -fsSL --max-time 30 'https://api.github.com/repos/hashcat/hashcat/releases/latest' 2>/dev/null | grep '"tag_name"' | head -1 | cut -d'"' -f4 | sed 's/^v//')"
+[ -n "$VERSION" ] || print_error "Failed to resolve latest hashcat release"
+wget --show-progress -q --progress=bar:force:noscroll -O "$TMPDIR/hashcat-${VERSION}.zip" \
+https://github.com/hashcat/hashcat/archive/refs/tags/v${VERSION}.zip || print_error "Download failed"
 
-unzip -q "$TMPDIR/hashcat-7.1.2.zip" -d "$TMPDIR" || print_error "Extraction failed"
-mv "$TMPDIR/hashcat-7.1.2" "$HASHCAT_DIR" || print_error "Move failed"
+unzip -q "$TMPDIR/hashcat-${VERSION}.zip" -d "$TMPDIR" || print_error "Extraction failed"
+mv "$TMPDIR/hashcat-${VERSION}" "$HASHCAT_DIR" || print_error "Move failed"
 cd "$HASHCAT_DIR" || print_error "Could not enter $HASHCAT_DIR"
 
 line=$(grep -n "\$(LDFLAGS)" src/Makefile | awk -F ":" '{print $1}')

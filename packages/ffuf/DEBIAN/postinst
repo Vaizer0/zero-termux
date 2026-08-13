@@ -2,8 +2,9 @@
 set -e
 
 REPO="https://github.com/ffuf/ffuf.git"
-# Zero-Termux: justified pin — source build at tag — reproducible build
-TAG="v2.2.1"
+# Zero-Termux: rolling — resolve latest upstream release tag at install time
+TAG="$(curl -fsSL --max-time 30 'https://api.github.com/repos/ffuf/ffuf/releases/latest' 2>/dev/null | grep '"tag_name"' | head -1 | cut -d'"' -f4)"
+[ -n "$TAG" ] || { echo 'Error: failed to resolve latest ffuf release' >&2; exit 1; }
 TMP_DIR="$TMPDIR/ffuf-build"
 BIN_DIR="$PREFIX/bin"
 

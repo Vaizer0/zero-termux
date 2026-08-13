@@ -2,8 +2,10 @@
 set -e
 
 REPO_DIR="$TMPDIR/fscan"
-# Zero-Termux: justified pin — source build at tag — reproducible build
-git clone --depth 1 --branch v2.1.3 https://github.com/shadow1ng/fscan.git "$REPO_DIR"
+# Zero-Termux: rolling — resolve latest upstream release tag at install time
+TAG="$(curl -fsSL --max-time 30 'https://api.github.com/repos/shadow1ng/fscan/releases/latest' 2>/dev/null | grep '"tag_name"' | head -1 | cut -d'"' -f4)"
+[ -n "$TAG" ] || { echo 'Error: failed to resolve latest fscan release' >&2; exit 1; }
+git clone --depth 1 --branch "$TAG" https://github.com/shadow1ng/fscan.git "$REPO_DIR"
 cd "$REPO_DIR"
 go build -trimpath -ldflags "-w -s" -o fscan .
 install -Dm700 -t "$PREFIX/bin" fscan

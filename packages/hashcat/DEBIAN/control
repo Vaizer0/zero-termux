@@ -1,5 +1,5 @@
 Package: hashcat
-Version: 7.1.2
+Version: 7.1.2-1
 Architecture: all
 Maintainer: Vaizer0
 Depends: libc++, libiconv, opencl-vendor-driver, wget, unzip, rust, python, perl

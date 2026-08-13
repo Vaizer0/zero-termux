@@ -1,0 +1,2124 @@
+{
+  "schema": "zero-termux-package-manifest/1",
+  "generated": "2026-08-13",
+  "packages": {
+    "5luser": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/5LUser",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/5LUser + build (HEAD)",
+      "pin": null
+    },
+    "9router": {
+      "policy": "rolling",
+      "resolver": "npm",
+      "upstream": "9router",
+      "tracked": true,
+      "arch": null,
+      "install": "npm latest (9router)",
+      "pin": null
+    },
+    "afrog": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "zan8in/afrog",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone zan8in/afrog + build (HEAD)",
+      "pin": null
+    },
+    "aircrack-ng": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "aircrack-ng/aircrack-ng",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone aircrack-ng/aircrack-ng + build (HEAD)",
+      "pin": null
+    },
+    "amass": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "owasp-amass/amass",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (owasp-amass/amass)",
+      "pin": null
+    },
+    "andrax": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "5-2",
+        "reason": "GitLab rootfs build tag; no stable API to auto-resolve."
+      }
+    },
+    "androdos": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "android-sdk": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "termuxvoid/android-sdk-termux",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (termuxvoid/android-sdk-termux)",
+      "pin": null
+    },
+    "androvirus": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/AndroVirus",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/AndroVirus + build (HEAD)",
+      "pin": null
+    },
+    "antigravity-cli": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "google-antigravity/antigravity-cli",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (google-antigravity/antigravity-cli)",
+      "pin": null
+    },
+    "antisplit": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "termuxvoid/AntiSplit",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone termuxvoid/AntiSplit + build (HEAD)",
+      "pin": null
+    },
+    "apkeditor": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "REAndroid/APKEditor",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (REAndroid/APKEditor)",
+      "pin": null
+    },
+    "apkgen-cli": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "termuxvoid/apkgen-cli",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone termuxvoid/apkgen-cli + build (HEAD)",
+      "pin": null
+    },
+    "apkleaks": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "apkleaks",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (apkleaks)",
+      "pin": null
+    },
+    "apkpatcher": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/APKpatcher",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/APKpatcher + build (HEAD)",
+      "pin": null
+    },
+    "apksearch": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "apksearch",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (apksearch)",
+      "pin": null
+    },
+    "arjun": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "arjun",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (arjun)",
+      "pin": null
+    },
+    "arsenal-ng": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "halilkirazkaya/arsenal-ng",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone halilkirazkaya/arsenal-ng + build (HEAD)",
+      "pin": null
+    },
+    "asciibanner": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "beef": {
+      "policy": "rolling",
+      "resolver": "github-tag",
+      "upstream": "beefproject/beef",
+      "tracked": true,
+      "arch": null,
+      "install": "github-tag latest (beefproject/beef)",
+      "pin": null
+    },
+    "bettercap": {
+      "policy": "rolling",
+      "resolver": "github-tag",
+      "upstream": "bettercap/bettercap",
+      "tracked": true,
+      "arch": null,
+      "install": "github-tag latest (bettercap/bettercap)",
+      "pin": null
+    },
+    "bitb-framework": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "surya-dev-singh/BITB-framwork",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone surya-dev-singh/BITB-framwork + build (HEAD)",
+      "pin": null
+    },
+    "blackbird": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "p1ngul1n0/blackbird",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone p1ngul1n0/blackbird + build (HEAD)",
+      "pin": null
+    },
+    "blackbox-framework": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "2.0",
+        "reason": "Non-resolvable source; version updated manually."
+      }
+    },
+    "blackhat": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "blesh": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "akinomyoga/ble.sh",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone akinomyoga/ble.sh + build (HEAD)",
+      "pin": null
+    },
+    "blutter": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "dedshit/blutter-termux",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone dedshit/blutter-termux + build (HEAD)",
+      "pin": null
+    },
+    "breacher": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "s0md3v/Breacher",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone s0md3v/Breacher + build (HEAD)",
+      "pin": null
+    },
+    "brutespray": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/x90skysn3k/brutespray/v2",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/x90skysn3k/brutespray/v2)",
+      "pin": null
+    },
+    "bun": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "oven-sh/bun",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (oven-sh/bun)",
+      "pin": null
+    },
+    "burpsuite": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "2026.1.2",
+        "reason": "PortSwigger has no machine-readable latest endpoint; updated manually."
+      }
+    },
+    "burpsuite-pro": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "2026.1.5",
+        "reason": "PortSwigger has no machine-readable latest endpoint; updated manually."
+      }
+    },
+    "byakugan": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/Byakugan",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/Byakugan + build (HEAD)",
+      "pin": null
+    },
+    "catsay": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/catsay",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/catsay + build (HEAD)",
+      "pin": null
+    },
+    "cctvip": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "1.0.0",
+        "reason": "Non-resolvable source; version updated manually."
+      }
+    },
+    "cdxsummary": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "cdxsummary",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (cdxsummary)",
+      "pin": null
+    },
+    "cewl": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "digininja/CeWL",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone digininja/CeWL + build (HEAD)",
+      "pin": null
+    },
+    "claude-code": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "anthropics/claude-code",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (anthropics/claude-code)",
+      "pin": null
+    },
+    "cloudflare-gui": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "1.0",
+        "reason": "Non-resolvable source; version updated manually."
+      }
+    },
+    "commix": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "commixproject/commix",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone commixproject/commix + build (HEAD)",
+      "pin": null
+    },
+    "copilot-cli": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "github/copilot-cli",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (github/copilot-cli)",
+      "pin": null
+    },
+    "cronitor-cli": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "cronitorio/cronitor-cli",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (cronitorio/cronitor-cli)",
+      "pin": null
+    },
+    "cupp": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "d-tect": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "bibortone/D-Tech",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone bibortone/D-Tech + build (HEAD)",
+      "pin": null
+    },
+    "dalfox": {
+      "policy": "rolling",
+      "resolver": "github-tag",
+      "upstream": "hahwul/dalfox",
+      "tracked": true,
+      "arch": null,
+      "install": "github-tag latest (hahwul/dalfox)",
+      "pin": null
+    },
+    "dark-phish": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Cyber-Anonymous/Dark-Phish",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Cyber-Anonymous/Dark-Phish + build (HEAD)",
+      "pin": null
+    },
+    "darkcrawler": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/DarkCrawler",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/DarkCrawler + build (HEAD)",
+      "pin": null
+    },
+    "darksploit-framework": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "ykankaya/DarkSploit",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone ykankaya/DarkSploit + build (HEAD)",
+      "pin": null
+    },
+    "darkterm": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/darkterm",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/darkterm + build (HEAD)",
+      "pin": null
+    },
+    "ddos": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "the-deepnet/ddos",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone the-deepnet/ddos + build (HEAD)",
+      "pin": null
+    },
+    "dirsearch": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "maurosoria/dirsearch",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone maurosoria/dirsearch + build (HEAD)",
+      "pin": null
+    },
+    "dnsx": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/projectdiscovery/dnsx/cmd/dnsx",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/projectdiscovery/dnsx/cmd/dnsx)",
+      "pin": null
+    },
+    "dorks-eye": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "BullsEye0/dorks-eye",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone BullsEye0/dorks-eye + build (HEAD)",
+      "pin": null
+    },
+    "dpt-shell": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "luoyesiqiu/dpt-shell",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (luoyesiqiu/dpt-shell)",
+      "pin": null
+    },
+    "drshell": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "DrDataYE/DrShell",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone DrDataYE/DrShell + build (HEAD)",
+      "pin": null
+    },
+    "elpscrk": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "D4Vinci/elpscrk",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone D4Vinci/elpscrk + build (HEAD)",
+      "pin": null
+    },
+    "emailcrawl": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "1.0",
+        "reason": "Non-resolvable source; version updated manually."
+      }
+    },
+    "enctool": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": {
+        "version": "1.0",
+        "reason": "Non-resolvable source; version updated manually."
+      }
+    },
+    "evilginx": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "kgretzky/evilginx2",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone kgretzky/evilginx2 + build (HEAD)",
+      "pin": null
+    },
+    "evilurl": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "UndeadSec/EvilURL",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone UndeadSec/EvilURL + build (HEAD)",
+      "pin": null
+    },
+    "ffmpegp": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "ffmpegp",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (ffmpegp)",
+      "pin": null
+    },
+    "ffuf": {
+      "policy": "rolling",
+      "resolver": "github-tag",
+      "upstream": "ffuf/ffuf",
+      "tracked": true,
+      "arch": null,
+      "install": "github-tag latest (ffuf/ffuf)",
+      "pin": null
+    },
+    "findomain": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Findomain/Findomain",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Findomain/Findomain + build (HEAD)",
+      "pin": null
+    },
+    "flutter": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "termuxvoid/flutter-termux",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (termuxvoid/flutter-termux)",
+      "pin": null
+    },
+    "fscan": {
+      "policy": "rolling",
+      "resolver": "github-tag",
+      "upstream": "shadow1ng/fscan",
+      "tracked": true,
+      "arch": null,
+      "install": "github-tag latest (shadow1ng/fscan)",
+      "pin": null
+    },
+    "fuckyou": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "gallery-eye": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/gallery-eye",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/gallery-eye + build (HEAD)",
+      "pin": null
+    },
+    "gau": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/lc/gau/v2/cmd/gau",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/lc/gau/v2/cmd/gau)",
+      "pin": null
+    },
+    "ghauri": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "r0oth3x49/ghauri",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone r0oth3x49/ghauri + build (HEAD)",
+      "pin": null
+    },
+    "ghidra": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "NationalSecurityAgency/ghidra",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (NationalSecurityAgency/ghidra)",
+      "pin": null
+    },
+    "ghosttrack": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "HunxByts/GhostTrack",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone HunxByts/GhostTrack + build (HEAD)",
+      "pin": null
+    },
+    "gitleaks": {
+      "policy": "rolling",
+      "resolver": "github-tag",
+      "upstream": "gitleaks/gitleaks",
+      "tracked": true,
+      "arch": null,
+      "install": "github-tag latest (gitleaks/gitleaks)",
+      "pin": null
+    },
+    "gobuster": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/OJ/gobuster/v3",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/OJ/gobuster/v3)",
+      "pin": null
+    },
+    "gophish": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "gophish/gophish",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone gophish/gophish + build (HEAD)",
+      "pin": null
+    },
+    "goshs": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "goshs.de/goshs/v2",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (goshs.de/goshs/v2)",
+      "pin": null
+    },
+    "gowitness": {
+      "policy": "rolling",
+      "resolver": "github-tag",
+      "upstream": "sensepost/gowitness",
+      "tracked": true,
+      "arch": null,
+      "install": "github-tag latest (sensepost/gowitness)",
+      "pin": null
+    },
+    "gron": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/tomnomnom/gron",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/tomnomnom/gron)",
+      "pin": null
+    },
+    "haiti": {
+      "policy": "rolling",
+      "resolver": "gem",
+      "upstream": "haiti-hash",
+      "tracked": true,
+      "arch": null,
+      "install": "gem latest (haiti-hash)",
+      "pin": null
+    },
+    "hashcat": {
+      "policy": "rolling",
+      "resolver": "github-tag",
+      "upstream": "hashcat/hashcat",
+      "tracked": true,
+      "arch": null,
+      "install": "github-tag latest (hashcat/hashcat)",
+      "pin": null
+    },
+    "hashid": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "hashid",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (hashid)",
+      "pin": null
+    },
+    "hatcloud": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "HatBashBR/HatCloud",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone HatBashBR/HatCloud + build (HEAD)",
+      "pin": null
+    },
+    "haxrat": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/haxRat",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/haxRat + build (HEAD)",
+      "pin": null
+    },
+    "hbctool": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "Kirlif/HBC-Tool",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (Kirlif/HBC-Tool)",
+      "pin": null
+    },
+    "hermes-agent": {
+      "policy": "rolling",
+      "resolver": "github-tag",
+      "upstream": "NousResearch/hermes-agent",
+      "tracked": true,
+      "arch": null,
+      "install": "github-tag latest (NousResearch/hermes-agent)",
+      "pin": null
+    },
+    "holehe": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "holehe",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (holehe)",
+      "pin": null
+    },
+    "hound": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/hound",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/hound + build (HEAD)",
+      "pin": null
+    },
+    "httpx": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/projectdiscovery/httpx/cmd/httpx",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/projectdiscovery/httpx/cmd/httpx)",
+      "pin": null
+    },
+    "hunner-framework": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "b3-v3r/Hunner",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone b3-v3r/Hunner + build (HEAD)",
+      "pin": null
+    },
+    "ia-get": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "wimpysworld/ia-get",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone wimpysworld/ia-get + build (HEAD)",
+      "pin": null
+    },
+    "infect": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "instaghost": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/InstaGhost",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/InstaGhost + build (HEAD)",
+      "pin": null
+    },
+    "instajack": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "1.0",
+        "reason": "Non-resolvable source; version updated manually."
+      }
+    },
+    "ip-changer": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/Ip-Changer",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/Ip-Changer + build (HEAD)",
+      "pin": null
+    },
+    "ipinfo": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "1.0",
+        "reason": "Non-resolvable source; version updated manually."
+      }
+    },
+    "iplookup": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "john": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "openwall/john",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone openwall/john + build (HEAD)",
+      "pin": null
+    },
+    "jsql": {
+      "policy": "rolling",
+      "resolver": "github-tag",
+      "upstream": "ron190/jsql-injection",
+      "tracked": true,
+      "arch": null,
+      "install": "github-tag latest (ron190/jsql-injection)",
+      "pin": null
+    },
+    "jwt-hack": {
+      "policy": "rolling",
+      "resolver": "cargo",
+      "upstream": "jwt-hack",
+      "tracked": true,
+      "arch": null,
+      "install": "cargo latest (jwt-hack)",
+      "pin": null
+    },
+    "katana": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/projectdiscovery/katana/cmd/katana",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/projectdiscovery/katana/cmd/katana)",
+      "pin": null
+    },
+    "kerbrute": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/ropnop/kerbrute",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/ropnop/kerbrute)",
+      "pin": null
+    },
+    "keysigner": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "keysigner",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (keysigner)",
+      "pin": null
+    },
+    "kimi-code": {
+      "policy": "rolling",
+      "resolver": "npm",
+      "upstream": "@moonshot-ai/kimi-code",
+      "tracked": true,
+      "arch": null,
+      "install": "npm latest (@moonshot-ai/kimi-code)",
+      "pin": null
+    },
+    "knockpy": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "knock-subdomains",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (knock-subdomains)",
+      "pin": null
+    },
+    "lazyvim": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "LazyVim/starter",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone LazyVim/starter + build (HEAD)",
+      "pin": null
+    },
+    "linkwizard": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "1.0",
+        "reason": "Non-resolvable source; version updated manually."
+      }
+    },
+    "local2onion": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "locateme": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "lunarvim": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "LunarVim/LunarVim",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone LunarVim/LunarVim + build (HEAD)",
+      "pin": null
+    },
+    "maigret": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "maigret",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (maigret)",
+      "pin": null
+    },
+    "mantra": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/Brosck/mantra",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/Brosck/mantra)",
+      "pin": null
+    },
+    "maskme": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "medusa": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "jmk-foofus/medusa",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone jmk-foofus/medusa + build (HEAD)",
+      "pin": null
+    },
+    "metabigor": {
+      "policy": "rolling",
+      "resolver": "github-tag",
+      "upstream": "j3ssie/metabigor",
+      "tracked": true,
+      "arch": null,
+      "install": "github-tag latest (j3ssie/metabigor)",
+      "pin": null
+    },
+    "metasploit-framework": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "6.4.142-dev",
+        "reason": "Upstream tags are not version-ordered (only 4.x-era git tags); follows a rolling 6.4.x-dev line. Bumped manually."
+      }
+    },
+    "mimocode": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "XiaomiMiMo/MiMo-Code",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (XiaomiMiMo/MiMo-Code)",
+      "pin": null
+    },
+    "mkwebapp": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "mmx-cli": {
+      "policy": "rolling",
+      "resolver": "npm",
+      "upstream": "mmx-cli",
+      "tracked": true,
+      "arch": null,
+      "install": "npm latest (mmx-cli)",
+      "pin": null
+    },
+    "morphshell": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "termuxvoid/MorphShell",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone termuxvoid/MorphShell + build (HEAD)",
+      "pin": null
+    },
+    "mtcr-apply": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "naabu": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/projectdiscovery/naabu/v2/cmd/naabu",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/projectdiscovery/naabu/v2/cmd/naabu)",
+      "pin": null
+    },
+    "nethunter-cli": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "2025.4",
+        "reason": "kali.download current rootfs; version rolled manually."
+      }
+    },
+    "ngrok": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "3.39.1",
+        "reason": "bin.equinox.io stable channel; no public version API."
+      }
+    },
+    "nikto": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "sullo/nikto",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone sullo/nikto + build (HEAD)",
+      "pin": null
+    },
+    "nuclei": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/projectdiscovery/nuclei/v3/cmd/nuclei",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/projectdiscovery/nuclei/v3/cmd/nuclei)",
+      "pin": null
+    },
+    "numinfo": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/NumInfo",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/NumInfo + build (HEAD)",
+      "pin": null
+    },
+    "nvchad": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "NvChad/starter",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone NvChad/starter + build (HEAD)",
+      "pin": null
+    },
+    "onionsearch": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "onionsearch",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (onionsearch)",
+      "pin": null
+    },
+    "openbullet": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "esfelurm/OpenBullet",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone esfelurm/OpenBullet + build (HEAD)",
+      "pin": null
+    },
+    "openbullet2": {
+      "policy": "rolling",
+      "resolver": "github-tag",
+      "upstream": "openbullet/OpenBullet2",
+      "tracked": true,
+      "arch": null,
+      "install": "github-tag latest (openbullet/OpenBullet2)",
+      "pin": null
+    },
+    "openclaude": {
+      "policy": "rolling",
+      "resolver": "npm",
+      "upstream": "@gitlawb/openclaude",
+      "tracked": true,
+      "arch": null,
+      "install": "npm latest (@gitlawb/openclaude)",
+      "pin": null
+    },
+    "opencode": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "anomalyco/opencode",
+      "tracked": true,
+      "arch": "aarch64",
+      "install": "github-release latest (anomalyco/opencode)",
+      "pin": null
+    },
+    "pairip": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "pandora": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "MrSanZz/pandora",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone MrSanZz/pandora + build (HEAD)",
+      "pin": null
+    },
+    "paramspider": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "devanshbatham/paramspider",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone devanshbatham/paramspider + build (HEAD)",
+      "pin": null
+    },
+    "parrot-cli": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "EXALAB/Anlinux-Resources",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone EXALAB/Anlinux-Resources + build (HEAD)",
+      "pin": null
+    },
+    "pdfcracker": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "phishmailer": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "BiZken/PhishMailer",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone BiZken/PhishMailer + build (HEAD)",
+      "pin": null
+    },
+    "phoneinfo": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "phoneinfoga": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "sundowndev/phoneinfoga",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (sundowndev/phoneinfoga)",
+      "pin": null
+    },
+    "phoneintel": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "phoneintel",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (phoneintel)",
+      "pin": null
+    },
+    "phonesploit-pro": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "AzeemIdrisi/PhoneSploit-Pro",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone AzeemIdrisi/PhoneSploit-Pro + build (HEAD)",
+      "pin": null
+    },
+    "photon": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "s0md3v/photon",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone s0md3v/photon + build (HEAD)",
+      "pin": null
+    },
+    "pip-basic-depends": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": {
+        "version": "1.0",
+        "reason": "Non-resolvable source; version updated manually."
+      }
+    },
+    "pkiller": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/PKiller",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/PKiller + build (HEAD)",
+      "pin": null
+    },
+    "playit": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "playit-cloud/playit-agent",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone playit-cloud/playit-agent + build (HEAD)",
+      "pin": null
+    },
+    "powerdos": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "pptool": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "Kirlif/PPTool",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (Kirlif/PPTool)",
+      "pin": null
+    },
+    "publiceye": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "python-pandas": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "pandas",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (pandas)",
+      "pin": null
+    },
+    "pywhat": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "pywhat",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (pywhat)",
+      "pin": null
+    },
+    "qdl": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "linux-msm/qdl",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone linux-msm/qdl + build (HEAD)",
+      "pin": null
+    },
+    "qsreplace": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/tomnomnom/qsreplace",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/tomnomnom/qsreplace)",
+      "pin": null
+    },
+    "random-banner": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Alienkrishn/random_banners",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Alienkrishn/random_banners + build (HEAD)",
+      "pin": null
+    },
+    "rang3r": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "floriankunushevci/rang3r",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone floriankunushevci/rang3r + build (HEAD)",
+      "pin": null
+    },
+    "ransomux": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/RansoMux",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/RansoMux + build (HEAD)",
+      "pin": null
+    },
+    "reaver": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "t6x/reaver-wps-fork-t6x",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone t6x/reaver-wps-fork-t6x + build (HEAD)",
+      "pin": null
+    },
+    "redhawk": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Tuhinshubhra/RED_HAWK",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Tuhinshubhra/RED_HAWK + build (HEAD)",
+      "pin": null
+    },
+    "rkpairip": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "Pairip",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (Pairip)",
+      "pin": null
+    },
+    "ruby-curb": {
+      "policy": "rolling",
+      "resolver": "gem",
+      "upstream": "curb",
+      "tracked": true,
+      "arch": null,
+      "install": "gem latest (curb)",
+      "pin": null
+    },
+    "ruby-ethon": {
+      "policy": "rolling",
+      "resolver": "gem",
+      "upstream": "ethon",
+      "tracked": true,
+      "arch": null,
+      "install": "gem latest (ethon)",
+      "pin": null
+    },
+    "ruby-nokogiri": {
+      "policy": "rolling",
+      "resolver": "gem",
+      "upstream": "nokogiri",
+      "tracked": true,
+      "arch": null,
+      "install": "gem latest (nokogiri)",
+      "pin": null
+    },
+    "scanqli": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "bambish/ScanQLi",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone bambish/ScanQLi + build (HEAD)",
+      "pin": null
+    },
+    "secretfinder": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "m4ll0k/SecretFinder",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone m4ll0k/SecretFinder + build (HEAD)",
+      "pin": null
+    },
+    "setoolkit": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "8.0.3+git20241021-0kali1",
+        "reason": "Installed via nh apt from NetHunter repo."
+      }
+    },
+    "shark": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "E343IO/shark",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone E343IO/shark + build (HEAD)",
+      "pin": null
+    },
+    "shellcrypt": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": {
+        "version": "2.0.0",
+        "reason": "Non-resolvable source; version updated manually."
+      }
+    },
+    "sherlock": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "sherlock-project",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (sherlock-project)",
+      "pin": null
+    },
+    "shorturl": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "silverinstaeye": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "silverxpymaster/SilverInstaEye",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone silverxpymaster/SilverInstaEye + build (HEAD)",
+      "pin": null
+    },
+    "slowhttptest": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "shekyan/slowhttptest",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone shekyan/slowhttptest + build (HEAD)",
+      "pin": null
+    },
+    "sms-stealer": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/sms-stealer",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/sms-stealer + build (HEAD)",
+      "pin": null
+    },
+    "snatcher": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/Snatcher",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/Snatcher + build (HEAD)",
+      "pin": null
+    },
+    "snoop": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "snooppr/snoop",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone snooppr/snoop + build (HEAD)",
+      "pin": null
+    },
+    "spider": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "2.0",
+        "reason": "requirements.txt pinned for reproducible report tooling."
+      }
+    },
+    "sploitscan": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "sploitscan",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (sploitscan)",
+      "pin": null
+    },
+    "spurt": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "zer-far/spurt",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone zer-far/spurt + build (HEAD)",
+      "pin": null
+    },
+    "sqlmap": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "sqlmap",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (sqlmap)",
+      "pin": null
+    },
+    "sqlscan": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "machine1337/sqlscan",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone machine1337/sqlscan + build (HEAD)",
+      "pin": null
+    },
+    "storm-breaker": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "ultrasecurity/Storm-Breaker",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone ultrasecurity/Storm-Breaker + build (HEAD)",
+      "pin": null
+    },
+    "subcat": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "subcat",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (subcat)",
+      "pin": null
+    },
+    "subfinder": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/projectdiscovery/subfinder/v2/cmd/subfinder",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/projectdiscovery/subfinder/v2/cmd/subfinder)",
+      "pin": null
+    },
+    "subjack": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/haccer/subjack",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/haccer/subjack)",
+      "pin": null
+    },
+    "subzy": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/PentestPad/subzy",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/PentestPad/subzy)",
+      "pin": null
+    },
+    "superfile": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "yorukot/superfile",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone yorukot/superfile + build (HEAD)",
+      "pin": null
+    },
+    "takeover": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "edoardottt/takeover",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone edoardottt/takeover + build (HEAD)",
+      "pin": null
+    },
+    "term-helper": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "1.1.1",
+        "reason": "Non-resolvable source; version updated manually."
+      }
+    },
+    "termsploit": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/termsploit-framework",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/termsploit-framework + build (HEAD)",
+      "pin": null
+    },
+    "termux-ai": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": {
+        "version": "3.0",
+        "reason": "Non-resolvable source; version updated manually."
+      }
+    },
+    "termux-desktop": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "termux-desktop-wallpapers": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "termux-media-downloader": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/Termux-Media-Downloader",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/Termux-Media-Downloader + build (HEAD)",
+      "pin": null
+    },
+    "termux-penv": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "termuxfetch": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "thc-hydra": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "vanhauser-thc/thc-hydra",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone vanhauser-thc/thc-hydra + build (HEAD)",
+      "pin": null
+    },
+    "the-theif": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": {
+        "version": "2.1",
+        "reason": "Non-resolvable source; version updated manually."
+      }
+    },
+    "theharvester": {
+      "policy": "pinned",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "pinned (see pin.reason)",
+      "pin": {
+        "version": "4.10.1",
+        "reason": "Installed via nh apt from NetHunter repo."
+      }
+    },
+    "thezoo": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "ytisf/theZoo",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone ytisf/theZoo + build (HEAD)",
+      "pin": null
+    },
+    "tookie-osint": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Alfredredbird/tookie-osint",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Alfredredbird/tookie-osint + build (HEAD)",
+      "pin": null
+    },
+    "trufflehog": {
+      "policy": "rolling",
+      "resolver": "github-tag",
+      "upstream": "trufflesecurity/trufflehog",
+      "tracked": true,
+      "arch": null,
+      "install": "github-tag latest (trufflesecurity/trufflehog)",
+      "pin": null
+    },
+    "tte": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "terminaltexteffects",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (terminaltexteffects)",
+      "pin": null
+    },
+    "unfurl": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/tomnomnom/unfurl",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/tomnomnom/unfurl)",
+      "pin": null
+    },
+    "user-scanner": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "user-scanner",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (user-scanner)",
+      "pin": null
+    },
+    "vedic": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "vedic-lang/vedic",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone vedic-lang/vedic + build (HEAD)",
+      "pin": null
+    },
+    "venom": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/Venom",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/Venom + build (HEAD)",
+      "pin": null
+    },
+    "void-fonts": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "termuxvoid/Void-Fonts",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone termuxvoid/Void-Fonts + build (HEAD)",
+      "pin": null
+    },
+    "vulnx": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/projectdiscovery/vulnx/v2/cmd/vulnx",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/projectdiscovery/vulnx/v2/cmd/vulnx)",
+      "pin": null
+    },
+    "wacli": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "steipete/wacli",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone steipete/wacli + build (HEAD)",
+      "pin": null
+    },
+    "wafw00f": {
+      "policy": "rolling",
+      "resolver": "pypi",
+      "upstream": "wafw00f",
+      "tracked": true,
+      "arch": null,
+      "install": "pypi latest (wafw00f)",
+      "pin": null
+    },
+    "waybackurls": {
+      "policy": "rolling",
+      "resolver": "go",
+      "upstream": "github.com/tomnomnom/waybackurls",
+      "tracked": true,
+      "arch": null,
+      "install": "go latest (github.com/tomnomnom/waybackurls)",
+      "pin": null
+    },
+    "waymap": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "TrixSec/waymap",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone TrixSec/waymap + build (HEAD)",
+      "pin": null
+    },
+    "webhost": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "webinfo": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "webserver": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "websploit": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "f4rih/websploit",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone f4rih/websploit + build (HEAD)",
+      "pin": null
+    },
+    "weeman": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "evait-security/weeman",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone evait-security/weeman + build (HEAD)",
+      "pin": null
+    },
+    "whatbreach": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Ekultek/WhatBreach",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Ekultek/WhatBreach + build (HEAD)",
+      "pin": null
+    },
+    "whatsapp-cli": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "vicentereig/whatsapp-cli",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone vicentereig/whatsapp-cli + build (HEAD)",
+      "pin": null
+    },
+    "wipwn": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "anbuinfosec/wipwn",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone anbuinfosec/wipwn + build (HEAD)",
+      "pin": null
+    },
+    "wordlists": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "wpscan": {
+      "policy": "rolling",
+      "resolver": "gem",
+      "upstream": "wpscan",
+      "tracked": true,
+      "arch": null,
+      "install": "gem latest (wpscan)",
+      "pin": null
+    },
+    "xbomber": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "Anon4You/XBomber",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone Anon4You/XBomber + build (HEAD)",
+      "pin": null
+    },
+    "xss-loader": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "capture0x/XSS-LOADER",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone capture0x/XSS-LOADER + build (HEAD)",
+      "pin": null
+    },
+    "xsstrike": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "s0md3v/XSStrike",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone s0md3v/XSStrike + build (HEAD)",
+      "pin": null
+    },
+    "zaproxy": {
+      "policy": "rolling",
+      "resolver": "github-release",
+      "upstream": "zaproxy/zaproxy",
+      "tracked": true,
+      "arch": null,
+      "install": "github-release latest (zaproxy/zaproxy)",
+      "pin": null
+    },
+    "zen-c": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "z-libs/Zen-C",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone z-libs/Zen-C + build (HEAD)",
+      "pin": null
+    },
+    "zero-termux": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    },
+    "zero-termux-theme": {
+      "policy": "rolling-build",
+      "resolver": "github-clone",
+      "upstream": "termuxvoid/TermuxVoid-Theme",
+      "tracked": false,
+      "arch": null,
+      "install": "git clone termuxvoid/TermuxVoid-Theme + build (HEAD)",
+      "pin": null
+    },
+    "zipcracker": {
+      "policy": "static",
+      "resolver": null,
+      "upstream": null,
+      "tracked": false,
+      "arch": null,
+      "install": "bundled data payload",
+      "pin": null
+    }
+  }
+}

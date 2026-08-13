@@ -3,9 +3,17 @@
 # jSQL Injection installer for Termux
 
 JSQL_DIR="$PREFIX/share/jsql"
-# Zero-Termux: justified pin — jar asset version aligned with DEBIAN/control Version
-JAR_NAME="jsql-injection-v0.114.jar"
-JAR_URL="https://github.com/ron190/jsql-injection/releases/download/v0.114/$JAR_NAME"
+# Zero-Termux: rolling — jSQL has no GitHub "releases"; resolve latest git tag
+# via the git protocol (avoids API rate limits) with a version-aware sort.
+VERSION="$(git ls-remote --tags https://github.com/ron190/jsql-injection.git 2>/dev/null \
+    | grep -v '\^{}' \
+    | sed -E 's#.*refs/tags/##' \
+    | sort -V \
+    | tail -1 \
+    | sed 's/^v//')"
+[ -n "$VERSION" ] || { echo 'Error: failed to resolve latest jSQL tag' >&2; exit 1; }
+JAR_NAME="jsql-injection-v${VERSION}.jar"
+JAR_URL="https://github.com/ron190/jsql-injection/releases/download/v${VERSION}/$JAR_NAME"
 LAUNCHER="$PREFIX/bin/jsql"
 
 # Colors

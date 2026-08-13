@@ -1,5 +1,5 @@
 Package: trufflehog
-Version: 3.96.0
+Version: 3.96.0-1
 Architecture: all
 Maintainer: Vaizer0
 Depends: git, golang

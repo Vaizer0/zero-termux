@@ -1,8 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/bash
 set -e
 
-# Zero-Termux: justified pin — source build at tag — reproducible build
-VERSION="3.2.0"
+# Zero-Termux: rolling — resolve latest upstream release tag at install time
+VERSION="$(curl -fsSL --max-time 30 'https://api.github.com/repos/hahwul/dalfox/releases/latest' 2>/dev/null | grep '"tag_name"' | head -1 | cut -d'"' -f4 | sed 's/^v//')"
+[ -n "$VERSION" ] || { echo 'Error: failed to resolve latest dalfox release' >&2; exit 1; }
 BUILD_DIR="$TMPDIR/dalfox-build"
 
 mkdir -p "$BUILD_DIR"

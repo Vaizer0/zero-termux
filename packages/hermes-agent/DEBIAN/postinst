@@ -2,8 +2,9 @@
 set -e
 
 REPO="https://github.com/NousResearch/hermes-agent.git"
-# Zero-Termux: justified pin — source build at tag — reproducible build
-VERSION="2026.7.20"
+# Zero-Termux: rolling — resolve latest upstream release tag at install time
+VERSION="$(curl -fsSL --max-time 30 'https://api.github.com/repos/NousResearch/hermes-agent/releases/latest' 2>/dev/null | grep '"tag_name"' | head -1 | cut -d'"' -f4 | sed 's/^v//')"
+[ -n "$VERSION" ] || { echo 'Error: failed to resolve latest hermes-agent release' >&2; exit 1; }
 TAG="v${VERSION}"
 
 INSTALL_DIR="$PREFIX/share/hermes-agent"

@@ -1,0 +1,411 @@
+{
+  "schema": "zero-termux-recorded-versions/1",
+  "generated": "2026-08-13",
+  "packages": {
+    "9router": {
+      "upstream": "0.5.35",
+      "resolver": "npm",
+      "source": "9router"
+    },
+    "amass": {
+      "upstream": "5.1.1",
+      "resolver": "github-release",
+      "source": "owasp-amass/amass"
+    },
+    "android-sdk": {
+      "upstream": "36.0.0",
+      "resolver": "github-release",
+      "source": "termuxvoid/android-sdk-termux"
+    },
+    "antigravity-cli": {
+      "upstream": "1.1.11",
+      "resolver": "github-release",
+      "source": "google-antigravity/antigravity-cli"
+    },
+    "apkeditor": {
+      "upstream": "1.4.9",
+      "resolver": "github-release",
+      "source": "REAndroid/APKEditor"
+    },
+    "apkleaks": {
+      "upstream": "2.6.3",
+      "resolver": "pypi",
+      "source": "apkleaks"
+    },
+    "apksearch": {
+      "upstream": "1.3.5",
+      "resolver": "pypi",
+      "source": "apksearch"
+    },
+    "arjun": {
+      "upstream": "2.2.7",
+      "resolver": "pypi",
+      "source": "arjun"
+    },
+    "beef": {
+      "upstream": "0.6.0.0",
+      "resolver": "github-tag",
+      "source": "beefproject/beef"
+    },
+    "bettercap": {
+      "upstream": "2.41.7",
+      "resolver": "github-tag",
+      "source": "bettercap/bettercap"
+    },
+    "brutespray": {
+      "upstream": "2.6.3",
+      "resolver": "go",
+      "source": "github.com/x90skysn3k/brutespray/v2"
+    },
+    "bun": {
+      "upstream": "1.3.14",
+      "resolver": "github-release",
+      "source": "oven-sh/bun"
+    },
+    "cdxsummary": {
+      "upstream": "0.1.1",
+      "resolver": "pypi",
+      "source": "cdxsummary"
+    },
+    "claude-code": {
+      "upstream": "2.1.220",
+      "resolver": "github-release",
+      "source": "anthropics/claude-code"
+    },
+    "copilot-cli": {
+      "upstream": "1.0.78",
+      "resolver": "github-release",
+      "source": "github/copilot-cli"
+    },
+    "cronitor-cli": {
+      "upstream": "31.6",
+      "resolver": "github-release",
+      "source": "cronitorio/cronitor-cli"
+    },
+    "dalfox": {
+      "upstream": "3.2.0",
+      "resolver": "github-tag",
+      "source": "hahwul/dalfox"
+    },
+    "dnsx": {
+      "upstream": "1.2.2",
+      "resolver": "go",
+      "source": "github.com/projectdiscovery/dnsx/cmd/dnsx"
+    },
+    "dpt-shell": {
+      "upstream": "2.15.0",
+      "resolver": "github-release",
+      "source": "luoyesiqiu/dpt-shell"
+    },
+    "ffmpegp": {
+      "upstream": "1.30",
+      "resolver": "pypi",
+      "source": "ffmpegp"
+    },
+    "ffuf": {
+      "upstream": "2.2.1",
+      "resolver": "github-tag",
+      "source": "ffuf/ffuf"
+    },
+    "flutter": {
+      "upstream": "3.41.9",
+      "resolver": "github-release",
+      "source": "termuxvoid/flutter-termux"
+    },
+    "fscan": {
+      "upstream": "2.2.0",
+      "resolver": "github-tag",
+      "source": "shadow1ng/fscan"
+    },
+    "gau": {
+      "upstream": "2.2.4",
+      "resolver": "go",
+      "source": "github.com/lc/gau/v2/cmd/gau"
+    },
+    "ghidra": {
+      "upstream": "12.0.4",
+      "resolver": "github-release",
+      "source": "NationalSecurityAgency/ghidra"
+    },
+    "gitleaks": {
+      "upstream": "8.30.1",
+      "resolver": "github-tag",
+      "source": "gitleaks/gitleaks"
+    },
+    "gobuster": {
+      "upstream": "3.8.2",
+      "resolver": "go",
+      "source": "github.com/OJ/gobuster/v3"
+    },
+    "goshs": {
+      "upstream": "2.1.4",
+      "resolver": "go",
+      "source": "goshs.de/goshs/v2"
+    },
+    "gowitness": {
+      "upstream": "3.1.1",
+      "resolver": "github-tag",
+      "source": "sensepost/gowitness"
+    },
+    "gron": {
+      "upstream": "0.7.1",
+      "resolver": "go",
+      "source": "github.com/tomnomnom/gron"
+    },
+    "haiti": {
+      "upstream": "4.0.0",
+      "resolver": "gem",
+      "source": "haiti-hash"
+    },
+    "hashcat": {
+      "upstream": "7.1.2",
+      "resolver": "github-tag",
+      "source": "hashcat/hashcat"
+    },
+    "hashid": {
+      "upstream": "3.1.4",
+      "resolver": "pypi",
+      "source": "hashid"
+    },
+    "hbctool": {
+      "upstream": "0.1.5",
+      "resolver": "github-release",
+      "source": "Kirlif/HBC-Tool"
+    },
+    "hermes-agent": {
+      "upstream": "2026.8.3",
+      "resolver": "github-tag",
+      "source": "NousResearch/hermes-agent"
+    },
+    "holehe": {
+      "upstream": "1.61",
+      "resolver": "pypi",
+      "source": "holehe"
+    },
+    "httpx": {
+      "upstream": "1.9.0",
+      "resolver": "go",
+      "source": "github.com/projectdiscovery/httpx/cmd/httpx"
+    },
+    "jsql": {
+      "upstream": "0.115",
+      "resolver": "github-tag",
+      "source": "ron190/jsql-injection"
+    },
+    "jwt-hack": {
+      "upstream": "2.6.0",
+      "resolver": "cargo",
+      "source": "jwt-hack"
+    },
+    "katana": {
+      "upstream": "1.6.1",
+      "resolver": "go",
+      "source": "github.com/projectdiscovery/katana/cmd/katana"
+    },
+    "kerbrute": {
+      "upstream": "1.0.3",
+      "resolver": "go",
+      "source": "github.com/ropnop/kerbrute"
+    },
+    "keysigner": {
+      "upstream": "4.0",
+      "resolver": "pypi",
+      "source": "keysigner"
+    },
+    "kimi-code": {
+      "upstream": "0.32.0",
+      "resolver": "npm",
+      "source": "@moonshot-ai/kimi-code"
+    },
+    "knockpy": {
+      "upstream": "7.0.2",
+      "resolver": "pypi",
+      "source": "knock-subdomains"
+    },
+    "maigret": {
+      "upstream": "0.6.2",
+      "resolver": "pypi",
+      "source": "maigret"
+    },
+    "mantra": {
+      "upstream": "3.1",
+      "resolver": "go",
+      "source": "github.com/Brosck/mantra"
+    },
+    "metabigor": {
+      "upstream": "2.2.0",
+      "resolver": "github-tag",
+      "source": "j3ssie/metabigor"
+    },
+    "mimocode": {
+      "upstream": "0.1.10",
+      "resolver": "github-release",
+      "source": "XiaomiMiMo/MiMo-Code"
+    },
+    "mmx-cli": {
+      "upstream": "1.0.19",
+      "resolver": "npm",
+      "source": "mmx-cli"
+    },
+    "naabu": {
+      "upstream": "2.6.1",
+      "resolver": "go",
+      "source": "github.com/projectdiscovery/naabu/v2/cmd/naabu"
+    },
+    "nuclei": {
+      "upstream": "3.11.0",
+      "resolver": "go",
+      "source": "github.com/projectdiscovery/nuclei/v3/cmd/nuclei"
+    },
+    "onionsearch": {
+      "upstream": "1.3",
+      "resolver": "pypi",
+      "source": "onionsearch"
+    },
+    "openbullet2": {
+      "upstream": "2.0.1",
+      "resolver": "github-tag",
+      "source": "openbullet/OpenBullet2"
+    },
+    "openclaude": {
+      "upstream": "0.27.0",
+      "resolver": "npm",
+      "source": "@gitlawb/openclaude"
+    },
+    "opencode": {
+      "upstream": "1.18.15",
+      "resolver": "github-release",
+      "source": "anomalyco/opencode"
+    },
+    "phoneinfoga": {
+      "upstream": "2.11.0",
+      "resolver": "github-release",
+      "source": "sundowndev/phoneinfoga"
+    },
+    "phoneintel": {
+      "upstream": "1.1.1",
+      "resolver": "pypi",
+      "source": "phoneintel"
+    },
+    "pptool": {
+      "upstream": "2.0",
+      "resolver": "github-release",
+      "source": "Kirlif/PPTool"
+    },
+    "python-pandas": {
+      "upstream": "3.0.5",
+      "resolver": "pypi",
+      "source": "pandas"
+    },
+    "pywhat": {
+      "upstream": "5.1.0",
+      "resolver": "pypi",
+      "source": "pywhat"
+    },
+    "qsreplace": {
+      "upstream": "0.0.3",
+      "resolver": "go",
+      "source": "github.com/tomnomnom/qsreplace"
+    },
+    "rkpairip": {
+      "upstream": "5.2",
+      "resolver": "pypi",
+      "source": "Pairip"
+    },
+    "ruby-curb": {
+      "upstream": "1.3.5",
+      "resolver": "gem",
+      "source": "curb"
+    },
+    "ruby-ethon": {
+      "upstream": "0.18.0",
+      "resolver": "gem",
+      "source": "ethon"
+    },
+    "ruby-nokogiri": {
+      "upstream": "1.19.0",
+      "resolver": "gem",
+      "source": "nokogiri"
+    },
+    "sherlock": {
+      "upstream": "0.16.0",
+      "resolver": "pypi",
+      "source": "sherlock-project"
+    },
+    "sploitscan": {
+      "upstream": "0.14.3",
+      "resolver": "pypi",
+      "source": "sploitscan"
+    },
+    "sqlmap": {
+      "upstream": "1.10.7",
+      "resolver": "pypi",
+      "source": "sqlmap"
+    },
+    "subcat": {
+      "upstream": "1.4.0",
+      "resolver": "pypi",
+      "source": "subcat"
+    },
+    "subfinder": {
+      "upstream": "2.14.0",
+      "resolver": "go",
+      "source": "github.com/projectdiscovery/subfinder/v2/cmd/subfinder"
+    },
+    "subjack": {
+      "upstream": "3.0.0",
+      "resolver": "go",
+      "source": "github.com/haccer/subjack"
+    },
+    "subzy": {
+      "upstream": "1.2.1",
+      "resolver": "go",
+      "source": "github.com/PentestPad/subzy"
+    },
+    "trufflehog": {
+      "upstream": "3.96.0",
+      "resolver": "github-tag",
+      "source": "trufflesecurity/trufflehog"
+    },
+    "tte": {
+      "upstream": "0.14.2",
+      "resolver": "pypi",
+      "source": "terminaltexteffects"
+    },
+    "unfurl": {
+      "upstream": "0.4.3",
+      "resolver": "go",
+      "source": "github.com/tomnomnom/unfurl"
+    },
+    "user-scanner": {
+      "upstream": "1.3.6.6",
+      "resolver": "pypi",
+      "source": "user-scanner"
+    },
+    "vulnx": {
+      "upstream": "2.0.1",
+      "resolver": "go",
+      "source": "github.com/projectdiscovery/vulnx/v2/cmd/vulnx"
+    },
+    "wafw00f": {
+      "upstream": "2.3.1",
+      "resolver": "pypi",
+      "source": "wafw00f"
+    },
+    "waybackurls": {
+      "upstream": "0.1.0",
+      "resolver": "go",
+      "source": "github.com/tomnomnom/waybackurls"
+    },
+    "wpscan": {
+      "upstream": "4.0.0",
+      "resolver": "gem",
+      "source": "wpscan"
+    },
+    "zaproxy": {
+      "upstream": "2026.03.02",
+      "resolver": "github-release",
+      "source": "zaproxy/zaproxy"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 Package: jsql
-Version: 0.114
+Version: 0.115
 Architecture: all
 Maintainer: Vaizer0
 Depends: curl, openjdk-21

@@ -1,5 +1,5 @@
 Package: ffuf
-Version: 2.2.1
+Version: 2.2.1-1
 Architecture: all
 Maintainer: Vaizer0
 Depends: git, golang

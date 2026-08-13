@@ -1,5 +1,5 @@
 Package: hermes-agent
-Version: 2026.7.20
+Version: 2026.8.3
 Architecture: all
 Maintainer: Vaizer0
 Depends: npm, uv, git, python, clang, rust, make, pkg-config, libffi, openssl, nodejs, ripgrep, ffmpeg, python-psutil, python-pillow, python-cryptography

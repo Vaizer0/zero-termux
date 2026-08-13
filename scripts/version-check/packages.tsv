@@ -1,0 +1,228 @@
+5luser	github-clone	Anon4You/5LUser	script-clone
+9router	npm	9router	rolling-download
+afrog	github-clone	zan8in/afrog	script-clone
+aircrack-ng	github-clone	aircrack-ng/aircrack-ng	script-clone
+amass	github-release	owasp-amass/amass	rolling-download
+andrax	none		rolling-download
+androdos	none		static-data
+android-sdk	github-release	termuxvoid/android-sdk-termux	rolling-download
+androvirus	github-clone	Anon4You/AndroVirus	script-clone
+antigravity-cli	github-release	google-antigravity/antigravity-cli	rolling-download
+antisplit	github-clone	termuxvoid/AntiSplit	script-clone
+apkeditor	github-release	REAndroid/APKEditor	rolling-download
+apkgen-cli	github-clone	termuxvoid/apkgen-cli	script-clone
+apkleaks	pypi	apkleaks	rolling-download
+apkpatcher	github-clone	Anon4You/APKpatcher	script-clone
+apksearch	pypi	apksearch	rolling-download
+arjun	pypi	arjun	rolling-download
+arsenal-ng	github-clone	halilkirazkaya/arsenal-ng	script-clone
+asciibanner	none		static-data
+beef	github-tag	beefproject/beef	rolling-download
+bettercap	github-tag	bettercap/bettercap	script-clone
+bitb-framework	github-clone	surya-dev-singh/BITB-framwork	script-clone
+blackbird	github-clone	p1ngul1n0/blackbird	script-clone
+blackbox-framework	none		rolling-download
+blackhat	none		static-data
+blesh	github-clone	akinomyoga/ble.sh	script-clone
+blutter	github-clone	dedshit/blutter-termux	script-clone
+breacher	github-clone	s0md3v/Breacher	script-clone
+brutespray	go	github.com/x90skysn3k/brutespray/v2	rolling-download
+bun	github-release	oven-sh/bun	rolling-download
+burpsuite	none		rolling-download
+burpsuite-pro	none		rolling-download
+byakugan	github-clone	Anon4You/Byakugan	script-clone
+catsay	github-clone	Anon4You/catsay	script-clone
+cctvip	none		rolling-download
+cdxsummary	pypi	cdxsummary	rolling-download
+cewl	github-clone	digininja/CeWL	script-clone
+claude-code	github-release	anthropics/claude-code	rolling-download
+cloudflare-gui	none		rolling-download
+commix	github-clone	commixproject/commix	script-clone
+copilot-cli	github-release	github/copilot-cli	rolling-download
+cronitor-cli	github-release	cronitorio/cronitor-cli	rolling-download
+cupp	none		static-data
+d-tect	github-clone	bibortone/D-Tech	script-clone
+dalfox	github-tag	hahwul/dalfox	rolling-download
+dark-phish	github-clone	Cyber-Anonymous/Dark-Phish	script-clone
+darkcrawler	github-clone	Anon4You/DarkCrawler	script-clone
+darksploit-framework	github-clone	ykankaya/DarkSploit	script-clone
+darkterm	github-clone	Anon4You/darkterm	script-clone
+ddos	github-clone	the-deepnet/ddos	script-clone
+dirsearch	github-clone	maurosoria/dirsearch	script-clone
+dnsx	go	github.com/projectdiscovery/dnsx/cmd/dnsx	rolling-download
+dorks-eye	github-clone	BullsEye0/dorks-eye	script-clone
+dpt-shell	github-release	luoyesiqiu/dpt-shell	rolling-download
+drshell	github-clone	DrDataYE/DrShell	script-clone
+elpscrk	github-clone	D4Vinci/elpscrk	script-clone
+emailcrawl	none		rolling-download
+enctool	none		rolling-download
+evilginx	github-clone	kgretzky/evilginx2	script-clone
+evilurl	github-clone	UndeadSec/EvilURL	script-clone
+ffmpegp	pypi	ffmpegp	rolling-download
+ffuf	github-tag	ffuf/ffuf	script-clone
+findomain	github-clone	Findomain/Findomain	script-clone
+flutter	github-release	termuxvoid/flutter-termux	rolling-download
+fscan	github-tag	shadow1ng/fscan	script-clone
+fuckyou	none		static-data
+gallery-eye	github-clone	Anon4You/gallery-eye	script-clone
+gau	go	github.com/lc/gau/v2/cmd/gau	rolling-download
+ghauri	github-clone	r0oth3x49/ghauri	rolling-download
+ghidra	github-release	NationalSecurityAgency/ghidra	rolling-download
+ghosttrack	github-clone	HunxByts/GhostTrack	script-clone
+gitleaks	github-tag	gitleaks/gitleaks	script-clone
+gobuster	go	github.com/OJ/gobuster/v3	rolling-download
+gophish	github-clone	gophish/gophish	script-clone
+goshs	go	goshs.de/goshs/v2	rolling-download
+gowitness	github-tag	sensepost/gowitness	script-clone
+gron	go	github.com/tomnomnom/gron	rolling-download
+haiti	gem	haiti-hash	rolling-download
+hashcat	github-tag	hashcat/hashcat	rolling-download
+hashid	pypi	hashid	rolling-download
+hatcloud	github-clone	HatBashBR/HatCloud	script-clone
+haxrat	github-clone	Anon4You/haxRat	script-clone
+hbctool	github-release	Kirlif/HBC-Tool	rolling-download
+hermes-agent	github-tag	NousResearch/hermes-agent	script-clone
+holehe	pypi	holehe	rolling-download
+hound	github-clone	Anon4You/hound	script-clone
+httpx	go	github.com/projectdiscovery/httpx/cmd/httpx	rolling-download
+hunner-framework	github-clone	b3-v3r/Hunner	script-clone
+ia-get	github-clone	wimpysworld/ia-get	script-clone
+infect	none		static-data
+instaghost	github-clone	Anon4You/InstaGhost	rolling-download
+instajack	none		rolling-download
+ip-changer	github-clone	Anon4You/Ip-Changer	script-clone
+ipinfo	none		rolling-download
+iplookup	none		static-data
+john	github-clone	openwall/john	script-clone
+jsql	github-tag	ron190/jsql-injection	rolling-download
+jwt-hack	cargo	jwt-hack	rolling-download
+katana	go	github.com/projectdiscovery/katana/cmd/katana	rolling-download
+kerbrute	go	github.com/ropnop/kerbrute	rolling-download
+keysigner	pypi	keysigner	rolling-download
+kimi-code	npm	@moonshot-ai/kimi-code	rolling-download
+knockpy	pypi	knock-subdomains	rolling-download
+lazyvim	github-clone	LazyVim/starter	script-clone
+linkwizard	none		rolling-download
+local2onion	none		static-data
+locateme	none		static-data
+lunarvim	github-clone	LunarVim/LunarVim	script-clone
+maigret	pypi	maigret	rolling-download
+mantra	go	github.com/Brosck/mantra	rolling-download
+maskme	none		static-data
+medusa	github-clone	jmk-foofus/medusa	script-clone
+metabigor	github-tag	j3ssie/metabigor	rolling-download
+metasploit-framework	github-tag	rapid7/metasploit-framework	rolling-download
+mimocode	github-release	XiaomiMiMo/MiMo-Code	rolling-download
+mkwebapp	none		static-data
+mmx-cli	npm	mmx-cli	rolling-download
+morphshell	github-clone	termuxvoid/MorphShell	script-clone
+mtcr-apply	none		static-data
+naabu	go	github.com/projectdiscovery/naabu/v2/cmd/naabu	rolling-download
+nethunter-cli	none		rolling-download
+ngrok	none		rolling-download
+nikto	github-clone	sullo/nikto	script-clone
+nuclei	go	github.com/projectdiscovery/nuclei/v3/cmd/nuclei	rolling-download
+numinfo	github-clone	Anon4You/NumInfo	script-clone
+nvchad	github-clone	NvChad/starter	script-clone
+onionsearch	pypi	onionsearch	rolling-download
+openbullet	github-clone	esfelurm/OpenBullet	script-clone
+openbullet2	github-tag	openbullet/OpenBullet2	rolling-download
+openclaude	npm	@gitlawb/openclaude	rolling-download
+opencode	github-release	anomalyco/opencode	rolling-download
+pairip	none		static-data
+pandora	github-clone	MrSanZz/pandora	script-clone
+paramspider	github-clone	devanshbatham/paramspider	script-clone
+parrot-cli	github-clone	EXALAB/Anlinux-Resources	rolling-download
+pdfcracker	none		static-data
+phishmailer	github-clone	BiZken/PhishMailer	script-clone
+phoneinfo	none		static-data
+phoneinfoga	github-release	sundowndev/phoneinfoga	rolling-download
+phoneintel	pypi	phoneintel	rolling-download
+phonesploit-pro	github-clone	AzeemIdrisi/PhoneSploit-Pro	script-clone
+photon	github-clone	s0md3v/photon	script-clone
+pip-basic-depends	none		rolling-download
+pkiller	github-clone	Anon4You/PKiller	script-clone
+playit	github-clone	playit-cloud/playit-agent	script-clone
+powerdos	none		static-data
+pptool	github-release	Kirlif/PPTool	rolling-download
+publiceye	none		static-data
+python-pandas	pypi	pandas	rolling-download
+pywhat	pypi	pywhat	rolling-download
+qdl	github-clone	linux-msm/qdl	script-clone
+qsreplace	go	github.com/tomnomnom/qsreplace	rolling-download
+random-banner	github-clone	Alienkrishn/random_banners	script-clone
+rang3r	github-clone	floriankunushevci/rang3r	script-clone
+ransomux	github-clone	Anon4You/RansoMux	script-clone
+reaver	github-clone	t6x/reaver-wps-fork-t6x	script-clone
+redhawk	github-clone	Tuhinshubhra/RED_HAWK	script-clone
+rkpairip	pypi	Pairip	rolling-download
+ruby-curb	gem	curb	rolling-download
+ruby-ethon	gem	ethon	rolling-download
+ruby-nokogiri	gem	nokogiri	rolling-download
+scanqli	github-clone	bambish/ScanQLi	script-clone
+secretfinder	github-clone	m4ll0k/SecretFinder	rolling-download
+setoolkit	none		rolling-download
+shark	github-clone	E343IO/shark	script-clone
+shellcrypt	none		rolling-download
+sherlock	pypi	sherlock-project	rolling-download
+shorturl	none		static-data
+silverinstaeye	github-clone	silverxpymaster/SilverInstaEye	script-clone
+slowhttptest	github-clone	shekyan/slowhttptest	script-clone
+sms-stealer	github-clone	Anon4You/sms-stealer	script-clone
+snatcher	github-clone	Anon4You/Snatcher	script-clone
+snoop	github-clone	snooppr/snoop	script-clone
+spider	none		rolling-download
+sploitscan	pypi	sploitscan	rolling-download
+spurt	github-clone	zer-far/spurt	script-clone
+sqlmap	pypi	sqlmap	rolling-download
+sqlscan	github-clone	machine1337/sqlscan	script-clone
+storm-breaker	github-clone	ultrasecurity/Storm-Breaker	script-clone
+subcat	pypi	subcat	rolling-download
+subfinder	go	github.com/projectdiscovery/subfinder/v2/cmd/subfinder	rolling-download
+subjack	go	github.com/haccer/subjack	rolling-download
+subzy	go	github.com/PentestPad/subzy	rolling-download
+superfile	github-clone	yorukot/superfile	script-clone
+takeover	github-clone	edoardottt/takeover	script-clone
+term-helper	none		passive
+termsploit	github-clone	Anon4You/termsploit-framework	script-clone
+termux-ai	none		passive
+termux-desktop	none		static-data
+termux-desktop-wallpapers	none		static-data
+termux-media-downloader	github-clone	Anon4You/Termux-Media-Downloader	rolling-download
+termux-penv	none		static-data
+termuxfetch	none		static-data
+thc-hydra	github-clone	vanhauser-thc/thc-hydra	script-clone
+the-theif	none		rolling-download
+theharvester	none		rolling-download
+thezoo	github-clone	ytisf/theZoo	script-clone
+tookie-osint	github-clone	Alfredredbird/tookie-osint	script-clone
+trufflehog	github-tag	trufflesecurity/trufflehog	script-clone
+tte	pypi	terminaltexteffects	rolling-download
+unfurl	go	github.com/tomnomnom/unfurl	rolling-download
+user-scanner	pypi	user-scanner	rolling-download
+vedic	github-clone	vedic-lang/vedic	script-clone
+venom	github-clone	Anon4You/Venom	script-clone
+void-fonts	github-clone	termuxvoid/Void-Fonts	script-clone
+vulnx	go	github.com/projectdiscovery/vulnx/v2/cmd/vulnx	rolling-download
+wacli	github-clone	steipete/wacli	script-clone
+wafw00f	pypi	wafw00f	rolling-download
+waybackurls	go	github.com/tomnomnom/waybackurls	rolling-download
+waymap	github-clone	TrixSec/waymap	script-clone
+webhost	npm	http-server	rolling-download
+webinfo	none		static-data
+webserver	none		static-data
+websploit	github-clone	f4rih/websploit	script-clone
+weeman	github-clone	evait-security/weeman	script-clone
+whatbreach	github-clone	Ekultek/WhatBreach	script-clone
+whatsapp-cli	github-clone	vicentereig/whatsapp-cli	script-clone
+wipwn	github-clone	anbuinfosec/wipwn	script-clone
+wordlists	github-release	brannondorsey/naive-hashcat	script-clone
+wpscan	gem	wpscan	rolling-download
+xbomber	github-clone	Anon4You/XBomber	script-clone
+xss-loader	github-clone	capture0x/XSS-LOADER	script-clone
+xsstrike	github-clone	s0md3v/XSStrike	script-clone
+zaproxy	github-release	zaproxy/zaproxy	rolling-download
+zen-c	github-clone	z-libs/Zen-C	script-clone
+zero-termux	none		static-data
+zero-termux-theme	github-clone	termuxvoid/TermuxVoid-Theme	script-clone
+zipcracker	none		static-data
