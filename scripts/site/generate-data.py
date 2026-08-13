@@ -8,6 +8,7 @@ explorer, and package explorer. Regenerate after any change to:
   - zero/tools/<cat>/<tool>/    (add/remove a tool     -> modules.json)
   - packages/<name>/DEBIAN/control  (add/remove a pkg  -> packages.json)
   - assets/PACKAGES.md          (category assignment   -> packages.json)
+  - assets/tool-categories.tsv  (per-tool category     -> modules.json)
 
 Run:  python3 scripts/site/generate-data.py   (or `bash scripts/site/generate-data.sh`)
 Output: site/data/{meta,commands,modules,packages,search}.json
@@ -72,6 +73,28 @@ def load_categories():
     return cats
 
 
+def load_tool_categories():
+    """Map (module, tool) -> category from assets/tool-categories.tsv.
+
+    Uses the same taxonomy as assets/PACKAGES.md so the Modules page can
+    offer the same category filter as the Packages page. Unlisted tools fall
+    back to their module name.
+    """
+    cats = {}
+    path = os.path.join(ROOT, "assets", "tool-categories.tsv")
+    try:
+        for line in open(path, encoding="utf-8", errors="replace"):
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            parts = line.split("\t")
+            if len(parts) == 3:
+                cats[(parts[0], parts[1])] = parts[2]
+    except OSError:
+        pass
+    return cats
+
+
 def glob_dir(pattern):
     import glob
     return sorted(glob.glob(os.path.join(ROOT, pattern)))
@@ -105,7 +128,8 @@ CATEGORY_INFO = [
 ]
 
 
-def build_modules():
+def build_modules(tool_cats=None):
+    tool_cats = tool_cats or {}
     cats = []
     for cat, title, desc in CATEGORY_INFO:
         tools = []
@@ -118,7 +142,7 @@ def build_modules():
                 continue
             tools.append({
                 "name": name,
-                "category": cat,
+                "category": tool_cats.get((cat, name), cat),
                 "blurb": blurb(os.path.join(d, "README.md")) or "See installer for details.",
                 "docs": f"{REPO}/tree/main/zero/tools/{cat}/{name}",
                 "install": f"zero install {cat} --{name}",
@@ -275,7 +299,7 @@ def build_search(packages, modules, commands):
                 "kind": "tool",
                 "title": t["name"],
                 "url": f"modules.html#{m['name']}",
-                "category": m["name"],
+                "category": t["category"],
                 "text": t["blurb"],
                 "command": f"zero install {m['name']} --{t['name']}",
                 "keywords": "tool module " + m["name"] + " " + t["name"],
@@ -322,6 +346,7 @@ def build_search(packages, modules, commands):
 def main():
     pkgs = load_controls()
     cats = load_categories()
+    tool_cats = load_tool_categories()
     packages = []
     for name in sorted(pkgs):
         p = pkgs[name]
@@ -334,7 +359,7 @@ def main():
             "install": f"pkg install {name}",
         })
 
-    modules = build_modules()
+    modules = build_modules(tool_cats)
     tool_count = sum(c["count"] for c in modules)
     search = build_search(packages, modules, COMMANDS)
     meta = {

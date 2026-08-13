@@ -1,0 +1,105 @@
+# Zero-Termux tool categories
+# Single source of truth for per-tool categories shown on the Modules page of
+# the website, using the same taxonomy as assets/PACKAGES.md.
+# Format: module<TAB>tool<TAB>category   (blank lines and # comments ignored)
+# Unlisted tools fall back to their module name in the generated data.
+
+ai	ampcode	AI & Productivity
+ai	antigravity-cli	AI & Productivity
+ai	cactus	AI & Productivity
+ai	cactus-needle	AI & Productivity
+ai	claude-code	AI & Productivity
+ai	cline	AI & Productivity
+ai	codegraph	AI & Productivity
+ai	codex	AI & Productivity
+ai	command-code	AI & Productivity
+ai	ctx7	AI & Productivity
+ai	cursor-cli	AI & Productivity
+ai	droid-factory	AI & Productivity
+ai	engram	AI & Productivity
+ai	freebuff	AI & Productivity
+ai	gemini-cli	AI & Productivity
+ai	gentle-ai	AI & Productivity
+ai	gga	AI & Productivity
+ai	goose	AI & Productivity
+ai	hermes-agent	AI & Productivity
+ai	keelcode	AI & Productivity
+ai	kilocode-cli	AI & Productivity
+ai	kimchi	AI & Productivity
+ai	kimi-code	AI & Productivity
+ai	mimocode	AI & Productivity
+ai	minimax-cli	AI & Productivity
+ai	mistral-vibe	AI & Productivity
+ai	oh-my-pi	AI & Productivity
+ai	ollama	AI & Productivity
+ai	openclaude	AI & Productivity
+ai	openclaw	AI & Productivity
+ai	opencode	AI & Productivity
+ai	openspec	AI & Productivity
+ai	pi	AI & Productivity
+ai	qoder	AI & Productivity
+ai	qwen-code	AI & Productivity
+ai	supercode	AI & Productivity
+lang	nodejs	System Tools
+lang	bun	System Tools
+lang	python	System Tools
+lang	perl	System Tools
+lang	php	System Tools
+lang	rust	System Tools
+lang	clang	System Tools
+lang	golang	System Tools
+db	postgresql	System Tools
+db	mariadb	System Tools
+db	mongodb	System Tools
+db	sqlite	System Tools
+db	redis	System Tools
+editor	neovim	Text & Utilities
+editor	nvchad	Customization
+dev	bat	Text & Utilities
+dev	bc	Text & Utilities
+dev	cloudflared	Web Security & Tunneling
+dev	curl	Web Security & Tunneling
+dev	fzf	System Tools
+dev	gh	System Tools
+dev	html2text	Text & Utilities
+dev	imagemagick	Miscellaneous Utilities
+dev	jq	Text & Utilities
+dev	lsd	System Tools
+dev	make	System Tools
+dev	ncurses	System Tools
+dev	openssh	Web Security & Tunneling
+dev	proot	System Tools
+dev	shfmt	System Tools
+dev	superfile	System Tools
+dev	tmate	Web Security & Tunneling
+dev	tmux	System Tools
+dev	translate	Text & Utilities
+dev	tree	System Tools
+dev	udocker	System Tools
+dev	wget	Web Security & Tunneling
+npm	live-server	Miscellaneous Utilities
+npm	localtunnel	Web Security & Tunneling
+npm	markserv	Miscellaneous Utilities
+npm	ncu	System Tools
+npm	nestjs	Miscellaneous Utilities
+npm	ngrok	Web Security & Tunneling
+npm	prettier	System Tools
+npm	psqlformat	System Tools
+npm	turbopack	System Tools
+npm	typescript	System Tools
+npm	vercel	Miscellaneous Utilities
+shell	better-npm	Customization
+shell	fzf-tab	Customization
+shell	history-substring	Customization
+shell	powerlevel10k	Customization
+shell	you-should-use	Customization
+shell	zsh-autopair	Customization
+shell	zsh-autosuggestions	Customization
+shell	zsh-completions	Customization
+shell	zsh-defer	Customization
+shell	zsh-syntax-highlighting	Customization
+ui	font	Customization
+ui	cursor	Customization
+ui	extra-keys	Customization
+ui	banner	Customization
+auto	n8n	AI & Productivity

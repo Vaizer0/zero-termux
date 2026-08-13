@@ -115,7 +115,7 @@
     "kind": "tool",
     "title": "ampcode",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Amp is the frontier agent, for people who want the most out of an agent, rather than keeping their old ways.",
     "command": "zero install ai --ampcode",
     "keywords": "tool module ai ampcode"
@@ -124,7 +124,7 @@
     "kind": "tool",
     "title": "antigravity-cli",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Lightweight, terminal-first surface for Antigravity agents",
     "command": "zero install ai --antigravity-cli",
     "keywords": "tool module ai antigravity-cli"
@@ -133,7 +133,7 @@
     "kind": "tool",
     "title": "cactus",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "A hybrid edge-cloud AI engine for mobiles, wearables, smart home and robots — quantization, kernels, runtime and inference with OpenAI-compatible APIs for text,…",
     "command": "zero install ai --cactus",
     "keywords": "tool module ai cactus"
@@ -142,7 +142,7 @@
     "kind": "tool",
     "title": "cactus-needle",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "An open 45M-parameter model for tool calling, device use and structured extraction — the whole model is a single ~14 MB engine that runs a session in about 28 M…",
     "command": "zero install ai --cactus-needle",
     "keywords": "tool module ai cactus-needle"
@@ -151,7 +151,7 @@
     "kind": "tool",
     "title": "claude-code",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Anthropic's CLI tool with Claude AI",
     "command": "zero install ai --claude-code",
     "keywords": "tool module ai claude-code"
@@ -160,7 +160,7 @@
     "kind": "tool",
     "title": "cline",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "The open source coding agent in your IDE and terminal.",
     "command": "zero install ai --cline",
     "keywords": "tool module ai cline"
@@ -169,7 +169,7 @@
     "kind": "tool",
     "title": "codegraph",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Analyzes your codebase structure and dependencies to improve navigation",
     "command": "zero install ai --codegraph",
     "keywords": "tool module ai codegraph"
@@ -178,7 +178,7 @@
     "kind": "tool",
     "title": "codex",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Codex CLI is a coding agent from OpenAI that runs locally on your computer",
     "command": "zero install ai --codex",
     "keywords": "tool module ai codex"
@@ -187,7 +187,7 @@
     "kind": "tool",
     "title": "command-code",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "The coding agent that learns your coding taste.",
     "command": "zero install ai --command-code",
     "keywords": "tool module ai command-code"
@@ -196,7 +196,7 @@
     "kind": "tool",
     "title": "ctx7",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Up-to-date documentation for AI coding agents",
     "command": "zero install ai --ctx7",
     "keywords": "tool module ai ctx7"
@@ -205,7 +205,7 @@
     "kind": "tool",
     "title": "cursor-cli",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "AI-powered coding agent that runs in your terminal",
     "command": "zero install ai --cursor-cli",
     "keywords": "tool module ai cursor-cli"
@@ -214,7 +214,7 @@
     "kind": "tool",
     "title": "droid-factory",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "AI coding agent by Factory (Factory CLI)",
     "command": "zero install ai --droid-factory",
     "keywords": "tool module ai droid-factory"
@@ -223,7 +223,7 @@
     "kind": "tool",
     "title": "engram",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Persistent memory system for AI coding agents",
     "command": "zero install ai --engram",
     "keywords": "tool module ai engram"
@@ -232,7 +232,7 @@
     "kind": "tool",
     "title": "freebuff",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "A 100% free coding agent, right from your terminal",
     "command": "zero install ai --freebuff",
     "keywords": "tool module ai freebuff"
@@ -241,7 +241,7 @@
     "kind": "tool",
     "title": "gemini-cli",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Google's AI assistant with Gemini",
     "command": "zero install ai --gemini-cli",
     "keywords": "tool module ai gemini-cli"
@@ -250,7 +250,7 @@
     "kind": "tool",
     "title": "gentle-ai",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Ecosystem, Frameworks, Workflows for AI coding agents",
     "command": "zero install ai --gentle-ai",
     "keywords": "tool module ai gentle-ai"
@@ -259,7 +259,7 @@
     "kind": "tool",
     "title": "gga",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Provider-agnostic AI code review on every commit",
     "command": "zero install ai --gga",
     "keywords": "tool module ai gga"
@@ -268,7 +268,7 @@
     "kind": "tool",
     "title": "goose",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "An open source AI agent that supercharges your workflow with one tool: plan, build, test, and iterate on tasks in a local environment",
     "command": "zero install ai --goose",
     "keywords": "tool module ai goose"
@@ -277,7 +277,7 @@
     "kind": "tool",
     "title": "hermes-agent",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "The self-improving AI agent built by Nous Research",
     "command": "zero install ai --hermes-agent",
     "keywords": "tool module ai hermes-agent"
@@ -286,7 +286,7 @@
     "kind": "tool",
     "title": "keelcode",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "The hosted coding agent for your terminal — inspect a project, edit files, run commands, search the web, use MCP servers, and verify its work",
     "command": "zero install ai --keelcode",
     "keywords": "tool module ai keelcode"
@@ -295,7 +295,7 @@
     "kind": "tool",
     "title": "kilocode-cli",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "The open source coding agent for building with AI in VS Code, JetBrains, or the CLI",
     "command": "zero install ai --kilocode-cli",
     "keywords": "tool module ai kilocode-cli"
@@ -304,7 +304,7 @@
     "kind": "tool",
     "title": "kimchi",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Terminal coding agent powered by Kimchi's multi-model orchestration",
     "command": "zero install ai --kimchi",
     "keywords": "tool module ai kimchi"
@@ -313,7 +313,7 @@
     "kind": "tool",
     "title": "kimi-code",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Kimi Code CLI — The Starting Point for Next-Gen Agents",
     "command": "zero install ai --kimi-code",
     "keywords": "tool module ai kimi-code"
@@ -322,7 +322,7 @@
     "kind": "tool",
     "title": "mimocode",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Xiaomi's AI coding agent — fast, local, and open-source",
     "command": "zero install ai --mimocode",
     "keywords": "tool module ai mimocode"
@@ -331,7 +331,7 @@
     "kind": "tool",
     "title": "minimax-cli",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Generate text, images, video, speech, and music from the terminal",
     "command": "zero install ai --minimax-cli",
     "keywords": "tool module ai minimax-cli"
@@ -340,7 +340,7 @@
     "kind": "tool",
     "title": "mistral-vibe",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Command-line coding assistant powered by Mistral's models",
     "command": "zero install ai --mistral-vibe",
     "keywords": "tool module ai mistral-vibe"
@@ -349,7 +349,7 @@
     "kind": "tool",
     "title": "oh-my-pi",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Enhanced AI coding agent — improved version of Pi, built as a standalone binary with bun build --compile.",
     "command": "zero install ai --oh-my-pi",
     "keywords": "tool module ai oh-my-pi"
@@ -358,7 +358,7 @@
     "kind": "tool",
     "title": "ollama",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Run open-source LLMs locally on Termux",
     "command": "zero install ai --ollama",
     "keywords": "tool module ai ollama"
@@ -367,7 +367,7 @@
     "kind": "tool",
     "title": "openclaude",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Open source Claude Code alternative",
     "command": "zero install ai --openclaude",
     "keywords": "tool module ai openclaude"
@@ -376,7 +376,7 @@
     "kind": "tool",
     "title": "openclaw",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Personal AI Assistant",
     "command": "zero install ai --openclaw",
     "keywords": "tool module ai openclaw"
@@ -385,7 +385,7 @@
     "kind": "tool",
     "title": "opencode",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Open-source agent that helps you write code in your terminal",
     "command": "zero install ai --opencode",
     "keywords": "tool module ai opencode"
@@ -394,7 +394,7 @@
     "kind": "tool",
     "title": "openspec",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Spec-Driven Development framework for AI coding assistants",
     "command": "zero install ai --openspec",
     "keywords": "tool module ai openspec"
@@ -403,7 +403,7 @@
     "kind": "tool",
     "title": "pi",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Minimal terminal coding harness — adapt Pi to your workflows",
     "command": "zero install ai --pi",
     "keywords": "tool module ai pi"
@@ -412,7 +412,7 @@
     "kind": "tool",
     "title": "qoder",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "A terminal-native AI coding partner—and an agent engine you can build on.",
     "command": "zero install ai --qoder",
     "keywords": "tool module ai qoder"
@@ -421,7 +421,7 @@
     "kind": "tool",
     "title": "qwen-code",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "Alibaba's AI coding assistant",
     "command": "zero install ai --qwen-code",
     "keywords": "tool module ai qwen-code"
@@ -430,7 +430,7 @@
     "kind": "tool",
     "title": "supercode",
     "url": "modules.html#ai",
-    "category": "ai",
+    "category": "AI & Productivity",
     "text": "The open source SWE agent — AI-powered coding assistant with multi-model support",
     "command": "zero install ai --supercode",
     "keywords": "tool module ai supercode"
@@ -447,7 +447,7 @@
     "kind": "tool",
     "title": "bun",
     "url": "modules.html#lang",
-    "category": "lang",
+    "category": "System Tools",
     "text": "JavaScript runtime, bundler, test runner, and package manager (all-in-one toolkit)",
     "command": "zero install lang --bun",
     "keywords": "tool module lang bun"
@@ -456,7 +456,7 @@
     "kind": "tool",
     "title": "clang",
     "url": "modules.html#lang",
-    "category": "lang",
+    "category": "System Tools",
     "text": "LLVM C/C++ compiler for systems programming",
     "command": "zero install lang --clang",
     "keywords": "tool module lang clang"
@@ -465,7 +465,7 @@
     "kind": "tool",
     "title": "golang",
     "url": "modules.html#lang",
-    "category": "lang",
+    "category": "System Tools",
     "text": "Statically typed, compiled programming language by Google",
     "command": "zero install lang --golang",
     "keywords": "tool module lang golang"
@@ -474,7 +474,7 @@
     "kind": "tool",
     "title": "nodejs",
     "url": "modules.html#lang",
-    "category": "lang",
+    "category": "System Tools",
     "text": "JavaScript runtime environment (Long Term Support version)",
     "command": "zero install lang --nodejs",
     "keywords": "tool module lang nodejs"
@@ -483,7 +483,7 @@
     "kind": "tool",
     "title": "perl",
     "url": "modules.html#lang",
-    "category": "lang",
+    "category": "System Tools",
     "text": "Highly capable, feature-rich programming language",
     "command": "zero install lang --perl",
     "keywords": "tool module lang perl"
@@ -492,7 +492,7 @@
     "kind": "tool",
     "title": "php",
     "url": "modules.html#lang",
-    "category": "lang",
+    "category": "System Tools",
     "text": "Popular general-purpose scripting language for web development",
     "command": "zero install lang --php",
     "keywords": "tool module lang php"
@@ -501,7 +501,7 @@
     "kind": "tool",
     "title": "python",
     "url": "modules.html#lang",
-    "category": "lang",
+    "category": "System Tools",
     "text": "High-level, general-purpose programming language",
     "command": "zero install lang --python",
     "keywords": "tool module lang python"
@@ -510,7 +510,7 @@
     "kind": "tool",
     "title": "rust",
     "url": "modules.html#lang",
-    "category": "lang",
+    "category": "System Tools",
     "text": "Systems programming language with memory safety guarantees",
     "command": "zero install lang --rust",
     "keywords": "tool module lang rust"
@@ -527,7 +527,7 @@
     "kind": "tool",
     "title": "mariadb",
     "url": "modules.html#db",
-    "category": "db",
+    "category": "System Tools",
     "text": "Community-developed fork of MySQL relational database",
     "command": "zero install db --mariadb",
     "keywords": "tool module db mariadb"
@@ -536,7 +536,7 @@
     "kind": "tool",
     "title": "mongodb",
     "url": "modules.html#db",
-    "category": "db",
+    "category": "System Tools",
     "text": "NoSQL document database for modern applications",
     "command": "zero install db --mongodb",
     "keywords": "tool module db mongodb"
@@ -545,7 +545,7 @@
     "kind": "tool",
     "title": "postgresql",
     "url": "modules.html#db",
-    "category": "db",
+    "category": "System Tools",
     "text": "Advanced open-source relational database",
     "command": "zero install db --postgresql",
     "keywords": "tool module db postgresql"
@@ -554,7 +554,7 @@
     "kind": "tool",
     "title": "redis",
     "url": "modules.html#db",
-    "category": "db",
+    "category": "System Tools",
     "text": "In-memory data structure store used as database, cache, and message broker",
     "command": "zero install db --redis",
     "keywords": "tool module db redis"
@@ -563,7 +563,7 @@
     "kind": "tool",
     "title": "sqlite",
     "url": "modules.html#db",
-    "category": "db",
+    "category": "System Tools",
     "text": "Self-contained, serverless, zero-configuration SQL database engine",
     "command": "zero install db --sqlite",
     "keywords": "tool module db sqlite"
@@ -580,7 +580,7 @@
     "kind": "tool",
     "title": "neovim",
     "url": "modules.html#editor",
-    "category": "editor",
+    "category": "Text & Utilities",
     "text": "Fast, extensible code editor (modern Vim fork)",
     "command": "zero install editor --neovim",
     "keywords": "tool module editor neovim"
@@ -589,7 +589,7 @@
     "kind": "tool",
     "title": "nvchad",
     "url": "modules.html#editor",
-    "category": "editor",
+    "category": "Customization",
     "text": "Modern Neovim configuration with preconfigured plugins",
     "command": "zero install editor --nvchad",
     "keywords": "tool module editor nvchad"
@@ -606,7 +606,7 @@
     "kind": "tool",
     "title": "bat",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "Text & Utilities",
     "text": "Modern cat replacement with syntax highlighting",
     "command": "zero install dev --bat",
     "keywords": "tool module dev bat"
@@ -615,7 +615,7 @@
     "kind": "tool",
     "title": "bc",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "Text & Utilities",
     "text": "Arbitrary precision calculator language",
     "command": "zero install dev --bc",
     "keywords": "tool module dev bc"
@@ -624,7 +624,7 @@
     "kind": "tool",
     "title": "cloudflared",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "Web Security & Tunneling",
     "text": "Cloudflare Tunnel client for secure connections",
     "command": "zero install dev --cloudflared",
     "keywords": "tool module dev cloudflared"
@@ -633,7 +633,7 @@
     "kind": "tool",
     "title": "curl",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "Web Security & Tunneling",
     "text": "Command-line tool for transferring data with URLs",
     "command": "zero install dev --curl",
     "keywords": "tool module dev curl"
@@ -642,7 +642,7 @@
     "kind": "tool",
     "title": "fzf",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "System Tools",
     "text": "General-purpose command-line fuzzy finder",
     "command": "zero install dev --fzf",
     "keywords": "tool module dev fzf"
@@ -651,7 +651,7 @@
     "kind": "tool",
     "title": "gh",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "System Tools",
     "text": "Official GitHub command-line tool for managing repositories, PRs, and issues",
     "command": "zero install dev --gh",
     "keywords": "tool module dev gh"
@@ -660,7 +660,7 @@
     "kind": "tool",
     "title": "html2text",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "Text & Utilities",
     "text": "Convert HTML documents to plain text",
     "command": "zero install dev --html2text",
     "keywords": "tool module dev html2text"
@@ -669,7 +669,7 @@
     "kind": "tool",
     "title": "imagemagick",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "Miscellaneous Utilities",
     "text": "Image manipulation and conversion suite",
     "command": "zero install dev --imagemagick",
     "keywords": "tool module dev imagemagick"
@@ -678,7 +678,7 @@
     "kind": "tool",
     "title": "jq",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "Text & Utilities",
     "text": "Lightweight and flexible command-line JSON processor",
     "command": "zero install dev --jq",
     "keywords": "tool module dev jq"
@@ -687,7 +687,7 @@
     "kind": "tool",
     "title": "lsd",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "System Tools",
     "text": "Modern ls replacement with icons and colors",
     "command": "zero install dev --lsd",
     "keywords": "tool module dev lsd"
@@ -696,7 +696,7 @@
     "kind": "tool",
     "title": "make",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "System Tools",
     "text": "Build automation tool for managing compilation and dependencies",
     "command": "zero install dev --make",
     "keywords": "tool module dev make"
@@ -705,7 +705,7 @@
     "kind": "tool",
     "title": "ncurses",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "System Tools",
     "text": "Terminal UI manipulation utilities",
     "command": "zero install dev --ncurses",
     "keywords": "tool module dev ncurses"
@@ -714,7 +714,7 @@
     "kind": "tool",
     "title": "openssh",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "Web Security & Tunneling",
     "text": "SSH server and client for secure remote access",
     "command": "zero install dev --openssh",
     "keywords": "tool module dev openssh"
@@ -723,7 +723,7 @@
     "kind": "tool",
     "title": "proot",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "System Tools",
     "text": "Chroot alternative for user-space sandboxing",
     "command": "zero install dev --proot",
     "keywords": "tool module dev proot"
@@ -732,7 +732,7 @@
     "kind": "tool",
     "title": "shfmt",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "System Tools",
     "text": "Shell script formatter with POSIX and Bash support",
     "command": "zero install dev --shfmt",
     "keywords": "tool module dev shfmt"
@@ -741,7 +741,7 @@
     "kind": "tool",
     "title": "superfile",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "System Tools",
     "text": "Terminal file manager with TUI, themes, and hotkeys",
     "command": "zero install dev --superfile",
     "keywords": "tool module dev superfile"
@@ -750,7 +750,7 @@
     "kind": "tool",
     "title": "tmate",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "Web Security & Tunneling",
     "text": "Instant terminal sharing for pair programming",
     "command": "zero install dev --tmate",
     "keywords": "tool module dev tmate"
@@ -759,7 +759,7 @@
     "kind": "tool",
     "title": "tmux",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "System Tools",
     "text": "Terminal multiplexer for managing multiple sessions",
     "command": "zero install dev --tmux",
     "keywords": "tool module dev tmux"
@@ -768,7 +768,7 @@
     "kind": "tool",
     "title": "translate",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "Text & Utilities",
     "text": "Command-line translator powered by Google Translate",
     "command": "zero install dev --translate",
     "keywords": "tool module dev translate"
@@ -777,7 +777,7 @@
     "kind": "tool",
     "title": "tree",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "System Tools",
     "text": "Recursive directory listing in a tree-like format",
     "command": "zero install dev --tree",
     "keywords": "tool module dev tree"
@@ -786,7 +786,7 @@
     "kind": "tool",
     "title": "udocker",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "System Tools",
     "text": "Run Docker containers without root privileges",
     "command": "zero install dev --udocker",
     "keywords": "tool module dev udocker"
@@ -795,7 +795,7 @@
     "kind": "tool",
     "title": "wget",
     "url": "modules.html#dev",
-    "category": "dev",
+    "category": "Web Security & Tunneling",
     "text": "Network downloader for retrieving files from the web",
     "command": "zero install dev --wget",
     "keywords": "tool module dev wget"
@@ -812,7 +812,7 @@
     "kind": "tool",
     "title": "live-server",
     "url": "modules.html#npm",
-    "category": "npm",
+    "category": "Miscellaneous Utilities",
     "text": "Development server with live reload capability",
     "command": "zero install npm --live-server",
     "keywords": "tool module npm live-server"
@@ -821,7 +821,7 @@
     "kind": "tool",
     "title": "localtunnel",
     "url": "modules.html#npm",
-    "category": "npm",
+    "category": "Web Security & Tunneling",
     "text": "Expose localhost to the internet securely",
     "command": "zero install npm --localtunnel",
     "keywords": "tool module npm localtunnel"
@@ -830,7 +830,7 @@
     "kind": "tool",
     "title": "markserv",
     "url": "modules.html#npm",
-    "category": "npm",
+    "category": "Miscellaneous Utilities",
     "text": "Markdown live-preview server",
     "command": "zero install npm --markserv",
     "keywords": "tool module npm markserv"
@@ -839,7 +839,7 @@
     "kind": "tool",
     "title": "ncu",
     "url": "modules.html#npm",
-    "category": "npm",
+    "category": "System Tools",
     "text": "Find and update outdated npm dependencies",
     "command": "zero install npm --ncu",
     "keywords": "tool module npm ncu"
@@ -848,7 +848,7 @@
     "kind": "tool",
     "title": "nestjs",
     "url": "modules.html#npm",
-    "category": "npm",
+    "category": "Miscellaneous Utilities",
     "text": "Progressive Node.js framework for building efficient, reliable applications",
     "command": "zero install npm --nestjs",
     "keywords": "tool module npm nestjs"
@@ -857,7 +857,7 @@
     "kind": "tool",
     "title": "ngrok",
     "url": "modules.html#npm",
-    "category": "npm",
+    "category": "Web Security & Tunneling",
     "text": "Secure tunnel to expose local servers to the internet",
     "command": "zero install npm --ngrok",
     "keywords": "tool module npm ngrok"
@@ -866,7 +866,7 @@
     "kind": "tool",
     "title": "prettier",
     "url": "modules.html#npm",
-    "category": "npm",
+    "category": "System Tools",
     "text": "Opinionated code formatter supporting multiple languages",
     "command": "zero install npm --prettier",
     "keywords": "tool module npm prettier"
@@ -875,7 +875,7 @@
     "kind": "tool",
     "title": "psqlformat",
     "url": "modules.html#npm",
-    "category": "npm",
+    "category": "System Tools",
     "text": "PostgreSQL query formatter",
     "command": "zero install npm --psqlformat",
     "keywords": "tool module npm psqlformat"
@@ -884,7 +884,7 @@
     "kind": "tool",
     "title": "turbopack",
     "url": "modules.html#npm",
-    "category": "npm",
+    "category": "System Tools",
     "text": "Run Next.js with Turbopack on Termux (Android aarch64).",
     "command": "zero install npm --turbopack",
     "keywords": "tool module npm turbopack"
@@ -893,7 +893,7 @@
     "kind": "tool",
     "title": "typescript",
     "url": "modules.html#npm",
-    "category": "npm",
+    "category": "System Tools",
     "text": "Typed superset of JavaScript that compiles to plain JavaScript",
     "command": "zero install npm --typescript",
     "keywords": "tool module npm typescript"
@@ -902,7 +902,7 @@
     "kind": "tool",
     "title": "vercel",
     "url": "modules.html#npm",
-    "category": "npm",
+    "category": "Miscellaneous Utilities",
     "text": "Deploy frontend applications and serverless functions",
     "command": "zero install npm --vercel",
     "keywords": "tool module npm vercel"
@@ -919,7 +919,7 @@
     "kind": "tool",
     "title": "better-npm",
     "url": "modules.html#shell",
-    "category": "shell",
+    "category": "Customization",
     "text": "Better npm completion for ZSH",
     "command": "zero install shell --better-npm",
     "keywords": "tool module shell better-npm"
@@ -928,7 +928,7 @@
     "kind": "tool",
     "title": "fzf-tab",
     "url": "modules.html#shell",
-    "category": "shell",
+    "category": "Customization",
     "text": "Fuzzy completion with fzf for ZSH",
     "command": "zero install shell --fzf-tab",
     "keywords": "tool module shell fzf-tab"
@@ -937,7 +937,7 @@
     "kind": "tool",
     "title": "history-substring",
     "url": "modules.html#shell",
-    "category": "shell",
+    "category": "Customization",
     "text": "History search by typing substrings",
     "command": "zero install shell --history-substring",
     "keywords": "tool module shell history-substring"
@@ -946,7 +946,7 @@
     "kind": "tool",
     "title": "powerlevel10k",
     "url": "modules.html#shell",
-    "category": "shell",
+    "category": "Customization",
     "text": "Modern and fast ZSH theme with customizable prompts",
     "command": "zero install shell --powerlevel10k",
     "keywords": "tool module shell powerlevel10k"
@@ -955,7 +955,7 @@
     "kind": "tool",
     "title": "you-should-use",
     "url": "modules.html#shell",
-    "category": "shell",
+    "category": "Customization",
     "text": "Suggests alternative commands when you use outdated ones",
     "command": "zero install shell --you-should-use",
     "keywords": "tool module shell you-should-use"
@@ -964,7 +964,7 @@
     "kind": "tool",
     "title": "zsh-autopair",
     "url": "modules.html#shell",
-    "category": "shell",
+    "category": "Customization",
     "text": "Auto-close and delete matching parentheses and quotes",
     "command": "zero install shell --zsh-autopair",
     "keywords": "tool module shell zsh-autopair"
@@ -973,7 +973,7 @@
     "kind": "tool",
     "title": "zsh-autosuggestions",
     "url": "modules.html#shell",
-    "category": "shell",
+    "category": "Customization",
     "text": "Fish-like autosuggestions for ZSH",
     "command": "zero install shell --zsh-autosuggestions",
     "keywords": "tool module shell zsh-autosuggestions"
@@ -982,7 +982,7 @@
     "kind": "tool",
     "title": "zsh-completions",
     "url": "modules.html#shell",
-    "category": "shell",
+    "category": "Customization",
     "text": "Additional ZSH completion definitions for various tools",
     "command": "zero install shell --zsh-completions",
     "keywords": "tool module shell zsh-completions"
@@ -991,7 +991,7 @@
     "kind": "tool",
     "title": "zsh-defer",
     "url": "modules.html#shell",
-    "category": "shell",
+    "category": "Customization",
     "text": "Deferred plugin loading for faster ZSH startup",
     "command": "zero install shell --zsh-defer",
     "keywords": "tool module shell zsh-defer"
@@ -1000,7 +1000,7 @@
     "kind": "tool",
     "title": "zsh-syntax-highlighting",
     "url": "modules.html#shell",
-    "category": "shell",
+    "category": "Customization",
     "text": "Real-time syntax highlighting for ZSH commands",
     "command": "zero install shell --zsh-syntax-highlighting",
     "keywords": "tool module shell zsh-syntax-highlighting"
@@ -1017,7 +1017,7 @@
     "kind": "tool",
     "title": "banner",
     "url": "modules.html#ui",
-    "category": "ui",
+    "category": "Customization",
     "text": "Customize Termux with Zero-Termux Banner",
     "command": "zero install ui --banner",
     "keywords": "tool module ui banner"
@@ -1026,7 +1026,7 @@
     "kind": "tool",
     "title": "cursor",
     "url": "modules.html#ui",
-    "category": "ui",
+    "category": "Customization",
     "text": "Customize Termux terminal cursor color",
     "command": "zero install ui --cursor",
     "keywords": "tool module ui cursor"
@@ -1035,7 +1035,7 @@
     "kind": "tool",
     "title": "extra-keys",
     "url": "modules.html#ui",
-    "category": "ui",
+    "category": "Customization",
     "text": "Additional keyboard rows for Termux with navigation keys",
     "command": "zero install ui --extra-keys",
     "keywords": "tool module ui extra-keys"
@@ -1044,7 +1044,7 @@
     "kind": "tool",
     "title": "font",
     "url": "modules.html#ui",
-    "category": "ui",
+    "category": "Customization",
     "text": "Patched font with Nerd Font icons for Termux",
     "command": "zero install ui --font",
     "keywords": "tool module ui font"
@@ -1061,7 +1061,7 @@
     "kind": "tool",
     "title": "n8n",
     "url": "modules.html#auto",
-    "category": "auto",
+    "category": "AI & Productivity",
     "text": "Workflow automation tool for connecting services",
     "command": "zero install auto --n8n",
     "keywords": "tool module auto n8n"
