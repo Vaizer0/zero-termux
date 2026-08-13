@@ -37,10 +37,15 @@ GH_API="https://api.github.com"
 
 vlog() { [ "${ZT_VERBOSE:-0}" = "1" ] && echo "[version-lib] $*" >&2; }
 
+# Fetch a URL with retries/backoff. Prints the response body on success and
+# sets ZT_HTTP_CODE to the HTTP status; returns non-zero on non-200/failure so
+# callers can distinguish "no such resource" (404) from "rate limited" (403).
 vcurl() {
-  local attempt i out
+  local i out
   for i in $(seq 1 "$RETRIES"); do
-    out="$("$CURL_BIN" -fsSL --max-time "$TIMEOUT" "${GH_AUTH[@]:-}" "$@" 2>/dev/null)" && { echo "$out"; return 0; }
+    # "${GH_AUTH[@]}" expands to zero words when empty; `:-` would emit one
+    # empty argument and break curl.
+    out="$("$CURL_BIN" -fsSL --max-time "$TIMEOUT" "${GH_AUTH[@]}" "$@" 2>/dev/null)" && { printf '%s' "$out"; return 0; }
     [ "$i" -lt "$RETRIES" ] && sleep "$((RETRY_DELAY * i))"
   done
   return 1
@@ -57,15 +62,30 @@ ver_sanitize() {
   printf '%s' "$1" | sed -E 's/^[vV]//; s/\+/-/g'
 }
 
-# --- GitHub: latest release tag -------------------------------------------
+# --- GitHub: latest release tag --------------------------------------------
+# Follows the /releases/latest HTTP redirect (Location: .../releases/tag/<tag>)
+# which does NOT count against the GitHub API rate limit. Falls back to the
+# highest git tag ONLY for repos with no releases (redirect lands on a
+# non-tag page). Never guesses from tags on errors: tag names are not reliable
+# "latest" signals (e.g. a repo whose releases are at 1.18.18 may carry a
+# highest tag of vscode-v0.0.13).
 resolve_github_latest() {
   local repo="$1"
-  local data
-  data="$(vcurl "$GH_API/repos/$repo/releases/latest")" || { vlog "github latest failed: $repo"; return 1; }
-  local tag
-  tag="$(printf '%s' "$data" | grep -o '"tag_name"[^,]*' | head -1 | cut -d'"' -f4)"
-  [ -n "$tag" ] || { vlog "no tag_name in response for $repo"; return 1; }
-  ver_sanitize "$tag"
+  local loc tag
+  loc="$(curl -fsSI --max-time "$TIMEOUT" "https://github.com/$repo/releases/latest" 2>/dev/null \
+    | grep -i '^location:' | tr -d '\r' | awk '{print $2}')"
+  if [ -n "$loc" ]; then
+    tag="$(printf '%s' "$loc" | sed -E 's#.*/releases/tag/(.*)#\1#')"
+    if [ "$tag" != "$loc" ]; then
+      ver_sanitize "$tag"
+      return 0
+    fi
+    tag="$(resolve_github_tag_latest "$repo")" || { vlog "no tags for $repo"; return 1; }
+    ver_sanitize "$tag"
+    return 0
+  fi
+  vlog "github latest failed for $repo (no /releases/latest redirect)"
+  return 1
 }
 
 # --- GitHub: latest tag (projects that never cut "releases") ---------------
@@ -150,22 +170,32 @@ resolve_gem_latest() {
 resolve_cargo_latest() {
   local crate="$1"
   local data
-  data="$(vcurl "https://crates.io/api/v1/crates/$crate")" || { vlog "cargo failed: $crate"; return 1; }
+  data="$(vcurl -A "zero-termux maintenance" "https://crates.io/api/v1/crates/$crate")" || { vlog "cargo failed: $crate"; return 1; }
   local ver
-  ver="$(printf '%s' "$data" | grep -o '"newest_version":"[^"]*"' | head -1 | cut -d'"' -f4)"
+  ver="$(printf '%s' "$data" | grep -o '"max_stable_version":"[^"]*"' | head -1 | cut -d'"' -f4)"
   [ -n "$ver" ] || { vlog "no version for crate $crate"; return 1; }
   ver_sanitize "$ver"
 }
 
 # --- Go modules (proxy.golang.org @latest) -----------------------------------
+# The proxy path must be the MODULE path (first 3 path segments + optional
+# /vN) with uppercase letters case-encoded (A -> !a); the tracked upstream may
+# be a package path such as github.com/x/y/v2/cmd/y.
 resolve_go_latest() {
-  local mod="$1"
-  # module path is case-encoded by the proxy; keep it as the source of truth.
+  local p="$1"
+  local base rest first mod
+  base="$(printf '%s' "$p" | cut -d/ -f1-3)"
+  rest="$(printf '%s' "$p" | cut -d/ -f4-)"
+  if [ -n "$rest" ] && [ "$rest" != "$p" ]; then
+    first="$(printf '%s' "$rest" | cut -d/ -f1)"
+    case "$first" in v[0-9]*) base="$base/$first" ;; esac
+  fi
+  mod="$(printf '%s' "$base" | sed -E 's/([A-Z])/!\l\1/g')"
   local data
-  data="$(vcurl "https://proxy.golang.org/$mod/@latest")" || { vlog "go proxy failed: $mod"; return 1; }
+  data="$(vcurl "https://proxy.golang.org/$mod/@latest")" || { vlog "go proxy failed: $p ($mod)"; return 1; }
   local ver
   ver="$(printf '%s' "$data" | grep -o '"Version":"[^"]*"' | head -1 | cut -d'"' -f4)"
-  [ -n "$ver" ] || { vlog "no version for go $mod"; return 1; }
+  [ -n "$ver" ] || { vlog "no version for go $p"; return 1; }
   ver_sanitize "$ver"
 }
 
@@ -173,8 +203,7 @@ resolve_go_latest() {
 resolve_version() {
   local resolver="$1" upstream="$2"
   case "$resolver" in
-    github-release) resolve_github_latest "$upstream" ;;
-    github-tag)     resolve_github_tag_latest "$upstream" ;;
+    github-release|github-tag) resolve_github_latest "$upstream" ;;
     npm)            resolve_npm_latest "$upstream" ;;
     pypi)           resolve_pypi_latest "$upstream" ;;
     gem)            resolve_gem_latest "$upstream" ;;

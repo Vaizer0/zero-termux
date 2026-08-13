@@ -1,5 +1,5 @@
 Package: hbctool
-Version: 0.1.5-96
+Version: 96
 Architecture: all
 Maintainer: Vaizer0
 Depends: python, python-pip, curl

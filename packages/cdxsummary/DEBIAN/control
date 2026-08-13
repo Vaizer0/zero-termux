@@ -1,5 +1,5 @@
 Package: cdxsummary
-Version: 0.1.1
+Version: 0.1.1b5
 Architecture: all
 Maintainer: Vaizer0
 Depends: python, python-pip

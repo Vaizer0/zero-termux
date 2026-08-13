@@ -1,5 +1,5 @@
 Package: goshs
-Version: 2.1.4
+Version: 2.1.5
 Architecture: all
 Maintainer: Vaizer0
 Depends: git, golang

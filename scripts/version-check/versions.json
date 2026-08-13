@@ -3,7 +3,7 @@
   "generated": "2026-08-13",
   "packages": {
     "9router": {
-      "upstream": "0.5.35",
+      "upstream": "0.5.50",
       "resolver": "npm",
       "source": "9router"
     },
@@ -18,7 +18,7 @@
       "source": "termuxvoid/android-sdk-termux"
     },
     "antigravity-cli": {
-      "upstream": "1.1.11",
+      "upstream": "1.1.12",
       "resolver": "github-release",
       "source": "google-antigravity/antigravity-cli"
     },
@@ -63,22 +63,22 @@
       "source": "oven-sh/bun"
     },
     "cdxsummary": {
-      "upstream": "0.1.1",
+      "upstream": "0.1.1b5",
       "resolver": "pypi",
       "source": "cdxsummary"
     },
     "claude-code": {
-      "upstream": "2.1.220",
+      "upstream": "2.1.229",
       "resolver": "github-release",
       "source": "anthropics/claude-code"
     },
     "copilot-cli": {
-      "upstream": "1.0.78",
+      "upstream": "1.0.79",
       "resolver": "github-release",
       "source": "github/copilot-cli"
     },
     "cronitor-cli": {
-      "upstream": "31.6",
+      "upstream": "33.4",
       "resolver": "github-release",
       "source": "cronitorio/cronitor-cli"
     },
@@ -88,12 +88,12 @@
       "source": "hahwul/dalfox"
     },
     "dnsx": {
-      "upstream": "1.2.2",
+      "upstream": "1.3.0",
       "resolver": "go",
       "source": "github.com/projectdiscovery/dnsx/cmd/dnsx"
     },
     "dpt-shell": {
-      "upstream": "2.15.0",
+      "upstream": "2.19.0",
       "resolver": "github-release",
       "source": "luoyesiqiu/dpt-shell"
     },
@@ -123,7 +123,7 @@
       "source": "github.com/lc/gau/v2/cmd/gau"
     },
     "ghidra": {
-      "upstream": "12.0.4",
+      "upstream": "12.1.2.build",
       "resolver": "github-release",
       "source": "NationalSecurityAgency/ghidra"
     },
@@ -138,7 +138,7 @@
       "source": "github.com/OJ/gobuster/v3"
     },
     "goshs": {
-      "upstream": "2.1.4",
+      "upstream": "2.1.5",
       "resolver": "go",
       "source": "goshs.de/goshs/v2"
     },
@@ -168,7 +168,7 @@
       "source": "hashid"
     },
     "hbctool": {
-      "upstream": "0.1.5",
+      "upstream": "96",
       "resolver": "github-release",
       "source": "Kirlif/HBC-Tool"
     },
@@ -183,7 +183,7 @@
       "source": "holehe"
     },
     "httpx": {
-      "upstream": "1.9.0",
+      "upstream": "1.10.0",
       "resolver": "go",
       "source": "github.com/projectdiscovery/httpx/cmd/httpx"
     },
@@ -198,7 +198,7 @@
       "source": "jwt-hack"
     },
     "katana": {
-      "upstream": "1.6.1",
+      "upstream": "1.7.0",
       "resolver": "go",
       "source": "github.com/projectdiscovery/katana/cmd/katana"
     },
@@ -213,17 +213,17 @@
       "source": "keysigner"
     },
     "kimi-code": {
-      "upstream": "0.32.0",
+      "upstream": "0.35.0",
       "resolver": "npm",
       "source": "@moonshot-ai/kimi-code"
     },
     "knockpy": {
-      "upstream": "7.0.2",
+      "upstream": "9.0.0",
       "resolver": "pypi",
       "source": "knock-subdomains"
     },
     "maigret": {
-      "upstream": "0.6.2",
+      "upstream": "0.6.4",
       "resolver": "pypi",
       "source": "maigret"
     },
@@ -238,7 +238,7 @@
       "source": "j3ssie/metabigor"
     },
     "mimocode": {
-      "upstream": "0.1.10",
+      "upstream": "0.1.11",
       "resolver": "github-release",
       "source": "XiaomiMiMo/MiMo-Code"
     },
@@ -253,7 +253,7 @@
       "source": "github.com/projectdiscovery/naabu/v2/cmd/naabu"
     },
     "nuclei": {
-      "upstream": "3.11.0",
+      "upstream": "3.11.1",
       "resolver": "go",
       "source": "github.com/projectdiscovery/nuclei/v3/cmd/nuclei"
     },
@@ -268,12 +268,12 @@
       "source": "openbullet/OpenBullet2"
     },
     "openclaude": {
-      "upstream": "0.27.0",
+      "upstream": "0.28.0",
       "resolver": "npm",
       "source": "@gitlawb/openclaude"
     },
     "opencode": {
-      "upstream": "1.18.15",
+      "upstream": "1.18.18",
       "resolver": "github-release",
       "source": "anomalyco/opencode"
     },
@@ -308,12 +308,12 @@
       "source": "github.com/tomnomnom/qsreplace"
     },
     "rkpairip": {
-      "upstream": "5.2",
+      "upstream": "5.3",
       "resolver": "pypi",
       "source": "Pairip"
     },
     "ruby-curb": {
-      "upstream": "1.3.5",
+      "upstream": "1.3.7",
       "resolver": "gem",
       "source": "curb"
     },
@@ -323,7 +323,7 @@
       "source": "ethon"
     },
     "ruby-nokogiri": {
-      "upstream": "1.19.0",
+      "upstream": "1.19.4",
       "resolver": "gem",
       "source": "nokogiri"
     },
@@ -338,17 +338,17 @@
       "source": "sploitscan"
     },
     "sqlmap": {
-      "upstream": "1.10.7",
+      "upstream": "1.10.8",
       "resolver": "pypi",
       "source": "sqlmap"
     },
     "subcat": {
-      "upstream": "1.4.0",
+      "upstream": "1.6.0",
       "resolver": "pypi",
       "source": "subcat"
     },
     "subfinder": {
-      "upstream": "2.14.0",
+      "upstream": "2.15.0",
       "resolver": "go",
       "source": "github.com/projectdiscovery/subfinder/v2/cmd/subfinder"
     },
@@ -368,7 +368,7 @@
       "source": "trufflesecurity/trufflehog"
     },
     "tte": {
-      "upstream": "0.14.2",
+      "upstream": "0.15.0",
       "resolver": "pypi",
       "source": "terminaltexteffects"
     },
@@ -378,17 +378,17 @@
       "source": "github.com/tomnomnom/unfurl"
     },
     "user-scanner": {
-      "upstream": "1.3.6.6",
+      "upstream": "1.4.3.1",
       "resolver": "pypi",
       "source": "user-scanner"
     },
     "vulnx": {
-      "upstream": "2.0.1",
+      "upstream": "2.0.2",
       "resolver": "go",
       "source": "github.com/projectdiscovery/vulnx/v2/cmd/vulnx"
     },
     "wafw00f": {
-      "upstream": "2.3.1",
+      "upstream": "2.4.2",
       "resolver": "pypi",
       "source": "wafw00f"
     },
@@ -398,12 +398,12 @@
       "source": "github.com/tomnomnom/waybackurls"
     },
     "wpscan": {
-      "upstream": "4.0.0",
+      "upstream": "4.1.0",
       "resolver": "gem",
       "source": "wpscan"
     },
     "zaproxy": {
-      "upstream": "2026.03.02",
+      "upstream": "2.17.0",
       "resolver": "github-release",
       "source": "zaproxy/zaproxy"
     }

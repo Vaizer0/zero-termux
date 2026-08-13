@@ -1,5 +1,5 @@
 Package: claude-code
-Version: 2.1.220
+Version: 2.1.229
 Architecture: all
 Maintainer: Vaizer0
 Depends: glibc, clang, curl, tar

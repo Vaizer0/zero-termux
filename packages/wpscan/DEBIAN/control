@@ -1,5 +1,5 @@
 Package: wpscan
-Version: 4.0.0
+Version: 4.1.0
 Architecture: all
 Maintainer: Vaizer0
 Depends: ruby, ruby-nokogiri, ruby-ethon, libcurl, libffi, sed, findutils
