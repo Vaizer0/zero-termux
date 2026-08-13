@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Packages — Zero-Termux APT Repository</title>
-<meta name="description" content="Browse all 228 packages in the Zero-Termux signed APT repository.">
+<title>Packages — Zero-Termux</title>
+<meta name="description" content="Searchable catalog of 228 packages in the Zero-Termux APT repository, with install commands and versions.">
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 <nav class="nav">
   <div class="nav-inner">
     <a class="brand" href="index.html"><span class="diamond">◈</span> Zero-Termux</a>
-    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="docs.html">Docs</a>
@@ -24,6 +24,7 @@
       <a href="contributing.html">Contributing</a>
       <a href="security.html">Security</a>
       <a href="about.html">About</a>
+      <a href="search.html">Search</a>
     </div>
   </div>
 </nav>
@@ -32,23 +33,29 @@
   <div class="page-head">
     <div class="crumb">/ packages</div>
     <h1>APT packages</h1>
-    <p>All 228 packages in the signed <span class="mono">zero-termux</span> APT repository, generated from <span class="mono">packages/*/DEBIAN/control</span>. Install with <span class="mono">pkg install &lt;name&gt;</span> after <span class="mono">apt update</span>.</p>
+    <p>228 packages served from the repository <span class="mono">repo/dists/zero-termux/</span>. Install any of them with <span class="mono">pkg install &lt;name&gt;</span> after adding the repo. Search and category filters combine.</p>
   </div>
 
-  <div class="searchbar">
-    <span class="icon">⌕</span>
-    <input type="text" data-search="packages" placeholder="Search 228 packages… (e.g. zaproxy, nvim, python)" aria-label="Search packages">
-  </div>
-  <div class="searchbar" style="margin-top:0.5rem; max-width:34rem">
-    <span class="icon">▤</span>
-    <select data-cat="packages" aria-label="Filter by category" style="flex:1; background:none; border:0; outline:0; color:var(--text); font-family:var(--mono); font-size:0.9rem">
-      <option value="all">All categories</option>
-    </select>
-  </div>
-  <p class="search-meta"></p>
+  <div data-explorer="packages">
+    <div class="explorer-tools">
+      <div class="searchbar">
+        <span class="icon" aria-hidden="true">⌕</span>
+        <input type="search" data-search="packages" placeholder="Filter packages… (e.g. ripgrep, gcc, zaproxy)" aria-label="Filter packages">
+        <button type="button" class="clear-search" data-clear="packages" hidden>✕</button>
+      </div>
+      <div class="searchbar catbar">
+        <span class="icon" aria-hidden="true">▤</span>
+        <select data-cat="packages" aria-label="Filter by category">
+          <option value="all">All categories</option>
+        </select>
+      </div>
+      <p class="search-meta" data-meta="packages"></p>
+    </div>
 
-  <div class="explorer-init note"><strong>Loading</strong> Loading package data…</div>
-  <div data-explorer="packages"></div>
+    <div class="explorer-wrap">
+      <div class="explorer-init note"><strong>Loading</strong> Loading package data…</div>
+    </div>
+  </div>
 </div>
 
 <footer>

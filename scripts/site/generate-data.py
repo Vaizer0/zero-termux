@@ -10,7 +10,7 @@ explorer, and package explorer. Regenerate after any change to:
   - assets/PACKAGES.md          (category assignment   -> packages.json)
 
 Run:  python3 scripts/site/generate-data.py   (or `bash scripts/site/generate-data.sh`)
-Output: site/data/{meta,commands,modules,packages}.json
+Output: site/data/{meta,commands,modules,packages,search}.json
 """
 
 import json
@@ -196,51 +196,127 @@ COMMANDS = [
         "name": "open",
         "summary": "Open Zero-Termux documentation in the browser.",
         "syntax": "zero open <target>",
-        "args": [("target", "site anchor: zero, help, zero-termux, or a module (ai, lang, …)")],
-        "examples": ["zero open", "zero open ai"],
-        "notes": "Opens the GitHub Pages site; module targets anchor to the homepage sections.",
+        "args": [("target", "`zero`, `help` or `zero-termux` for the site; a module name (ai, lang, db, editor, dev, npm, shell, ui, auto) to anchor to its section")],
+        "examples": ["zero open", "zero open ai", "zero open zero-termux"],
+        "notes": "With no target it prints help. Requires Termux:API (`termux-open-url`); module targets open the homepage section, e.g. https://vaizer0.github.io/zero-termux/#ai.",
     },
     {
         "name": "init",
-        "summary": "Configure an existing project.",
-        "syntax": "zero init <template>",
-        "args": [("template", "project template, e.g. next, react")],
-        "examples": ["zero init next"],
-        "notes": "Run inside the project directory.",
+        "summary": "Configure an existing project with a scaffold.",
+        "syntax": "zero init [template]",
+        "args": [("template", "next | react | nest | express (run with no template to auto-detect from package.json)")],
+        "examples": ["zero init next", "zero init react", "zero init nest", "zero init express"],
+        "notes": "Run inside a project that already has package.json. Adds optional dependencies, folder structure, Prettier, and .env.example interactively; detects the package manager from lockfiles.",
     },
     {
         "name": "brain",
-        "summary": "Second brain — save, search, and manage memories.",
-        "syntax": "zero brain <subcommand>",
-        "args": [("subcommand", "init, save, search (and dashboard views)")],
-        "examples": ["zero brain init", "zero brain save", "zero brain search"],
-        "notes": "Stores memories locally (and optionally a GitHub repo on init).",
+        "summary": "Second brain — save, search, link, and sync memories.",
+        "syntax": "zero brain <subcommand> [args]",
+        "args": [("subcommand", "init, save, search [query], ls/list [category], edit [slug], delete/rm, reset/destroy, relate, show/view <slug>, graph/map, skill/skills, sync")],
+        "examples": ["zero brain init", "zero brain save", "zero brain search react", "zero brain ls dev", "zero brain graph", "zero brain sync"],
+        "notes": "Memories are markdown files with tags, category, and relations. init optionally creates a private GitHub repo (zero-termux-brain) for sync.",
     },
     {
         "name": "env",
         "summary": "Manage user-scoped environment variables.",
-        "syntax": "zero env <set|unset|ls> [-key value]",
-        "args": [("subcommand", "set, unset, ls")],
-        "examples": ["zero env set KEY value", "zero env unset KEY", "zero env ls"],
-        "notes": "Variables are stored per-user and loaded into the shell session.",
+        "syntax": "zero env <set|unset|ls>",
+        "args": [("subcommand", "set (interactive), unset (interactive), ls | list")],
+        "examples": ["zero env set", "zero env unset", "zero env ls", "zero env list"],
+        "notes": "set and unset prompt for input interactively — they take no arguments. Variables are written as `export KEY=value` lines to ~/.zshrc (or ~/.bashrc if zsh is absent); source the rc file to apply.",
     },
     {
         "name": "pg",
         "summary": "PostgreSQL database manager.",
-        "syntax": "zero pg <command>",
-        "args": [("command", "start, stop, restart (and related server commands)")],
-        "examples": ["zero pg start"],
-        "notes": "Manages the local Termux PostgreSQL instance.",
+        "syntax": "zero pg <command> [db-name]",
+        "args": [("command", "init, start, stop, restart, status, create <db>, drop <db>, list | ls, shell | psql")],
+        "examples": ["zero pg init", "zero pg start", "zero pg status", "zero pg create mydb", "zero pg shell"],
+        "notes": "Requires PostgreSQL (`zero install db --postgresql`). Manages the local Termux instance on localhost:5432.",
     },
     {
         "name": "voice",
         "summary": "Speech-to-agent — record voice, review in nvim, send to an AI agent.",
-        "syntax": "zero voice [agent]",
-        "args": [("agent", "opencode | claude-code (default opencode)")],
-        "examples": ["zero voice", "zero voice claude-code"],
-        "notes": "Requires a microphone and a terminal audio solution on Termux.",
+        "syntax": "zero voice <agent>",
+        "args": [("agent", "opencode, qoder, claude-code, codex, gemini-cli, hermes-agent, kilocode-cli, kimi-code, mimocode, mistral-vibe, openclaude, pi, qwen-code, or text/`!` to print the prompt")],
+        "examples": ["zero voice opencode", "zero voice qoder", "zero voice claude-code", "zero voice text"],
+        "notes": "An agent argument is required — bare `zero voice` prints help. Requires Termux:API (pkg termux-api + app) and neovim (`zero install editor`). Captures speech, lets you fix the text in nvim, copies it to the clipboard, and runs the agent.",
     },
 ]
+
+
+def strip_tags(s):
+    return re.sub(r"<[^>]+>", "", s).replace("&amp;", "&").replace("&#39;", "'").strip()
+
+
+def build_search(packages, modules, commands):
+    """Site-wide search index (site/data/search.json) consumed by search.html."""
+    index = []
+
+    for c in commands:
+        index.append({
+            "kind": "command",
+            "title": "zero " + c["name"],
+            "url": "commands.html",
+            "text": c["summary"],
+            "command": "zero " + c["name"],
+            "keywords": "command " + c["name"],
+        })
+
+    for m in modules:
+        index.append({
+            "kind": "module",
+            "title": f"{m['name']} — {m['title']}",
+            "url": f"modules.html#{m['name']}",
+            "text": m["description"],
+            "command": f"zero install {m['name']}",
+            "keywords": "module category " + m["name"],
+        })
+        for t in m["tools"]:
+            index.append({
+                "kind": "tool",
+                "title": t["name"],
+                "url": f"modules.html#{m['name']}",
+                "category": m["name"],
+                "text": t["blurb"],
+                "command": f"zero install {m['name']} --{t['name']}",
+                "keywords": "tool module " + m["name"] + " " + t["name"],
+            })
+
+    for p in packages:
+        index.append({
+            "kind": "package",
+            "title": p["name"],
+            "url": "packages.html",
+            "category": p["category"],
+            "text": p["description"],
+            "command": f"pkg install {p['name']}",
+            "keywords": "apt package " + p["name"],
+        })
+
+    # documentation headings across the static pages
+    pages = ["docs", "guides", "architecture", "security", "contributing", "about", "commands", "modules", "packages"]
+    page_titles = {
+        "docs": "Documentation", "guides": "Guides", "architecture": "Architecture",
+        "security": "Security", "contributing": "Contributing", "about": "About",
+        "commands": "Command reference", "modules": "Modules & tools", "packages": "APT packages",
+    }
+    for page in pages:
+        path = os.path.join(ROOT, "site", page + ".html")
+        try:
+            content = open(path, encoding="utf-8", errors="replace").read()
+        except OSError:
+            continue
+        for m in re.finditer(r"<h([12])[^>]*id=\"([^\"]+)\"[^>]*>(.*?)</h\1>", content, re.S):
+            heading = strip_tags(m.group(3))
+            if heading:
+                index.append({
+                    "kind": "page",
+                    "title": heading,
+                    "url": f"{page}.html#{m.group(2)}",
+                    "text": page_titles.get(page, page),
+                    "keywords": "docs guide page " + page,
+                })
+
+    return index
 
 
 def main():
@@ -260,6 +336,7 @@ def main():
 
     modules = build_modules()
     tool_count = sum(c["count"] for c in modules)
+    search = build_search(packages, modules, COMMANDS)
     meta = {
         "version": "1.0.0",
         "repo": REPO,
@@ -279,12 +356,13 @@ def main():
         ("commands.json", COMMANDS),
         ("modules.json", modules),
         ("packages.json", packages),
+        ("search.json", search),
     ):
         with open(os.path.join(SITE_DATA, fname), "w", encoding="utf-8") as fh:
             json.dump(obj, fh, indent=2, ensure_ascii=False)
             fh.write("\n")
     print(f"Wrote site/data/*.json: {len(packages)} packages, {tool_count} tools/"
-          f"{len(modules)} categories, {len(COMMANDS)} commands")
+          f"{len(modules)} categories, {len(COMMANDS)} commands, {len(search)} search entries")
     return 0
 
 

@@ -22,6 +22,7 @@ Zero-Termux is a modular development environment for [Termux](https://termux.dev
 | Area | Link |
 |---|---|
 | Website & live docs | [vaizer0.github.io/zero-termux](https://vaizer0.github.io/zero-termux) |
+| Site search | [search](https://vaizer0.github.io/zero-termux/search/) |
 | Command reference | [commands](/docs#commands) • [website](https://vaizer0.github.io/zero-termux/commands/) |
 | Modules & tools | [modules](/docs#modules) • [explorer](https://vaizer0.github.io/zero-termux/modules/) |
 | APT package catalog | [assets/PACKAGES.md](assets/PACKAGES.md) • [explorer](https://vaizer0.github.io/zero-termux/packages/) |
@@ -57,7 +58,7 @@ Two ecosystems, one installer:
 | Second brain (save/search memories) | `zero brain` |
 | Project scaffolding | `zero init <template>` |
 | PostgreSQL manager | `zero pg` |
-| Speech-to-agent | `zero voice [opencode|claude-code]` |
+| Speech-to-agent | `zero voice <agent>` |
 | Environment variable manager | `zero env set/unset/ls` |
 | 228-package signed APT repo | `pkg install <tool>` |
 | Weekly rolling-version drift report | `.github/workflows/maintenance.yml` |
@@ -86,7 +87,7 @@ The installer does seven things:
 ```bash
 zero --version        # → 1.0.0
 zero list ai          # shows AI tools and their installed state
-zero open             # opens the documentation site
+zero open zero        # opens the documentation site
 ```
 
 ### First commands

@@ -12,7 +12,7 @@
 <nav class="nav">
   <div class="nav-inner">
     <a class="brand" href="index.html"><span class="diamond">◈</span> Zero-Termux</a>
-    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="docs.html">Docs</a>
@@ -24,6 +24,7 @@
       <a href="contributing.html">Contributing</a>
       <a href="security.html">Security</a>
       <a href="about.html">About</a>
+      <a href="search.html">Search</a>
     </div>
   </div>
 </nav>
@@ -32,23 +33,29 @@
   <div class="page-head">
     <div class="crumb">/ modules</div>
     <h1>Modules &amp; tools</h1>
-    <p>99 tools across 9 categories, generated from <span class="mono">zero/tools/</span>. Install a category with <span class="mono">zero install &lt;module&gt;</span> or one tool with <span class="mono">zero install &lt;module&gt; --&lt;tool&gt;</span>.</p>
+    <p>99 tools across 9 categories, generated from <span class="mono">zero/tools/</span>. Install a category with <span class="mono">zero install &lt;module&gt;</span> or one tool with <span class="mono">zero install &lt;module&gt; --&lt;tool&gt;</span>. Search and category filters combine — e.g. search <em>opencode</em> + category <em>ai</em>.</p>
   </div>
 
-  <div class="searchbar">
-    <span class="icon">⌕</span>
-    <input type="text" data-search="modules" placeholder="Search tools and modules… (e.g. opencode, postgresql, tmux)" aria-label="Search tools">
-  </div>
-  <div class="searchbar" style="margin-top:0.5rem; max-width:34rem">
-    <span class="icon">▤</span>
-    <select data-cat="modules" aria-label="Filter by category" style="flex:1; background:none; border:0; outline:0; color:var(--text); font-family:var(--mono); font-size:0.9rem">
-      <option value="all">All categories</option>
-    </select>
-  </div>
-  <p class="search-meta"></p>
+  <div data-explorer="modules">
+    <div class="explorer-tools">
+      <div class="searchbar">
+        <span class="icon" aria-hidden="true">⌕</span>
+        <input type="search" data-search="modules" placeholder="Search tools and modules… (e.g. opencode, postgresql, tmux)" aria-label="Search tools">
+        <button type="button" class="clear-search" data-clear="modules" hidden>✕</button>
+      </div>
+      <div class="searchbar catbar">
+        <span class="icon" aria-hidden="true">▤</span>
+        <select data-cat="modules" aria-label="Filter by category">
+          <option value="all">All categories</option>
+        </select>
+      </div>
+      <p class="search-meta" data-meta="modules"></p>
+    </div>
 
-  <div class="explorer-init note"><strong>Loading</strong> Loading module data…</div>
-  <div data-explorer="modules"></div>
+    <div class="explorer-wrap">
+      <div class="explorer-init note"><strong>Loading</strong> Loading module data…</div>
+    </div>
+  </div>
 </div>
 
 <footer>

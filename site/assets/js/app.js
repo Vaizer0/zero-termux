@@ -5,13 +5,25 @@
   var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
   var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
 
-  /* ---------- nav (mobile) + active link ---------- */
+  /* =========================================================
+   * Navigation (mobile toggle + active link)
+   * ========================================================= */
   function initNav() {
     var toggle = $(".nav-toggle");
     var links = $(".nav-links");
     if (toggle && links) {
       toggle.addEventListener("click", function () {
-        links.classList.toggle("open");
+        var open = links.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Menu");
+      });
+      // close the menu after following a link (mobile)
+      $$("a", links).forEach(function (a) {
+        a.addEventListener("click", function () { links.classList.remove("open"); });
+      });
+      // Escape closes the menu
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") { links.classList.remove("open"); }
       });
     }
     var here = location.pathname.split("/").pop() || "index.html";
@@ -21,27 +33,45 @@
     });
   }
 
-  /* ---------- copy buttons ---------- */
+  /* =========================================================
+   * Copy-to-clipboard with fallback
+   * ========================================================= */
   function copyText(txt, btn) {
+    var label = btn.getAttribute("data-label") || btn.textContent;
     function done() {
       var old = btn.textContent;
       btn.textContent = "COPIED ✓";
       btn.classList.add("copied");
+      btn.setAttribute("aria-live", "polite");
       setTimeout(function () {
         btn.textContent = old;
         btn.classList.remove("copied");
       }, 1600);
     }
+    function fail() {
+      var old = btn.textContent;
+      btn.textContent = "COPY FAILED";
+      btn.classList.add("failed");
+      setTimeout(function () {
+        btn.textContent = old;
+        btn.classList.remove("failed");
+      }, 1600);
+    }
     function fallback() {
       var ta = document.createElement("textarea");
       ta.value = txt;
+      ta.setAttribute("readonly", "");
       ta.style.position = "fixed";
+      ta.style.top = "0";
       ta.style.opacity = "0";
       document.body.appendChild(ta);
+      ta.focus();
       ta.select();
-      try { document.execCommand("copy"); } catch (e) {}
+      ta.setSelectionRange(0, txt.length);
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) {}
       document.body.removeChild(ta);
-      done();
+      ok ? done() : fail();
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(txt).then(done, fallback);
@@ -53,22 +83,39 @@
   function initCopy() {
     // Static copy buttons: <button class="copy-btn" data-copy="text">
     $$("[data-copy]").forEach(function (btn) {
-      btn.addEventListener("click", function () { copyText(btn.getAttribute("data-copy"), btn); });
+      if (btn.__zcCopy) return;
+      btn.__zcCopy = true;
+      btn.addEventListener("click", function () {
+        copyText(btn.getAttribute("data-copy"), btn);
+      });
     });
-    // Copy buttons for <pre><code> blocks
+    // Copy buttons for <pre><code> blocks. Skip pre blocks that:
+    //   - already contain a copy button,
+    //   - are inside an explorer wrapper (re-rendered by JS),
+    //   - are marked non-copyable (class="no-copy"),
+    //   - are paired with an existing static data-copy button in the same
+    //     container (avoids double buttons next to the hero install command).
     $$("pre").forEach(function (pre) {
-      if (pre.querySelector(".copy-btn")) return;
+      if (pre.classList.contains("no-copy")) return;
       if ($("[data-explorer]", pre)) return;
+      if (pre.querySelector(".copy-btn")) return;
+      var host = pre.parentElement;
+      if (host && $(".copy-btn[data-copy]", host)) return;
       var btn = document.createElement("button");
       btn.className = "copy-btn";
       btn.textContent = "COPY";
       btn.setAttribute("type", "button");
-      btn.addEventListener("click", function () { copyText(pre.innerText.replace(/\n$/, ""), btn); });
+      btn.setAttribute("aria-label", "Copy code block");
+      btn.addEventListener("click", function () {
+        copyText(pre.innerText.replace(/\n$/, ""), btn);
+      });
       pre.appendChild(btn);
     });
   }
 
-  /* ---------- helpers ---------- */
+  /* =========================================================
+   * Helpers
+   * ========================================================= */
   function esc(s) {
     return String(s == null ? "" : s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -84,11 +131,26 @@
     };
   }
 
-  /* ---------- explorers ---------- */
-  var demos = { "zero --version": "Show version" };
+  /* Simple term scoring: exact/prefix name hits outrank substring hits. */
+  function scoreItem(item, q) {
+    var fields = item._haystack || "";
+    if (!q) return 0;
+    if (item.name === q) return 200;
+    if (item.name.indexOf(q) === 0) return 150;
+    var idx = fields.indexOf(q);
+    if (idx === -1) return 0;
+    return idx === 0 ? 120 : 80;
+  }
 
+  /* =========================================================
+   * Explorers (commands / modules / packages)
+   *
+   * The page must place the search input, category select and
+   * meta line INSIDE the [data-explorer] container so all the
+   * controls stay wired to the data set.
+   * ========================================================= */
   function renderCommands(list) {
-    var out = list.map(function (c) {
+    return list.map(function (c) {
       var ex = (c.examples || []).map(function (e) {
         return '<div class="cmd"><code>zero ' + esc(e.replace(/^zero\s+/, "")) + "</code></div>";
       }).join("");
@@ -101,14 +163,14 @@
         "</div></details>"
       );
     }).join("");
-    return out;
   }
 
   function renderModules(list) {
     return list.map(function (m) {
       var tools = m.tools.map(function (t) {
         return (
-          '<div class="card tool-card"><h3><span class="mono">' + esc(t.name) + "</span></h3>" +
+          '<div class="card tool-card"><h3><span class="mono">' + esc(t.name) + "</span>" +
+          (t.category ? '<span class="chip">' + esc(t.category) + "</span>" : "") + "</h3>" +
           "<p>" + esc(t.blurb) + "</p>" +
           '<span class="cmd">' + esc(t.install) + "</span></div>"
         );
@@ -138,76 +200,232 @@
     );
   }
 
+  function buildHaystack(kind, item) {
+    if (kind === "commands") {
+      return [item.name, item.summary, item.syntax || "", (item.examples || []).join(" "), (item.args || []).join(" "), item.notes || ""].join(" ").toLowerCase();
+    }
+    if (kind === "modules") {
+      return [item.name, item.title, item.description, item.install,
+              item.tools.map(function (t) { return t.name + " " + t.blurb + " " + t.category; }).join(" ")].join(" ").toLowerCase();
+    }
+    return [item.name, item.description, item.category, item.install, item.version].join(" ").toLowerCase();
+  }
+
   function initExplorer() {
     var root = $("[data-explorer]");
     if (!root) return;
     var kind = root.getAttribute("data-explorer");
     var url = "data/" + kind + ".json";
-    var wrap = $(".explorer-wrap", root);
-    if (!wrap) wrap = root;
+    var wrap = $(".explorer-wrap", root) || root;
+    var input = $('[data-search="' + kind + '"]', root);
+    var catSel = $('[data-cat="' + kind + '"]', root);
+    var metaEl = $('[data-meta="' + kind + '"]', root);
+    var clearBtn = $('[data-clear="' + kind + '"]', root);
+
+    function updateMeta(count, total, empty) {
+      if (metaEl) {
+        if (empty && count === 0) {
+          metaEl.textContent = "No results";
+        } else {
+          metaEl.textContent = count + " of " + total + " shown";
+        }
+      }
+      if (clearBtn) clearBtn.hidden = !empty && !count;
+    }
 
     fetch(url).then(function (r) { return r.json(); }).then(function (data) {
       var all = data;
       var state = { filter: "", cat: "all" };
-      var q = '[data-search="' + kind + '"]';
-      var input = $(q, root) || $("[data-search]", root);
-      var catSel = $('[data-cat="' + kind + '"]', root);
+
+      // category options are derived from the data (authoritative)
+      if (catSel) {
+        var catMap = {};
+        all.forEach(function (item) {
+          if (kind === "packages") catMap[item.category] = (catMap[item.category] || 0) + 1;
+          else if (kind === "modules") catMap[item.name] = (catMap[item.name] || 0) + 1;
+        });
+        Object.keys(catMap).sort().forEach(function (c) {
+          var o = document.createElement("option");
+          o.value = c;
+          o.textContent = c + " (" + catMap[c] + ")";
+          catSel.appendChild(o);
+        });
+      }
+
+      all.forEach(function (item) {
+        item._haystack = buildHaystack(kind, item);
+      });
 
       function apply() {
+        var q = state.filter;
         var list = all.filter(function (item) {
-          var hit = !state.filter ||
-            (kind === "commands"
-              ? (item.name + " " + item.summary + " " + (item.syntax || "")).toLowerCase().indexOf(state.filter) !== -1
-              : kind === "modules"
-                ? (item.name + " " + item.title + " " + item.description + " " + item.tools.map(function (t) { return t.name; }).join(" ")).toLowerCase().indexOf(state.filter) !== -1
-                : (item.name + " " + item.description).toLowerCase().indexOf(state.filter) !== -1);
-          if (kind === "packages" && state.cat !== "all" && item.category !== state.cat) hit = false;
-          if (kind === "modules" && state.cat !== "all" && item.name !== state.cat) hit = false;
-          return hit;
+          if (q) {
+            var s = scoreItem(item, q);
+            if (!s) return false;
+            item._score = s;
+          } else {
+            item._score = 0;
+          }
+          if (state.cat !== "all") {
+            if (kind === "packages" && item.category !== state.cat) return false;
+            if (kind === "modules" && item.name !== state.cat) return false;
+          }
+          return true;
         });
+        list.sort(function (a, b) { return (b._score || 0) - (a._score || 0); });
+
         var html;
         if (kind === "commands") html = renderCommands(list);
         else if (kind === "modules") html = renderModules(list);
         else html = renderPackages(list);
-        wrap.innerHTML = html || "<p class='search-meta'>No results for “" + esc(state.filter) + "”.</p>";
-        var metaEl = $(".search-meta", root);
+
         var count = kind === "modules"
           ? list.reduce(function (n, m) { return n + m.tools.length; }, 0)
           : list.length;
-        if (metaEl) metaEl.textContent = count + " of " + all.length + " shown";
+
+        if (list.length === 0) {
+          wrap.innerHTML = "<div class='empty-state'>" +
+            "<h3>No results found</h3>" +
+            "<p>Nothing matches “" + esc(q) + "”" + (state.cat !== "all" ? " in category “" + esc(state.cat) + "”" : "") + ".</p>" +
+            "<p>Try a different term, or <a href='#' data-reset='" + kind + "'>clear the filters</a>.</p></div>";
+          updateMeta(0, all.length, true);
+        } else {
+          wrap.innerHTML = html;
+          updateMeta(count, all.length, false);
+        }
+        var reset = $('[data-reset="' + kind + '"]', root);
+        if (reset) {
+          reset.addEventListener("click", function (e) {
+            e.preventDefault();
+            if (input) { input.value = ""; state.filter = ""; }
+            if (catSel) { catSel.value = "all"; state.cat = "all"; }
+            apply();
+            if (input) input.focus();
+          });
+        }
         initCopy();
       }
 
+      function onInput() {
+        state.filter = input.value.trim().toLowerCase();
+        apply();
+      }
+
       if (input) {
-        input.addEventListener("input", debounce(function () {
-          state.filter = input.value.trim().toLowerCase();
+        input.addEventListener("input", debounce(onInput, 100));
+        input.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            input.value = "";
+            state.filter = "";
+            apply();
+          }
+        });
+      }
+      if (clearBtn) {
+        clearBtn.addEventListener("click", function () {
+          if (input) { input.value = ""; state.filter = ""; }
+          if (catSel) { catSel.value = "all"; state.cat = "all"; }
           apply();
-        }, 120));
+          if (input) input.focus();
+        });
       }
       if (catSel) {
         catSel.addEventListener("change", function () {
           state.cat = catSel.value;
           apply();
         });
-        if (kind === "packages") {
-          var cats = {};
-          all.forEach(function (p) { cats[p.category] = true; });
-          Object.keys(cats).sort().forEach(function (c) {
-            var o = document.createElement("option");
-            o.value = c; o.textContent = c;
-            catSel.appendChild(o);
-          });
-        }
       }
+
       apply();
       var initial = $(".explorer-init", root);
-      if (initial) initial.style.display = "none";
+      if (initial) initial.remove();
     }).catch(function () {
       wrap.innerHTML = "<p class='warn'>Could not load " + url + ". Regenerate site data: python3 scripts/site/generate-data.py</p>";
     });
   }
 
-  /* ---------- meta stats on landing ---------- */
+  /* =========================================================
+   * Global site search (search.html) — searches a generated
+   * index (site/data/search.json) of commands, tools, packages,
+   * and documentation sections.
+   * ========================================================= */
+  function initSiteSearch() {
+    var host = $("[data-site-search]");
+    if (!host) return;
+    var input = $("input[type=search]", host);
+    var resultsEl = $(".search-results", host);
+    var metaEl = $(".search-meta", host);
+    if (!input || !resultsEl) return;
+
+    fetch("data/search.json").then(function (r) { return r.json(); }).then(function (index) {
+      index.forEach(function (item) {
+        item._hay = [item.title, item.kind, item.category || "", item.text || "", item.keywords || "", item.command || ""].join(" ").toLowerCase();
+      });
+
+      function run() {
+        var q = input.value.trim().toLowerCase();
+        if (!q) {
+          resultsEl.innerHTML = "<p class='empty-state sm'>Type to search across commands, tools, packages, guides and docs.</p>";
+          if (metaEl) metaEl.textContent = "";
+          return;
+        }
+        var hits = index.filter(function (item) {
+          return item._hay.indexOf(q) !== -1;
+        }).map(function (item) {
+          var s = item.title.toLowerCase();
+          var sc = s === q ? 100 : (s.indexOf(q) === 0 ? 80 : 40);
+          if ((item.command || "").toLowerCase().indexOf(q) !== -1) sc += 30;
+          if ((item.keywords || "").toLowerCase().indexOf(q) !== -1) sc += 20;
+          return { item: item, score: sc };
+        }).sort(function (a, b) { return b.score - a.score; });
+
+        if (hits.length === 0) {
+          resultsEl.innerHTML = "<div class='empty-state'><h3>No results for “" + esc(q) + "”</h3>" +
+            "<p>Try a tool name, command, package, or topic (e.g. <em>opencode</em>, <em>search</em>, <em>zaproxy</em>, <em>signing</em>).</p></div>";
+          if (metaEl) metaEl.textContent = "No results";
+          return;
+        }
+
+        var groups = {};
+        hits.forEach(function (h) { (groups[h.item.kind] = groups[h.item.kind] || []).push(h); });
+
+        var html = "<div class='search-meta'>" + hits.length + " result" + (hits.length === 1 ? "" : "s") + "</div>";
+        var kindLabel = {
+          command: "Commands",
+          tool: "Tools",
+          module: "Modules",
+          package: "Packages",
+          page: "Documentation",
+        };
+        Object.keys(groups).forEach(function (kind) {
+          html += "<section class='search-group'><h2>" + (kindLabel[kind] || kind) + "</h2>";
+          groups[kind].forEach(function (h) {
+            var it = h.item;
+            html += "<a class='search-hit' href='" + esc(it.url) + "'>" +
+              "<span class='k'>" + esc(kindLabel[kind] || kind) + "</span>" +
+              "<strong>" + esc(it.title) + "</strong>" +
+              (it.command ? "<code>" + esc(it.command) + "</code>" : "") +
+              "<p>" + esc(it.text) + "</p></a>";
+          });
+          html += "</section>";
+        });
+        resultsEl.innerHTML = html;
+        if (metaEl) metaEl.textContent = hits.length + " of " + index.length + " indexed";
+      }
+
+      input.addEventListener("input", debounce(run, 120));
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") { input.value = ""; run(); }
+      });
+      run();
+    }).catch(function () {
+      resultsEl.innerHTML = "<p class='warn'>Could not load the search index. Regenerate site data: python3 scripts/site/generate-data.py</p>";
+    });
+  }
+
+  /* =========================================================
+   * Meta stats on landing + footer year
+   * ========================================================= */
   function initStats() {
     var host = $("[data-stats]");
     if (!host) return;
@@ -220,7 +438,6 @@
     }).catch(function () {});
   }
 
-  /* ---------- footer year ---------- */
   function initYear() {
     var y = $("[data-year]");
     if (y) y.textContent = new Date().getFullYear();
@@ -230,6 +447,7 @@
     initNav();
     initCopy();
     initExplorer();
+    initSiteSearch();
     initStats();
     initYear();
   });
