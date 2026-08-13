@@ -1,0 +1,3149 @@
+[
+  {
+    "kind": "command",
+    "title": "zero --version",
+    "url": "commands.html",
+    "text": "Show the installed Zero-Termux version.",
+    "command": "zero --version",
+    "keywords": "command --version"
+  },
+  {
+    "kind": "command",
+    "title": "zero install",
+    "url": "commands.html",
+    "text": "Install a module (whole category) or specific tools.",
+    "command": "zero install",
+    "keywords": "command install"
+  },
+  {
+    "kind": "command",
+    "title": "zero update",
+    "url": "commands.html",
+    "text": "Update the framework or installed modules/tools.",
+    "command": "zero update",
+    "keywords": "command update"
+  },
+  {
+    "kind": "command",
+    "title": "zero uninstall",
+    "url": "commands.html",
+    "text": "Remove a module or specific tools.",
+    "command": "zero uninstall",
+    "keywords": "command uninstall"
+  },
+  {
+    "kind": "command",
+    "title": "zero reinstall",
+    "url": "commands.html",
+    "text": "Uninstall then reinstall a module or tools.",
+    "command": "zero reinstall",
+    "keywords": "command reinstall"
+  },
+  {
+    "kind": "command",
+    "title": "zero list",
+    "url": "commands.html",
+    "text": "List the tools available in a module.",
+    "command": "zero list",
+    "keywords": "command list"
+  },
+  {
+    "kind": "command",
+    "title": "zero show",
+    "url": "commands.html",
+    "text": "Show help/documentation for a specific tool.",
+    "command": "zero show",
+    "keywords": "command show"
+  },
+  {
+    "kind": "command",
+    "title": "zero open",
+    "url": "commands.html",
+    "text": "Open Zero-Termux documentation in the browser.",
+    "command": "zero open",
+    "keywords": "command open"
+  },
+  {
+    "kind": "command",
+    "title": "zero init",
+    "url": "commands.html",
+    "text": "Configure an existing project with a scaffold.",
+    "command": "zero init",
+    "keywords": "command init"
+  },
+  {
+    "kind": "command",
+    "title": "zero brain",
+    "url": "commands.html",
+    "text": "Second brain — save, search, link, and sync memories.",
+    "command": "zero brain",
+    "keywords": "command brain"
+  },
+  {
+    "kind": "command",
+    "title": "zero env",
+    "url": "commands.html",
+    "text": "Manage user-scoped environment variables.",
+    "command": "zero env",
+    "keywords": "command env"
+  },
+  {
+    "kind": "command",
+    "title": "zero pg",
+    "url": "commands.html",
+    "text": "PostgreSQL database manager.",
+    "command": "zero pg",
+    "keywords": "command pg"
+  },
+  {
+    "kind": "command",
+    "title": "zero voice",
+    "url": "commands.html",
+    "text": "Speech-to-agent — record voice, review in nvim, send to an AI agent.",
+    "command": "zero voice",
+    "keywords": "command voice"
+  },
+  {
+    "kind": "module",
+    "title": "ai — AI tools",
+    "url": "modules.html#ai",
+    "text": "Agentic and LLM coding tools: opencode, qwen-code, claude-code, gemini-cli, ollama, and more.",
+    "command": "zero install ai",
+    "keywords": "module category ai"
+  },
+  {
+    "kind": "tool",
+    "title": "ampcode",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Amp is the frontier agent, for people who want the most out of an agent, rather than keeping their old ways.",
+    "command": "zero install ai --ampcode",
+    "keywords": "tool module ai ampcode"
+  },
+  {
+    "kind": "tool",
+    "title": "antigravity-cli",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Lightweight, terminal-first surface for Antigravity agents",
+    "command": "zero install ai --antigravity-cli",
+    "keywords": "tool module ai antigravity-cli"
+  },
+  {
+    "kind": "tool",
+    "title": "cactus",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "A hybrid edge-cloud AI engine for mobiles, wearables, smart home and robots — quantization, kernels, runtime and inference with OpenAI-compatible APIs for text,…",
+    "command": "zero install ai --cactus",
+    "keywords": "tool module ai cactus"
+  },
+  {
+    "kind": "tool",
+    "title": "cactus-needle",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "An open 45M-parameter model for tool calling, device use and structured extraction — the whole model is a single ~14 MB engine that runs a session in about 28 M…",
+    "command": "zero install ai --cactus-needle",
+    "keywords": "tool module ai cactus-needle"
+  },
+  {
+    "kind": "tool",
+    "title": "claude-code",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Anthropic's CLI tool with Claude AI",
+    "command": "zero install ai --claude-code",
+    "keywords": "tool module ai claude-code"
+  },
+  {
+    "kind": "tool",
+    "title": "cline",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "The open source coding agent in your IDE and terminal.",
+    "command": "zero install ai --cline",
+    "keywords": "tool module ai cline"
+  },
+  {
+    "kind": "tool",
+    "title": "codegraph",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Analyzes your codebase structure and dependencies to improve navigation",
+    "command": "zero install ai --codegraph",
+    "keywords": "tool module ai codegraph"
+  },
+  {
+    "kind": "tool",
+    "title": "codex",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Codex CLI is a coding agent from OpenAI that runs locally on your computer",
+    "command": "zero install ai --codex",
+    "keywords": "tool module ai codex"
+  },
+  {
+    "kind": "tool",
+    "title": "command-code",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "The coding agent that learns your coding taste.",
+    "command": "zero install ai --command-code",
+    "keywords": "tool module ai command-code"
+  },
+  {
+    "kind": "tool",
+    "title": "ctx7",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Up-to-date documentation for AI coding agents",
+    "command": "zero install ai --ctx7",
+    "keywords": "tool module ai ctx7"
+  },
+  {
+    "kind": "tool",
+    "title": "cursor-cli",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "AI-powered coding agent that runs in your terminal",
+    "command": "zero install ai --cursor-cli",
+    "keywords": "tool module ai cursor-cli"
+  },
+  {
+    "kind": "tool",
+    "title": "droid-factory",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "AI coding agent by Factory (Factory CLI)",
+    "command": "zero install ai --droid-factory",
+    "keywords": "tool module ai droid-factory"
+  },
+  {
+    "kind": "tool",
+    "title": "engram",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Persistent memory system for AI coding agents",
+    "command": "zero install ai --engram",
+    "keywords": "tool module ai engram"
+  },
+  {
+    "kind": "tool",
+    "title": "freebuff",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "A 100% free coding agent, right from your terminal",
+    "command": "zero install ai --freebuff",
+    "keywords": "tool module ai freebuff"
+  },
+  {
+    "kind": "tool",
+    "title": "gemini-cli",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Google's AI assistant with Gemini",
+    "command": "zero install ai --gemini-cli",
+    "keywords": "tool module ai gemini-cli"
+  },
+  {
+    "kind": "tool",
+    "title": "gentle-ai",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Ecosystem, Frameworks, Workflows for AI coding agents",
+    "command": "zero install ai --gentle-ai",
+    "keywords": "tool module ai gentle-ai"
+  },
+  {
+    "kind": "tool",
+    "title": "gga",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Provider-agnostic AI code review on every commit",
+    "command": "zero install ai --gga",
+    "keywords": "tool module ai gga"
+  },
+  {
+    "kind": "tool",
+    "title": "goose",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "An open source AI agent that supercharges your workflow with one tool: plan, build, test, and iterate on tasks in a local environment",
+    "command": "zero install ai --goose",
+    "keywords": "tool module ai goose"
+  },
+  {
+    "kind": "tool",
+    "title": "hermes-agent",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "The self-improving AI agent built by Nous Research",
+    "command": "zero install ai --hermes-agent",
+    "keywords": "tool module ai hermes-agent"
+  },
+  {
+    "kind": "tool",
+    "title": "keelcode",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "The hosted coding agent for your terminal — inspect a project, edit files, run commands, search the web, use MCP servers, and verify its work",
+    "command": "zero install ai --keelcode",
+    "keywords": "tool module ai keelcode"
+  },
+  {
+    "kind": "tool",
+    "title": "kilocode-cli",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "The open source coding agent for building with AI in VS Code, JetBrains, or the CLI",
+    "command": "zero install ai --kilocode-cli",
+    "keywords": "tool module ai kilocode-cli"
+  },
+  {
+    "kind": "tool",
+    "title": "kimchi",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Terminal coding agent powered by Kimchi's multi-model orchestration",
+    "command": "zero install ai --kimchi",
+    "keywords": "tool module ai kimchi"
+  },
+  {
+    "kind": "tool",
+    "title": "kimi-code",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Kimi Code CLI — The Starting Point for Next-Gen Agents",
+    "command": "zero install ai --kimi-code",
+    "keywords": "tool module ai kimi-code"
+  },
+  {
+    "kind": "tool",
+    "title": "mimocode",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Xiaomi's AI coding agent — fast, local, and open-source",
+    "command": "zero install ai --mimocode",
+    "keywords": "tool module ai mimocode"
+  },
+  {
+    "kind": "tool",
+    "title": "minimax-cli",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Generate text, images, video, speech, and music from the terminal",
+    "command": "zero install ai --minimax-cli",
+    "keywords": "tool module ai minimax-cli"
+  },
+  {
+    "kind": "tool",
+    "title": "mistral-vibe",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Command-line coding assistant powered by Mistral's models",
+    "command": "zero install ai --mistral-vibe",
+    "keywords": "tool module ai mistral-vibe"
+  },
+  {
+    "kind": "tool",
+    "title": "oh-my-pi",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Enhanced AI coding agent — improved version of Pi, built as a standalone binary with bun build --compile.",
+    "command": "zero install ai --oh-my-pi",
+    "keywords": "tool module ai oh-my-pi"
+  },
+  {
+    "kind": "tool",
+    "title": "ollama",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Run open-source LLMs locally on Termux",
+    "command": "zero install ai --ollama",
+    "keywords": "tool module ai ollama"
+  },
+  {
+    "kind": "tool",
+    "title": "openclaude",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Open source Claude Code alternative",
+    "command": "zero install ai --openclaude",
+    "keywords": "tool module ai openclaude"
+  },
+  {
+    "kind": "tool",
+    "title": "openclaw",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Personal AI Assistant",
+    "command": "zero install ai --openclaw",
+    "keywords": "tool module ai openclaw"
+  },
+  {
+    "kind": "tool",
+    "title": "opencode",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Open-source agent that helps you write code in your terminal",
+    "command": "zero install ai --opencode",
+    "keywords": "tool module ai opencode"
+  },
+  {
+    "kind": "tool",
+    "title": "openspec",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Spec-Driven Development framework for AI coding assistants",
+    "command": "zero install ai --openspec",
+    "keywords": "tool module ai openspec"
+  },
+  {
+    "kind": "tool",
+    "title": "pi",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Minimal terminal coding harness — adapt Pi to your workflows",
+    "command": "zero install ai --pi",
+    "keywords": "tool module ai pi"
+  },
+  {
+    "kind": "tool",
+    "title": "qoder",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "A terminal-native AI coding partner—and an agent engine you can build on.",
+    "command": "zero install ai --qoder",
+    "keywords": "tool module ai qoder"
+  },
+  {
+    "kind": "tool",
+    "title": "qwen-code",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "Alibaba's AI coding assistant",
+    "command": "zero install ai --qwen-code",
+    "keywords": "tool module ai qwen-code"
+  },
+  {
+    "kind": "tool",
+    "title": "supercode",
+    "url": "modules.html#ai",
+    "category": "ai",
+    "text": "The open source SWE agent — AI-powered coding assistant with multi-model support",
+    "command": "zero install ai --supercode",
+    "keywords": "tool module ai supercode"
+  },
+  {
+    "kind": "module",
+    "title": "lang — Language toolchains",
+    "url": "modules.html#lang",
+    "text": "Node.js, Bun, Python, Perl, PHP, Rust, C/C++, Go.",
+    "command": "zero install lang",
+    "keywords": "module category lang"
+  },
+  {
+    "kind": "tool",
+    "title": "bun",
+    "url": "modules.html#lang",
+    "category": "lang",
+    "text": "JavaScript runtime, bundler, test runner, and package manager (all-in-one toolkit)",
+    "command": "zero install lang --bun",
+    "keywords": "tool module lang bun"
+  },
+  {
+    "kind": "tool",
+    "title": "clang",
+    "url": "modules.html#lang",
+    "category": "lang",
+    "text": "LLVM C/C++ compiler for systems programming",
+    "command": "zero install lang --clang",
+    "keywords": "tool module lang clang"
+  },
+  {
+    "kind": "tool",
+    "title": "golang",
+    "url": "modules.html#lang",
+    "category": "lang",
+    "text": "Statically typed, compiled programming language by Google",
+    "command": "zero install lang --golang",
+    "keywords": "tool module lang golang"
+  },
+  {
+    "kind": "tool",
+    "title": "nodejs",
+    "url": "modules.html#lang",
+    "category": "lang",
+    "text": "JavaScript runtime environment (Long Term Support version)",
+    "command": "zero install lang --nodejs",
+    "keywords": "tool module lang nodejs"
+  },
+  {
+    "kind": "tool",
+    "title": "perl",
+    "url": "modules.html#lang",
+    "category": "lang",
+    "text": "Highly capable, feature-rich programming language",
+    "command": "zero install lang --perl",
+    "keywords": "tool module lang perl"
+  },
+  {
+    "kind": "tool",
+    "title": "php",
+    "url": "modules.html#lang",
+    "category": "lang",
+    "text": "Popular general-purpose scripting language for web development",
+    "command": "zero install lang --php",
+    "keywords": "tool module lang php"
+  },
+  {
+    "kind": "tool",
+    "title": "python",
+    "url": "modules.html#lang",
+    "category": "lang",
+    "text": "High-level, general-purpose programming language",
+    "command": "zero install lang --python",
+    "keywords": "tool module lang python"
+  },
+  {
+    "kind": "tool",
+    "title": "rust",
+    "url": "modules.html#lang",
+    "category": "lang",
+    "text": "Systems programming language with memory safety guarantees",
+    "command": "zero install lang --rust",
+    "keywords": "tool module lang rust"
+  },
+  {
+    "kind": "module",
+    "title": "db — Databases",
+    "url": "modules.html#db",
+    "text": "PostgreSQL, MariaDB, MongoDB, SQLite, Redis.",
+    "command": "zero install db",
+    "keywords": "module category db"
+  },
+  {
+    "kind": "tool",
+    "title": "mariadb",
+    "url": "modules.html#db",
+    "category": "db",
+    "text": "Community-developed fork of MySQL relational database",
+    "command": "zero install db --mariadb",
+    "keywords": "tool module db mariadb"
+  },
+  {
+    "kind": "tool",
+    "title": "mongodb",
+    "url": "modules.html#db",
+    "category": "db",
+    "text": "NoSQL document database for modern applications",
+    "command": "zero install db --mongodb",
+    "keywords": "tool module db mongodb"
+  },
+  {
+    "kind": "tool",
+    "title": "postgresql",
+    "url": "modules.html#db",
+    "category": "db",
+    "text": "Advanced open-source relational database",
+    "command": "zero install db --postgresql",
+    "keywords": "tool module db postgresql"
+  },
+  {
+    "kind": "tool",
+    "title": "redis",
+    "url": "modules.html#db",
+    "category": "db",
+    "text": "In-memory data structure store used as database, cache, and message broker",
+    "command": "zero install db --redis",
+    "keywords": "tool module db redis"
+  },
+  {
+    "kind": "tool",
+    "title": "sqlite",
+    "url": "modules.html#db",
+    "category": "db",
+    "text": "Self-contained, serverless, zero-configuration SQL database engine",
+    "command": "zero install db --sqlite",
+    "keywords": "tool module db sqlite"
+  },
+  {
+    "kind": "module",
+    "title": "editor — Code editor",
+    "url": "modules.html#editor",
+    "text": "Neovim-based setups (nvchad) with plugins.",
+    "command": "zero install editor",
+    "keywords": "module category editor"
+  },
+  {
+    "kind": "tool",
+    "title": "neovim",
+    "url": "modules.html#editor",
+    "category": "editor",
+    "text": "Fast, extensible code editor (modern Vim fork)",
+    "command": "zero install editor --neovim",
+    "keywords": "tool module editor neovim"
+  },
+  {
+    "kind": "tool",
+    "title": "nvchad",
+    "url": "modules.html#editor",
+    "category": "editor",
+    "text": "Modern Neovim configuration with preconfigured plugins",
+    "command": "zero install editor --nvchad",
+    "keywords": "tool module editor nvchad"
+  },
+  {
+    "kind": "module",
+    "title": "dev — Development utilities",
+    "url": "modules.html#dev",
+    "text": "Everyday CLI tools: gh, fzf, jq, bat, tmux, curl, wget, and more.",
+    "command": "zero install dev",
+    "keywords": "module category dev"
+  },
+  {
+    "kind": "tool",
+    "title": "bat",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Modern cat replacement with syntax highlighting",
+    "command": "zero install dev --bat",
+    "keywords": "tool module dev bat"
+  },
+  {
+    "kind": "tool",
+    "title": "bc",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Arbitrary precision calculator language",
+    "command": "zero install dev --bc",
+    "keywords": "tool module dev bc"
+  },
+  {
+    "kind": "tool",
+    "title": "cloudflared",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Cloudflare Tunnel client for secure connections",
+    "command": "zero install dev --cloudflared",
+    "keywords": "tool module dev cloudflared"
+  },
+  {
+    "kind": "tool",
+    "title": "curl",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Command-line tool for transferring data with URLs",
+    "command": "zero install dev --curl",
+    "keywords": "tool module dev curl"
+  },
+  {
+    "kind": "tool",
+    "title": "fzf",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "General-purpose command-line fuzzy finder",
+    "command": "zero install dev --fzf",
+    "keywords": "tool module dev fzf"
+  },
+  {
+    "kind": "tool",
+    "title": "gh",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Official GitHub command-line tool for managing repositories, PRs, and issues",
+    "command": "zero install dev --gh",
+    "keywords": "tool module dev gh"
+  },
+  {
+    "kind": "tool",
+    "title": "html2text",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Convert HTML documents to plain text",
+    "command": "zero install dev --html2text",
+    "keywords": "tool module dev html2text"
+  },
+  {
+    "kind": "tool",
+    "title": "imagemagick",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Image manipulation and conversion suite",
+    "command": "zero install dev --imagemagick",
+    "keywords": "tool module dev imagemagick"
+  },
+  {
+    "kind": "tool",
+    "title": "jq",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Lightweight and flexible command-line JSON processor",
+    "command": "zero install dev --jq",
+    "keywords": "tool module dev jq"
+  },
+  {
+    "kind": "tool",
+    "title": "lsd",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Modern ls replacement with icons and colors",
+    "command": "zero install dev --lsd",
+    "keywords": "tool module dev lsd"
+  },
+  {
+    "kind": "tool",
+    "title": "make",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Build automation tool for managing compilation and dependencies",
+    "command": "zero install dev --make",
+    "keywords": "tool module dev make"
+  },
+  {
+    "kind": "tool",
+    "title": "ncurses",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Terminal UI manipulation utilities",
+    "command": "zero install dev --ncurses",
+    "keywords": "tool module dev ncurses"
+  },
+  {
+    "kind": "tool",
+    "title": "openssh",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "SSH server and client for secure remote access",
+    "command": "zero install dev --openssh",
+    "keywords": "tool module dev openssh"
+  },
+  {
+    "kind": "tool",
+    "title": "proot",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Chroot alternative for user-space sandboxing",
+    "command": "zero install dev --proot",
+    "keywords": "tool module dev proot"
+  },
+  {
+    "kind": "tool",
+    "title": "shfmt",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Shell script formatter with POSIX and Bash support",
+    "command": "zero install dev --shfmt",
+    "keywords": "tool module dev shfmt"
+  },
+  {
+    "kind": "tool",
+    "title": "superfile",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Terminal file manager with TUI, themes, and hotkeys",
+    "command": "zero install dev --superfile",
+    "keywords": "tool module dev superfile"
+  },
+  {
+    "kind": "tool",
+    "title": "tmate",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Instant terminal sharing for pair programming",
+    "command": "zero install dev --tmate",
+    "keywords": "tool module dev tmate"
+  },
+  {
+    "kind": "tool",
+    "title": "tmux",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Terminal multiplexer for managing multiple sessions",
+    "command": "zero install dev --tmux",
+    "keywords": "tool module dev tmux"
+  },
+  {
+    "kind": "tool",
+    "title": "translate",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Command-line translator powered by Google Translate",
+    "command": "zero install dev --translate",
+    "keywords": "tool module dev translate"
+  },
+  {
+    "kind": "tool",
+    "title": "tree",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Recursive directory listing in a tree-like format",
+    "command": "zero install dev --tree",
+    "keywords": "tool module dev tree"
+  },
+  {
+    "kind": "tool",
+    "title": "udocker",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Run Docker containers without root privileges",
+    "command": "zero install dev --udocker",
+    "keywords": "tool module dev udocker"
+  },
+  {
+    "kind": "tool",
+    "title": "wget",
+    "url": "modules.html#dev",
+    "category": "dev",
+    "text": "Network downloader for retrieving files from the web",
+    "command": "zero install dev --wget",
+    "keywords": "tool module dev wget"
+  },
+  {
+    "kind": "module",
+    "title": "npm — Node.js global modules",
+    "url": "modules.html#npm",
+    "text": "Vercel, live-server, ncu, ngrok, typescript, prettier, and more.",
+    "command": "zero install npm",
+    "keywords": "module category npm"
+  },
+  {
+    "kind": "tool",
+    "title": "live-server",
+    "url": "modules.html#npm",
+    "category": "npm",
+    "text": "Development server with live reload capability",
+    "command": "zero install npm --live-server",
+    "keywords": "tool module npm live-server"
+  },
+  {
+    "kind": "tool",
+    "title": "localtunnel",
+    "url": "modules.html#npm",
+    "category": "npm",
+    "text": "Expose localhost to the internet securely",
+    "command": "zero install npm --localtunnel",
+    "keywords": "tool module npm localtunnel"
+  },
+  {
+    "kind": "tool",
+    "title": "markserv",
+    "url": "modules.html#npm",
+    "category": "npm",
+    "text": "Markdown live-preview server",
+    "command": "zero install npm --markserv",
+    "keywords": "tool module npm markserv"
+  },
+  {
+    "kind": "tool",
+    "title": "ncu",
+    "url": "modules.html#npm",
+    "category": "npm",
+    "text": "Find and update outdated npm dependencies",
+    "command": "zero install npm --ncu",
+    "keywords": "tool module npm ncu"
+  },
+  {
+    "kind": "tool",
+    "title": "nestjs",
+    "url": "modules.html#npm",
+    "category": "npm",
+    "text": "Progressive Node.js framework for building efficient, reliable applications",
+    "command": "zero install npm --nestjs",
+    "keywords": "tool module npm nestjs"
+  },
+  {
+    "kind": "tool",
+    "title": "ngrok",
+    "url": "modules.html#npm",
+    "category": "npm",
+    "text": "Secure tunnel to expose local servers to the internet",
+    "command": "zero install npm --ngrok",
+    "keywords": "tool module npm ngrok"
+  },
+  {
+    "kind": "tool",
+    "title": "prettier",
+    "url": "modules.html#npm",
+    "category": "npm",
+    "text": "Opinionated code formatter supporting multiple languages",
+    "command": "zero install npm --prettier",
+    "keywords": "tool module npm prettier"
+  },
+  {
+    "kind": "tool",
+    "title": "psqlformat",
+    "url": "modules.html#npm",
+    "category": "npm",
+    "text": "PostgreSQL query formatter",
+    "command": "zero install npm --psqlformat",
+    "keywords": "tool module npm psqlformat"
+  },
+  {
+    "kind": "tool",
+    "title": "turbopack",
+    "url": "modules.html#npm",
+    "category": "npm",
+    "text": "Run Next.js with Turbopack on Termux (Android aarch64).",
+    "command": "zero install npm --turbopack",
+    "keywords": "tool module npm turbopack"
+  },
+  {
+    "kind": "tool",
+    "title": "typescript",
+    "url": "modules.html#npm",
+    "category": "npm",
+    "text": "Typed superset of JavaScript that compiles to plain JavaScript",
+    "command": "zero install npm --typescript",
+    "keywords": "tool module npm typescript"
+  },
+  {
+    "kind": "tool",
+    "title": "vercel",
+    "url": "modules.html#npm",
+    "category": "npm",
+    "text": "Deploy frontend applications and serverless functions",
+    "command": "zero install npm --vercel",
+    "keywords": "tool module npm vercel"
+  },
+  {
+    "kind": "module",
+    "title": "shell — ZSH shell",
+    "url": "modules.html#shell",
+    "text": "ZSH + Oh My Zsh, powerlevel10k, and plugins.",
+    "command": "zero install shell",
+    "keywords": "module category shell"
+  },
+  {
+    "kind": "tool",
+    "title": "better-npm",
+    "url": "modules.html#shell",
+    "category": "shell",
+    "text": "Better npm completion for ZSH",
+    "command": "zero install shell --better-npm",
+    "keywords": "tool module shell better-npm"
+  },
+  {
+    "kind": "tool",
+    "title": "fzf-tab",
+    "url": "modules.html#shell",
+    "category": "shell",
+    "text": "Fuzzy completion with fzf for ZSH",
+    "command": "zero install shell --fzf-tab",
+    "keywords": "tool module shell fzf-tab"
+  },
+  {
+    "kind": "tool",
+    "title": "history-substring",
+    "url": "modules.html#shell",
+    "category": "shell",
+    "text": "History search by typing substrings",
+    "command": "zero install shell --history-substring",
+    "keywords": "tool module shell history-substring"
+  },
+  {
+    "kind": "tool",
+    "title": "powerlevel10k",
+    "url": "modules.html#shell",
+    "category": "shell",
+    "text": "Modern and fast ZSH theme with customizable prompts",
+    "command": "zero install shell --powerlevel10k",
+    "keywords": "tool module shell powerlevel10k"
+  },
+  {
+    "kind": "tool",
+    "title": "you-should-use",
+    "url": "modules.html#shell",
+    "category": "shell",
+    "text": "Suggests alternative commands when you use outdated ones",
+    "command": "zero install shell --you-should-use",
+    "keywords": "tool module shell you-should-use"
+  },
+  {
+    "kind": "tool",
+    "title": "zsh-autopair",
+    "url": "modules.html#shell",
+    "category": "shell",
+    "text": "Auto-close and delete matching parentheses and quotes",
+    "command": "zero install shell --zsh-autopair",
+    "keywords": "tool module shell zsh-autopair"
+  },
+  {
+    "kind": "tool",
+    "title": "zsh-autosuggestions",
+    "url": "modules.html#shell",
+    "category": "shell",
+    "text": "Fish-like autosuggestions for ZSH",
+    "command": "zero install shell --zsh-autosuggestions",
+    "keywords": "tool module shell zsh-autosuggestions"
+  },
+  {
+    "kind": "tool",
+    "title": "zsh-completions",
+    "url": "modules.html#shell",
+    "category": "shell",
+    "text": "Additional ZSH completion definitions for various tools",
+    "command": "zero install shell --zsh-completions",
+    "keywords": "tool module shell zsh-completions"
+  },
+  {
+    "kind": "tool",
+    "title": "zsh-defer",
+    "url": "modules.html#shell",
+    "category": "shell",
+    "text": "Deferred plugin loading for faster ZSH startup",
+    "command": "zero install shell --zsh-defer",
+    "keywords": "tool module shell zsh-defer"
+  },
+  {
+    "kind": "tool",
+    "title": "zsh-syntax-highlighting",
+    "url": "modules.html#shell",
+    "category": "shell",
+    "text": "Real-time syntax highlighting for ZSH commands",
+    "command": "zero install shell --zsh-syntax-highlighting",
+    "keywords": "tool module shell zsh-syntax-highlighting"
+  },
+  {
+    "kind": "module",
+    "title": "ui — Termux UI",
+    "url": "modules.html#ui",
+    "text": "Fonts, cursor, extra keys, welcome banner.",
+    "command": "zero install ui",
+    "keywords": "module category ui"
+  },
+  {
+    "kind": "tool",
+    "title": "banner",
+    "url": "modules.html#ui",
+    "category": "ui",
+    "text": "Customize Termux with Zero-Termux Banner",
+    "command": "zero install ui --banner",
+    "keywords": "tool module ui banner"
+  },
+  {
+    "kind": "tool",
+    "title": "cursor",
+    "url": "modules.html#ui",
+    "category": "ui",
+    "text": "Customize Termux terminal cursor color",
+    "command": "zero install ui --cursor",
+    "keywords": "tool module ui cursor"
+  },
+  {
+    "kind": "tool",
+    "title": "extra-keys",
+    "url": "modules.html#ui",
+    "category": "ui",
+    "text": "Additional keyboard rows for Termux with navigation keys",
+    "command": "zero install ui --extra-keys",
+    "keywords": "tool module ui extra-keys"
+  },
+  {
+    "kind": "tool",
+    "title": "font",
+    "url": "modules.html#ui",
+    "category": "ui",
+    "text": "Patched font with Nerd Font icons for Termux",
+    "command": "zero install ui --font",
+    "keywords": "tool module ui font"
+  },
+  {
+    "kind": "module",
+    "title": "auto — Automation",
+    "url": "modules.html#auto",
+    "text": "n8n workflow automation.",
+    "command": "zero install auto",
+    "keywords": "module category auto"
+  },
+  {
+    "kind": "tool",
+    "title": "n8n",
+    "url": "modules.html#auto",
+    "category": "auto",
+    "text": "Workflow automation tool for connecting services",
+    "command": "zero install auto --n8n",
+    "keywords": "tool module auto n8n"
+  },
+  {
+    "kind": "package",
+    "title": "5luser",
+    "url": "packages.html",
+    "category": "Defensive Tools",
+    "text": "get unlimited 5 letters instagram unused usernames",
+    "command": "pkg install 5luser",
+    "keywords": "apt package 5luser"
+  },
+  {
+    "kind": "package",
+    "title": "9router",
+    "url": "packages.html",
+    "category": "AI & Productivity",
+    "text": "Smart gateway between your tools and 60+ AI providers",
+    "command": "pkg install 9router",
+    "keywords": "apt package 9router"
+  },
+  {
+    "kind": "package",
+    "title": "afrog",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "Fast vulnerability scanner with custom PoCs (afrog)",
+    "command": "pkg install afrog",
+    "keywords": "apt package afrog"
+  },
+  {
+    "kind": "package",
+    "title": "aircrack-ng",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "Wireless network security auditing suite",
+    "command": "pkg install aircrack-ng",
+    "keywords": "apt package aircrack-ng"
+  },
+  {
+    "kind": "package",
+    "title": "amass",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "In-depth Attack Surface Mapping and Asset Discovery",
+    "command": "pkg install amass",
+    "keywords": "apt package amass"
+  },
+  {
+    "kind": "package",
+    "title": "andrax",
+    "url": "packages.html",
+    "category": "Mobile Development",
+    "text": "Android Penetration Testing OS (rootless)",
+    "command": "pkg install andrax",
+    "keywords": "apt package andrax"
+  },
+  {
+    "kind": "package",
+    "title": "androdos",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "Denials of service(DoS) attack tool",
+    "command": "pkg install androdos",
+    "keywords": "apt package androdos"
+  },
+  {
+    "kind": "package",
+    "title": "android-sdk",
+    "url": "packages.html",
+    "category": "Mobile Development",
+    "text": "Android SDK built using musl libc, supporting multiple architectures.",
+    "command": "pkg install android-sdk",
+    "keywords": "apt package android-sdk"
+  },
+  {
+    "kind": "package",
+    "title": "androvirus",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "Android penetration testing framework (USE RESPONSIBLY)",
+    "command": "pkg install androvirus",
+    "keywords": "apt package androvirus"
+  },
+  {
+    "kind": "package",
+    "title": "antigravity-cli",
+    "url": "packages.html",
+    "category": "AI & Productivity",
+    "text": "AI‑powered coding assistant (glibc wrapper for Termux)",
+    "command": "pkg install antigravity-cli",
+    "keywords": "apt package antigravity-cli"
+  },
+  {
+    "kind": "package",
+    "title": "antisplit",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "APK Split Package Combiner and Modifier",
+    "command": "pkg install antisplit",
+    "keywords": "apt package antisplit"
+  },
+  {
+    "kind": "package",
+    "title": "apkeditor",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "Lightweight APK modification tool",
+    "command": "pkg install apkeditor",
+    "keywords": "apt package apkeditor"
+  },
+  {
+    "kind": "package",
+    "title": "apkgen-cli",
+    "url": "packages.html",
+    "category": "Mobile Development",
+    "text": "CLI tool to quickly generate Android APKs from local templates",
+    "command": "pkg install apkgen-cli",
+    "keywords": "apt package apkgen-cli"
+  },
+  {
+    "kind": "package",
+    "title": "apkleaks",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "Scanning APK file for URIs, endpoints & secrets.",
+    "command": "pkg install apkleaks",
+    "keywords": "apt package apkleaks"
+  },
+  {
+    "kind": "package",
+    "title": "apkpatcher",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "Advanced APK Modification Tool",
+    "command": "pkg install apkpatcher",
+    "keywords": "apt package apkpatcher"
+  },
+  {
+    "kind": "package",
+    "title": "apksearch",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "APK Search Tool for Multiple APK Websites",
+    "command": "pkg install apksearch",
+    "keywords": "apt package apksearch"
+  },
+  {
+    "kind": "package",
+    "title": "arjun",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "HTTP parameter discovery suite",
+    "command": "pkg install arjun",
+    "keywords": "apt package arjun"
+  },
+  {
+    "kind": "package",
+    "title": "arsenal-ng",
+    "url": "packages.html",
+    "category": "System Tools",
+    "text": "Fast command launcher with 200+ cybersecurity cheat-sheets",
+    "command": "pkg install arsenal-ng",
+    "keywords": "apt package arsenal-ng"
+  },
+  {
+    "kind": "package",
+    "title": "asciibanner",
+    "url": "packages.html",
+    "category": "Text & Utilities",
+    "text": "A feature-rich FIGlet-compatible ASCII art generator with color support and font previews",
+    "command": "pkg install asciibanner",
+    "keywords": "apt package asciibanner"
+  },
+  {
+    "kind": "package",
+    "title": "beef",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "Browser Exploitation Framework",
+    "command": "pkg install beef",
+    "keywords": "apt package beef"
+  },
+  {
+    "kind": "package",
+    "title": "bettercap",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "Swiss army knife for network attacks and monitoring",
+    "command": "pkg install bettercap",
+    "keywords": "apt package bettercap"
+  },
+  {
+    "kind": "package",
+    "title": "bitb-framework",
+    "url": "packages.html",
+    "category": "Defensive Tools",
+    "text": "Phishing technique that simulates a browser window within the browser to spoof a legitimate domain.",
+    "command": "pkg install bitb-framework",
+    "keywords": "apt package bitb-framework"
+  },
+  {
+    "kind": "package",
+    "title": "blackbird",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "OSINT tool for username and email searches across 600+ platforms",
+    "command": "pkg install blackbird",
+    "keywords": "apt package blackbird"
+  },
+  {
+    "kind": "package",
+    "title": "blackbox-framework",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "A Python-based network analysis and exploitation toolkit",
+    "command": "pkg install blackbox-framework",
+    "keywords": "apt package blackbox-framework"
+  },
+  {
+    "kind": "package",
+    "title": "blackhat",
+    "url": "packages.html",
+    "category": "Defensive Tools",
+    "text": "blackhat hacking sources",
+    "command": "pkg install blackhat",
+    "keywords": "apt package blackhat"
+  },
+  {
+    "kind": "package",
+    "title": "blesh",
+    "url": "packages.html",
+    "category": "System Tools",
+    "text": "Bash Line Editor (ble.sh) – interactive command line editing",
+    "command": "pkg install blesh",
+    "keywords": "apt package blesh"
+  },
+  {
+    "kind": "package",
+    "title": "blutter",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "Flutter/Dart Binary Analysis and Reverse Engineering",
+    "command": "pkg install blutter",
+    "keywords": "apt package blutter"
+  },
+  {
+    "kind": "package",
+    "title": "breacher",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Multi-threaded URL brute-forcer for hidden paths",
+    "command": "pkg install breacher",
+    "keywords": "apt package breacher"
+  },
+  {
+    "kind": "package",
+    "title": "brutespray",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "Brute-force attacks from Nmap output",
+    "command": "pkg install brutespray",
+    "keywords": "apt package brutespray"
+  },
+  {
+    "kind": "package",
+    "title": "bun",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Incredibly fast JavaScript runtime (glibc wrapper for Termux)",
+    "command": "pkg install bun",
+    "keywords": "apt package bun"
+  },
+  {
+    "kind": "package",
+    "title": "burpsuite",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "An integrated platform for performing security testing of web applications (community edition)",
+    "command": "pkg install burpsuite",
+    "keywords": "apt package burpsuite"
+  },
+  {
+    "kind": "package",
+    "title": "burpsuite-pro",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "An integrated platform for performing security testing of web applications (professional edition)",
+    "command": "pkg install burpsuite-pro",
+    "keywords": "apt package burpsuite-pro"
+  },
+  {
+    "kind": "package",
+    "title": "byakugan",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Advanced footprinting tool for Termux",
+    "command": "pkg install byakugan",
+    "keywords": "apt package byakugan"
+  },
+  {
+    "kind": "package",
+    "title": "catsay",
+    "url": "packages.html",
+    "category": "Text & Utilities",
+    "text": "terminal-based feline messenger inspired by cowsay",
+    "command": "pkg install catsay",
+    "keywords": "apt package catsay"
+  },
+  {
+    "kind": "package",
+    "title": "cctvip",
+    "url": "packages.html",
+    "category": "Defensive Tools",
+    "text": "A collection of open cctv camera ip",
+    "command": "pkg install cctvip",
+    "keywords": "apt package cctvip"
+  },
+  {
+    "kind": "package",
+    "title": "cdxsummary",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "CDX summary and analysis tool",
+    "command": "pkg install cdxsummary",
+    "keywords": "apt package cdxsummary"
+  },
+  {
+    "kind": "package",
+    "title": "cewl",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "Custom Word List generator (CeWL) for password cracking",
+    "command": "pkg install cewl",
+    "keywords": "apt package cewl"
+  },
+  {
+    "kind": "package",
+    "title": "claude-code",
+    "url": "packages.html",
+    "category": "AI & Productivity",
+    "text": "Claude Code - AI coding assistant by Anthropic",
+    "command": "pkg install claude-code",
+    "keywords": "apt package claude-code"
+  },
+  {
+    "kind": "package",
+    "title": "cloudflare-gui",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "Stylish GUI for Cloudflare Tunnels",
+    "command": "pkg install cloudflare-gui",
+    "keywords": "apt package cloudflare-gui"
+  },
+  {
+    "kind": "package",
+    "title": "commix",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "Automated All-in-One OS Command Injection and Exploitation Tool",
+    "command": "pkg install commix",
+    "keywords": "apt package commix"
+  },
+  {
+    "kind": "package",
+    "title": "copilot-cli",
+    "url": "packages.html",
+    "category": "AI & Productivity",
+    "text": "GitHub Copilot CLI (glibc version)",
+    "command": "pkg install copilot-cli",
+    "keywords": "apt package copilot-cli"
+  },
+  {
+    "kind": "package",
+    "title": "cronitor-cli",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Command Line Interface for Cronitor Monitoring",
+    "command": "pkg install cronitor-cli",
+    "keywords": "apt package cronitor-cli"
+  },
+  {
+    "kind": "package",
+    "title": "cupp",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "Common User Passwords Profiler (CUPP)",
+    "command": "pkg install cupp",
+    "keywords": "apt package cupp"
+  },
+  {
+    "kind": "package",
+    "title": "d-tect",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "D-TECT - Pentest the Modern Web",
+    "command": "pkg install d-tect",
+    "keywords": "apt package d-tect"
+  },
+  {
+    "kind": "package",
+    "title": "dalfox",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Fast parameter analysis and XSS scanning tool (v3 in Rust)",
+    "command": "pkg install dalfox",
+    "keywords": "apt package dalfox"
+  },
+  {
+    "kind": "package",
+    "title": "dark-phish",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "Powerful Phishing Tool with 50+ templates",
+    "command": "pkg install dark-phish",
+    "keywords": "apt package dark-phish"
+  },
+  {
+    "kind": "package",
+    "title": "darkcrawler",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "CLI tool to crawl .onion sites and generate threat reports",
+    "command": "pkg install darkcrawler",
+    "keywords": "apt package darkcrawler"
+  },
+  {
+    "kind": "package",
+    "title": "darksploit-framework",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "Darksploit is a tool to run and create exploits",
+    "command": "pkg install darksploit-framework",
+    "keywords": "apt package darksploit-framework"
+  },
+  {
+    "kind": "package",
+    "title": "darkterm",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "Advanced Ethical Hacking Framework for Termux",
+    "command": "pkg install darkterm",
+    "keywords": "apt package darkterm"
+  },
+  {
+    "kind": "package",
+    "title": "ddos",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "DDoS attack script with 36+ attack methods",
+    "command": "pkg install ddos",
+    "keywords": "apt package ddos"
+  },
+  {
+    "kind": "package",
+    "title": "dirsearch",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Web path scanner",
+    "command": "pkg install dirsearch",
+    "keywords": "apt package dirsearch"
+  },
+  {
+    "kind": "package",
+    "title": "dnsx",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Fast DNS toolkit for reconnaissance",
+    "command": "pkg install dnsx",
+    "keywords": "apt package dnsx"
+  },
+  {
+    "kind": "package",
+    "title": "dorks-eye",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Google Hacking Dork Scraping and Searching Tool",
+    "command": "pkg install dorks-eye",
+    "keywords": "apt package dorks-eye"
+  },
+  {
+    "kind": "package",
+    "title": "dpt-shell",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "DPT Shell - Dex Protection Tool Shell dpt-shell is an Android Dex protection shell that hollows out Dex method implementations and reconstructs them at runtime.",
+    "command": "pkg install dpt-shell",
+    "keywords": "apt package dpt-shell"
+  },
+  {
+    "kind": "package",
+    "title": "drshell",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "Reverse Shell Session Manager",
+    "command": "pkg install drshell",
+    "keywords": "apt package drshell"
+  },
+  {
+    "kind": "package",
+    "title": "elpscrk",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "Intelligent common user-password profiler",
+    "command": "pkg install elpscrk",
+    "keywords": "apt package elpscrk"
+  },
+  {
+    "kind": "package",
+    "title": "emailcrawl",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Professional-grade OSINT email extraction tool",
+    "command": "pkg install emailcrawl",
+    "keywords": "apt package emailcrawl"
+  },
+  {
+    "kind": "package",
+    "title": "enctool",
+    "url": "packages.html",
+    "category": "System Tools",
+    "text": "encrypt or decrypt bash file and encrypt python in Marshal format",
+    "command": "pkg install enctool",
+    "keywords": "apt package enctool"
+  },
+  {
+    "kind": "package",
+    "title": "evilginx",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "Advanced phishing framework with 2FA bypass",
+    "command": "pkg install evilginx",
+    "keywords": "apt package evilginx"
+  },
+  {
+    "kind": "package",
+    "title": "evilurl",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "Generate unicode evil domains for IDN homograph attacks",
+    "command": "pkg install evilurl",
+    "keywords": "apt package evilurl"
+  },
+  {
+    "kind": "package",
+    "title": "ffmpegp",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Python Utility for FFmpeg and FFprobe Operations",
+    "command": "pkg install ffmpegp",
+    "keywords": "apt package ffmpegp"
+  },
+  {
+    "kind": "package",
+    "title": "ffuf",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Fast web fuzzer written in Go",
+    "command": "pkg install ffuf",
+    "keywords": "apt package ffuf"
+  },
+  {
+    "kind": "package",
+    "title": "findomain",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "The fastest and complete solution for domain recognition",
+    "command": "pkg install findomain",
+    "keywords": "apt package findomain"
+  },
+  {
+    "kind": "package",
+    "title": "flutter",
+    "url": "packages.html",
+    "category": "Mobile Development",
+    "text": "Google's UI toolkit for building native apps",
+    "command": "pkg install flutter",
+    "keywords": "apt package flutter"
+  },
+  {
+    "kind": "package",
+    "title": "fscan",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Intranet penetration test tool for scanning vulnerabilities",
+    "command": "pkg install fscan",
+    "keywords": "apt package fscan"
+  },
+  {
+    "kind": "package",
+    "title": "fuckyou",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "A powerful and customizable password list generator written in Bash.",
+    "command": "pkg install fuckyou",
+    "keywords": "apt package fuckyou"
+  },
+  {
+    "kind": "package",
+    "title": "gallery-eye",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "Silent gallery exfiltration via Telegram bot",
+    "command": "pkg install gallery-eye",
+    "keywords": "apt package gallery-eye"
+  },
+  {
+    "kind": "package",
+    "title": "gau",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Fetch known URLs from AlienVault OTX, Wayback Machine, Common Crawl",
+    "command": "pkg install gau",
+    "keywords": "apt package gau"
+  },
+  {
+    "kind": "package",
+    "title": "ghauri",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "Advanced Cross-Platform SQL Injection Scanner",
+    "command": "pkg install ghauri",
+    "keywords": "apt package ghauri"
+  },
+  {
+    "kind": "package",
+    "title": "ghidra",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "NSA Reverse Engineering Framework",
+    "command": "pkg install ghidra",
+    "keywords": "apt package ghidra"
+  },
+  {
+    "kind": "package",
+    "title": "ghosttrack",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Advanced tracking and reconnaissance tool",
+    "command": "pkg install ghosttrack",
+    "keywords": "apt package ghosttrack"
+  },
+  {
+    "kind": "package",
+    "title": "gitleaks",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Detect hard-coded secrets and sensitive data in Git repositories",
+    "command": "pkg install gitleaks",
+    "keywords": "apt package gitleaks"
+  },
+  {
+    "kind": "package",
+    "title": "gobuster",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Directory/file & DNS busting tool written in Go",
+    "command": "pkg install gobuster",
+    "keywords": "apt package gobuster"
+  },
+  {
+    "kind": "package",
+    "title": "gophish",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "Open-source phishing framework",
+    "command": "pkg install gophish",
+    "keywords": "apt package gophish"
+  },
+  {
+    "kind": "package",
+    "title": "goshs",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "Feature-rich single-binary file server for red teamers and developers",
+    "command": "pkg install goshs",
+    "keywords": "apt package goshs"
+  },
+  {
+    "kind": "package",
+    "title": "gowitness",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Web screenshot utility using headless Chrome",
+    "command": "pkg install gowitness",
+    "keywords": "apt package gowitness"
+  },
+  {
+    "kind": "package",
+    "title": "gron",
+    "url": "packages.html",
+    "category": "Data Analysis",
+    "text": "Make JSON greppable",
+    "command": "pkg install gron",
+    "keywords": "apt package gron"
+  },
+  {
+    "kind": "package",
+    "title": "haiti",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "Hash type identifier (CLI tool)",
+    "command": "pkg install haiti",
+    "keywords": "apt package haiti"
+  },
+  {
+    "kind": "package",
+    "title": "hashcat",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "World's fastest and most advanced password recovery utility",
+    "command": "pkg install hashcat",
+    "keywords": "apt package hashcat"
+  },
+  {
+    "kind": "package",
+    "title": "hashid",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "Advanced hash identifier",
+    "command": "pkg install hashid",
+    "keywords": "apt package hashid"
+  },
+  {
+    "kind": "package",
+    "title": "hatcloud",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "CloudFlare detector and information gatherer",
+    "command": "pkg install hatcloud",
+    "keywords": "apt package hatcloud"
+  },
+  {
+    "kind": "package",
+    "title": "haxrat",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "Cloud-based remote Android management suite",
+    "command": "pkg install haxrat",
+    "keywords": "apt package haxrat"
+  },
+  {
+    "kind": "package",
+    "title": "hbctool",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "Hermes Bytecode Disassembler and Assembler",
+    "command": "pkg install hbctool",
+    "keywords": "apt package hbctool"
+  },
+  {
+    "kind": "package",
+    "title": "hermes-agent",
+    "url": "packages.html",
+    "category": "AI & Productivity",
+    "text": "AI-powered coding assistant and workflow automation tool",
+    "command": "pkg install hermes-agent",
+    "keywords": "apt package hermes-agent"
+  },
+  {
+    "kind": "package",
+    "title": "holehe",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Email OSINT tool",
+    "command": "pkg install holehe",
+    "keywords": "apt package holehe"
+  },
+  {
+    "kind": "package",
+    "title": "hound",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Simple and light tool for information gathering and capture exact GPS coordinates",
+    "command": "pkg install hound",
+    "keywords": "apt package hound"
+  },
+  {
+    "kind": "package",
+    "title": "httpx",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Fast and Multi-Purpose HTTP Toolkit by ProjectDiscovery",
+    "command": "pkg install httpx",
+    "keywords": "apt package httpx"
+  },
+  {
+    "kind": "package",
+    "title": "hunner-framework",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "Open Source Penetration Testing Framework",
+    "command": "pkg install hunner-framework",
+    "keywords": "apt package hunner-framework"
+  },
+  {
+    "kind": "package",
+    "title": "ia-get",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Internet Archive Downloader Tool",
+    "command": "pkg install ia-get",
+    "keywords": "apt package ia-get"
+  },
+  {
+    "kind": "package",
+    "title": "infect",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "Android APK backdoor injector with Meterpreter support",
+    "command": "pkg install infect",
+    "keywords": "apt package infect"
+  },
+  {
+    "kind": "package",
+    "title": "instaghost",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Professional Instagram OSINT Tool",
+    "command": "pkg install instaghost",
+    "keywords": "apt package instaghost"
+  },
+  {
+    "kind": "package",
+    "title": "instajack",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "Instagram old account jacker",
+    "command": "pkg install instajack",
+    "keywords": "apt package instajack"
+  },
+  {
+    "kind": "package",
+    "title": "ip-changer",
+    "url": "packages.html",
+    "category": "System Tools",
+    "text": "A powerful and easy-to-use tool to change your IP address automatically",
+    "command": "pkg install ip-changer",
+    "keywords": "apt package ip-changer"
+  },
+  {
+    "kind": "package",
+    "title": "ipinfo",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Ip address information gathering tool for termux",
+    "command": "pkg install ipinfo",
+    "keywords": "apt package ipinfo"
+  },
+  {
+    "kind": "package",
+    "title": "iplookup",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Ip address info gethering script..",
+    "command": "pkg install iplookup",
+    "keywords": "apt package iplookup"
+  },
+  {
+    "kind": "package",
+    "title": "john",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "John the Ripper password cracker",
+    "command": "pkg install john",
+    "keywords": "apt package john"
+  },
+  {
+    "kind": "package",
+    "title": "jsql",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "Lightweight database information finder from a server",
+    "command": "pkg install jsql",
+    "keywords": "apt package jsql"
+  },
+  {
+    "kind": "package",
+    "title": "jwt-hack",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "JWT security testing and exploitation tool",
+    "command": "pkg install jwt-hack",
+    "keywords": "apt package jwt-hack"
+  },
+  {
+    "kind": "package",
+    "title": "katana",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Fast, passive and active web crawler",
+    "command": "pkg install katana",
+    "keywords": "apt package katana"
+  },
+  {
+    "kind": "package",
+    "title": "kerbrute",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "Kerberos brute force and enumeration tool",
+    "command": "pkg install kerbrute",
+    "keywords": "apt package kerbrute"
+  },
+  {
+    "kind": "package",
+    "title": "keysigner",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "APK signing tool for Termux",
+    "command": "pkg install keysigner",
+    "keywords": "apt package keysigner"
+  },
+  {
+    "kind": "package",
+    "title": "kimi-code",
+    "url": "packages.html",
+    "category": "AI & Productivity",
+    "text": "AI-powered coding assistant for the terminal",
+    "command": "pkg install kimi-code",
+    "keywords": "apt package kimi-code"
+  },
+  {
+    "kind": "package",
+    "title": "knockpy",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "Subdomain enumeration and reconnaissance tool",
+    "command": "pkg install knockpy",
+    "keywords": "apt package knockpy"
+  },
+  {
+    "kind": "package",
+    "title": "lazyvim",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Modern Neovim configuration framework",
+    "command": "pkg install lazyvim",
+    "keywords": "apt package lazyvim"
+  },
+  {
+    "kind": "package",
+    "title": "linkwizard",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Powerful profile link finder for Termux",
+    "command": "pkg install linkwizard",
+    "keywords": "apt package linkwizard"
+  },
+  {
+    "kind": "package",
+    "title": "local2onion",
+    "url": "packages.html",
+    "category": "Defensive Tools",
+    "text": "Expose your localhost on the DARKWEB using termux",
+    "command": "pkg install local2onion",
+    "keywords": "apt package local2onion"
+  },
+  {
+    "kind": "package",
+    "title": "locateme",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Live location tracker using google maps",
+    "command": "pkg install locateme",
+    "keywords": "apt package locateme"
+  },
+  {
+    "kind": "package",
+    "title": "lunarvim",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "IDE layer for Neovim with sane defaults",
+    "command": "pkg install lunarvim",
+    "keywords": "apt package lunarvim"
+  },
+  {
+    "kind": "package",
+    "title": "maigret",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "OSINT username search tool with 3000+ sites",
+    "command": "pkg install maigret",
+    "keywords": "apt package maigret"
+  },
+  {
+    "kind": "package",
+    "title": "mantra",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "API key hunter for JS files and web pages",
+    "command": "pkg install mantra",
+    "keywords": "apt package mantra"
+  },
+  {
+    "kind": "package",
+    "title": "maskme",
+    "url": "packages.html",
+    "category": "Defensive Tools",
+    "text": "Give a Mask to Phishing URL like a PRO",
+    "command": "pkg install maskme",
+    "keywords": "apt package maskme"
+  },
+  {
+    "kind": "package",
+    "title": "medusa",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "Parallel network login brute-forcer",
+    "command": "pkg install medusa",
+    "keywords": "apt package medusa"
+  },
+  {
+    "kind": "package",
+    "title": "metabigor",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "OSINT tool without API keys",
+    "command": "pkg install metabigor",
+    "keywords": "apt package metabigor"
+  },
+  {
+    "kind": "package",
+    "title": "metasploit-framework",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "Penetration testing framework",
+    "command": "pkg install metasploit-framework",
+    "keywords": "apt package metasploit-framework"
+  },
+  {
+    "kind": "package",
+    "title": "mimocode",
+    "url": "packages.html",
+    "category": "AI & Productivity",
+    "text": "AI‑powered coding assistant (glibc wrapper for Termux)",
+    "command": "pkg install mimocode",
+    "keywords": "apt package mimocode"
+  },
+  {
+    "kind": "package",
+    "title": "mkwebapp",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Tool to create Termux .deb packages for websites",
+    "command": "pkg install mkwebapp",
+    "keywords": "apt package mkwebapp"
+  },
+  {
+    "kind": "package",
+    "title": "mmx-cli",
+    "url": "packages.html",
+    "category": "AI & Productivity",
+    "text": "CLI tool for MiniMax AI",
+    "command": "pkg install mmx-cli",
+    "keywords": "apt package mmx-cli"
+  },
+  {
+    "kind": "package",
+    "title": "morphshell",
+    "url": "packages.html",
+    "category": "System Tools",
+    "text": "Sleek Termux Shell Environment with Dynamic Themes",
+    "command": "pkg install morphshell",
+    "keywords": "apt package morphshell"
+  },
+  {
+    "kind": "package",
+    "title": "mtcr-apply",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "MTCR Patch Application Tool for Android APKs",
+    "command": "pkg install mtcr-apply",
+    "keywords": "apt package mtcr-apply"
+  },
+  {
+    "kind": "package",
+    "title": "naabu",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Fast port scanner written in Go",
+    "command": "pkg install naabu",
+    "keywords": "apt package naabu"
+  },
+  {
+    "kind": "package",
+    "title": "nethunter-cli",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Kali NetHunter Rootless Edition CLI",
+    "command": "pkg install nethunter-cli",
+    "keywords": "apt package nethunter-cli"
+  },
+  {
+    "kind": "package",
+    "title": "ngrok",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "Secure tunnels to localhost",
+    "command": "pkg install ngrok",
+    "keywords": "apt package ngrok"
+  },
+  {
+    "kind": "package",
+    "title": "nikto",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "Comprehensive web server scanner",
+    "command": "pkg install nikto",
+    "keywords": "apt package nikto"
+  },
+  {
+    "kind": "package",
+    "title": "nuclei",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Fast and customizable vulnerability scanner",
+    "command": "pkg install nuclei",
+    "keywords": "apt package nuclei"
+  },
+  {
+    "kind": "package",
+    "title": "numinfo",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Phone number intelligence and lookup tool",
+    "command": "pkg install numinfo",
+    "keywords": "apt package numinfo"
+  },
+  {
+    "kind": "package",
+    "title": "nvchad",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Neovim Configuration Framework",
+    "command": "pkg install nvchad",
+    "keywords": "apt package nvchad"
+  },
+  {
+    "kind": "package",
+    "title": "onionsearch",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Scrape .onion URLs from various Tor search engines",
+    "command": "pkg install onionsearch",
+    "keywords": "apt package onionsearch"
+  },
+  {
+    "kind": "package",
+    "title": "openbullet",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "A tool for running openbullet configurations",
+    "command": "pkg install openbullet",
+    "keywords": "apt package openbullet"
+  },
+  {
+    "kind": "package",
+    "title": "openbullet2",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Cross-platform automation suite powered by .NET Core",
+    "command": "pkg install openbullet2",
+    "keywords": "apt package openbullet2"
+  },
+  {
+    "kind": "package",
+    "title": "openclaude",
+    "url": "packages.html",
+    "category": "AI & Productivity",
+    "text": "Open‑source coding‑agent CLI for cloud and local LLMs",
+    "command": "pkg install openclaude",
+    "keywords": "apt package openclaude"
+  },
+  {
+    "kind": "package",
+    "title": "opencode",
+    "url": "packages.html",
+    "category": "AI & Productivity",
+    "text": "AI‑powered coding assistant (glibc version)",
+    "command": "pkg install opencode",
+    "keywords": "apt package opencode"
+  },
+  {
+    "kind": "package",
+    "title": "pairip",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "PairIP Protection Removal Tool",
+    "command": "pkg install pairip",
+    "keywords": "apt package pairip"
+  },
+  {
+    "kind": "package",
+    "title": "pandora",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "open source osint tool",
+    "command": "pkg install pandora",
+    "keywords": "apt package pandora"
+  },
+  {
+    "kind": "package",
+    "title": "paramspider",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Parameter discovery suite for web applications",
+    "command": "pkg install paramspider",
+    "keywords": "apt package paramspider"
+  },
+  {
+    "kind": "package",
+    "title": "parrot-cli",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Parrot Security OS 6.3 (Lorikeet) for Termux",
+    "command": "pkg install parrot-cli",
+    "keywords": "apt package parrot-cli"
+  },
+  {
+    "kind": "package",
+    "title": "pdfcracker",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "A powerful yet simple PDF password recovery tool designed for security professionals and ethical hackers.",
+    "command": "pkg install pdfcracker",
+    "keywords": "apt package pdfcracker"
+  },
+  {
+    "kind": "package",
+    "title": "phishmailer",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "Professional Phishing Email Generation Tool",
+    "command": "pkg install phishmailer",
+    "keywords": "apt package phishmailer"
+  },
+  {
+    "kind": "package",
+    "title": "phoneinfo",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Phone number lookup tool for termux",
+    "command": "pkg install phoneinfo",
+    "keywords": "apt package phoneinfo"
+  },
+  {
+    "kind": "package",
+    "title": "phoneinfoga",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Phone number intelligence framework",
+    "command": "pkg install phoneinfoga",
+    "keywords": "apt package phoneinfoga"
+  },
+  {
+    "kind": "package",
+    "title": "phoneintel",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Phone number intelligence and validation tool",
+    "command": "pkg install phoneintel",
+    "keywords": "apt package phoneintel"
+  },
+  {
+    "kind": "package",
+    "title": "phonesploit-pro",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "Android hacking tool with ADB",
+    "command": "pkg install phonesploit-pro",
+    "keywords": "apt package phonesploit-pro"
+  },
+  {
+    "kind": "package",
+    "title": "photon",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Lightweight web crawler for OSINT and reconnaissance",
+    "command": "pkg install photon",
+    "keywords": "apt package photon"
+  },
+  {
+    "kind": "package",
+    "title": "pip-basic-depends",
+    "url": "packages.html",
+    "category": "Data Analysis",
+    "text": "Essential build dependencies for Python packages",
+    "command": "pkg install pip-basic-depends",
+    "keywords": "apt package pip-basic-depends"
+  },
+  {
+    "kind": "package",
+    "title": "pkiller",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "Automated PairIP License Removal Tool for Android APKs",
+    "command": "pkg install pkiller",
+    "keywords": "apt package pkiller"
+  },
+  {
+    "kind": "package",
+    "title": "playit",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "Global Proxy for Server Hosting Without Port Forwarding",
+    "command": "pkg install playit",
+    "keywords": "apt package playit"
+  },
+  {
+    "kind": "package",
+    "title": "powerdos",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "A multi-threaded Denial of Service tool made in Python",
+    "command": "pkg install powerdos",
+    "keywords": "apt package powerdos"
+  },
+  {
+    "kind": "package",
+    "title": "pptool",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "Python tool to find the loading addresses of Dart objects in libapp.so through their pool pointer offset.",
+    "command": "pkg install pptool",
+    "keywords": "apt package pptool"
+  },
+  {
+    "kind": "package",
+    "title": "publiceye",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Comprehensive OSINT Tool for Information Lookup",
+    "command": "pkg install publiceye",
+    "keywords": "apt package publiceye"
+  },
+  {
+    "kind": "package",
+    "title": "python-pandas",
+    "url": "packages.html",
+    "category": "Data Analysis",
+    "text": "Powerhouse data analysis toolkit",
+    "command": "pkg install python-pandas",
+    "keywords": "apt package python-pandas"
+  },
+  {
+    "kind": "package",
+    "title": "pywhat",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Identify anything - text analysis tool",
+    "command": "pkg install pywhat",
+    "keywords": "apt package pywhat"
+  },
+  {
+    "kind": "package",
+    "title": "qdl",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "Qualcomm Download Tool (QDL) for EDL flashing",
+    "command": "pkg install qdl",
+    "keywords": "apt package qdl"
+  },
+  {
+    "kind": "package",
+    "title": "qsreplace",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Accept URLs on stdin, replace all query string values with a user-supplied value",
+    "command": "pkg install qsreplace",
+    "keywords": "apt package qsreplace"
+  },
+  {
+    "kind": "package",
+    "title": "random-banner",
+    "url": "packages.html",
+    "category": "Text & Utilities",
+    "text": "random banner and quote",
+    "command": "pkg install random-banner",
+    "keywords": "apt package random-banner"
+  },
+  {
+    "kind": "package",
+    "title": "rang3r",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Multi-threaded IP + port scanner",
+    "command": "pkg install rang3r",
+    "keywords": "apt package rang3r"
+  },
+  {
+    "kind": "package",
+    "title": "ransomux",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "Ramsomware making tool",
+    "command": "pkg install ransomux",
+    "keywords": "apt package ransomux"
+  },
+  {
+    "kind": "package",
+    "title": "reaver",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "Brute force WPS PINs and recover WPA/WPA2 passphrases",
+    "command": "pkg install reaver",
+    "keywords": "apt package reaver"
+  },
+  {
+    "kind": "package",
+    "title": "redhawk",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "All in one tool for Information Gathering, Vulnerability Scanning and Crawling",
+    "command": "pkg install redhawk",
+    "keywords": "apt package redhawk"
+  },
+  {
+    "kind": "package",
+    "title": "rkpairip",
+    "url": "packages.html",
+    "category": "Reverse Engineering",
+    "text": "Remove Pairip Protection and Rebuild APKs",
+    "command": "pkg install rkpairip",
+    "keywords": "apt package rkpairip"
+  },
+  {
+    "kind": "package",
+    "title": "ruby-curb",
+    "url": "packages.html",
+    "category": "System Tools",
+    "text": "Ruby bindings for libcurl",
+    "command": "pkg install ruby-curb",
+    "keywords": "apt package ruby-curb"
+  },
+  {
+    "kind": "package",
+    "title": "ruby-ethon",
+    "url": "packages.html",
+    "category": "System Tools",
+    "text": "Ruby HTTP client library (libcurl wrapper)",
+    "command": "pkg install ruby-ethon",
+    "keywords": "apt package ruby-ethon"
+  },
+  {
+    "kind": "package",
+    "title": "ruby-nokogiri",
+    "url": "packages.html",
+    "category": "System Tools",
+    "text": "Ruby gem for HTML/XML parsing (system libraries version)",
+    "command": "pkg install ruby-nokogiri",
+    "keywords": "apt package ruby-nokogiri"
+  },
+  {
+    "kind": "package",
+    "title": "scanqli",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "SQL injection scanner and vulnerability detection tool",
+    "command": "pkg install scanqli",
+    "keywords": "apt package scanqli"
+  },
+  {
+    "kind": "package",
+    "title": "secretfinder",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Discover sensitive data (API keys, access tokens, JWT, etc.) in JavaScript files",
+    "command": "pkg install secretfinder",
+    "keywords": "apt package secretfinder"
+  },
+  {
+    "kind": "package",
+    "title": "setoolkit",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "Social Engineering Toolkit",
+    "command": "pkg install setoolkit",
+    "keywords": "apt package setoolkit"
+  },
+  {
+    "kind": "package",
+    "title": "shark",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "Future of Phishing with less delay",
+    "command": "pkg install shark",
+    "keywords": "apt package shark"
+  },
+  {
+    "kind": "package",
+    "title": "shellcrypt",
+    "url": "packages.html",
+    "category": "System Tools",
+    "text": "Professional code obfuscation tool for Bash and Python",
+    "command": "pkg install shellcrypt",
+    "keywords": "apt package shellcrypt"
+  },
+  {
+    "kind": "package",
+    "title": "sherlock",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Hunt down social media accounts by username",
+    "command": "pkg install sherlock",
+    "keywords": "apt package sherlock"
+  },
+  {
+    "kind": "package",
+    "title": "shorturl",
+    "url": "packages.html",
+    "category": "Defensive Tools",
+    "text": "URL shortner for termux",
+    "command": "pkg install shorturl",
+    "keywords": "apt package shorturl"
+  },
+  {
+    "kind": "package",
+    "title": "silverinstaeye",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Instagram information gathering tool",
+    "command": "pkg install silverinstaeye",
+    "keywords": "apt package silverinstaeye"
+  },
+  {
+    "kind": "package",
+    "title": "slowhttptest",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "Application Layer Denial of Service attack simulator",
+    "command": "pkg install slowhttptest",
+    "keywords": "apt package slowhttptest"
+  },
+  {
+    "kind": "package",
+    "title": "sms-stealer",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "Silent SMS interceptor via Telegram bot",
+    "command": "pkg install sms-stealer",
+    "keywords": "apt package sms-stealer"
+  },
+  {
+    "kind": "package",
+    "title": "snatcher",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "Snatcher - Capture Images from Victim's Camera",
+    "command": "pkg install snatcher",
+    "keywords": "apt package snatcher"
+  },
+  {
+    "kind": "package",
+    "title": "snoop",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Information gathering tool using online resources",
+    "command": "pkg install snoop",
+    "keywords": "apt package snoop"
+  },
+  {
+    "kind": "package",
+    "title": "spider",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "telegram autoreport script",
+    "command": "pkg install spider",
+    "keywords": "apt package spider"
+  },
+  {
+    "kind": "package",
+    "title": "sploitscan",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Exploit Intelligence Gathering and Analysis Tool",
+    "command": "pkg install sploitscan",
+    "keywords": "apt package sploitscan"
+  },
+  {
+    "kind": "package",
+    "title": "spurt",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "HTTP stress testing tool that can overload web servers.",
+    "command": "pkg install spurt",
+    "keywords": "apt package spurt"
+  },
+  {
+    "kind": "package",
+    "title": "sqlmap",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "Automatic SQL Injection and Database Takeover Tool",
+    "command": "pkg install sqlmap",
+    "keywords": "apt package sqlmap"
+  },
+  {
+    "kind": "package",
+    "title": "sqlscan",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "A small and an efficient tool to find SQL injection vulnerability in a websites.",
+    "command": "pkg install sqlscan",
+    "keywords": "apt package sqlscan"
+  },
+  {
+    "kind": "package",
+    "title": "storm-breaker",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "Social Engineering Toolkit",
+    "command": "pkg install storm-breaker",
+    "keywords": "apt package storm-breaker"
+  },
+  {
+    "kind": "package",
+    "title": "subcat",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Lightning-fast Passive Subdomain Discovery Tool",
+    "command": "pkg install subcat",
+    "keywords": "apt package subcat"
+  },
+  {
+    "kind": "package",
+    "title": "subfinder",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Fast passive subdomain enumeration tool",
+    "command": "pkg install subfinder",
+    "keywords": "apt package subfinder"
+  },
+  {
+    "kind": "package",
+    "title": "subjack",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Subdomain Takeover tool written in Go",
+    "command": "pkg install subjack",
+    "keywords": "apt package subjack"
+  },
+  {
+    "kind": "package",
+    "title": "subzy",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Subdomain takeover vulnerability scanner",
+    "command": "pkg install subzy",
+    "keywords": "apt package subzy"
+  },
+  {
+    "kind": "package",
+    "title": "superfile",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Terminal file manager with modern features",
+    "command": "pkg install superfile",
+    "keywords": "apt package superfile"
+  },
+  {
+    "kind": "package",
+    "title": "takeover",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Subdomain takeover detection tool",
+    "command": "pkg install takeover",
+    "keywords": "apt package takeover"
+  },
+  {
+    "kind": "package",
+    "title": "term-helper",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Terminal command helper and cheatsheet tool",
+    "command": "pkg install term-helper",
+    "keywords": "apt package term-helper"
+  },
+  {
+    "kind": "package",
+    "title": "termsploit",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "Pentesting framework for Termux",
+    "command": "pkg install termsploit",
+    "keywords": "apt package termsploit"
+  },
+  {
+    "kind": "package",
+    "title": "termux-ai",
+    "url": "packages.html",
+    "category": "AI & Productivity",
+    "text": "Interactive AI Assistant for Termux",
+    "command": "pkg install termux-ai",
+    "keywords": "apt package termux-ai"
+  },
+  {
+    "kind": "package",
+    "title": "termux-desktop",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "termux xfce4 desktop gui with Hacker themes and icona",
+    "command": "pkg install termux-desktop",
+    "keywords": "apt package termux-desktop"
+  },
+  {
+    "kind": "package",
+    "title": "termux-desktop-wallpapers",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Wallpapers for termux-desktop",
+    "command": "pkg install termux-desktop-wallpapers",
+    "keywords": "apt package termux-desktop-wallpapers"
+  },
+  {
+    "kind": "package",
+    "title": "termux-media-downloader",
+    "url": "packages.html",
+    "category": "AI & Productivity",
+    "text": "A high-performance media downloader for Termux",
+    "command": "pkg install termux-media-downloader",
+    "keywords": "apt package termux-media-downloader"
+  },
+  {
+    "kind": "package",
+    "title": "termux-penv",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Termux Penv - Simplify Chroot Environments in Termux",
+    "command": "pkg install termux-penv",
+    "keywords": "apt package termux-penv"
+  },
+  {
+    "kind": "package",
+    "title": "termuxfetch",
+    "url": "packages.html",
+    "category": "System Tools",
+    "text": "Neofetch‑like system information tool for Termux",
+    "command": "pkg install termuxfetch",
+    "keywords": "apt package termuxfetch"
+  },
+  {
+    "kind": "package",
+    "title": "thc-hydra",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "Parallelized Login Cracker Supporting Numerous Protocols",
+    "command": "pkg install thc-hydra",
+    "keywords": "apt package thc-hydra"
+  },
+  {
+    "kind": "package",
+    "title": "the-theif",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "A tool that can hijack cookies and transmit them to Telegram using the API.",
+    "command": "pkg install the-theif",
+    "keywords": "apt package the-theif"
+  },
+  {
+    "kind": "package",
+    "title": "theharvester",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "E-mail, Subdomain, and Name Harvester",
+    "command": "pkg install theharvester",
+    "keywords": "apt package theharvester"
+  },
+  {
+    "kind": "package",
+    "title": "thezoo",
+    "url": "packages.html",
+    "category": "Malware Analysis",
+    "text": "A repository of live malware samples",
+    "command": "pkg install thezoo",
+    "keywords": "apt package thezoo"
+  },
+  {
+    "kind": "package",
+    "title": "tookie-osint",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "OSINT tool for username search across platforms",
+    "command": "pkg install tookie-osint",
+    "keywords": "apt package tookie-osint"
+  },
+  {
+    "kind": "package",
+    "title": "trufflehog",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Find leaked credentials and secrets in code and data",
+    "command": "pkg install trufflehog",
+    "keywords": "apt package trufflehog"
+  },
+  {
+    "kind": "package",
+    "title": "tte",
+    "url": "packages.html",
+    "category": "System Tools",
+    "text": "Terminal Text Effects and Animation Library",
+    "command": "pkg install tte",
+    "keywords": "apt package tte"
+  },
+  {
+    "kind": "package",
+    "title": "unfurl",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Pull out bits of URLs provided on stdin",
+    "command": "pkg install unfurl",
+    "keywords": "apt package unfurl"
+  },
+  {
+    "kind": "package",
+    "title": "user-scanner",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "2-in-1 Email & Username OSINT suite",
+    "command": "pkg install user-scanner",
+    "keywords": "apt package user-scanner"
+  },
+  {
+    "kind": "package",
+    "title": "vedic",
+    "url": "packages.html",
+    "category": "Mobile Development",
+    "text": "World's first Sanskrit programming language",
+    "command": "pkg install vedic",
+    "keywords": "apt package vedic"
+  },
+  {
+    "kind": "package",
+    "title": "venom",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "An automated phishing tool for absolute beginners",
+    "command": "pkg install venom",
+    "keywords": "apt package venom"
+  },
+  {
+    "kind": "package",
+    "title": "void-fonts",
+    "url": "packages.html",
+    "category": "Customization",
+    "text": "Custom font collection for Termux",
+    "command": "pkg install void-fonts",
+    "keywords": "apt package void-fonts"
+  },
+  {
+    "kind": "package",
+    "title": "vulnx",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Modern CLI for exploring vulnerability data with powerful search, filtering, and analysis capabilities.",
+    "command": "pkg install vulnx",
+    "keywords": "apt package vulnx"
+  },
+  {
+    "kind": "package",
+    "title": "wacli",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Command-line tool for WhatsApp chat management",
+    "command": "pkg install wacli",
+    "keywords": "apt package wacli"
+  },
+  {
+    "kind": "package",
+    "title": "wafw00f",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Web Application Firewall detection tool",
+    "command": "pkg install wafw00f",
+    "keywords": "apt package wafw00f"
+  },
+  {
+    "kind": "package",
+    "title": "waybackurls",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Fetch known URLs from Wayback Machine archives",
+    "command": "pkg install waybackurls",
+    "keywords": "apt package waybackurls"
+  },
+  {
+    "kind": "package",
+    "title": "waymap",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Fast Web Vulnerability Scanner and Security Testing Toolkit",
+    "command": "pkg install waymap",
+    "keywords": "apt package waymap"
+  },
+  {
+    "kind": "package",
+    "title": "webhost",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "Serve local directories and expose via tunnels",
+    "command": "pkg install webhost",
+    "keywords": "apt package webhost"
+  },
+  {
+    "kind": "package",
+    "title": "webinfo",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "Website information gathering",
+    "command": "pkg install webinfo",
+    "keywords": "apt package webinfo"
+  },
+  {
+    "kind": "package",
+    "title": "webserver",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "a simple webserver for termux",
+    "command": "pkg install webserver",
+    "keywords": "apt package webserver"
+  },
+  {
+    "kind": "package",
+    "title": "websploit",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "Advanced MITM framework.",
+    "command": "pkg install websploit",
+    "keywords": "apt package websploit"
+  },
+  {
+    "kind": "package",
+    "title": "weeman",
+    "url": "packages.html",
+    "category": "Social Engineering",
+    "text": "HTTP server for phishing in python2",
+    "command": "pkg install weeman",
+    "keywords": "apt package weeman"
+  },
+  {
+    "kind": "package",
+    "title": "whatbreach",
+    "url": "packages.html",
+    "category": "Information Gathering",
+    "text": "OSINT tool to discover email breaches",
+    "command": "pkg install whatbreach",
+    "keywords": "apt package whatbreach"
+  },
+  {
+    "kind": "package",
+    "title": "whatsapp-cli",
+    "url": "packages.html",
+    "category": "Miscellaneous Utilities",
+    "text": "Standalone CLI for WhatsApp using multidevice protocol",
+    "command": "pkg install whatsapp-cli",
+    "keywords": "apt package whatsapp-cli"
+  },
+  {
+    "kind": "package",
+    "title": "wipwn",
+    "url": "packages.html",
+    "category": "Attack Tools",
+    "text": "Fast automated WiFi WPS PIN cracking tool",
+    "command": "pkg install wipwn",
+    "keywords": "apt package wipwn"
+  },
+  {
+    "kind": "package",
+    "title": "wordlists",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "Security wordlists collection (rockyou.txt + SecLists subset).",
+    "command": "pkg install wordlists",
+    "keywords": "apt package wordlists"
+  },
+  {
+    "kind": "package",
+    "title": "wpscan",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "WordPress vulnerability scanner",
+    "command": "pkg install wpscan",
+    "keywords": "apt package wpscan"
+  },
+  {
+    "kind": "package",
+    "title": "xbomber",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "A High-Performance SMS Bombing Tool for Educational Testing",
+    "command": "pkg install xbomber",
+    "keywords": "apt package xbomber"
+  },
+  {
+    "kind": "package",
+    "title": "xss-loader",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "XSS payload generator and loader tool",
+    "command": "pkg install xss-loader",
+    "keywords": "apt package xss-loader"
+  },
+  {
+    "kind": "package",
+    "title": "xsstrike",
+    "url": "packages.html",
+    "category": "Reconnaissance & Scanning",
+    "text": "Advanced XSS Detection and Exploitation Suite",
+    "command": "pkg install xsstrike",
+    "keywords": "apt package xsstrike"
+  },
+  {
+    "kind": "package",
+    "title": "zaproxy",
+    "url": "packages.html",
+    "category": "Web Security & Tunneling",
+    "text": "OWASP Zed Attack Proxy",
+    "command": "pkg install zaproxy",
+    "keywords": "apt package zaproxy"
+  },
+  {
+    "kind": "package",
+    "title": "zen-c",
+    "url": "packages.html",
+    "category": "Mobile Development",
+    "text": "High-level Systems Programming Language compiling to C",
+    "command": "pkg install zen-c",
+    "keywords": "apt package zen-c"
+  },
+  {
+    "kind": "package",
+    "title": "zero-termux",
+    "url": "packages.html",
+    "category": "Miscellaneous",
+    "text": "Zero-Termux package manager and system helper",
+    "command": "pkg install zero-termux",
+    "keywords": "apt package zero-termux"
+  },
+  {
+    "kind": "package",
+    "title": "zero-termux-theme",
+    "url": "packages.html",
+    "category": "Customization",
+    "text": "Professional terminal customization for Termux",
+    "command": "pkg install zero-termux-theme",
+    "keywords": "apt package zero-termux-theme"
+  },
+  {
+    "kind": "package",
+    "title": "zipcracker",
+    "url": "packages.html",
+    "category": "Password Tools",
+    "text": "A powerful yet simple ZIP archive password recovery tool designed for Termux",
+    "command": "pkg install zipcracker",
+    "keywords": "apt package zipcracker"
+  },
+  {
+    "kind": "page",
+    "title": "Command reference",
+    "url": "docs.html#commands",
+    "text": "Documentation",
+    "keywords": "docs guide page docs"
+  },
+  {
+    "kind": "page",
+    "title": "Modules",
+    "url": "docs.html#modules",
+    "text": "Documentation",
+    "keywords": "docs guide page docs"
+  },
+  {
+    "kind": "page",
+    "title": "APT package repository",
+    "url": "docs.html#packages",
+    "text": "Documentation",
+    "keywords": "docs guide page docs"
+  },
+  {
+    "kind": "page",
+    "title": "APT repository & signing",
+    "url": "architecture.html#workflows",
+    "text": "Architecture",
+    "keywords": "docs guide page architecture"
+  }
+]

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search — Zero-Termux</title>
+<meta name="description" content="Search the Zero-Termux docs: commands, tools, modules, packages and guides in one place.">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="diamond">◈</span> Zero-Termux</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="docs.html">Docs</a>
+      <a href="commands.html">Commands</a>
+      <a href="modules.html">Modules</a>
+      <a href="packages.html">Packages</a>
+      <a href="guides.html">Guides</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="contributing.html">Contributing</a>
+      <a href="security.html">Security</a>
+      <a href="about.html">About</a>
+      <a href="search.html">Search</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap" data-site-search>
+  <div class="page-head">
+    <div class="crumb">/ search</div>
+    <h1>Search the docs</h1>
+    <p>Searches commands, tools, modules, APT packages and documentation pages from a generated index (<span class="mono">site/data/search.json</span>). Results rank title and command matches first.</p>
+  </div>
+
+  <div class="searchbar" style="max-width:100%; margin-top:1.6rem">
+    <span class="icon" aria-hidden="true">⌕</span>
+    <input type="search" placeholder="Try “opencode”, “search”, “zaproxy”, “signing”, “postgres”…" aria-label="Search the docs" style="font-size:1rem; padding:0.35rem 0">
+  </div>
+  <p class="search-meta" aria-live="polite"></p>
+
+  <div class="search-results" style="margin-top:1.4rem"></div>
+</div>
+
+<footer>
+  <div class="mono">◈ Zero-Termux — modular dev environment &amp; APT repository for Termux</div>
+  <div><a href="https://github.com/Vaizer0/zero-termux">github.com/Vaizer0/zero-termux</a> · MIT · © <span data-year>2026</span></div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
