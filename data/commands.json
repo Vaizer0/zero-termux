@@ -121,93 +121,107 @@
     "args": [
       [
         "target",
-        "site anchor: zero, help, zero-termux, or a module (ai, lang, …)"
+        "`zero`, `help` or `zero-termux` for the site; a module name (ai, lang, db, editor, dev, npm, shell, ui, auto) to anchor to its section"
       ]
     ],
     "examples": [
       "zero open",
-      "zero open ai"
+      "zero open ai",
+      "zero open zero-termux"
     ],
-    "notes": "Opens the GitHub Pages site; module targets anchor to the homepage sections."
+    "notes": "With no target it prints help. Requires Termux:API (`termux-open-url`); module targets open the homepage section, e.g. https://vaizer0.github.io/zero-termux/#ai."
   },
   {
     "name": "init",
-    "summary": "Configure an existing project.",
-    "syntax": "zero init <template>",
+    "summary": "Configure an existing project with a scaffold.",
+    "syntax": "zero init [template]",
     "args": [
       [
         "template",
-        "project template, e.g. next, react"
+        "next | react | nest | express (run with no template to auto-detect from package.json)"
       ]
     ],
     "examples": [
-      "zero init next"
+      "zero init next",
+      "zero init react",
+      "zero init nest",
+      "zero init express"
     ],
-    "notes": "Run inside the project directory."
+    "notes": "Run inside a project that already has package.json. Adds optional dependencies, folder structure, Prettier, and .env.example interactively; detects the package manager from lockfiles."
   },
   {
     "name": "brain",
-    "summary": "Second brain — save, search, and manage memories.",
-    "syntax": "zero brain <subcommand>",
+    "summary": "Second brain — save, search, link, and sync memories.",
+    "syntax": "zero brain <subcommand> [args]",
     "args": [
       [
         "subcommand",
-        "init, save, search (and dashboard views)"
+        "init, save, search [query], ls/list [category], edit [slug], delete/rm, reset/destroy, relate, show/view <slug>, graph/map, skill/skills, sync"
       ]
     ],
     "examples": [
       "zero brain init",
       "zero brain save",
-      "zero brain search"
+      "zero brain search react",
+      "zero brain ls dev",
+      "zero brain graph",
+      "zero brain sync"
     ],
-    "notes": "Stores memories locally (and optionally a GitHub repo on init)."
+    "notes": "Memories are markdown files with tags, category, and relations. init optionally creates a private GitHub repo (zero-termux-brain) for sync."
   },
   {
     "name": "env",
     "summary": "Manage user-scoped environment variables.",
-    "syntax": "zero env <set|unset|ls> [-key value]",
+    "syntax": "zero env <set|unset|ls>",
     "args": [
       [
         "subcommand",
-        "set, unset, ls"
+        "set (interactive), unset (interactive), ls | list"
       ]
     ],
     "examples": [
-      "zero env set KEY value",
-      "zero env unset KEY",
-      "zero env ls"
+      "zero env set",
+      "zero env unset",
+      "zero env ls",
+      "zero env list"
     ],
-    "notes": "Variables are stored per-user and loaded into the shell session."
+    "notes": "set and unset prompt for input interactively — they take no arguments. Variables are written as `export KEY=value` lines to ~/.zshrc (or ~/.bashrc if zsh is absent); source the rc file to apply."
   },
   {
     "name": "pg",
     "summary": "PostgreSQL database manager.",
-    "syntax": "zero pg <command>",
+    "syntax": "zero pg <command> [db-name]",
     "args": [
       [
         "command",
-        "start, stop, restart (and related server commands)"
+        "init, start, stop, restart, status, create <db>, drop <db>, list | ls, shell | psql"
       ]
     ],
     "examples": [
-      "zero pg start"
+      "zero pg init",
+      "zero pg start",
+      "zero pg status",
+      "zero pg create mydb",
+      "zero pg shell"
     ],
-    "notes": "Manages the local Termux PostgreSQL instance."
+    "notes": "Requires PostgreSQL (`zero install db --postgresql`). Manages the local Termux instance on localhost:5432."
   },
   {
     "name": "voice",
     "summary": "Speech-to-agent — record voice, review in nvim, send to an AI agent.",
-    "syntax": "zero voice [agent]",
+    "syntax": "zero voice <agent>",
     "args": [
       [
         "agent",
-        "opencode | claude-code (default opencode)"
+        "opencode, qoder, claude-code, codex, gemini-cli, hermes-agent, kilocode-cli, kimi-code, mimocode, mistral-vibe, openclaude, pi, qwen-code, or text/`!` to print the prompt"
       ]
     ],
     "examples": [
-      "zero voice",
-      "zero voice claude-code"
+      "zero voice opencode",
+      "zero voice qoder",
+      "zero voice claude-code",
+      "zero voice text"
     ],
-    "notes": "Requires a microphone and a terminal audio solution on Termux."
+    "notes": "An agent argument is required — bare `zero voice` prints help. Requires Termux:API (pkg termux-api + app) and neovim (`zero install editor`). Captures speech, lets you fix the text in nvim, copies it to the clipboard, and runs the agent."
   }
 ]

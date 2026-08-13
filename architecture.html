@@ -24,6 +24,7 @@
       <a href="contributing.html">Contributing</a>
       <a href="security.html">Security</a>
       <a href="about.html">About</a>
+      <a href="search.html">Search</a>
     </div>
   </div>
 </nav>
@@ -36,35 +37,30 @@
   </div>
 
   <h2>Overview</h2>
-  <pre><code>User on Termux
-    │  bash &lt;(curl … install.sh)
-    ▼
-┌─────────────────────────────┐      ┌──────────────────────────┐
-│ Installer (install.sh)      │      │ zero CLI (bash, no       │
-│ deps → dirs → clone →       │───▶  │ runtime deps)            │
-│ symlink → APT repo → config │      │ 13 commands, 9 modules,  │
-└─────────────────────────────┘      │ 99 tool installers       │
-                                     └────────────┬─────────────┘
-                                                  │ zero install &lt;cat&gt;
-                                                  ▼
-                                     tool installers resolve LATEST
-                                     from official npm/pip/GitHub API
-
-┌─────────────────────────────────────────────────────────────────┐
-│ GitHub Actions                                                  │
-│ test.yml        bash -n + validators (packages, branding,       │
-│                 pins, stale URLs, docs links, landing checks)   │
-│ build-repo.yml  dpkg-deb → termux-apt-repo → gpg sign           │
-│                 → assemble _site (site + repo/ + public key)    │
-│ pages.yml       site-only deploy (keep_files preserves /repo)   │
-│ maintenance.yml weekly drift report (justified pins vs latest)  │
-└─────────────────────────────────────────────────────────────────┘
-                            │ deploy gh-pages
-                            ▼
-                  https://vaizer0.github.io/zero-termux/
-                  ├── site pages (docs, explorers)
-                  ├── repo/        (InRelease, signed)
-                  └── zero-termux.gpg (public key)</code></pre>
+  <div class="arch" role="img" aria-label="Diagram: installer bootstraps the zero CLI; the CLI installs tools resolving latest versions; GitHub Actions builds the signed APT repo and site; pages deploy to GitHub Pages.">
+    <div class="arch-node arch-top">User on Termux<br><code>bash &lt;(curl -fsSL …/install.sh)</code></div>
+    <div class="arch-arrow" aria-hidden="true">▼</div>
+    <div class="arch-row">
+      <div class="arch-node"><strong>Installer</strong> (<code>install.sh</code>)<br>deps → dirs → clone → symlink → APT repo → config</div>
+      <div class="arch-arrow horiz" aria-hidden="true">▶</div>
+      <div class="arch-node"><strong>zero CLI</strong> (bash, no runtime deps)<br>13 commands · 9 modules · 99 tool installers</div>
+    </div>
+    <div class="arch-arrow" aria-hidden="true">▼ <code>zero install &lt;cat&gt;</code></div>
+    <div class="arch-node">Tool installers resolve <strong>LATEST</strong><br>from official npm / pip / GitHub API</div>
+    <div class="arch-arrow" aria-hidden="true">▼</div>
+    <div class="arch-node">
+      <strong>GitHub Actions</strong><br>
+      <code>test.yml</code> · validators (packages, branding, pins, stale URLs, docs links, landing)<br>
+      <code>build-repo.yml</code> · dpkg-deb → termux-apt-repo → gpg sign → assemble <code>_site</code><br>
+      <code>pages.yml</code> · site-only deploy (<code>keep_files</code> preserves <code>/repo</code>)<br>
+      <code>maintenance.yml</code> · weekly drift report
+    </div>
+    <div class="arch-arrow" aria-hidden="true">▼ deploy</div>
+    <div class="arch-node arch-end">
+      <strong>https://vaizer0.github.io/zero-termux/</strong><br>
+      site pages (docs, explorers) · <code>repo/</code> (signed InRelease) · <code>zero-termux.gpg</code> (public key)
+    </div>
+  </div>
 
   <h2>Install flow</h2>
   <ol class="steps">
@@ -117,7 +113,7 @@ assets/                        PACKAGES.md + zero-termux.gpg (public key)
 install.sh                     unified installer</code></pre>
 
   <h2>Data flow for the website</h2>
-  <p>The site is data-driven: <span class="mono">python3 scripts/site/generate-data.py</span> scans <span class="mono">zero/cli/commands</span>, <span class="mono">zero/tools/*/*</span>, <span class="mono">packages/*/DEBIAN/control</span> (and the category map in <span class="mono">assets/PACKAGES.md</span>) and writes <span class="mono">site/data/{meta,commands,modules,packages}.json</span>. The explorer pages fetch those JSON files at runtime. Changing tools or packages means regenerating the JSON — CI fails if the site is out of date.</p>
+  <p>The site is data-driven: <span class="mono">python3 scripts/site/generate-data.py</span> scans <span class="mono">zero/cli/commands</span>, <span class="mono">zero/tools/*/*</span>, <span class="mono">packages/*/DEBIAN/control</span> (and the category map in <span class="mono">assets/PACKAGES.md</span>) and writes <span class="mono">site/data/{meta,commands,modules,packages,search}.json</span>. The explorer pages fetch those JSON files at runtime and <span class="mono">search.json</span> powers the <a href="search.html">site search</a>. Changing tools or packages means regenerating the JSON — CI fails if the site is out of date.</p>
 </div>
 
 <footer>

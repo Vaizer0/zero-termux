@@ -12,7 +12,7 @@
 <nav class="nav">
   <div class="nav-inner">
     <a class="brand" href="index.html"><span class="diamond">◈</span> Zero-Termux</a>
-    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="docs.html">Docs</a>
@@ -24,6 +24,7 @@
       <a href="contributing.html">Contributing</a>
       <a href="security.html">Security</a>
       <a href="about.html">About</a>
+      <a href="search.html">Search</a>
     </div>
   </div>
 </nav>
@@ -32,28 +33,34 @@
   <div class="page-head">
     <div class="crumb">/ commands</div>
     <h1>Command reference</h1>
-    <p>All <span class="mono">zero</span> commands, generated from the CLI implementation in <span class="mono">zero/cli/commands/</span>.</p>
+    <p>All <span class="mono">zero</span> commands, generated from the CLI implementation in <span class="mono">zero/cli/commands/</span>. Every command has a copy button — the copied text is exactly the raw command, no markup.</p>
   </div>
 
-  <div class="searchbar">
-    <span class="icon">⌕</span>
-    <input type="text" data-search="commands" placeholder="Filter commands… (e.g. install, brain, open)" aria-label="Filter commands">
+  <div data-explorer="commands">
+    <div class="explorer-tools">
+      <div class="searchbar">
+        <span class="icon" aria-hidden="true">⌕</span>
+        <input type="search" data-search="commands" placeholder="Filter commands… (e.g. install, brain, open)" aria-label="Filter commands">
+        <button type="button" class="clear-search" data-clear="commands" hidden>✕</button>
+      </div>
+      <p class="search-meta" data-meta="commands"></p>
+    </div>
+
+    <div class="explorer-wrap">
+      <div class="explorer-init note"><strong>Loading</strong> Loading command data…</div>
+    </div>
   </div>
-  <p class="search-meta"></p>
 
-  <div class="explorer-init note"><strong>Loading</strong> Loading command data…</div>
-  <div data-explorer="commands"></div>
-
-  <h2 style="margin-top:2rem">Common patterns</h2>
-  <table>
-    <thead><tr><th>Goal</th><th>Command</th></tr></thead>
+  <h2 style="margin-top:2.5rem">Common patterns</h2>
+  <table class="cmd-table">
+    <thead><tr><th>Goal</th><th>Command</th><th aria-label="Copy"></th></tr></thead>
     <tbody>
-      <tr><td>Fresh install</td><td><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh)</code></td></tr>
-      <tr><td>AI tooling</td><td><code>zero install ai --qwen-code --ollama</code></td></tr>
-      <tr><td>Dev essentials</td><td><code>zero install dev --gh --fzf --jq --bat</code></td></tr>
-      <tr><td>Everything updated</td><td><code>zero update zero &amp;&amp; zero update ai &amp;&amp; pkg upgrade</code></td></tr>
-      <tr><td>Recover a broken tool</td><td><code>zero reinstall &lt;module&gt; --&lt;tool&gt;</code></td></tr>
-      <tr><td>APT package</td><td><code>pkg install &lt;name&gt;</code></td></tr>
+      <tr><td>Fresh install</td><td><code>bash &lt;(curl -fsSL https://raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh)</code></td><td><button type="button" class="copy-btn inline" data-copy="bash &lt;(curl -fsSL https://raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh)">COPY</button></td></tr>
+      <tr><td>AI tooling</td><td><code>zero install ai --qwen-code --ollama</code></td><td><button type="button" class="copy-btn inline" data-copy="zero install ai --qwen-code --ollama">COPY</button></td></tr>
+      <tr><td>Dev essentials</td><td><code>zero install dev --gh --fzf --jq --bat</code></td><td><button type="button" class="copy-btn inline" data-copy="zero install dev --gh --fzf --jq --bat">COPY</button></td></tr>
+      <tr><td>Everything updated</td><td><code>zero update zero &amp;&amp; zero update ai &amp;&amp; pkg upgrade</code></td><td><button type="button" class="copy-btn inline" data-copy="zero update zero && zero update ai && pkg upgrade">COPY</button></td></tr>
+      <tr><td>Recover a broken tool</td><td><code>zero reinstall &lt;module&gt; --&lt;tool&gt;</code></td><td><button type="button" class="copy-btn inline" data-copy="zero reinstall &lt;module&gt; --&lt;tool&gt;">COPY</button></td></tr>
+      <tr><td>APT package</td><td><code>pkg install &lt;name&gt;</code></td><td><button type="button" class="copy-btn inline" data-copy="pkg install &lt;name&gt;">COPY</button></td></tr>
     </tbody>
   </table>
 </div>
