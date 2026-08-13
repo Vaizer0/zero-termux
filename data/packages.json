@@ -9,7 +9,7 @@
   },
   {
     "name": "9router",
-    "version": "0.5.35",
+    "version": "0.5.50",
     "description": "Smart gateway between your tools and 60+ AI providers",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "AI & Productivity",
@@ -73,7 +73,7 @@
   },
   {
     "name": "antigravity-cli",
-    "version": "1.1.11",
+    "version": "1.1.12",
     "description": "AI‑powered coding assistant (glibc wrapper for Termux)",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "AI & Productivity",
@@ -153,7 +153,7 @@
   },
   {
     "name": "beef",
-    "version": "0.6.0.0",
+    "version": "0.6.0.0-1",
     "description": "Browser Exploitation Framework",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Social Engineering",
@@ -161,7 +161,7 @@
   },
   {
     "name": "bettercap",
-    "version": "2.41.7",
+    "version": "2.41.7-1",
     "description": "Swiss army knife for network attacks and monitoring",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Attack Tools",
@@ -281,7 +281,7 @@
   },
   {
     "name": "cdxsummary",
-    "version": "0.1.1",
+    "version": "0.1.1b5",
     "description": "CDX summary and analysis tool",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -297,7 +297,7 @@
   },
   {
     "name": "claude-code",
-    "version": "2.1.220",
+    "version": "2.1.229",
     "description": "Claude Code - AI coding assistant by Anthropic",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "AI & Productivity",
@@ -321,7 +321,7 @@
   },
   {
     "name": "copilot-cli",
-    "version": "1.0.78",
+    "version": "1.0.79",
     "description": "GitHub Copilot CLI (glibc version)",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "AI & Productivity",
@@ -329,7 +329,7 @@
   },
   {
     "name": "cronitor-cli",
-    "version": "31.6",
+    "version": "33.4",
     "description": "Command Line Interface for Cronitor Monitoring",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Miscellaneous Utilities",
@@ -353,7 +353,7 @@
   },
   {
     "name": "dalfox",
-    "version": "3.2.0",
+    "version": "3.2.0-1",
     "description": "Fast parameter analysis and XSS scanning tool (v3 in Rust)",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -409,7 +409,7 @@
   },
   {
     "name": "dnsx",
-    "version": "1.2.2",
+    "version": "1.3.0",
     "description": "Fast DNS toolkit for reconnaissance",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -425,7 +425,7 @@
   },
   {
     "name": "dpt-shell",
-    "version": "2.15.0",
+    "version": "2.19.0",
     "description": "DPT Shell - Dex Protection Tool Shell dpt-shell is an Android Dex protection shell that hollows out Dex method implementations and reconstructs them at runtime.",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reverse Engineering",
@@ -489,7 +489,7 @@
   },
   {
     "name": "ffuf",
-    "version": "2.2.1",
+    "version": "2.2.1-1",
     "description": "Fast web fuzzer written in Go",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -513,7 +513,7 @@
   },
   {
     "name": "fscan",
-    "version": "2.1.3",
+    "version": "2.2.0",
     "description": "Intranet penetration test tool for scanning vulnerabilities",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -553,7 +553,7 @@
   },
   {
     "name": "ghidra",
-    "version": "12.0.4",
+    "version": "12.1.2.build",
     "description": "NSA Reverse Engineering Framework",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reverse Engineering",
@@ -569,7 +569,7 @@
   },
   {
     "name": "gitleaks",
-    "version": "8.30.1",
+    "version": "8.30.1-1",
     "description": "Detect hard-coded secrets and sensitive data in Git repositories",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -593,7 +593,7 @@
   },
   {
     "name": "goshs",
-    "version": "2.1.4",
+    "version": "2.1.5",
     "description": "Feature-rich single-binary file server for red teamers and developers",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Web Security & Tunneling",
@@ -601,7 +601,7 @@
   },
   {
     "name": "gowitness",
-    "version": "3.1.1",
+    "version": "3.1.1-1",
     "description": "Web screenshot utility using headless Chrome",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -625,7 +625,7 @@
   },
   {
     "name": "hashcat",
-    "version": "7.1.2",
+    "version": "7.1.2-1",
     "description": "World's fastest and most advanced password recovery utility",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Password Tools",
@@ -657,7 +657,7 @@
   },
   {
     "name": "hbctool",
-    "version": "0.1.5-96",
+    "version": "96",
     "description": "Hermes Bytecode Disassembler and Assembler",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reverse Engineering",
@@ -665,7 +665,7 @@
   },
   {
     "name": "hermes-agent",
-    "version": "2026.7.20",
+    "version": "2026.8.3",
     "description": "AI-powered coding assistant and workflow automation tool",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "AI & Productivity",
@@ -689,7 +689,7 @@
   },
   {
     "name": "httpx",
-    "version": "1.9.0",
+    "version": "1.10.0",
     "description": "Fast and Multi-Purpose HTTP Toolkit by ProjectDiscovery",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -769,7 +769,7 @@
   },
   {
     "name": "jsql",
-    "version": "0.114",
+    "version": "0.115",
     "description": "Lightweight database information finder from a server",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Web Security & Tunneling",
@@ -785,7 +785,7 @@
   },
   {
     "name": "katana",
-    "version": "1.6.1",
+    "version": "1.7.0",
     "description": "Fast, passive and active web crawler",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -809,7 +809,7 @@
   },
   {
     "name": "kimi-code",
-    "version": "0.32.0",
+    "version": "0.35.0",
     "description": "AI-powered coding assistant for the terminal",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "AI & Productivity",
@@ -817,7 +817,7 @@
   },
   {
     "name": "knockpy",
-    "version": "7.0.2",
+    "version": "9.0.0",
     "description": "Subdomain enumeration and reconnaissance tool",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Attack Tools",
@@ -865,7 +865,7 @@
   },
   {
     "name": "maigret",
-    "version": "0.6.2",
+    "version": "0.6.4",
     "description": "OSINT username search tool with 3000+ sites",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Information Gathering",
@@ -897,7 +897,7 @@
   },
   {
     "name": "metabigor",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "description": "OSINT tool without API keys",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -913,7 +913,7 @@
   },
   {
     "name": "mimocode",
-    "version": "0.1.10",
+    "version": "0.1.11",
     "description": "AI‑powered coding assistant (glibc wrapper for Termux)",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "AI & Productivity",
@@ -985,7 +985,7 @@
   },
   {
     "name": "nuclei",
-    "version": "3.11.0",
+    "version": "3.11.1",
     "description": "Fast and customizable vulnerability scanner",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -1025,7 +1025,7 @@
   },
   {
     "name": "openbullet2",
-    "version": "2.0.1-0",
+    "version": "2.0.1-1",
     "description": "Cross-platform automation suite powered by .NET Core",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Miscellaneous Utilities",
@@ -1033,7 +1033,7 @@
   },
   {
     "name": "openclaude",
-    "version": "0.27.0",
+    "version": "0.28.0",
     "description": "Open‑source coding‑agent CLI for cloud and local LLMs",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "AI & Productivity",
@@ -1041,7 +1041,7 @@
   },
   {
     "name": "opencode",
-    "version": "1.18.15",
+    "version": "1.18.18",
     "description": "AI‑powered coding assistant (glibc version)",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "AI & Productivity",
@@ -1257,7 +1257,7 @@
   },
   {
     "name": "rkpairip",
-    "version": "5.2",
+    "version": "5.3",
     "description": "Remove Pairip Protection and Rebuild APKs",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reverse Engineering",
@@ -1265,7 +1265,7 @@
   },
   {
     "name": "ruby-curb",
-    "version": "1.3.5",
+    "version": "1.3.7",
     "description": "Ruby bindings for libcurl",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "System Tools",
@@ -1281,7 +1281,7 @@
   },
   {
     "name": "ruby-nokogiri",
-    "version": "1.19.0",
+    "version": "1.19.4",
     "description": "Ruby gem for HTML/XML parsing (system libraries version)",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "System Tools",
@@ -1409,7 +1409,7 @@
   },
   {
     "name": "sqlmap",
-    "version": "1.10.7",
+    "version": "1.10.8",
     "description": "Automatic SQL Injection and Database Takeover Tool",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Web Security & Tunneling",
@@ -1433,7 +1433,7 @@
   },
   {
     "name": "subcat",
-    "version": "1.4.0",
+    "version": "1.6.0",
     "description": "Lightning-fast Passive Subdomain Discovery Tool",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -1441,7 +1441,7 @@
   },
   {
     "name": "subfinder",
-    "version": "2.14.0",
+    "version": "2.15.0",
     "description": "Fast passive subdomain enumeration tool",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -1585,7 +1585,7 @@
   },
   {
     "name": "trufflehog",
-    "version": "3.96.0",
+    "version": "3.96.0-1",
     "description": "Find leaked credentials and secrets in code and data",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -1593,7 +1593,7 @@
   },
   {
     "name": "tte",
-    "version": "0.14.2",
+    "version": "0.15.0",
     "description": "Terminal Text Effects and Animation Library",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "System Tools",
@@ -1609,7 +1609,7 @@
   },
   {
     "name": "user-scanner",
-    "version": "1.3.6.6",
+    "version": "1.4.3.1",
     "description": "2-in-1 Email & Username OSINT suite",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Information Gathering",
@@ -1641,7 +1641,7 @@
   },
   {
     "name": "vulnx",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "Modern CLI for exploring vulnerability data with powerful search, filtering, and analysis capabilities.",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -1657,7 +1657,7 @@
   },
   {
     "name": "wafw00f",
-    "version": "2.3.1",
+    "version": "2.4.2",
     "description": "Web Application Firewall detection tool",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Reconnaissance & Scanning",
@@ -1753,7 +1753,7 @@
   },
   {
     "name": "wpscan",
-    "version": "4.0.0",
+    "version": "4.1.0",
     "description": "WordPress vulnerability scanner",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Web Security & Tunneling",
@@ -1785,7 +1785,7 @@
   },
   {
     "name": "zaproxy",
-    "version": "2026.03.02",
+    "version": "2.17.0",
     "description": "OWASP Zed Attack Proxy",
     "homepage": "https://github.com/Vaizer0/zero-termux",
     "category": "Web Security & Tunneling",

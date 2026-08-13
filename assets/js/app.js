@@ -252,8 +252,13 @@
       if (catSel) {
         var catMap = {};
         all.forEach(function (item) {
-          if (kind === "packages") catMap[item.category] = (catMap[item.category] || 0) + 1;
-          else if (kind === "modules") catMap[item.name] = (catMap[item.name] || 0) + 1;
+          if (kind === "packages") {
+            catMap[item.category] = (catMap[item.category] || 0) + 1;
+          } else if (kind === "modules") {
+            item.tools.forEach(function (t) {
+              catMap[t.category] = (catMap[t.category] || 0) + 1;
+            });
+          }
         });
         Object.keys(catMap).sort().forEach(function (c) {
           var o = document.createElement("option");
@@ -281,10 +286,11 @@
         if (kind === "modules") {
           // Filter at the TOOL level: a query matches individual tools, not
           // whole modules. If the query matches the module itself, the whole
-          // group is kept.
+          // group is kept (minus any active category filter). A category
+          // filter matches the tool's category, like the Packages explorer.
           list = all.map(function (m) {
-            if (state.cat !== "all" && m.name !== state.cat) return null;
             var matchedTools = m.tools.filter(function (t) {
+              if (state.cat !== "all" && t.category !== state.cat) return false;
               if (q) {
                 var s = scoreItem(t, q);
                 if (!s) return false;
@@ -295,9 +301,12 @@
               return true;
             });
             var moduleHits = q ? scoreItem(m, q) : 0;
+            if (state.cat !== "all" && matchedTools.length === 0) return null;
             if (q && !moduleHits && matchedTools.length === 0) return null;
             m._score = moduleHits;
-            return { m: m, tools: moduleHits ? m.tools : matchedTools, score: moduleHits || 0 };
+            return { m: m, tools: moduleHits
+              ? m.tools.filter(function (t) { return state.cat === "all" || t.category === state.cat; })
+              : matchedTools, score: moduleHits || 0 };
           }).filter(function (x) { return x; });
           list.sort(function (a, b) { return b.score - a.score; });
           count = list.reduce(function (n, x) { return n + x.tools.length; }, 0);

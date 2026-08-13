@@ -6,252 +6,252 @@
     "tools": [
       {
         "name": "ampcode",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Amp is the frontier agent, for people who want the most out of an agent, rather than keeping their old ways.",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/ampcode",
         "install": "zero install ai --ampcode"
       },
       {
         "name": "antigravity-cli",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Lightweight, terminal-first surface for Antigravity agents",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/antigravity-cli",
         "install": "zero install ai --antigravity-cli"
       },
       {
         "name": "cactus",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "A hybrid edge-cloud AI engine for mobiles, wearables, smart home and robots — quantization, kernels, runtime and inference with OpenAI-compatible APIs for text,…",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/cactus",
         "install": "zero install ai --cactus"
       },
       {
         "name": "cactus-needle",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "An open 45M-parameter model for tool calling, device use and structured extraction — the whole model is a single ~14 MB engine that runs a session in about 28 M…",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/cactus-needle",
         "install": "zero install ai --cactus-needle"
       },
       {
         "name": "claude-code",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Anthropic's CLI tool with Claude AI",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/claude-code",
         "install": "zero install ai --claude-code"
       },
       {
         "name": "cline",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "The open source coding agent in your IDE and terminal.",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/cline",
         "install": "zero install ai --cline"
       },
       {
         "name": "codegraph",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Analyzes your codebase structure and dependencies to improve navigation",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/codegraph",
         "install": "zero install ai --codegraph"
       },
       {
         "name": "codex",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Codex CLI is a coding agent from OpenAI that runs locally on your computer",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/codex",
         "install": "zero install ai --codex"
       },
       {
         "name": "command-code",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "The coding agent that learns your coding taste.",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/command-code",
         "install": "zero install ai --command-code"
       },
       {
         "name": "ctx7",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Up-to-date documentation for AI coding agents",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/ctx7",
         "install": "zero install ai --ctx7"
       },
       {
         "name": "cursor-cli",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "AI-powered coding agent that runs in your terminal",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/cursor-cli",
         "install": "zero install ai --cursor-cli"
       },
       {
         "name": "droid-factory",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "AI coding agent by Factory (Factory CLI)",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/droid-factory",
         "install": "zero install ai --droid-factory"
       },
       {
         "name": "engram",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Persistent memory system for AI coding agents",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/engram",
         "install": "zero install ai --engram"
       },
       {
         "name": "freebuff",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "A 100% free coding agent, right from your terminal",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/freebuff",
         "install": "zero install ai --freebuff"
       },
       {
         "name": "gemini-cli",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Google's AI assistant with Gemini",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/gemini-cli",
         "install": "zero install ai --gemini-cli"
       },
       {
         "name": "gentle-ai",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Ecosystem, Frameworks, Workflows for AI coding agents",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/gentle-ai",
         "install": "zero install ai --gentle-ai"
       },
       {
         "name": "gga",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Provider-agnostic AI code review on every commit",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/gga",
         "install": "zero install ai --gga"
       },
       {
         "name": "goose",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "An open source AI agent that supercharges your workflow with one tool: plan, build, test, and iterate on tasks in a local environment",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/goose",
         "install": "zero install ai --goose"
       },
       {
         "name": "hermes-agent",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "The self-improving AI agent built by Nous Research",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/hermes-agent",
         "install": "zero install ai --hermes-agent"
       },
       {
         "name": "keelcode",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "The hosted coding agent for your terminal — inspect a project, edit files, run commands, search the web, use MCP servers, and verify its work",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/keelcode",
         "install": "zero install ai --keelcode"
       },
       {
         "name": "kilocode-cli",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "The open source coding agent for building with AI in VS Code, JetBrains, or the CLI",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/kilocode-cli",
         "install": "zero install ai --kilocode-cli"
       },
       {
         "name": "kimchi",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Terminal coding agent powered by Kimchi's multi-model orchestration",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/kimchi",
         "install": "zero install ai --kimchi"
       },
       {
         "name": "kimi-code",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Kimi Code CLI — The Starting Point for Next-Gen Agents",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/kimi-code",
         "install": "zero install ai --kimi-code"
       },
       {
         "name": "mimocode",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Xiaomi's AI coding agent — fast, local, and open-source",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/mimocode",
         "install": "zero install ai --mimocode"
       },
       {
         "name": "minimax-cli",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Generate text, images, video, speech, and music from the terminal",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/minimax-cli",
         "install": "zero install ai --minimax-cli"
       },
       {
         "name": "mistral-vibe",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Command-line coding assistant powered by Mistral's models",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/mistral-vibe",
         "install": "zero install ai --mistral-vibe"
       },
       {
         "name": "oh-my-pi",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Enhanced AI coding agent — improved version of Pi, built as a standalone binary with bun build --compile.",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/oh-my-pi",
         "install": "zero install ai --oh-my-pi"
       },
       {
         "name": "ollama",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Run open-source LLMs locally on Termux",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/ollama",
         "install": "zero install ai --ollama"
       },
       {
         "name": "openclaude",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Open source Claude Code alternative",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/openclaude",
         "install": "zero install ai --openclaude"
       },
       {
         "name": "openclaw",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Personal AI Assistant",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/openclaw",
         "install": "zero install ai --openclaw"
       },
       {
         "name": "opencode",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Open-source agent that helps you write code in your terminal",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/opencode",
         "install": "zero install ai --opencode"
       },
       {
         "name": "openspec",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Spec-Driven Development framework for AI coding assistants",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/openspec",
         "install": "zero install ai --openspec"
       },
       {
         "name": "pi",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Minimal terminal coding harness — adapt Pi to your workflows",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/pi",
         "install": "zero install ai --pi"
       },
       {
         "name": "qoder",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "A terminal-native AI coding partner—and an agent engine you can build on.",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/qoder",
         "install": "zero install ai --qoder"
       },
       {
         "name": "qwen-code",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "Alibaba's AI coding assistant",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/qwen-code",
         "install": "zero install ai --qwen-code"
       },
       {
         "name": "supercode",
-        "category": "ai",
+        "category": "AI & Productivity",
         "blurb": "The open source SWE agent — AI-powered coding assistant with multi-model support",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ai/supercode",
         "install": "zero install ai --supercode"
@@ -267,56 +267,56 @@
     "tools": [
       {
         "name": "bun",
-        "category": "lang",
+        "category": "System Tools",
         "blurb": "JavaScript runtime, bundler, test runner, and package manager (all-in-one toolkit)",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/lang/bun",
         "install": "zero install lang --bun"
       },
       {
         "name": "clang",
-        "category": "lang",
+        "category": "System Tools",
         "blurb": "LLVM C/C++ compiler for systems programming",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/lang/clang",
         "install": "zero install lang --clang"
       },
       {
         "name": "golang",
-        "category": "lang",
+        "category": "System Tools",
         "blurb": "Statically typed, compiled programming language by Google",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/lang/golang",
         "install": "zero install lang --golang"
       },
       {
         "name": "nodejs",
-        "category": "lang",
+        "category": "System Tools",
         "blurb": "JavaScript runtime environment (Long Term Support version)",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/lang/nodejs",
         "install": "zero install lang --nodejs"
       },
       {
         "name": "perl",
-        "category": "lang",
+        "category": "System Tools",
         "blurb": "Highly capable, feature-rich programming language",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/lang/perl",
         "install": "zero install lang --perl"
       },
       {
         "name": "php",
-        "category": "lang",
+        "category": "System Tools",
         "blurb": "Popular general-purpose scripting language for web development",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/lang/php",
         "install": "zero install lang --php"
       },
       {
         "name": "python",
-        "category": "lang",
+        "category": "System Tools",
         "blurb": "High-level, general-purpose programming language",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/lang/python",
         "install": "zero install lang --python"
       },
       {
         "name": "rust",
-        "category": "lang",
+        "category": "System Tools",
         "blurb": "Systems programming language with memory safety guarantees",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/lang/rust",
         "install": "zero install lang --rust"
@@ -332,35 +332,35 @@
     "tools": [
       {
         "name": "mariadb",
-        "category": "db",
+        "category": "System Tools",
         "blurb": "Community-developed fork of MySQL relational database",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/db/mariadb",
         "install": "zero install db --mariadb"
       },
       {
         "name": "mongodb",
-        "category": "db",
+        "category": "System Tools",
         "blurb": "NoSQL document database for modern applications",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/db/mongodb",
         "install": "zero install db --mongodb"
       },
       {
         "name": "postgresql",
-        "category": "db",
+        "category": "System Tools",
         "blurb": "Advanced open-source relational database",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/db/postgresql",
         "install": "zero install db --postgresql"
       },
       {
         "name": "redis",
-        "category": "db",
+        "category": "System Tools",
         "blurb": "In-memory data structure store used as database, cache, and message broker",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/db/redis",
         "install": "zero install db --redis"
       },
       {
         "name": "sqlite",
-        "category": "db",
+        "category": "System Tools",
         "blurb": "Self-contained, serverless, zero-configuration SQL database engine",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/db/sqlite",
         "install": "zero install db --sqlite"
@@ -376,14 +376,14 @@
     "tools": [
       {
         "name": "neovim",
-        "category": "editor",
+        "category": "Text & Utilities",
         "blurb": "Fast, extensible code editor (modern Vim fork)",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/editor/neovim",
         "install": "zero install editor --neovim"
       },
       {
         "name": "nvchad",
-        "category": "editor",
+        "category": "Customization",
         "blurb": "Modern Neovim configuration with preconfigured plugins",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/editor/nvchad",
         "install": "zero install editor --nvchad"
@@ -399,154 +399,154 @@
     "tools": [
       {
         "name": "bat",
-        "category": "dev",
+        "category": "Text & Utilities",
         "blurb": "Modern cat replacement with syntax highlighting",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/bat",
         "install": "zero install dev --bat"
       },
       {
         "name": "bc",
-        "category": "dev",
+        "category": "Text & Utilities",
         "blurb": "Arbitrary precision calculator language",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/bc",
         "install": "zero install dev --bc"
       },
       {
         "name": "cloudflared",
-        "category": "dev",
+        "category": "Web Security & Tunneling",
         "blurb": "Cloudflare Tunnel client for secure connections",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/cloudflared",
         "install": "zero install dev --cloudflared"
       },
       {
         "name": "curl",
-        "category": "dev",
+        "category": "Web Security & Tunneling",
         "blurb": "Command-line tool for transferring data with URLs",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/curl",
         "install": "zero install dev --curl"
       },
       {
         "name": "fzf",
-        "category": "dev",
+        "category": "System Tools",
         "blurb": "General-purpose command-line fuzzy finder",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/fzf",
         "install": "zero install dev --fzf"
       },
       {
         "name": "gh",
-        "category": "dev",
+        "category": "System Tools",
         "blurb": "Official GitHub command-line tool for managing repositories, PRs, and issues",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/gh",
         "install": "zero install dev --gh"
       },
       {
         "name": "html2text",
-        "category": "dev",
+        "category": "Text & Utilities",
         "blurb": "Convert HTML documents to plain text",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/html2text",
         "install": "zero install dev --html2text"
       },
       {
         "name": "imagemagick",
-        "category": "dev",
+        "category": "Miscellaneous Utilities",
         "blurb": "Image manipulation and conversion suite",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/imagemagick",
         "install": "zero install dev --imagemagick"
       },
       {
         "name": "jq",
-        "category": "dev",
+        "category": "Text & Utilities",
         "blurb": "Lightweight and flexible command-line JSON processor",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/jq",
         "install": "zero install dev --jq"
       },
       {
         "name": "lsd",
-        "category": "dev",
+        "category": "System Tools",
         "blurb": "Modern ls replacement with icons and colors",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/lsd",
         "install": "zero install dev --lsd"
       },
       {
         "name": "make",
-        "category": "dev",
+        "category": "System Tools",
         "blurb": "Build automation tool for managing compilation and dependencies",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/make",
         "install": "zero install dev --make"
       },
       {
         "name": "ncurses",
-        "category": "dev",
+        "category": "System Tools",
         "blurb": "Terminal UI manipulation utilities",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/ncurses",
         "install": "zero install dev --ncurses"
       },
       {
         "name": "openssh",
-        "category": "dev",
+        "category": "Web Security & Tunneling",
         "blurb": "SSH server and client for secure remote access",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/openssh",
         "install": "zero install dev --openssh"
       },
       {
         "name": "proot",
-        "category": "dev",
+        "category": "System Tools",
         "blurb": "Chroot alternative for user-space sandboxing",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/proot",
         "install": "zero install dev --proot"
       },
       {
         "name": "shfmt",
-        "category": "dev",
+        "category": "System Tools",
         "blurb": "Shell script formatter with POSIX and Bash support",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/shfmt",
         "install": "zero install dev --shfmt"
       },
       {
         "name": "superfile",
-        "category": "dev",
+        "category": "System Tools",
         "blurb": "Terminal file manager with TUI, themes, and hotkeys",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/superfile",
         "install": "zero install dev --superfile"
       },
       {
         "name": "tmate",
-        "category": "dev",
+        "category": "Web Security & Tunneling",
         "blurb": "Instant terminal sharing for pair programming",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/tmate",
         "install": "zero install dev --tmate"
       },
       {
         "name": "tmux",
-        "category": "dev",
+        "category": "System Tools",
         "blurb": "Terminal multiplexer for managing multiple sessions",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/tmux",
         "install": "zero install dev --tmux"
       },
       {
         "name": "translate",
-        "category": "dev",
+        "category": "Text & Utilities",
         "blurb": "Command-line translator powered by Google Translate",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/translate",
         "install": "zero install dev --translate"
       },
       {
         "name": "tree",
-        "category": "dev",
+        "category": "System Tools",
         "blurb": "Recursive directory listing in a tree-like format",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/tree",
         "install": "zero install dev --tree"
       },
       {
         "name": "udocker",
-        "category": "dev",
+        "category": "System Tools",
         "blurb": "Run Docker containers without root privileges",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/udocker",
         "install": "zero install dev --udocker"
       },
       {
         "name": "wget",
-        "category": "dev",
+        "category": "Web Security & Tunneling",
         "blurb": "Network downloader for retrieving files from the web",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/dev/wget",
         "install": "zero install dev --wget"
@@ -562,77 +562,77 @@
     "tools": [
       {
         "name": "live-server",
-        "category": "npm",
+        "category": "Miscellaneous Utilities",
         "blurb": "Development server with live reload capability",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/npm/live-server",
         "install": "zero install npm --live-server"
       },
       {
         "name": "localtunnel",
-        "category": "npm",
+        "category": "Web Security & Tunneling",
         "blurb": "Expose localhost to the internet securely",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/npm/localtunnel",
         "install": "zero install npm --localtunnel"
       },
       {
         "name": "markserv",
-        "category": "npm",
+        "category": "Miscellaneous Utilities",
         "blurb": "Markdown live-preview server",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/npm/markserv",
         "install": "zero install npm --markserv"
       },
       {
         "name": "ncu",
-        "category": "npm",
+        "category": "System Tools",
         "blurb": "Find and update outdated npm dependencies",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/npm/ncu",
         "install": "zero install npm --ncu"
       },
       {
         "name": "nestjs",
-        "category": "npm",
+        "category": "Miscellaneous Utilities",
         "blurb": "Progressive Node.js framework for building efficient, reliable applications",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/npm/nestjs",
         "install": "zero install npm --nestjs"
       },
       {
         "name": "ngrok",
-        "category": "npm",
+        "category": "Web Security & Tunneling",
         "blurb": "Secure tunnel to expose local servers to the internet",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/npm/ngrok",
         "install": "zero install npm --ngrok"
       },
       {
         "name": "prettier",
-        "category": "npm",
+        "category": "System Tools",
         "blurb": "Opinionated code formatter supporting multiple languages",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/npm/prettier",
         "install": "zero install npm --prettier"
       },
       {
         "name": "psqlformat",
-        "category": "npm",
+        "category": "System Tools",
         "blurb": "PostgreSQL query formatter",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/npm/psqlformat",
         "install": "zero install npm --psqlformat"
       },
       {
         "name": "turbopack",
-        "category": "npm",
+        "category": "System Tools",
         "blurb": "Run Next.js with Turbopack on Termux (Android aarch64).",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/npm/turbopack",
         "install": "zero install npm --turbopack"
       },
       {
         "name": "typescript",
-        "category": "npm",
+        "category": "System Tools",
         "blurb": "Typed superset of JavaScript that compiles to plain JavaScript",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/npm/typescript",
         "install": "zero install npm --typescript"
       },
       {
         "name": "vercel",
-        "category": "npm",
+        "category": "Miscellaneous Utilities",
         "blurb": "Deploy frontend applications and serverless functions",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/npm/vercel",
         "install": "zero install npm --vercel"
@@ -648,70 +648,70 @@
     "tools": [
       {
         "name": "better-npm",
-        "category": "shell",
+        "category": "Customization",
         "blurb": "Better npm completion for ZSH",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/shell/better-npm",
         "install": "zero install shell --better-npm"
       },
       {
         "name": "fzf-tab",
-        "category": "shell",
+        "category": "Customization",
         "blurb": "Fuzzy completion with fzf for ZSH",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/shell/fzf-tab",
         "install": "zero install shell --fzf-tab"
       },
       {
         "name": "history-substring",
-        "category": "shell",
+        "category": "Customization",
         "blurb": "History search by typing substrings",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/shell/history-substring",
         "install": "zero install shell --history-substring"
       },
       {
         "name": "powerlevel10k",
-        "category": "shell",
+        "category": "Customization",
         "blurb": "Modern and fast ZSH theme with customizable prompts",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/shell/powerlevel10k",
         "install": "zero install shell --powerlevel10k"
       },
       {
         "name": "you-should-use",
-        "category": "shell",
+        "category": "Customization",
         "blurb": "Suggests alternative commands when you use outdated ones",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/shell/you-should-use",
         "install": "zero install shell --you-should-use"
       },
       {
         "name": "zsh-autopair",
-        "category": "shell",
+        "category": "Customization",
         "blurb": "Auto-close and delete matching parentheses and quotes",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/shell/zsh-autopair",
         "install": "zero install shell --zsh-autopair"
       },
       {
         "name": "zsh-autosuggestions",
-        "category": "shell",
+        "category": "Customization",
         "blurb": "Fish-like autosuggestions for ZSH",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/shell/zsh-autosuggestions",
         "install": "zero install shell --zsh-autosuggestions"
       },
       {
         "name": "zsh-completions",
-        "category": "shell",
+        "category": "Customization",
         "blurb": "Additional ZSH completion definitions for various tools",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/shell/zsh-completions",
         "install": "zero install shell --zsh-completions"
       },
       {
         "name": "zsh-defer",
-        "category": "shell",
+        "category": "Customization",
         "blurb": "Deferred plugin loading for faster ZSH startup",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/shell/zsh-defer",
         "install": "zero install shell --zsh-defer"
       },
       {
         "name": "zsh-syntax-highlighting",
-        "category": "shell",
+        "category": "Customization",
         "blurb": "Real-time syntax highlighting for ZSH commands",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/shell/zsh-syntax-highlighting",
         "install": "zero install shell --zsh-syntax-highlighting"
@@ -727,28 +727,28 @@
     "tools": [
       {
         "name": "banner",
-        "category": "ui",
+        "category": "Customization",
         "blurb": "Customize Termux with Zero-Termux Banner",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ui/banner",
         "install": "zero install ui --banner"
       },
       {
         "name": "cursor",
-        "category": "ui",
+        "category": "Customization",
         "blurb": "Customize Termux terminal cursor color",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ui/cursor",
         "install": "zero install ui --cursor"
       },
       {
         "name": "extra-keys",
-        "category": "ui",
+        "category": "Customization",
         "blurb": "Additional keyboard rows for Termux with navigation keys",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ui/extra-keys",
         "install": "zero install ui --extra-keys"
       },
       {
         "name": "font",
-        "category": "ui",
+        "category": "Customization",
         "blurb": "Patched font with Nerd Font icons for Termux",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/ui/font",
         "install": "zero install ui --font"
@@ -764,7 +764,7 @@
     "tools": [
       {
         "name": "n8n",
-        "category": "auto",
+        "category": "AI & Productivity",
         "blurb": "Workflow automation tool for connecting services",
         "docs": "https://github.com/Vaizer0/zero-termux/tree/main/zero/tools/auto/n8n",
         "install": "zero install auto --n8n"
