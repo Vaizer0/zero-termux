@@ -172,12 +172,15 @@
           '<div class="card tool-card"><h3><span class="mono">' + esc(t.name) + "</span>" +
           (t.category ? '<span class="chip">' + esc(t.category) + "</span>" : "") + "</h3>" +
           "<p>" + esc(t.blurb) + "</p>" +
-          '<span class="cmd">' + esc(t.install) + "</span></div>"
+          '<div class="cmd-row"><span class="cmd">' + esc(t.install) + "</span>" +
+          '<button type="button" class="copy-btn inline" data-copy="' + esc(t.install) + '" aria-label="Copy install command">COPY</button></div></div>'
         );
       }).join("");
       return (
         '<section class="mod-group" id="' + esc(m.name) + '" data-name="' + esc(m.name).toLowerCase() + '" data-title="' + esc(m.title).toLowerCase() + '">' +
-        '<h2><span class="mono">' + esc(m.name) + "</span> — " + esc(m.title) + ' <span class="count">' + m.tools.length + " tools</span></h2>" +
+        '<h2><span class="mono">' + esc(m.name) + "</span> — " + esc(m.title) +
+        ' <span class="count">' + m.tools.length + " tool" + (m.tools.length === 1 ? "" : "s") + "</span>" +
+        '<button type="button" class="copy-btn inline" data-copy="' + esc(m.install) + '" aria-label="Copy module install command">COPY</button></h2>' +
         "<p>" + esc(m.description) + "</p>" +
         '<div class="grid">' + tools + "</div></section>"
       );
@@ -187,7 +190,9 @@
   function renderPackages(list) {
     var rows = list.map(function (p) {
       return (
-        "<tr><td><strong>" + esc(p.name) + "</strong><br><span class='cmd'>" + esc(p.install) + "</span></td>" +
+        "<tr><td><strong>" + esc(p.name) + "</strong>" +
+        '<div class="cmd-row"><span class="cmd">' + esc(p.install) + "</span>" +
+        '<button type="button" class="copy-btn inline" data-copy="' + esc(p.install) + '" aria-label="Copy install command">COPY</button></div></td>' +
         '<td class="ver">' + esc(p.version) + "</td>" +
         "<td>" + esc(p.description) + "</td>" +
         '<td class="cat">' + esc(p.category) + "</td></tr>"
@@ -205,10 +210,16 @@
       return [item.name, item.summary, item.syntax || "", (item.examples || []).join(" "), (item.args || []).join(" "), item.notes || ""].join(" ").toLowerCase();
     }
     if (kind === "modules") {
-      return [item.name, item.title, item.description, item.install,
-              item.tools.map(function (t) { return t.name + " " + t.blurb + " " + t.category; }).join(" ")].join(" ").toLowerCase();
+      // module-level haystack = name + title only. Matching these shows the
+      // whole group; tool-level matches are handled per-tool in apply() so a
+      // query like "opencode" shows just that tool, not the entire module.
+      return [item.name, item.title].join(" ").toLowerCase();
     }
     return [item.name, item.description, item.category, item.install, item.version].join(" ").toLowerCase();
+  }
+
+  function buildToolHaystack(t) {
+    return [t.name, t.blurb, t.category, t.install].join(" ").toLowerCase();
   }
 
   function initExplorer() {
@@ -254,44 +265,74 @@
 
       all.forEach(function (item) {
         item._haystack = buildHaystack(kind, item);
+        if (kind === "modules") {
+          item.tools.forEach(function (t) { t._haystack = buildToolHaystack(t); });
+        }
       });
+
+      var totalCount = kind === "modules"
+        ? all.reduce(function (n, m) { return n + m.tools.length; }, 0)
+        : all.length;
 
       function apply() {
         var q = state.filter;
-        var list = all.filter(function (item) {
-          if (q) {
-            var s = scoreItem(item, q);
-            if (!s) return false;
-            item._score = s;
-          } else {
-            item._score = 0;
-          }
-          if (state.cat !== "all") {
-            if (kind === "packages" && item.category !== state.cat) return false;
-            if (kind === "modules" && item.name !== state.cat) return false;
-          }
-          return true;
-        });
-        list.sort(function (a, b) { return (b._score || 0) - (a._score || 0); });
+        var list, count;
+
+        if (kind === "modules") {
+          // Filter at the TOOL level: a query matches individual tools, not
+          // whole modules. If the query matches the module itself, the whole
+          // group is kept.
+          list = all.map(function (m) {
+            if (state.cat !== "all" && m.name !== state.cat) return null;
+            var matchedTools = m.tools.filter(function (t) {
+              if (q) {
+                var s = scoreItem(t, q);
+                if (!s) return false;
+                t._score = s;
+              } else {
+                t._score = 0;
+              }
+              return true;
+            });
+            var moduleHits = q ? scoreItem(m, q) : 0;
+            if (q && !moduleHits && matchedTools.length === 0) return null;
+            m._score = moduleHits;
+            return { m: m, tools: moduleHits ? m.tools : matchedTools, score: moduleHits || 0 };
+          }).filter(function (x) { return x; });
+          list.sort(function (a, b) { return b.score - a.score; });
+          count = list.reduce(function (n, x) { return n + x.tools.length; }, 0);
+        } else {
+          list = all.filter(function (item) {
+            if (q) {
+              var s = scoreItem(item, q);
+              if (!s) return false;
+              item._score = s;
+            } else {
+              item._score = 0;
+            }
+            if (kind === "packages" && state.cat !== "all" && item.category !== state.cat) return false;
+            return true;
+          });
+          list.sort(function (a, b) { return (b._score || 0) - (a._score || 0); });
+          count = list.length;
+        }
 
         var html;
         if (kind === "commands") html = renderCommands(list);
-        else if (kind === "modules") html = renderModules(list);
+        else if (kind === "modules") {
+          html = list.map(function (x) { return renderModules([{ name: x.m.name, title: x.m.title, description: x.m.description, install: x.m.install, tools: x.tools }]); }).join("");
+        }
         else html = renderPackages(list);
 
-        var count = kind === "modules"
-          ? list.reduce(function (n, m) { return n + m.tools.length; }, 0)
-          : list.length;
-
-        if (list.length === 0) {
+        if (count === 0) {
           wrap.innerHTML = "<div class='empty-state'>" +
             "<h3>No results found</h3>" +
             "<p>Nothing matches “" + esc(q) + "”" + (state.cat !== "all" ? " in category “" + esc(state.cat) + "”" : "") + ".</p>" +
             "<p>Try a different term, or <a href='#' data-reset='" + kind + "'>clear the filters</a>.</p></div>";
-          updateMeta(0, all.length, true);
+          updateMeta(0, totalCount, true);
         } else {
           wrap.innerHTML = html;
-          updateMeta(count, all.length, false);
+          updateMeta(count, totalCount, false);
         }
         var reset = $('[data-reset="' + kind + '"]', root);
         if (reset) {
