@@ -6,32 +6,32 @@ Version: 1
 Architectures: all
 Description: zero-termux repository
 Suite: zero-termux
-Date: Thu, 13 Aug 2026 06:09:57 UTC
+Date: Thu, 13 Aug 2026 06:26:26 UTC
 Components: main
 MD5Sum:
- ab166f7d159ff1a6ef045b7b92b3063e 175123 main/binary-all/Packages
- 2125231441621cb0e9694801726f711b 56392 main/binary-all/Packages.xz
+ 47f12ae9a6a54b1d7a44e27533a622ae 175123 main/binary-all/Packages
+ c765b44ddf9c54067cc5772118327339 56448 main/binary-all/Packages.xz
  fb6d67b72a26bf32e5d835f0c428e99a 135232 main/Contents-all.xz
  444a857d2d2bc364a46728cddafde3e8 3607398 main/Contents-all
 SHA1:
- 1effa285ef569b3b8f5eaf706ddca12e7a0c932d 175123 main/binary-all/Packages
- 2166cf520c396800fa3dce7997b56fba12afb8e2 56392 main/binary-all/Packages.xz
+ da55a4095c29ca1b7c5afd93166df77b2148936f 175123 main/binary-all/Packages
+ c2ca978d2a206b91b84c73c2e516ef1925c4b5d5 56448 main/binary-all/Packages.xz
  3e2d68bfd78d1592d6eac9c324bee834a137bb5f 135232 main/Contents-all.xz
  c427abf5af525abd7c9b30bbeb3370d49cc8d458 3607398 main/Contents-all
 SHA256:
- fbce4a75e8f88cf91f5dc8fef930f3c3b5886234854809021d95705d7a5fa920 175123 main/binary-all/Packages
- 1e664105bed74880a5b8a53e814d7b7f655f8e20a0f7089523ad8d8d19a62665 56392 main/binary-all/Packages.xz
+ 214346b450e2e9806be05e7643e47db087a5fcc3a38f8e5ec387a8816d633cf4 175123 main/binary-all/Packages
+ 43cad8e5fc2b6bc6acad6211e99df84061a9f5cb88c8cf905bcbbedc6cd0425d 56448 main/binary-all/Packages.xz
  c18f2e08bc2d0c533d9104c90dc817f4ff02ce33f24b985220ea2ab1049bedd5 135232 main/Contents-all.xz
  d7861da85a96113b8e1e72eb732ac5351eee83ad7910d89e8e673628bd3f99dc 3607398 main/Contents-all
 SHA512:
- 9f2b7e68f66e1eec4e9ac6769699931e5511bb0afc88e920153bcf1b9c386a68e82b30f23ff371e9e1b1f50f1131bb063efa4eeb26b71f63049c05f97036632b 175123 main/binary-all/Packages
- 66ffca41237f9849f0abdffe9e65c759933185e61ac4495e415b2f1ff8ea52ff34f0f3b4097a152a85bbbcd7d03fb3f4d475ede9cb4841c3c4d0026cec9cd742 56392 main/binary-all/Packages.xz
+ ebbedc55ca595a2c83b7f81161df1a10757836668e16dcb02ba9b6b4a13cbffd219740fe97ff381995cd77a2b6d3726a5de87e5441d09cd561726ebecfbf2249 175123 main/binary-all/Packages
+ 910b9eb07d661c20fcdd6ec276ad3a6b49a2c03c119c87f8838c9e8c776696ee64c26cbe6eca0f62dd062e93de705fabf0ddb3817aa57d5baaf71444e938ac05 56448 main/binary-all/Packages.xz
  18de1ee1850a998db117e12f6a06a582face3a6169558a94394cfb6eca692166b718dc2bb3a2f3bd2d378c5f92975955c8e8e95eba968b8e665e59e79bf4335f 135232 main/Contents-all.xz
  398b3a535e26122fa12ba0766b43c5fcba5d8920b1ad3874216d346590ea887b776118582779c837e1189ad70845de7a6bd71e144d307732c0a72c190d513e4a 3607398 main/Contents-all
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYIAB0WIQTfLH/Nq/lt9CmOlTuwx+x8G7nElAUCan1ftwAKCRCwx+x8G7nE
-lDzlAP9D8WsYijkwIIipfyONE666Pv5lfNJEpp1nLO4NIzVSXQD+I5gjMtDUMApY
-HYOGs1mpG1BoN4ABcdFJ7rcpIEKH+w0=
-=x0vj
+iHUEARYIAB0WIQTfLH/Nq/lt9CmOlTuwx+x8G7nElAUCan1jkwAKCRCwx+x8G7nE
+lBDyAQCTzubJRyoevmr0QM3NSRo5sSg0mZOQWBdZaz2g8SP3zQD/VASvzk2I3LLL
+OeThr4g8UnvMZ/jPOPiIxcICgCaQRQE=
+=Jr1e
 -----END PGP SIGNATURE-----
