@@ -1,78 +1,53 @@
 # ◈ Zero-Termux
 
-**Your Termux, zero setup friction.**
-
-Zero-Termux is a modular development environment for [Termux](https://termux.dev): a single `zero` CLI — 13 commands — that installs, updates, and removes toolchains, plus a **signed APT repository** of 228 packages served from GitHub Pages. One installer, one ecosystem, no root.
+**Modular dev environment for Termux — one CLI, one signed APT repository, zero setup friction.**
 
 <p align="center">
-  <a href="https://github.com/Vaizer0/zero-termux"><img alt="GitHub" src="https://img.shields.io/badge/repo-Vaizer0%2Fzero--termux-1f6feb?style=flat-square&logo=github"></a>
-  <img alt="CLI version" src="https://img.shields.io/badge/CLI%20v-1.0.0-1f6feb?style=flat-square">
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-3fb950?style=flat-square">
-  <img alt="Packages" src="https://img.shields.io/badge/packages-228-3fb950?style=flat-square">
-  <img alt="Modules" src="https://img.shields.io/badge/tools-99-3fb950?style=flat-square">
-  <img alt="APT suite" src="https://img.shields.io/badge/APT%20suite-zero--termux-8957e5?style=flat-square">
-  <img alt="Signing key" src="https://img.shields.io/badge/signed-GPG-8957e5?style=flat-square">
-  <img alt="Docs" src="https://img.shields.io/badge/docs-vaizer0.github.io%2Fzero--termux-1f6feb?style=flat-square&logo=gitbook">
+  <a href="https://github.com/Vaizer0/zero-termux"><img alt="Repository" src="https://img.shields.io/badge/repo-Vaizer0%2Fzero--termux-1f6feb?style=flat-square&logo=github"></a>
+  <a href="https://github.com/Vaizer0/zero-termux/actions/workflows/test.yml"><img alt="Test" src="https://github.com/Vaizer0/zero-termux/actions/workflows/test.yml/badge.svg"></a>
+  <a href="https://vaizer0.github.io/zero-termux/docs"><img alt="Docs" src="https://img.shields.io/badge/docs-vaizer0.github.io%2Fzero--termux-1f6feb?style=flat-square"></a>
+  <a href="./LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-3fb950?style=flat-square"></a>
+  <a href="https://termux.dev"><img alt="Platform" src="https://img.shields.io/badge/platform-Termux-16a085?style=flat-square&logo=terminal"></a>
+  <a href="https://vaizer0.github.io/zero-termux/packages"><img alt="APT packages" src="https://img.shields.io/badge/packages-228-3fb950?style=flat-square"></a>
+  <a href="https://vaizer0.github.io/zero-termux/packages"><img alt="APT suite" src="https://img.shields.io/badge/APT%20suite-zero--termux-8957e5?style=flat-square"></a>
 </p>
 
----
+<p align="center">
+  <img src="assets/images/zero-termux.png" alt="Zero-Termux" width="100%">
+</p>
 
-## Quick navigation
+<p align="center">
+  <a href="https://vaizer0.github.io/zero-termux">
+    <img src="assets/badges/zero-termux-site.svg" alt="Open the Zero-Termux website" width="280">
+  </a>
+</p>
 
-| Area | Link |
+Zero-Termux is a complete, Termux-native development environment. A single `zero` CLI — 13 commands, pure bash, zero runtime dependencies — installs, updates, and removes toolchains across 9 modules and 99 tools, while a **signed APT repository** of 228 Debian packages is built from source on your device and served over GitHub Pages. No root, no systemd, no sudo: everything lives under `$HOME` and `$PREFIX`.
+
+## Quick links
+
+| | |
 |---|---|
 | Website & live docs | [vaizer0.github.io/zero-termux](https://vaizer0.github.io/zero-termux) |
-| Site search | [search](https://vaizer0.github.io/zero-termux/search/) |
-| Command reference | [commands](/docs#commands) • [website](https://vaizer0.github.io/zero-termux/commands/) |
-| Modules & tools | [modules](/docs#modules) • [explorer](https://vaizer0.github.io/zero-termux/modules/) |
-| APT package catalog | [assets/PACKAGES.md](assets/PACKAGES.md) • [explorer](https://vaizer0.github.io/zero-termux/packages/) |
-| Migration from earlier setups | [MIGRATION.md](MIGRATION.md) |
-| Guiding documents | [CONTRIBUTING.md](CONTRIBUTING.md) • [SECURITY.md](SECURITY.md) |
+| Command reference | [website](https://vaizer0.github.io/zero-termux/commands) |
+| Module explorer | [website](https://vaizer0.github.io/zero-termux/modules) |
+| Package catalog & explorer | [assets/PACKAGES.md](assets/PACKAGES.md) • [website](https://vaizer0.github.io/zero-termux/packages) |
+| Search | [website](https://vaizer0.github.io/zero-termux/search) |
+| Migration | [MIGRATION.md](MIGRATION.md) |
+| Contributing / Security | [CONTRIBUTING.md](CONTRIBUTING.md) • [SECURITY.md](SECURITY.md) |
 
 ---
 
-## What is Zero-Termux?
+## Installation
 
-Two ecosystems, one installer:
-
-- **`zero`** — a modular **bash CLI framework** (zero runtime dependencies) that knows how to install, update, reinstall, and uninstall 99 tools across 9 modules: AI coding agents, language toolchains, databases, editors, dev utilities, npm globals, ZSH shell, Termux UI, and automation.
-- **`packages/`** — a **signed APT repository** of **228 Debian packages**, built from source on your device at install time and distributed over GitHub Pages.
-
-> [!NOTE]
-> Termux-only. No root, no systemd, no sudo. Everything lives under `$HOME` and `$PREFIX`.
-
-## Why Zero-Termux?
-
-- **One command to rule them all** — `zero install ai --qwen-code` instead of ten different tutorials.
-- **Uniform lifecycle** — every tool has the same four verbs: install / update / reinstall / uninstall.
-- **Rolling versions, latest tools** — registry installs use `@latest`; GitHub-release binaries resolve the newest release at install time.
-- **Signed APT repository** — 228 packages with a GPG-signed `InRelease`, served from the same Pages deploy as the site.
-- **Visible code** — every installer and package lifecycle script is plain bash in this repository. Nothing ships as a mystery binary.
-
-## Features
-
-| Feature | Where |
-|---|---|
-| 99 tools across 9 modules | `zero/tools/<category>/<tool>/` |
-| Install / update / reinstall / uninstall for every tool | `zero install|update|reinstall|uninstall <module> [--tool …]` |
-| Second brain (save/search memories) | `zero brain` |
-| Project scaffolding | `zero init <template>` |
-| PostgreSQL manager | `zero pg` |
-| Speech-to-agent | `zero voice <agent>` |
-| Environment variable manager | `zero env set/unset/ls` |
-| 228-package signed APT repo | `pkg install <tool>` |
-| Weekly rolling-version drift report | `.github/workflows/maintenance.yml` |
-| CI: build, sign, validate, deploy | `.github/workflows/*.yml` |
-
----
-
-## Quick install
+Termux-only. On a fresh Termux installation:
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/Vaizer0/zero-termux/main/install.sh)
 ```
 
-The installer does seven things:
+<details>
+<summary><b>What the installer does</b> — 7 steps</summary>
 
 1. Verifies and installs dependencies (`tput`, `git`, `glow`, `gh`, `rg`, `jq`, `bat`, `curl`).
 2. Creates the Zero-Termux directories.
@@ -82,52 +57,75 @@ The installer does seven things:
 6. Saves the configuration (`zero_data`, `zero_cache`, `zero_config`, `zero_source`, `zero_tool_data`).
 7. Prints a summary with next steps.
 
-### Verify the installation
+</details>
+
+> [!NOTE]
+> Termux only. No root, no systemd, no sudo — everything runs under `$HOME` and `$PREFIX`.
+
+## Quick Start
 
 ```bash
-zero --version        # → 1.0.0
-zero list ai          # shows AI tools and their installed state
-zero open zero        # opens the documentation site
+zero --version                    # → 1.0.0
+zero list ai                      # list AI tools and their install state
+zero install ai --qwen-code       # install one AI tool
+zero install dev --gh --fzf --jq  # install a few day-to-day utilities
+zero install shell                # ZSH + Oh My Zsh + prompt + plugins
+zero update ai                    # update installed AI tools
+zero show ai --opencode           # show help for one tool
+pkg install zaproxy               # an example APT package
 ```
 
-### First commands
+Full syntax for every command: [command reference](https://vaizer0.github.io/zero-termux/commands).
 
-```bash
-zero install dev --gh --fzf --jq   # a few day-to-day utilities
-zero install ai --qwen-code        # one AI tool (or the whole module: zero install ai)
-zero install shell                 # ZSH + Oh My Zsh + prompt + plugins
-pkg install zaproxy                # an example APT package
-```
+## What Zero-Termux Provides
 
-### Update / uninstall
+| Area | What Zero-Termux provides |
+|---|---|
+| CLI | `zero` — modular bash command framework (13 commands, no runtime deps) |
+| AI | 36 AI coding and agent tools (`qwen-code`, `opencode`, `claude-code`, `ollama`, …) |
+| Development | Language toolchains (8), databases (5), editors (2), dev utilities (22), npm globals (11) |
+| Shell & UI | ZSH + Oh My Zsh setup (10) and Termux UI (4) |
+| Automation | n8n workflow automation |
+| Packages | 228 Debian packages in a GPG-signed APT repository |
+| Updates | Rolling/latest strategy for user-facing tools; justified source pins |
+| Security | Repository signing + validation on every build |
+| Docs | GitHub Pages website with searchable module and package explorers |
 
-```bash
-zero update zero        # update the Zero-Termux framework itself (git pull)
-zero update ai          # update all installed tools in a module
-zero uninstall ai --ollama   # remove a single tool
-zero reinstall editor   # uninstall + reinstall a module
-pkg remove zaproxy      # remove an APT package
-```
+## Features
+
+| Feature | Where |
+|---|---|
+| Install / update / reinstall / uninstall for every tool | `zero install|update|reinstall|uninstall <module> [--tool …]` |
+| Second brain (save/search memories) | `zero brain` |
+| Project scaffolding | `zero init <template>` |
+| PostgreSQL manager | `zero pg` |
+| Speech-to-agent | `zero voice <agent>` |
+| Environment variable manager | `zero env set|unset|ls` |
+| 228-package signed APT repo | `pkg install <tool>` |
+| Weekly rolling-version drift report | `.github/workflows/maintenance.yml` |
+| CI: build, sign, validate, deploy | `.github/workflows/*.yml` |
 
 ---
 
 ## Command reference
 
+Every command shares the same four lifecycle verbs: **install / update / reinstall / uninstall**.
+
 | Command | Purpose |
 |---|---|
-| [`zero install`](#install) | Install a module or specific tools |
-| [`zero update`](#update) | Update the framework or a module |
-| [`zero uninstall`](#uninstall) | Remove a module or specific tools |
-| [`zero reinstall`](#reinstall) | Uninstall then reinstall |
-| [`zero list`](#list) | List a module's tools |
-| [`zero show`](#show) | Show help for one tool |
-| [`zero open`](#open) | Open docs in the browser |
-| [`zero init`](#init) | Configure an existing project |
-| [`zero brain`](#brain) | Second brain (memories) |
-| [`zero env`](#env) | Manage env variables |
-| [`zero pg`](#pg) | PostgreSQL manager |
-| [`zero voice`](#voice) | Speech-to-agent |
-| [`zero --version`](#--version) | Show version |
+| [`zero install`](https://vaizer0.github.io/zero-termux/commands) | Install a module or specific tools |
+| [`zero update`](https://vaizer0.github.io/zero-termux/commands) | Update the framework or a module |
+| [`zero uninstall`](https://vaizer0.github.io/zero-termux/commands) | Remove a module or specific tools |
+| [`zero reinstall`](https://vaizer0.github.io/zero-termux/commands) | Uninstall then reinstall |
+| [`zero list`](https://vaizer0.github.io/zero-termux/commands) | List a module's tools |
+| [`zero show`](https://vaizer0.github.io/zero-termux/commands) | Show help for one tool |
+| [`zero open`](https://vaizer0.github.io/zero-termux/commands) | Open docs in the browser |
+| [`zero init`](https://vaizer0.github.io/zero-termux/commands) | Configure an existing project |
+| [`zero brain`](https://vaizer0.github.io/zero-termux/commands) | Second brain (memories) |
+| [`zero env`](https://vaizer0.github.io/zero-termux/commands) | Manage env variables |
+| [`zero pg`](https://vaizer0.github.io/zero-termux/commands) | PostgreSQL manager |
+| [`zero voice`](https://vaizer0.github.io/zero-termux/commands) | Speech-to-agent |
+| [`zero --version`](https://vaizer0.github.io/zero-termux/commands) | Show version |
 
 <details>
 <summary><b>install</b> — install a module or specific tools</summary>
@@ -137,7 +135,7 @@ zero install <target> [--tool1 --tool2 …]
 ```
 
 - `<target>` is a module: `ai`, `lang`, `db`, `editor`, `dev`, `npm`, `shell`, `ui`, `auto`.
-- With **no `--tool` flags**, the whole category is installed.
+- With **no `--tool` flags**, the whole module is installed.
 - With flags, only the named tools are installed.
 
 ```bash
@@ -155,7 +153,7 @@ zero update <target> [--tool1 --tool2 …]
 ```
 
 - `zero update zero` updates only the framework (git pull).
-- `zero update <module>` runs each tool's update hook; `lang` maps to `pkg upgrade`.
+- `zero update <module>` runs each tool's update hook.
 
 ```bash
 zero update zero
@@ -263,11 +261,12 @@ zero brain search
 <summary><b>env</b> — manage environment variables</summary>
 
 ```
-zero env set KEY value | zero env unset KEY | zero env ls
+zero env <subcommand>     # set | unset | ls (set/unset are interactive)
 ```
 
 ```bash
-zero env set OPENAI_API_KEY sk-…
+zero env set
+zero env unset
 zero env ls
 ```
 </details>
@@ -276,7 +275,7 @@ zero env ls
 <summary><b>pg</b> — PostgreSQL manager</summary>
 
 ```
-zero pg <command>   # start | stop | restart | …
+zero pg <command>   # start | stop | restart | create | drop | …
 ```
 
 ```bash
@@ -311,7 +310,7 @@ zero --version    # → 1.0.0
 
 ## Modules and tools
 
-9 modules, **99 tools**. `zero list <module>` shows the live list; the website has a searchable [module explorer](https://vaizer0.github.io/zero-termux/modules/).
+9 modules, **99 tools**. `zero list <module>` shows the live list; the website has a searchable [module explorer](https://vaizer0.github.io/zero-termux/modules).
 
 | Module | Tools | What it installs |
 |---|---:|---|
@@ -392,7 +391,7 @@ Full details: `zero list ai`, `zero show ai --<tool>`.
 
 ## APT repository
 
-**228 packages**, signed, published to GitHub Pages. The installer configures this for you; manual setup:
+**228 packages**, GPG-signed, published to GitHub Pages. The installer configures this for you; manual setup:
 
 ```bash
 echo "deb [trusted=yes arch=all] https://vaizer0.github.io/zero-termux/repo zero-termux main" \
@@ -410,7 +409,7 @@ apt update
 | Install | `pkg install <name>` |
 | Update lists | `apt update` (or `pkg update`) |
 | Remove | `pkg remove <name>` |
-| Browse catalog | [assets/PACKAGES.md](assets/PACKAGES.md) • [live explorer](https://vaizer0.github.io/zero-termux/packages/) |
+| Browse catalog | [assets/PACKAGES.md](assets/PACKAGES.md) • [live explorer](https://vaizer0.github.io/zero-termux/packages) |
 
 ### Verify the signing key
 
@@ -426,12 +425,10 @@ gpg --show-keys "$PREFIX/etc/apt/trusted.gpg.d/zero-termux.gpg"
 
 ## Version policy
 
-- **Rolling user-facing tools → latest.** Registry installs use `@latest` / `-U`; GitHub-release binaries resolve `…/releases/latest` at install time via the GitHub API (no stale fallback — they fail with a clear error if the API is unreachable).
+- **Rolling user-facing tools → latest.** Registry installs use `@latest` / `-U`; GitHub-release binaries resolve the newest release at install time (no stale fallback).
 - **Build-critical / source-tag pins → kept and justified**, each with a `# Zero-Termux: justified pin — <reason>` comment and an entry in the pin manifest.
-- **The Debian `Version:` field is the *package* revision** — separate from the installed tool version.
+- **The Debian `Version:` field is the *package* revision** — separate from the installed tool version. It is not displayed as the upstream application version.
 - A weekly maintenance workflow (`maintenance.yml`, Mondays 03:00 UTC) reports drift between justified pins and latest upstream; `test.yml` fails on any new unapproved pin.
-
----
 
 ## Architecture
 
@@ -442,14 +439,15 @@ flowchart LR
     I --> A[APT repo configured<br/>suite: zero-termux]
     C -->|zero install ai| M[Module installers<br/>zero/tools/&lt;cat&gt;/&lt;tool&gt;/]
     A -->|pkg install| P[Debian packages<br/>packages/&lt;name&gt;/]
-    M --> T[Latest tool releases<br/>npm / pip / GitHub API]
+    M --> T[Latest tool releases<br/>npm / pip / GitHub]
     P --> S[Build from source on device]
     CI[GitHub Actions] -->|build-repo.yml| B[dpkg-deb + termux-apt-repo + gpg sign]
     B -->|peaceiris/actions-gh-pages| G[GitHub Pages<br/>site + /repo + key]
     G --> PGP[GPG key<br/>DF2C7FCD…]
 ```
 
-## Directory layout
+<details>
+<summary><b>Directory layout</b></summary>
 
 ```
 zero/                          CLI framework (bash, no runtime deps)
@@ -464,13 +462,14 @@ scripts/
   validation/                  CI validators (packages, branding, pins, stale URLs, docs)
   version-check/               rolling-version drift reporter
   maintenance/                 scheduled-checks entrypoint
-  site/                        site data generator (scripts/site/generate-data.py)
+  site/                        site data generator
 site/                          website (multi-page, data-driven)
   data/*.json                  generated: meta, commands, modules, packages
 assets/                        PACKAGES.md catalog + zero-termux.gpg (public key)
 .github/workflows/             CI/CD: build-repo, test, pages, maintenance
 install.sh                     unified installer (7 steps)
 ```
+</details>
 
 ## Common workflows
 
@@ -489,10 +488,6 @@ install.sh                     unified installer (7 steps)
 - **Modules:** `zero update <module> [--tool …]`.
 - **APT:** `apt update && pkg upgrade`.
 
-## Migration
-
-Moving from an earlier single-purpose Termux setup? See [MIGRATION.md](MIGRATION.md) — it documents the layout Zero-Termux uses (`$HOME/.local/share/zero-termux`, `$PREFIX/bin/zero`, config under `~/.config/zero-termux`) and how to keep your existing configs intact.
-
 ## Troubleshooting
 
 | Symptom | Fix |
@@ -503,6 +498,10 @@ Moving from an earlier single-purpose Termux setup? See [MIGRATION.md](MIGRATION
 | `zero install ai` is slow | Expected — whole-module AI installs take 1–2 h. Install per-tool instead |
 | Tool version looks stale | Rolling tools resolve latest at install time; `zero update <module>` re-resolves |
 | GPG verify fails | Re-download the key: `curl -fsSL https://vaizer0.github.io/zero-termux/zero-termux.gpg` |
+
+## Migration
+
+Moving from an earlier single-purpose Termux setup? See [MIGRATION.md](MIGRATION.md) — it documents the layout Zero-Termux uses (`$HOME/.local/share/zero-termux`, `$PREFIX/bin/zero`, config under `~/.config/zero-termux`) and how to keep your existing configs intact.
 
 ## Security
 
@@ -522,6 +521,11 @@ MIT. See [LICENSE](LICENSE). Tools installed through Zero-Termux are governed by
 ## Links
 
 - Website: <https://vaizer0.github.io/zero-termux>
+- Docs: <https://vaizer0.github.io/zero-termux/docs>
+- Commands: <https://vaizer0.github.io/zero-termux/commands>
+- Module explorer: <https://vaizer0.github.io/zero-termux/modules>
+- Package explorer: <https://vaizer0.github.io/zero-termux/packages>
+- Site search: <https://vaizer0.github.io/zero-termux/search>
 - Repository: <https://github.com/Vaizer0/zero-termux>
 - Package catalog: [assets/PACKAGES.md](assets/PACKAGES.md)
 - Issues: <https://github.com/Vaizer0/zero-termux/issues>

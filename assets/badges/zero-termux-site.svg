@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 44" width="280" role="img" aria-label="Open the Zero-Termux website">
+  <title>Zero-Termux Website</title>
+  <defs>
+    <linearGradient id="zt-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f6feb">
+        <animate attributeName="stop-color"
+                 values="#1f6feb;#8957e5;#e34f76;#16a085;#1f6feb"
+                 dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#8957e5">
+        <animate attributeName="stop-color"
+                 values="#8957e5;#e34f76;#16a085;#1f6feb;#8957e5"
+                 dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <linearGradient id="zt-shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0">
+        <animate attributeName="stop-color" values="#ffffff;#ffffff;#ffffff;#ffffff;#ffffff" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <animateTransform attributeName="gradientTransform" type="translate"
+                        values="-300 0;300 0" dur="3.6s" repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="1" y="1" width="298" height="42" rx="21" fill="url(#zt-grad)"/>
+  <rect x="1" y="1" width="298" height="42" rx="21" fill="url(#zt-shine)"/>
+  <rect x="1" y="1" width="298" height="42" rx="21" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1"/>
+
+  <g>
+    <polygon points="29,14 37,22 29,30 21,22" fill="#ffffff">
+      <animate attributeName="opacity" values="1;0.55;1" dur="2.4s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <text x="66" y="27" font-family="Arial, Helvetica, sans-serif" font-size="17"
+        font-weight="700" fill="#ffffff" letter-spacing="0.5">Zero-Termux Website</text>
+</svg>
